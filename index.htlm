@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benova - Centro Estético Integral</title>
+    <style>
+        /* Estilos base modernos */
+        :root {
+            --primary: #8A4FFF;
+            --secondary: #00D4FF;
+            --dark: #2D3748;
+            --light: #F7FAFC;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Technical Section */
+        .tech-section {
+            background: #f0f4f8;
+            padding: 4rem 0;
+            margin: 4rem 0;
+        }
+
+        .code-snippet {
+            background: #282a36;
+            color: #f8f8f2;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            margin: 2rem 0;
+        }
+
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Benova</div>
+            <div class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#tecnologia">Tecnología</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Centro Estético Inteligente</h1>
+            <p>Tratamientos personalizados con tecnología de última generación</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Sección para público general -->
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>Tratamientos Faciales</h3>
+                    <p>Limpiezas profundas, peelings y tratamientos anti-edad</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Masajes Terapéuticos</h3>
+                    <p>Relajación y recuperación muscular</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Tecnología Láser</h3>
+                    <p>Depilación y rejuvenecimiento</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección técnica -->
+        <section id="tecnologia" class="tech-section">
+            <h2>Nuestra Tecnología</h2>
+            <div class="code-snippet">
+                <pre><code>
+# Sistema de agendamiento inteligente
+curl -X POST https://benova.railway.app/webhook \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event": "message_created",
+    "content": "¿Disponibilidad para limpieza facial?",
+    "conversation": {
+      "id": "12345",
+      "status": "open"
+    }
+  }'
+                </code></pre>
+            </div>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>API REST</h3>
+                    <p>Integración con sistemas empresariales</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Redis VectorStore</h3>
+                    <p>Almacenamiento de conocimiento optimizado</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Multi-Agent System</h3>
+                    <p>Gestión inteligente de citas y consultas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Widget -->
+        <div class="chat-widget" onclick="openChat()">
+            💬 Chatear con nosotros
+        </div>
+    </main>
+
+    <script>
+        // Chat widget interactivo
+        function openChat() {
+            const chatWindow = window.open(
+                'https://chatwoot-production-0f1d.up.railway.app',
+                'Chat Benova',
+                'width=400,height=600'
+            );
+        }
+
+        // Formulario de contacto
+        document.querySelector('#contacto form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica de envío al backend
+            alert('¡Gracias por contactarnos! Te responderemos en breve.');
+        });
+    </script>
+</body>
+</html>
