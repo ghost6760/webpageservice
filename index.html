@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hachi - Agentes de IA que hablan el lenguaje de tu negocio</title>
-    <meta name="description" content="Solución conversacional de última generación que se integra con tu CRM existente - sin migraciones, sin complicaciones">
+    <title>Hachi - Sistema Multi-Agente de IA para Atención al Cliente 24/7</title>
+    <meta name="description" content="Plataforma inteligente con 5 agentes especializados que automatiza atención al cliente, agendamiento y emergencias médicas. Integración completa con CRM existente.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* Partículas de fondo */
+        /* Partículas de fondo mejoradas */
         .particles {
             position: fixed;
             top: 0;
@@ -29,39 +29,49 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.1;
+            opacity: 0.15;
         }
 
         .particle {
             position: absolute;
+            border-radius: 50%;
+            animation: float 8s infinite linear;
+        }
+
+        .particle.neural {
+            width: 3px;
+            height: 3px;
+            background: #40E0D0;
+            box-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
+        }
+
+        .particle.data {
             width: 2px;
             height: 2px;
-            background: #40E0D0;
-            border-radius: 50%;
-            animation: float 6s infinite linear;
+            background: #FF6B6B;
         }
 
         @keyframes float {
-            0% { transform: translateY(100vh) translateX(0px); opacity: 0; }
+            0% { transform: translateY(100vh) translateX(0px) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
         }
 
-        /* Header */
+        /* Header mejorado */
         .header {
             position: fixed;
             top: 0;
             width: 100%;
             background: rgba(15, 15, 35, 0.95);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+            border-bottom: 1px solid rgba(64, 224, 208, 0.2);
         }
 
         .nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -76,27 +86,29 @@
         }
 
         .logo-nav svg {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
             color: #40E0D0;
+            text-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
         }
 
-        /* Hero Section */
+        /* Hero Section mejorado */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -104,42 +116,57 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            background: radial-gradient(ellipse at center, rgba(64, 224, 208, 0.1) 0%, #0f0f23 70%);
             position: relative;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             z-index: 10;
         }
 
         .hero-logo {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 2rem;
-            filter: drop-shadow(0 0 30px rgba(64, 224, 208, 0.3));
+            filter: drop-shadow(0 0 40px rgba(64, 224, 208, 0.4));
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             font-weight: 300;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #40E0D0, #FF6B6B);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #40E0D0, #FF6B6B, #9B59B6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero .subtitle {
+            font-size: 1.4rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            color: #40E0D0;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            margin-bottom: 2.5rem;
             line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 1rem 2.5rem;
+            padding: 1.2rem 2.8rem;
             background: linear-gradient(45deg, #40E0D0, #FF6B6B);
             color: white;
             text-decoration: none;
@@ -149,240 +176,28 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(64, 224, 208, 0.4);
-        }
-
-        /* Sections */
-        .section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(45deg, #40E0D0, #FF6B6B);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Valor Diferencial */
-        .value-prop {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            padding: 3rem;
-            border: 1px solid rgba(64, 224, 208, 0.1);
-            margin: 3rem 0;
-        }
-
-        .value-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .value-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(64, 224, 208, 0.05);
-            border-radius: 15px;
-            border-left: 4px solid #40E0D0;
-        }
-
-        .value-item i {
-            color: #40E0D0;
-            font-size: 1.5rem;
-        }
-
-        /* Módulos */
-        .modules {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .module-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .module-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(64, 224, 208, 0.2);
-            border-color: #40E0D0;
-        }
-
-        .module-card h3 {
-            color: #40E0D0;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .module-features {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .module-features li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .module-features li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #FF6B6B;
-        }
-
-        /* CRM Integration */
-        .crm-integration {
-            background: linear-gradient(135deg, rgba(64, 224, 208, 0.1), rgba(255, 107, 107, 0.1));
-            border-radius: 30px;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .crm-benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .crm-benefit {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1rem;
-        }
-
-        .crm-benefit i {
-            font-size: 3rem;
-            color: #40E0D0;
-        }
-
-        /* Caso de Éxito */
-        .case-study {
-            background: rgba(155, 89, 182, 0.1);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 3rem 0;
-            border-left: 5px solid #9B59B6;
-        }
-
-        .results {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .result-item {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-        }
-
-        .result-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #40E0D0;
-            display: block;
-        }
-
-        /* Pricing */
-        .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card:nth-child(2) {
-            border-color: #40E0D0;
-            transform: scale(1.05);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: #40E0D0;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            color: #40E0D0;
-            font-weight: bold;
-            margin: 1rem 0;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2rem;
-            border-left: 4px solid #FF6B6B;
-        }
-
-        .testimonial-author {
-            margin-top: 1rem;
-            font-weight: bold;
-            color: #40E0D0;
-        }
-
-        /* Footer CTA */
-        .footer-cta {
-            background: linear-gradient(135deg, #0f0f23, #1a1a2e);
-            text-align: center;
-            padding: 5rem 2rem;
-        }
-
-        .footer-cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            box-shadow: 0 20px 40px rgba(64, 224, 208, 0.4);
         }
 
         .cta-secondary {
@@ -396,7 +211,427 @@
             color: #0f0f23;
         }
 
-        /* Responsive */
+        /* Sections mejoradas */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #40E0D0, #FF6B6B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Sistema Multi-Agente - Sección principal */
+        .multi-agent-hero {
+            background: linear-gradient(135deg, rgba(64, 224, 208, 0.1), rgba(255, 107, 107, 0.1));
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .multi-agent-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(64, 224, 208, 0.05) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        /* Agentes Especializados */
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .agent-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 2.5rem;
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .agent-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #40E0D0, #FF6B6B, #9B59B6, #3498DB);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .agent-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .agent-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(64, 224, 208, 0.3);
+            border-color: rgba(64, 224, 208, 0.5);
+        }
+
+        .agent-card.emergency {
+            border-left: 4px solid #E74C3C;
+        }
+
+        .agent-card.sales {
+            border-left: 4px solid #F39C12;
+        }
+
+        .agent-card.schedule {
+            border-left: 4px solid #3498DB;
+        }
+
+        .agent-card.availability {
+            border-left: 4px solid #9B59B6;
+        }
+
+        .agent-card.support {
+            border-left: 4px solid #2ECC71;
+        }
+
+        .agent-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .agent-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            background: rgba(64, 224, 208, 0.1);
+        }
+
+        .agent-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-tag {
+            background: rgba(64, 224, 208, 0.2);
+            color: #40E0D0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .agent-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .agent-features li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .agent-features li:last-child {
+            border-bottom: none;
+        }
+
+        .agent-features li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #40E0D0;
+            font-size: 1.2rem;
+        }
+
+        /* Características Técnicas */
+        .tech-features {
+            background: rgba(15, 15, 35, 0.8);
+            border-radius: 25px;
+            padding: 4rem;
+            margin: 4rem 0;
+            border: 1px solid rgba(64, 224, 208, 0.2);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(64, 224, 208, 0.05);
+            border-radius: 20px;
+            border-left: 4px solid #40E0D0;
+        }
+
+        .tech-item i {
+            color: #40E0D0;
+            font-size: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        .tech-item h4 {
+            color: #40E0D0;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Beneficios para Landing Page */
+        .benefits-section {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(52, 152, 219, 0.1));
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .benefit-card i {
+            font-size: 3rem;
+            color: #FF6B6B;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h4 {
+            color: #40E0D0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Integración CRM mejorada */
+        .crm-integration {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .integration-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .flow-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .flow-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #40E0D0, #FF6B6B);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: #40E0D0;
+            align-self: center;
+        }
+
+        /* Testimoniales mejorados */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 2.5rem;
+            border-left: 4px solid #FF6B6B;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #40E0D0;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #40E0D0, #FF6B6B);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Precios mejorados */
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #40E0D0;
+            transform: scale(1.05);
+            background: rgba(64, 224, 208, 0.1);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MÁS POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #40E0D0, #FF6B6B);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: #40E0D0;
+            box-shadow: 0 20px 40px rgba(64, 224, 208, 0.2);
+        }
+
+        .price {
+            font-size: 3rem;
+            color: #40E0D0;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .price-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price-features li::before {
+            content: "✓";
+            color: #2ECC71;
+            font-weight: bold;
+        }
+
+        /* Footer CTA mejorado */
+        .footer-cta {
+            background: linear-gradient(135deg, #0f0f23, #1a1a2e);
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .footer-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #40E0D0, #FF6B6B, #9B59B6);
+        }
+
+        /* Responsive mejorado */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -406,29 +641,122 @@
                 font-size: 2.5rem;
             }
             
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .section {
-                padding: 3rem 1rem;
+                padding: 4rem 1rem;
             }
             
-            .pricing-card:nth-child(2) {
+            .agents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
                 transform: none;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .flow-arrow {
+                display: none;
             }
         }
 
-        /* Animations */
+        /* Animaciones mejoradas */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.6s ease;
+            transition: all 0.8s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        .orbit {
+            animation: rotate 12s linear infinite;
+            transform-origin: center;
+        }
+
+        .neural-network {
+            animation: pulse 3s infinite;
+        }
+
+        /* Stats counter animation */
+        .stats-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 4rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(64, 224, 208, 0.05);
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #40E0D0;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -447,55 +775,6 @@
                         <circle cx="105" cy="60" r="3" fill="#40E0D0"/>
                     </g>
                     <g class="neural-network">
-                        <circle cx="60" cy="60" r="8" fill="url(#coreGradient)" class="core-glow"/>
-                        <circle cx="40" cy="45" r="4" fill="#FF6B6B"/>
-                        <circle cx="80" cy="45" r="4" fill="#40E0D0"/>
-                        <circle cx="35" cy="75" r="4" fill="#9B59B6"/>
-                        <circle cx="85" cy="75" r="4" fill="#3498DB"/>
-                        <line x1="60" y1="60" x2="40" y2="45" stroke="url(#gradient2)" stroke-width="2" opacity="0.7"/>
-                        <line x1="60" y1="60" x2="80" y2="45" stroke="url(#gradient2)" stroke-width="2" opacity="0.7"/>
-                        <line x1="60" y1="60" x2="35" y2="75" stroke="url(#gradient2)" stroke-width="2" opacity="0.7"/>
-                        <line x1="60" y1="60" x2="85" y2="75" stroke="url(#gradient2)" stroke-width="2" opacity="0.7"/>
-                    </g>
-                    <defs>
-                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#40E0D0;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
-                        </linearGradient>
-                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#40E0D0;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:0.8" />
-                        </linearGradient>
-                        <radialGradient id="coreGradient" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#40E0D0;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
-                        </radialGradient>
-                    </defs>
-                </svg>
-                <span style="font-size: 1.5rem; font-weight: bold;">Hachi</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#integracion">Integración</a></li>
-                <li><a href="#modulos">Módulos</a></li>
-                <li><a href="#precios">Precios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content fade-in">
-            <div class="hero-logo">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(64, 224, 208, 0.1)" stroke-width="2"/>
-                    <g class="orbit" style="animation: rotate 8s linear infinite;">
-                        <circle cx="60" cy="60" r="45" fill="none" stroke="url(#gradient1)" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6"/>
-                        <circle cx="105" cy="60" r="3" fill="#40E0D0"/>
-                    </g>
-                    <g class="neural-network" style="animation: pulse 2s infinite;">
                         <circle cx="60" cy="60" r="8" fill="url(#coreGradient)"/>
                         <circle cx="40" cy="45" r="4" fill="#FF6B6B"/>
                         <circle cx="80" cy="45" r="4" fill="#40E0D0"/>
@@ -510,19 +789,68 @@
                         <line x1="60" y1="60" x2="60" y2="30" stroke="url(#gradient2)" stroke-width="1.5" opacity="0.6"/>
                         <line x1="60" y1="60" x2="60" y2="90" stroke="url(#gradient2)" stroke-width="1.5" opacity="0.6"/>
                     </g>
-                    <g class="data-particles">
-                        <circle cx="25" cy="30" r="1.5" fill="#40E0D0" opacity="0.8">
-                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="95" cy="25" r="1.5" fill="#FF6B6B" opacity="0.8">
-                            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="20" cy="95" r="1.5" fill="#9B59B6" opacity="0.8">
-                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
-                        </circle>
-                        <circle cx="100" cy="90" r="1.5" fill="#3498DB" opacity="0.8">
-                            <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.8s" repeatCount="indefinite"/>
-                        </circle>
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#40E0D0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#40E0D0;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:0.8" />
+                        </linearGradient>
+                        <radialGradient id="coreGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#40E0D0;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+                <span style="font-size: 1.6rem; font-weight: bold;">Hachi</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#agentes">Agentes</a></li>
+                <li><a href="#tecnologia">Tecnología</a></li>
+                <li><a href="#integracion">Integración</a></li>
+                <li><a href="#precios">Precios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content fade-in">
+            <div class="hero-logo">
+                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(64, 224, 208, 0.2)" stroke-width="2"/>
+                    <g class="orbit">
+                        <circle cx="60" cy="60" r="45" fill="none" stroke="url(#gradient1)" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
+                        <circle cx="105" cy="60" r="4" fill="#40E0D0"/>
+                        <circle cx="15" cy="60" r="3" fill="#FF6B6B"/>
+                        <circle cx="60" cy="15" r="3" fill="#9B59B6"/>
+                        <circle cx="60" cy="105" r="3" fill="#3498DB"/>
+                    </g>
+                    <g class="neural-network">
+                        <circle cx="60" cy="60" r="10" fill="url(#coreGradient)"/>
+                        <circle cx="40" cy="45" r="5" fill="#FF6B6B"/>
+                        <circle cx="80" cy="45" r="5" fill="#40E0D0"/>
+                        <circle cx="35" cy="75" r="5" fill="#9B59B6"/>
+                        <circle cx="85" cy="75" r="5" fill="#3498DB"/>
+                        <circle cx="25" cy="35" r="3" fill="#F39C12"/>
+                        <circle cx="95" cy="35" r="3" fill="#E74C3C"/>
+                        <circle cx="25" cy="85" r="3" fill="#2ECC71"/>
+                        <circle cx="95" cy="85" r="3" fill="#E67E22"/>
+                        <!-- Conexiones principales -->
+                        <line x1="60" y1="60" x2="40" y2="45" stroke="url(#gradient2)" stroke-width="3" opacity="0.8"/>
+                        <line x1="60" y1="60" x2="80" y2="45" stroke="url(#gradient2)" stroke-width="3" opacity="0.8"/>
+                        <line x1="60" y1="60" x2="35" y2="75" stroke="url(#gradient2)" stroke-width="3" opacity="0.8"/>
+                        <line x1="60" y1="60" x2="85" y2="75" stroke="url(#gradient2)" stroke-width="3" opacity="0.8"/>
+                        <!-- Conexiones secundarias -->
+                        <line x1="40" y1=45" x2="25" y2="35" stroke="url(#gradient2)" stroke-width="2" opacity="0.6"/>
+                        <line x1="80" y1="45" x2="95" y2="35" stroke="url(#gradient2)" stroke-width="2" opacity="0.6"/>
+                        <line x1="35" y1="75" x2="25" y2="85" stroke="url(#gradient2)" stroke-width="2" opacity="0.6"/>
+                        <line x1="85" y1="75" x2="95" y2="85" stroke="url(#gradient2)" stroke-width="2" opacity="0.6"/>
                     </g>
                     <defs>
                         <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -541,151 +869,342 @@
                     </defs>
                 </svg>
             </div>
-            <h1>Hachi: Agentes de IA que hablan el lenguaje de tu negocio</h1>
-            <p>Solución conversacional de última generación que se integra con tu CRM existente - sin migraciones, sin complicaciones</p>
-            <button class="cta-button" onclick="requestDemo()">Solicitar Demo Personalizada →</button>
-        </div>
-    </section>
-
-    <!-- Valor Diferencial -->
-    <section class="section" id="integracion">
-        <div class="value-prop fade-in">
-            <h2>Sin migraciones, solo integración</h2>
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Mantén tu CRM actual mientras potencias tus operaciones con IA especializada</p>
-            
-            <div class="value-list">
-                <div class="value-item">
-                    <i class="fas fa-plug"></i>
-                    <div>
-                        <strong>Integración plug&play</strong><br>
-                        con Salesforce, Hubspot, Zoho
-                    </div>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-cogs"></i>
-                    <div>
-                        <strong>Personalización de agentes</strong><br>
-                        para tu industria específica
-                    </div>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <strong>Conexión API en 72h</strong><br>
-                        sin interrumpir operaciones
-                    </div>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-chart-line"></i>
-                    <div>
-                        <strong>Ahorro de 65%</strong><br>
-                        vs soluciones que requieren migración
-                    </div>
-                </div>
+            <h1>Hachi</h1>
+            <div class="subtitle">Sistema Multi-Agente de IA para Atención al Cliente 24/7</div>
+            <p>Automatiza completamente tu atención al cliente con 5 agentes especializados que trabajan en conjunto. Desde emergencias hasta ventas, pasando por agendamiento automático y soporte técnico.</p>
+            <div class="cta-buttons">
+                <a href="#demo" class="cta-button">Ver Demo en Vivo</a>
+                <a href="#precios" class="cta-button cta-secondary">Conocer Precios</a>
             </div>
         </div>
     </section>
 
-    <!-- Módulos Especializados -->
-    <section class="section" id="modulos">
-        <h2 class="fade-in">Módulos Especializados</h2>
-        <div class="modules">
-            <div class="module-card fade-in">
-                <h3><i class="fas fa-stethoscope"></i> Medicina Estética (Benova)</h3>
-                <p>Agente médico especializado para clínicas estéticas premium</p>
-                <ul class="module-features">
-                    <li>Triaje automático de síntomas post-tratamiento</li>
-                    <li>Agendamiento inteligente con verificación de disponibilidad</li>
-                    <li>Consultas sobre procedimientos y contraindicaciones</li>
+    <!-- Sistema Multi-Agente Hero -->
+    <section class="section">
+        <div class="multi-agent-hero fade-in">
+            <h2 style="margin-bottom: 1.5rem;">🤖 Sistema Multi-Agente Inteligente</h2>
+            <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+                Cinco agentes especializados que colaboran para ofrecer la experiencia de atención al cliente más avanzada del mercado. Cada agente domina su área y se comunica inteligentemente con los demás.
+            </p>
+        </div>
+    </section>
+
+    <!-- Agentes Especializados -->
+    <section class="section" id="agentes">
+        <h2>Agentes Especializados</h2>
+        <p class="section-subtitle">Cada agente está diseñado para una función específica, garantizando respuestas expertas y acciones automatizadas</p>
+        
+        <div class="agents-grid">
+            <!-- Agente de Emergencias -->
+            <div class="agent-card emergency fade-in">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-exclamation-triangle" style="color: #E74C3C;"></i>
+                    </div>
+                    <div>
+                        <h3>Agente de Emergencias</h3>
+                        <span class="agent-tag">Respuesta < 3 min</span>
+                    </div>
+                </div>
+                <p>Especialista en urgencias que detecta automáticamente situaciones críticas y activa protocolos de escalación inmediata.</p>
+                <ul class="agent-features">
+                    <li>Detección automática de palabras clave de emergencia</li>
+                    <li>Protocolo de respuesta en menos de 3 minutos</li>
+                    <li>Escalación automática a personal médico</li>
+                    <li>Tono empático pero urgente y profesional</li>
+                    <li>Disponibilidad 24/7 sin interrupciones</li>
                 </ul>
             </div>
-            
-            <div class="module-card fade-in">
-                <h3><i class="fas fa-shopping-cart"></i> eCommerce Premium</h3>
-                <p>Asistentes de ventas con conocimiento completo de catálogo</p>
-                <ul class="module-features">
-                    <li>Asistentes de ventas con conocimiento de catálogo</li>
-                    <li>Gestión de devoluciones automatizada</li>
-                    <li>Upselling contextual basado en historial</li>
+
+            <!-- Agente de Ventas -->
+            <div class="agent-card sales slide-in-left">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-chart-line" style="color: #F39C12;"></i>
+                    </div>
+                    <div>
+                        <h3>Agente de Ventas</h3>
+                        <span class="agent-tag">IA + RAG</span>
+                    </div>
+                </div>
+                <p>Asesora comercial inteligente con acceso a toda la información de productos y servicios actualizada en tiempo real.</p>
+                <ul class="agent-features">
+                    <li>Base de conocimiento siempre actualizada (RAG)</li>
+                    <li>Comparación inteligente de productos/servicios</li>
+                    <li>Información de precios y promociones</li>
+                    <li>Llamadas a la acción personalizadas</li>
+                    <li>Finaliza siempre con invitación a agendar</li>
                 </ul>
             </div>
-            
-            <div class="module-card fade-in">
-                <h3><i class="fas fa-university"></i> Servicios Financieros</h3>
-                <p>Agentes especializados en productos financieros complejos</p>
-                <ul class="module-features">
-                    <li>Verificación KYC conversacional</li>
-                    <li>Explicación de productos complejos</li>
-                    <li>Detección de fraude en tiempo real</li>
+
+            <!-- Agente de Citas -->
+            <div class="agent-card schedule slide-in-right">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-calendar-check" style="color: #3498DB;"></i>
+                    </div>
+                    <div>
+                        <h3>Agente de Citas</h3>
+                        <span class="agent-tag">Automatización Total</span>
+                    </div>
+                </div>
+                <p>Sistema de agendamiento completamente automatizado que gestiona citas sin intervención humana.</p>
+                <ul class="agent-features">
+                    <li>Agendamiento automático con integración Selenium</li>
+                    <li>Verificación de disponibilidad en tiempo real</li>
+                    <li>Modificación y cancelación inteligente</li>
+                    <li>Reagendamiento automático por cambios</li>
+                    <li>Manejo completo de datos del cliente</li>
                 </ul>
+            </div>
+
+            <!-- Agente de Disponibilidad -->
+            <div class="agent-card availability fade-in">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-clock" style="color: #9B59B6;"></i>
+                    </div>
+                    <div>
+                        <h3>Agente de Disponibilidad</h3>
+                        <span class="agent-tag">Tiempo Real</span>
+                    </div>
+                </div>
+                <p>Consultor de horarios que optimiza la disponibilidad según la duración específica de cada servicio.</p>
+                <ul class="agent-features">
+                    <li>Consulta de disponibilidad por fecha específica</li>
+                    <li>Filtrado automático por duración de servicio</li>
+                    <li>Sugerencia de horarios alternativos</li>
+                    <li>Reconoce más de 20 tipos de servicios</li>
+                    <li>Optimización inteligente de calendario</li>
+                </ul>
+            </div>
+
+            <!-- Agente de Soporte -->
+            <div class="agent-card support slide-in-left">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-headset" style="color: #2ECC71;"></i>
+                    </div>
+                    <div>
+                        <h3>Agente de Soporte</h3>
+                        <span class="agent-tag">Escalación Inteligente</span>
+                    </div>
+                </div>
+                <p>Especialista en consultas generales con capacidad de escalación automática a agentes humanos cuando es necesario.</p>
+                <ul class="agent-features">
+                    <li>Información institucional completa</li>
+                    <li>Procesos y políticas empresariales</li>
+                    <li>Escalación inteligente a humanos</li>
+                    <li>Resolución de consultas generales</li>
+                    <li>Integración completa con CRM existente</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Características Técnicas -->
+    <section class="section" id="tecnologia">
+        <div class="tech-features">
+            <h2>Tecnología de Vanguardia</h2>
+            <p class="section-subtitle">Arquitectura empresarial diseñada para máximo rendimiento, confiabilidad y escalabilidad</p>
+            
+            <div class="tech-grid">
+                <div class="tech-item fade-in">
+                    <i class="fas fa-brain"></i>
+                    <div>
+                        <h4>Orquestador Inteligente</h4>
+                        <p>Sistema que analiza cada consulta y enruta automáticamente al agente más especializado con 99.2% de precisión.</p>
+                    </div>
+                </div>
+
+                <div class="tech-item fade-in">
+                    <i class="fas fa-database"></i>
+                    <div>
+                        <h4>Sistema RAG Avanzado</h4>
+                        <p>Retrieval-Augmented Generation que mantiene información siempre actualizada con búsqueda vectorial semántica.</p>
+                    </div>
+                </div>
+
+                <div class="tech-item fade-in">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h4>Automatización Selenium</h4>
+                        <p>Microservicio local que automatiza completamente el agendamiento sin intervención humana.</p>
+                    </div>
+                </div>
+
+                <div class="tech-item fade-in">
+                    <i class="fas fa-memory"></i>
+                    <div>
+                        <h4>Memoria Conversacional</h4>
+                        <p>Mantiene contexto a largo plazo y recuerda preferencias del cliente entre sesiones.</p>
+                    </div>
+                </div>
+
+                <div class="tech-item fade-in">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4>Arquitectura Empresarial</h4>
+                        <p>Sistema robusto con health checks automáticos, fallbacks y recuperación ante fallos.</p>
+                    </div>
+                </div>
+
+                <div class="tech-item fade-in">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <div>
+                        <h4>Rendimiento Optimizado</h4>
+                        <p>Cache inteligente, procesamiento asíncrono y respuestas en menos de 2 segundos promedio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="section">
+        <div class="stats-section fade-in">
+            <h2>Resultados Comprobados</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">99.2%</span>
+                    <span class="stat-label">Precisión en Clasificación</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">< 2s</span>
+                    <span class="stat-label">Tiempo de Respuesta</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Disponibilidad</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Automatización</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="section">
+        <div class="benefits-section">
+            <h2>Beneficios Transformadores</h2>
+            <p class="section-subtitle">Revoluciona tu atención al cliente con tecnología que realmente funciona</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Implementación Rápida</h4>
+                    <p>Sistema listo para funcionar en 48 horas. Integración completa con tu CRM existente sin interrupciones operativas.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>ROI Inmediato</h4>
+                    <p>Reduce costos operativos hasta 70% mientras aumentas la satisfacción del cliente y las conversiones de venta.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-users"></i>
+                    <h4>Experiencia Superior</h4>
+                    <p>Respuestas instantáneas, agendamiento automático y atención personalizada que supera las expectativas.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-chart-bar"></i>
+                    <h4>Escalabilidad Infinita</h4>
+                    <p>Maneja miles de conversaciones simultáneas sin perder calidad ni aumentar costos operativos.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-cog"></i>
+                    <h4>Mantenimiento Mínimo</h4>
+                    <p>Sistema autogestionado con actualizaciones automáticas y monitoreo proactivo de rendimiento.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-analytics"></i>
+                    <h4>Analytics Avanzados</h4>
+                    <p>Métricas detalladas de rendimiento, patrones de uso y oportunidades de optimización continua.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Integración CRM -->
-    <section class="section">
-        <div class="crm-integration fade-in">
-            <h2>Tu CRM, superpoderado con IA conversacional</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Flujo de datos bidireccional sin migración - tu información siempre en tu CRM</p>
+    <section class="section" id="integracion">
+        <div class="crm-integration">
+            <h2>Integración Sin Fricciones</h2>
+            <p class="section-subtitle">Conecta con tu sistema actual en minutos, no meses</p>
             
-            <div class="crm-benefits">
-                <div class="crm-benefit">
-                    <i class="fas fa-ban"></i>
-                    <h3>Cero migración de datos</h3>
-                    <p>Mantén tu CRM actual sin cambios</p>
+            <div class="integration-flow">
+                <div class="flow-step">
+                    <div class="flow-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h4>Conexión API</h4>
+                    <p>Integración directa con Chatwoot, Salesforce, HubSpot y más</p>
                 </div>
-                <div class="crm-benefit">
-                    <i class="fas fa-sync-alt"></i>
-                    <h3>Sincronización bidireccional</h3>
-                    <p>Tiempo real entre Hachi y tu CRM</p>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h4>Sincronización</h4>
+                    <p>Datos de clientes y servicios se sincronizan automáticamente</p>
                 </div>
-                <div class="crm-benefit">
-                    <i class="fas fa-chart-bar"></i>
-                    <h3>Enriquece registros CRM</h3>
-                    <p>Con insights conversacionales únicos</p>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h4>Sistema Activo</h4>
+                    <p>Hachi comienza a trabajar inmediatamente con tus datos</p>
                 </div>
-                <div class="crm-benefit">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Cumplimiento normativo</h3>
-                    <p>HIPAA/GDPR automatizado</p>
-                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.1rem; opacity: 0.9;">
+                    <strong>Compatibilidad Garantizada:</strong> Chatwoot • Salesforce • HubSpot • Zoho • Pipedrive • Sistemas Propietarios
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Caso de Éxito -->
+    <!-- Testimoniales -->
     <section class="section">
-        <div class="case-study fade-in">
-            <h2 style="text-align: center; color: #9B59B6;">Caso de Éxito: Benova</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
-                <div>
-                    <h3 style="color: #FF6B6B;">Reto</h3>
-                    <p>Clínica estética premium con saturación en call center y citas perdidas</p>
-                </div>
-                <div>
-                    <h3 style="color: #40E0D0;">Solución Hachi</h3>
-                    <p>Agente médico especializado en estética integrado con CRM existente (Clinicsoft) y sistema de triaje automatizado</p>
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+        <div class="testimonials">
+            <div class="testimonial fade-in">
+                <p>Hachi transformó completamente nuestra atención al cliente. En el primer mes vimos una reducción del 65% en tiempo de respuesta y un aumento del 40% en satisfacción del cliente.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div>
+                        <strong>María Rodríguez</strong><br>
+                        <span style="opacity: 0.7;">Directora de Operaciones, Clínica EstéticaVida</span>
+                    </div>
                 </div>
             </div>
-            
-            <h3 style="text-align: center; margin: 2rem 0; color: #40E0D0;">Resultados</h3>
-            <div class="results">
-                <div class="result-item">
-                    <span class="result-number">40%</span>
-                    <span>reducción carga operativa</span>
+
+            <div class="testimonial fade-in">
+                <p>La automatización del agendamiento es increíble. Nuestros clientes pueden agendar citas a cualquier hora y el sistema nunca se equivoca. Ha liberado a nuestro equipo para enfocarse en lo realmente importante.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">CP</div>
+                    <div>
+                        <strong>Carlos Pérez</strong><br>
+                        <span style="opacity: 0.7;">CEO, Centro Médico Integral</span>
+                    </div>
                 </div>
-                <div class="result-item">
-                    <span class="result-number">92%</span>
-                    <span>precisión en consultas médicas</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-number">30%</span>
-                    <span>aumento en retención clientes</span>
-                </div>
-                <div class="result-item">
-                    <span class="result-number">45 días</span>
-                    <span>ROI alcanzado</span>
+            </div>
+
+            <div class="testimonial fade-in">
+                <p>El ROI fue inmediato. En 3 meses recuperamos la inversión y ahora estamos ahorrando miles de dólares mensuales en costos operativos mientras brindamos mejor servicio.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">LP</div>
+                    <div>
+                        <strong>Laura Patiño</strong><br>
+                        <span style="opacity: 0.7;">Gerente General, Spa Wellness Plus</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -693,202 +1212,198 @@
 
     <!-- Precios -->
     <section class="section" id="precios">
-        <h2 class="fade-in">Modelo de Precios</h2>
+        <h2>Planes de Inversión</h2>
+        <p class="section-subtitle">Soluciones escalables diseñadas para el crecimiento de tu negocio</p>
+        
         <div class="pricing">
+            <!-- Plan Starter -->
             <div class="pricing-card fade-in">
-                <h3>Básico</h3>
-                <div class="price">$499<span style="font-size: 1rem;">/mes</span></div>
-                <ul style="list-style: none; text-align: left;">
-                    <li>✓ 1 CRM integrado</li>
-                    <li>✓ 2 agentes especializados</li>
-                    <li>✓ Soporte estándar</li>
-                    <li>✓ Documentación API</li>
+                <h3>Starter</h3>
+                <div class="price">$299<span style="font-size: 1rem; opacity: 0.7;">/mes</span></div>
+                <p>Perfecto para pequeños negocios que inician su transformación digital</p>
+                <ul class="price-features">
+                    <li>Hasta 1,000 conversaciones/mes</li>
+                    <li>3 agentes especializados</li>
+                    <li>Integración básica con CRM</li>
+                    <li>Soporte por email</li>
+                    <li>Dashboard de métricas básicas</li>
+                    <li>Automatización de agendamiento</li>
                 </ul>
-                <button class="cta-button cta-secondary" onclick="selectPlan('basic')">Comenzar</button>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Empezar Ahora</a>
             </div>
-            
-            <div class="pricing-card fade-in">
-                <h3>Empresas</h3>
-                <div class="price">$1,299<span style="font-size: 1rem;">/mes</span></div>
-                <ul style="list-style: none; text-align: left;">
-                    <li>✓ Hasta 3 sistemas integrados</li>
-                    <li>✓ 5+ agentes especializados</li>
-                    <li>✓ Soporte prioritario 24/5</li>
-                    <li>✓ Analytics avanzados</li>
-                    <li>✓ Customización completa</li>
-                </ul>
-                <button class="cta-button" onclick="selectPlan('enterprise')">Más Popular</button>
-            </div>
-            
-            <div class="pricing-card fade-in">
-                <h3>Personalizado</h3>
-                <div class="price">Consultar</div>
-                <ul style="list-style: none; text-align: left;">
-                    <li>✓ Ecosistema completo</li>
-                    <li>✓ Dominio ilimitado</li>
-                    <li>✓ Gerente dedicado</li>
-                    <li>✓ SLA personalizado</li>
-                    <li>✓ Integración white-label</li>
-                </ul>
-                <button class="cta-button cta-secondary" onclick="selectPlan('custom')">Contactar</button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Testimoniales -->
-    <section class="section">
-        <h2 class="fade-in">Lo que dicen nuestros clientes</h2>
-        <div class="testimonials">
-            <div class="testimonial fade-in">
-                <p>"Implementamos Hachi manteniendo nuestro CRM de 10 años. En 2 semanas teníamos un agente médico que redujo nuestro tiempo de respuesta de 24h a 2 minutos"</p>
-                <div class="testimonial-author">
-                    <strong>Dr. Alejandro Torres</strong><br>
-                    Director Médico, Benova Estética
-                </div>
+            <!-- Plan Professional -->
+            <div class="pricing-card featured fade-in">
+                <h3>Professional</h3>
+                <div class="price">$599<span style="font-size: 1rem; opacity: 0.7;">/mes</span></div>
+                <p>La solución completa para empresas en crecimiento</p>
+                <ul class="price-features">
+                    <li>Conversaciones ilimitadas</li>
+                    <li>5 agentes especializados completos</li>
+                    <li>Integración avanzada con múltiples CRM</li>
+                    <li>Soporte prioritario 24/7</li>
+                    <li>Analytics avanzados y reportes</li>
+                    <li>Personalización de respuestas</li>
+                    <li>Sistema RAG completo</li>
+                    <li>API para integraciones custom</li>
+                </ul>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Elegir Professional</a>
             </div>
-            
-            <div class="testimonial fade-in">
-                <p>"La integración con Salesforce fue impecable. Nuestros agentes de ventas ahora tienen superpoderes conversacionales sin cambiar de plataforma"</p>
-                <div class="testimonial-author">
-                    <strong>Valeria Rojas</strong><br>
-                    VP Operaciones, LuxeCommerce
-                </div>
+
+            <!-- Plan Enterprise -->
+            <div class="pricing-card fade-in">
+                <h3>Enterprise</h3>
+                <div class="price">Personalizado</div>
+                <p>Solución enterprise con desarrollo a medida</p>
+                <ul class="price-features">
+                    <li>Agentes personalizados ilimitados</li>
+                    <li>Integración con sistemas legacy</li>
+                    <li>Desarrollo de funcionalidades custom</li>
+                    <li>Soporte dedicado con SLA</li>
+                    <li>Implementación asistida</li>
+                    <li>Capacitación del equipo</li>
+                    <li>Escalabilidad enterprise</li>
+                    <li>Cumplimiento regulatorio</li>
+                </ul>
+                <a href="#contacto" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Solicitar Cotización</a>
             </div>
         </div>
     </section>
 
     <!-- Footer CTA -->
     <section class="footer-cta" id="contacto">
-        <div class="fade-in">
-            <h2>Transforma tu atención al cliente, no tu infraestructura</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Primeros 90 días sin costo para integraciones empresariales</p>
-            
-            <div class="cta-buttons">
-                <button class="cta-button" onclick="requestDemo()">Comenzar Integración</button>
-                <button class="cta-button cta-secondary" onclick="viewDocs()">Ver Documentación API</button>
+        <div class="section">
+            <h2>¿Listo para Transformar tu Atención al Cliente?</h2>
+            <p style="font-size: 1.3rem; opacity: 0.9; margin: 2rem 0;">
+                Únete a las empresas que ya están revolucionando su servicio al cliente con Hachi
+            </p>
+            <div class="cta-buttons" style="margin-top: 3rem;">
+                <a href="mailto:contacto@hachi.io" class="cta-button">Solicitar Demo</a>
+                <a href="tel:+573001234567" class="cta-button cta-secondary">Llamar Ahora</a>
             </div>
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                📞 +57 300 123 4567 | 📧 contacto@hachi.io | 🌐 hachi.io
+            </p>
         </div>
     </section>
 
     <script>
-        // Crear partículas animadas
+        // Crear partículas de fondo
         function createParticles() {
-            const particles = document.getElementById('particles');
+            const container = document.getElementById('particles');
             const particleCount = 50;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
-                particle.className = 'particle';
+                particle.className = Math.random() > 0.5 ? 'particle neural' : 'particle data';
+                
+                // Posición inicial aleatoria
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 6 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                particles.appendChild(particle);
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (8 + Math.random() * 4) + 's';
+                
+                container.appendChild(particle);
             }
         }
 
-        // Animación de aparición en scroll
+        // Animaciones de scroll
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.fade-in');
+            const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     }
                 });
-            }, { threshold: 0.1 });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
 
             elements.forEach(element => {
                 observer.observe(element);
             });
         }
 
-        // Funciones de interacción
-        function requestDemo() {
-            // Aquí integrarías con tu sistema de CRM o formulario
-            alert('¡Gracias por tu interés! Te contactaremos en las próximas 24 horas para programar tu demo personalizada.');
-        }
-
-        function selectPlan(plan) {
-            const plans = {
-                'basic': 'Plan Básico - $499/mes',
-                'enterprise': 'Plan Empresas - $1,299/mes',
-                'custom': 'Plan Personalizado - Consultar'
-            };
-            alert(`Has seleccionado: ${plans[plan]}. Te contactaremos para finalizar la configuración.`);
-        }
-
-        function viewDocs() {
-            // Redirigir a documentación API
-            alert('Redirigiendo a la documentación completa de la API de Hachi...');
-        }
-
-        // Smooth scrolling para navegación
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+        // Contador animado para estadísticas
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const isPercentage = target.includes('%');
+                const isTime = target.includes('s');
+                const isAvailability = target.includes('/');
+                
+                if (!isTime && !isAvailability) {
+                    const numericValue = parseFloat(target);
+                    const increment = numericValue / 100;
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        if (current < numericValue) {
+                            current += increment;
+                            if (isPercentage) {
+                                counter.textContent = Math.ceil(current) + '%';
+                            } else {
+                                counter.textContent = Math.ceil(current);
+                            }
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    
+                    // Iniciar animación cuando el elemento sea visible
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                updateCounter();
+                                observer.unobserve(entry.target);
+                            }
+                        });
                     });
+                    
+                    observer.observe(counter);
                 }
             });
-        });
+        }
 
-        // Inicializar efectos
+        // Smooth scroll para navegación
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Inicializar todo cuando la página cargue
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
             animateOnScroll();
-            
-            // Hacer visible el primer elemento inmediatamente
-            const firstElement = document.querySelector('.hero .fade-in');
-            if (firstElement) {
-                firstElement.classList.add('visible');
-            }
+            animateCounters();
+            initSmoothScroll();
         });
 
-        // Efecto parallax sutil en hero
-        window.addEventListener('scroll', () => {
+        // Efecto parallax suave para el hero
+        window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            
             if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.transform = `translateY(${rate}px)`;
             }
         });
-
-        // Añadir CSS para las animaciones que faltaban
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0%, 100% { opacity: 0.8; }
-                50% { opacity: 1; }
-            }
-
-            @keyframes rotate {
-                from { transform: rotate(0deg); }
-                to { transform: rotate(360deg); }
-            }
-
-            .orbit {
-                animation: rotate 8s linear infinite;
-                transform-origin: center;
-            }
-
-            .neural-network {
-                animation: pulse 2s infinite;
-            }
-
-            .core-glow {
-                animation: glow 3s ease-in-out infinite alternate;
-            }
-
-            @keyframes glow {
-                from { filter: brightness(1); }
-                to { filter: brightness(1.3); }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
