@@ -15,8 +15,8 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f4e8; /* Cambiado a dorado tenue */
-            color: #333; /* Texto más oscuro para mejor contraste */
+            background: #0f0f23;
+            color: white;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -41,14 +41,14 @@
         .particle.neural {
             width: 3px;
             height: 3px;
-            background: #b8860b; /* Cambiado a dorado */
-            box-shadow: 0 0 10px rgba(184, 134, 11, 0.5);
+            background: #1E40AF;
+            box-shadow: 0 0 10px rgba(30, 64, 175, 0.5);
         }
         
         .particle.data {
             width: 2px;
             height: 2px;
-            background: #daa520; /* Cambiado a dorado */
+            background: #F97316;
         }
         
         @keyframes float {
@@ -63,11 +63,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 248, 232, 0.95); /* Fondo dorado claro */
+            background: rgba(15, 15, 35, 0.95);
             backdrop-filter: blur(15px);
             z-index: 1000;
             padding: 1rem 0;
-            border-bottom: 1px solid rgba(184, 134, 11, 0.2); /* Borde dorado */
+            border-bottom: 1px solid rgba(30, 64, 175, 0.2);
         }
         
         .nav {
@@ -97,15 +97,15 @@
         }
         
         .nav-links a {
-            color: #333; /* Texto oscuro */
+            color: white;
             text-decoration: none;
             transition: all 0.3s;
             font-weight: 500;
         }
         
         .nav-links a:hover {
-            color: #b8860b; /* Dorado oscuro */
-            text-shadow: 0 0 10px rgba(184, 134, 11, 0.2);
+            color: #1E40AF;
+            text-shadow: 0 0 10px rgba(30, 64, 175, 0.5);
         }
         
         /* Hero Section mejorado */
@@ -116,7 +116,7 @@
             justify-content: center;
             text-align: center;
             padding: 2rem;
-            background: radial-gradient(ellipse at center, rgba(218, 165, 32, 0.1) 0%, #f8f4e8 70%); /* Fondo dorado */
+            background: radial-gradient(ellipse at center, rgba(30, 64, 175, 0.1) 0%, #0f0f23 70%);
             position: relative;
         }
         
@@ -126,17 +126,17 @@
         }
         
         .hero-logo {
-            width: 240px; /* Ancho aumentado para igualar al título */
-            height: 240px; /* Alto aumentado proporcionalmente */
+            width: 180px;
+            height: 180px;
             margin: 0 auto 2rem;
-            filter: drop-shadow(0 0 40px rgba(218, 165, 32, 0.4)); /* Sombra dorada */
+            filter: drop-shadow(0 0 40px rgba(30, 64, 175, 0.4));
         }
         
         .hero h1 {
-            font-size: 4rem; /* Tamaño aumentado para igualar al logo */
+            font-size: 3.8rem;
             font-weight: 300;
             margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #b8860b, #daa520, #cd853f); /* Gradiente dorado */
+            background: linear-gradient(45deg, #1E40AF, #F97316, #7C3AED);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -146,7 +146,7 @@
             font-size: 1.4rem;
             opacity: 0.9;
             margin-bottom: 1rem;
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             font-weight: 600;
         }
         
@@ -155,7 +155,6 @@
             opacity: 0.85;
             margin-bottom: 2.5rem;
             line-height: 1.8;
-            color: #555; /* Texto más oscuro */
         }
         
         .cta-buttons {
@@ -168,7 +167,7 @@
         .cta-button {
             display: inline-block;
             padding: 1.2rem 2.8rem;
-            background: linear-gradient(45deg, #b8860b, #daa520); /* Gradiente dorado */
+            background: linear-gradient(45deg, #1E40AF, #F97316);
             color: white;
             text-decoration: none;
             border-radius: 50px;
@@ -198,18 +197,18 @@
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(184, 134, 11, 0.4); /* Sombra dorada */
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.4);
         }
         
         .cta-secondary {
             background: transparent;
-            border: 2px solid #b8860b; /* Dorado oscuro */
-            color: #b8860b; /* Dorado oscuro */
+            border: 2px solid #1E40AF;
+            color: #1E40AF;
         }
         
         .cta-secondary:hover {
-            background: #b8860b; /* Dorado oscuro */
-            color: white;
+            background: #1E40AF;
+            color: #0f0f23;
         }
         
         /* Sections mejoradas */
@@ -223,7 +222,7 @@
             font-size: 2.8rem;
             text-align: center;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, #b8860b, #daa520); /* Gradiente dorado */
+            background: linear-gradient(45deg, #1E40AF, #F97316);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -237,12 +236,11 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            color: #555; /* Texto más oscuro */
         }
         
         /* Sistema Multi-Agente - Sección principal */
         .multi-agent-hero {
-            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(205, 133, 63, 0.1)); /* Fondo dorado */
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(249, 115, 22, 0.1));
             border-radius: 30px;
             padding: 4rem;
             text-align: center;
@@ -258,7 +256,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(218, 165, 32, 0.05) 0%, transparent 70%); /* Fondo dorado */
+            background: radial-gradient(circle, rgba(30, 64, 175, 0.05) 0%, transparent 70%);
             animation: rotate 20s linear infinite;
         }
         
@@ -271,7 +269,7 @@
         }
         
         .agent-card {
-            background: rgba(255, 255, 255, 0.7); /* Fondo más claro */
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
             padding: 2.5rem;
             border: 2px solid transparent;
@@ -279,7 +277,6 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .agent-card::before {
@@ -289,7 +286,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #b8860b, #daa520, #cd853f, #d4af37); /* Gradiente dorado */
+            background: linear-gradient(90deg, #1E40AF, #F97316, #7C3AED, #0EA5E9);
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
@@ -300,8 +297,8 @@
         
         .agent-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(184, 134, 11, 0.2); /* Sombra dorada */
-            border-color: rgba(184, 134, 11, 0.3); /* Borde dorado */
+            box-shadow: 0 25px 50px rgba(30, 64, 175, 0.3);
+            border-color: rgba(30, 64, 175, 0.5);
         }
         
         .agent-card.emergency {
@@ -339,22 +336,17 @@
             align-items: center;
             justify-content: center;
             border-radius: 15px;
-            background: rgba(218, 165, 32, 0.1); /* Fondo dorado */
+            background: rgba(30, 64, 175, 0.1);
         }
         
         .agent-card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
-            color: #333; /* Texto oscuro */
-        }
-        
-        .agent-card p {
-            color: #555; /* Texto más oscuro */
         }
         
         .agent-tag {
-            background: rgba(218, 165, 32, 0.2); /* Fondo dorado */
-            color: #b8860b; /* Dorado oscuro */
+            background: rgba(30, 64, 175, 0.2);
+            color: #1E40AF;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -370,8 +362,7 @@
             padding: 0.7rem 0;
             padding-left: 2rem;
             position: relative;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            color: #555; /* Texto más oscuro */
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         
         .agent-features li:last-child {
@@ -382,17 +373,17 @@
             content: "⚡";
             position: absolute;
             left: 0;
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             font-size: 1.2rem;
         }
         
         /* Características Técnicas */
         .tech-features {
-            background: rgba(255, 255, 255, 0.8); /* Fondo más claro */
+            background: rgba(15, 15, 35, 0.8);
             border-radius: 25px;
             padding: 4rem;
             margin: 4rem 0;
-            border: 1px solid rgba(218, 165, 32, 0.2); /* Borde dorado */
+            border: 1px solid rgba(30, 64, 175, 0.2);
         }
         
         .tech-grid {
@@ -407,30 +398,26 @@
             align-items: flex-start;
             gap: 1.5rem;
             padding: 1.5rem;
-            background: rgba(255, 248, 232, 0.7); /* Fondo dorado claro */
+            background: rgba(30, 64, 175, 0.05);
             border-radius: 20px;
-            border-left: 4px solid #b8860b; /* Dorado oscuro */
+            border-left: 4px solid #1E40AF;
         }
         
         .tech-item i {
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             font-size: 2rem;
             margin-top: 0.5rem;
         }
         
         .tech-item h4 {
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
         
-        .tech-item p {
-            color: #555; /* Texto más oscuro */
-        }
-        
         /* Beneficios para Landing Page */
         .benefits-section {
-            background: linear-gradient(135deg, rgba(205, 133, 63, 0.1), rgba(212, 175, 55, 0.1)); /* Fondo dorado */
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(14, 165, 233, 0.1));
             border-radius: 30px;
             padding: 4rem;
             margin: 4rem 0;
@@ -444,38 +431,33 @@
         }
         
         .benefit-card {
-            background: rgba(255, 255, 255, 0.7); /* Fondo más claro */
+            background: rgba(255, 255, 255, 0.08);
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .benefit-card:hover {
             transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.9); /* Fondo más claro */
+            background: rgba(255, 255, 255, 0.12);
         }
         
         .benefit-card i {
             font-size: 3rem;
-            color: #daa520; /* Dorado */
+            color: #F97316;
             margin-bottom: 1rem;
         }
         
         .benefit-card h4 {
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
         
-        .benefit-card p {
-            color: #555; /* Texto más oscuro */
-        }
-        
         /* Integración CRM mejorada */
         .crm-integration {
-            background: rgba(255, 255, 255, 0.7); /* Fondo más claro */
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 30px;
             padding: 4rem;
             margin: 4rem 0;
@@ -501,7 +483,7 @@
         .flow-icon {
             width: 80px;
             height: 80px;
-            background: linear-gradient(45deg, #b8860b, #daa520); /* Gradiente dorado */
+            background: linear-gradient(45deg, #1E40AF, #F97316);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -513,7 +495,7 @@
         
         .flow-arrow {
             font-size: 2rem;
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             align-self: center;
         }
         
@@ -526,12 +508,11 @@
         }
         
         .testimonial {
-            background: rgba(255, 255, 255, 0.7); /* Fondo más claro */
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
             padding: 2.5rem;
-            border-left: 4px solid #daa520; /* Dorado */
+            border-left: 4px solid #F97316;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .testimonial::before {
@@ -540,12 +521,8 @@
             top: -10px;
             left: 20px;
             font-size: 4rem;
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             opacity: 0.3;
-        }
-        
-        .testimonial p {
-            color: #555; /* Texto más oscuro */
         }
         
         .testimonial-author {
@@ -558,14 +535,13 @@
         .author-avatar {
             width: 50px;
             height: 50px;
-            background: linear-gradient(45deg, #b8860b, #daa520); /* Gradiente dorado */
+            background: linear-gradient(45deg, #1E40AF, #F97316);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             font-size: 1.2rem;
-            color: white;
         }
         
         /* Precios mejorados */
@@ -577,20 +553,19 @@
         }
         
         .pricing-card {
-            background: rgba(255, 255, 255, 0.7); /* Fondo más claro */
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
             padding: 2.5rem;
             text-align: center;
             border: 2px solid transparent;
             transition: all 0.4s ease;
             position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .pricing-card.featured {
-            border-color: #b8860b; /* Dorado oscuro */
+            border-color: #1E40AF;
             transform: scale(1.05);
-            background: rgba(255, 248, 232, 0.7); /* Fondo dorado claro */
+            background: rgba(30, 64, 175, 0.1);
         }
         
         .pricing-card.featured::before {
@@ -599,23 +574,22 @@
             top: -15px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(45deg, #b8860b, #daa520); /* Gradiente dorado */
+            background: linear-gradient(45deg, #1E40AF, #F97316);
             padding: 0.5rem 1.5rem;
             border-radius: 20px;
             font-size: 0.9rem;
             font-weight: bold;
-            color: white;
         }
         
         .pricing-card:hover {
             transform: translateY(-10px);
-            border-color: #b8860b; /* Dorado oscuro */
-            box-shadow: 0 20px 40px rgba(184, 134, 11, 0.2); /* Sombra dorada */
+            border-color: #1E40AF;
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
         }
         
         .price {
             font-size: 3rem;
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             font-weight: bold;
             margin: 1.5rem 0;
         }
@@ -631,7 +605,6 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            color: #555; /* Texto más oscuro */
         }
         
         .price-features li::before {
@@ -642,7 +615,7 @@
         
         /* Footer CTA mejorado */
         .footer-cta {
-            background: linear-gradient(135deg, #f8f4e8, #f0e6d2); /* Fondo dorado */
+            background: linear-gradient(135deg, #0f0f23, #1a1a2e);
             text-align: center;
             padding: 6rem 2rem;
             position: relative;
@@ -655,20 +628,12 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, #b8860b, #daa520, #cd853f); /* Gradiente dorado */
-        }
-        
-        .footer-cta h2 {
-            color: #333; /* Texto oscuro */
-        }
-        
-        .footer-cta p {
-            color: #555; /* Texto más oscuro */
+            background: linear-gradient(90deg, #1E40AF, #F97316, #7C3AED);
         }
         
         /* Stats counter animation */
         .stats-section {
-            background: rgba(255, 255, 255, 0.7); /* Fondo más claro */
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 25px;
             padding: 3rem;
             margin: 4rem 0;
@@ -684,14 +649,14 @@
         .stat-item {
             text-align: center;
             padding: 1.5rem;
-            background: rgba(255, 248, 232, 0.7); /* Fondo dorado claro */
+            background: rgba(30, 64, 175, 0.05);
             border-radius: 15px;
         }
         
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
-            color: #b8860b; /* Dorado oscuro */
+            color: #1E40AF;
             display: block;
             margin-bottom: 0.5rem;
         }
@@ -699,7 +664,6 @@
         .stat-label {
             font-size: 1rem;
             opacity: 0.8;
-            color: #555; /* Texto más oscuro */
         }
         
         /* Responsive mejorado */
@@ -805,19 +769,19 @@
         <nav class="nav">
             <div class="logo-nav">
                 <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(184, 134, 11, 0.1)" stroke-width="2"/>
+                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(30, 64, 175, 0.1)" stroke-width="2"/>
                     <g class="orbit">
                         <circle cx="60" cy="60" r="45" fill="none" stroke="url(#gradientHeader1)" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.6"/>
-                        <circle cx="105" cy="60" r="3" fill="#b8860b"/>
+                        <circle cx="105" cy="60" r="3" fill="#1E40AF"/>
                     </g>
                     <g class="neural-network">
                         <circle cx="60" cy="60" r="8" fill="url(#coreGradientHeader)"/>
-                        <circle cx="40" cy="45" r="4" fill="#daa520"/>
-                        <circle cx="80" cy="45" r="4" fill="#b8860b"/>
-                        <circle cx="35" cy="75" r="4" fill="#cd853f"/>
-                        <circle cx="85" cy="75" r="4" fill="#d4af37"/>
-                        <circle cx="60" cy="30" r="3" fill="#f0c05a"/>
-                        <circle cx="60" cy="90" r="3" fill="#e6be8a"/>
+                        <circle cx="40" cy="45" r="4" fill="#F97316"/>
+                        <circle cx="80" cy="45" r="4" fill="#1E40AF"/>
+                        <circle cx="35" cy="75" r="4" fill="#7C3AED"/>
+                        <circle cx="85" cy="75" r="4" fill="#0EA5E9"/>
+                        <circle cx="60" cy="30" r="3" fill="#F59E0B"/>
+                        <circle cx="60" cy="90" r="3" fill="#059669"/>
                         <line x1="60" y1="60" x2="40" y2="45" stroke="url(#gradientHeader2)" stroke-width="2" opacity="0.7"/>
                         <line x1="60" y1="60" x2="80" y2="45" stroke="url(#gradientHeader2)" stroke-width="2" opacity="0.7"/>
                         <line x1="60" y1="60" x2="35" y2="75" stroke="url(#gradientHeader2)" stroke-width="2" opacity="0.7"/>
@@ -827,21 +791,21 @@
                     </g>
                     <defs>
                         <linearGradient id="gradientHeader1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#b8860b;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#daa520;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F97316;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="gradientHeader2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#b8860b;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#daa520;stop-opacity:0.8" />
+                            <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#F97316;stop-opacity:0.8" />
                         </linearGradient>
                         <radialGradient id="coreGradientHeader" cx="50%" cy="50%" r="50%">
                             <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#b8860b;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#daa520;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#1E40AF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F97316;stop-opacity:1" />
                         </radialGradient>
                     </defs>
                 </svg>
-                <span style="font-size: 1.6rem; font-weight: bold; background: linear-gradient(45deg, #b8860b, #daa520); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Hachi</span>
+                <span style="font-size: 1.6rem; font-weight: bold; background: linear-gradient(45deg, #1E40AF, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Hachi</span>
             </div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
@@ -859,24 +823,24 @@
         <div class="hero-content fade-in">
             <div class="hero-logo">
                 <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(184, 134, 11, 0.2)" stroke-width="2"/>
+                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(30, 64, 175, 0.2)" stroke-width="2"/>
                     <g class="orbit">
                         <circle cx="60" cy="60" r="45" fill="none" stroke="url(#gradientHero1)" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
-                        <circle cx="105" cy="60" r="4" fill="#b8860b"/>
-                        <circle cx="15" cy="60" r="3" fill="#daa520"/>
-                        <circle cx="60" cy="15" r="3" fill="#cd853f"/>
-                        <circle cx="60" cy="105" r="3" fill="#d4af37"/>
+                        <circle cx="105" cy="60" r="4" fill="#1E40AF"/>
+                        <circle cx="15" cy="60" r="3" fill="#F97316"/>
+                        <circle cx="60" cy="15" r="3" fill="#7C3AED"/>
+                        <circle cx="60" cy="105" r="3" fill="#0EA5E9"/>
                     </g>
                     <g class="neural-network">
                         <circle cx="60" cy="60" r="10" fill="url(#coreGradientHero)"/>
-                        <circle cx="40" cy="45" r="5" fill="#daa520"/>
-                        <circle cx="80" cy="45" r="5" fill="#b8860b"/>
-                        <circle cx="35" cy="75" r="5" fill="#cd853f"/>
-                        <circle cx="85" cy="75" r="5" fill="#d4af37"/>
-                        <circle cx="25" cy="35" r="3" fill="#f0c05a"/>
-                        <circle cx="95" cy="35" r="3" fill="#e6be8a"/>
-                        <circle cx="25" cy="85" r="3" fill="#e8c39e"/>
-                        <circle cx="95" cy="85" r="3" fill="#daa520"/>
+                        <circle cx="40" cy="45" r="5" fill="#F97316"/>
+                        <circle cx="80" cy="45" r="5" fill="#1E40AF"/>
+                        <circle cx="35" cy="75" r="5" fill="#7C3AED"/>
+                        <circle cx="85" cy="75" r="5" fill="#0EA5E9"/>
+                        <circle cx="25" cy="35" r="3" fill="#F59E0B"/>
+                        <circle cx="95" cy="35" r="3" fill="#059669"/>
+                        <circle cx="25" cy="85" r="3" fill="#10B981"/>
+                        <circle cx="95" cy="85" r="3" fill="#F97316"/>
                         <line x1="60" y1="60" x2="40" y2="45" stroke="url(#gradientHero2)" stroke-width="3" opacity="0.8"/>
                         <line x1="60" y1="60" x2="80" y2="45" stroke="url(#gradientHero2)" stroke-width="3" opacity="0.8"/>
                         <line x1="60" y1="60" x2="35" y2="75" stroke="url(#gradientHero2)" stroke-width="3" opacity="0.8"/>
@@ -888,17 +852,17 @@
                     </g>
                     <defs>
                         <linearGradient id="gradientHero1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#b8860b;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#daa520;stop-opacity:1" />
+                            <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F97316;stop-opacity:1" />
                         </linearGradient>
                         <linearGradient id="gradientHero2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#b8860b;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#daa520;stop-opacity:0.8" />
+                            <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#F97316;stop-opacity:0.8" />
                         </linearGradient>
                         <radialGradient id="coreGradientHero" cx="50%" cy="50%" r="50%">
                             <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#b8860b;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#daa520;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#1E40AF;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#F97316;stop-opacity:1" />
                         </radialGradient>
                     </defs>
                 </svg>
@@ -917,7 +881,7 @@
     <section class="section">
         <div class="multi-agent-hero fade-in">
             <h2 style="margin-bottom: 1.5rem;">🤖 Sistema Multi-Agente Inteligente</h2>
-            <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto; color: #555;">
+            <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
                 Cinco agentes especializados que colaboran para ofrecer la experiencia de atención al cliente más avanzada del mercado. Cada agente domina su área y se comunica inteligentemente con los demás.
             </p>
         </div>
