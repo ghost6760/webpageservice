@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hachi - Sistema Multi-Agente de IA para Atención al Cliente 24/7</title>
-    <meta name="description" content="Plataforma inteligente con 5 agentes especializados que automatiza atención al cliente, agendamiento y emergencias médicas. Integración completa con CRM existente.">
+    <title>Hachi - Agentes IA Conversacionales + CRM Multicanal para WhatsApp, Instagram y Messenger</title>
+    <meta name="description" content="Plataforma SaaS de agentes IA especializados que automatizan ventas, soporte y agendamiento en WhatsApp, Instagram y Messenger. CRM Chatwoot integrado + Email Marketing.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -868,11 +868,11 @@
                 </svg>
             </div>
             <h1>Hachi</h1>
-            <div class="subtitle">Sistema Multi-Agente de IA para Atención al Cliente 24/7</div>
-            <p>Automatiza completamente tu atención al cliente con 5 agentes especializados que trabajan en conjunto. Desde emergencias hasta ventas, pasando por agendamiento automático y soporte técnico.</p>
+            <div class="subtitle">Agentes IA Conversacionales + CRM Multicanal</div>
+            <p>Automatiza tus conversaciones en <strong>WhatsApp, Instagram, Messenger y Email</strong> con agentes IA especializados que entienden tu negocio. CRM Chatwoot integrado para supervisión humana + panel de gestión de bots.</p>
             <div class="cta-buttons">
-                <a href="#demo" class="cta-button">Ver Demo en Vivo</a>
-                <a href="#precios" class="cta-button cta-secondary">Conocer Precios</a>
+                <a href="#contacto" class="cta-button">Solicitar Demo</a>
+                <a href="#precios" class="cta-button cta-secondary">Ver Planes</a>
             </div>
         </div>
     </section>
@@ -880,10 +880,34 @@
     <!-- Sistema Multi-Agente Hero -->
     <section class="section">
         <div class="multi-agent-hero fade-in">
-            <h2 style="margin-bottom: 1.5rem;">🤖 Sistema Multi-Agente Inteligente</h2>
+            <h2 style="margin-bottom: 1.5rem;">🤖 Orquestación Multi-Agente con LangGraph</h2>
             <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
-                Cinco agentes especializados que colaboran para ofrecer la experiencia de atención al cliente más avanzada del mercado. Cada agente domina su área y se comunica inteligentemente con los demás.
+                Agentes especializados orquestados con <strong>LangGraph</strong> que utilizan tu documentación, precios y servicios gracias a un sistema <strong>RAG avanzado</strong>. No son chatbots genéricos: entienden el contexto específico de tu negocio.
             </p>
+        </div>
+
+        <!-- Canales Soportados -->
+        <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem; padding: 2rem; background: rgba(30, 64, 175, 0.05); border-radius: 20px;">
+            <div style="text-align: center;">
+                <i class="fab fa-whatsapp" style="font-size: 2.5rem; color: #25D366;"></i>
+                <p style="margin-top: 0.5rem; font-weight: 600;">WhatsApp</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fab fa-instagram" style="font-size: 2.5rem; color: #E4405F;"></i>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Instagram</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fab fa-facebook-messenger" style="font-size: 2.5rem; color: #0084FF;"></i>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Messenger</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fas fa-envelope" style="font-size: 2.5rem; color: #F97316;"></i>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Email</p>
+            </div>
+            <div style="text-align: center;">
+                <i class="fas fa-comment-dots" style="font-size: 2.5rem; color: #1E40AF;"></i>
+                <p style="margin-top: 0.5rem; font-weight: 600;">Web Chat</p>
+            </div>
         </div>
     </section>
 
@@ -922,16 +946,16 @@
                     </div>
                     <div>
                         <h3>Agente de Ventas</h3>
-                        <span class="agent-tag">IA + RAG</span>
+                        <span class="agent-tag">RAG Híbrido</span>
                     </div>
                 </div>
-                <p>Asesora comercial inteligente con acceso a toda la información de productos y servicios actualizada en tiempo real.</p>
+                <p>Asesora comercial con búsqueda híbrida (BM25 + semántica) que encuentra información precisa de tu catálogo.</p>
                 <ul class="agent-features">
-                    <li>Base de conocimiento siempre actualizada (RAG)</li>
-                    <li>Comparación inteligente de productos/servicios</li>
-                    <li>Información de precios y promociones</li>
-                    <li>Llamadas a la acción personalizadas</li>
-                    <li>Finaliza siempre con invitación a agendar</li>
+                    <li>Búsqueda híbrida con cross-encoder reranking</li>
+                    <li>Precios, promociones y paquetes actualizados</li>
+                    <li>Respuestas adaptadas al tono de tu marca</li>
+                    <li>Detección automática de intención de compra</li>
+                    <li>Handoff inteligente a agente de citas</li>
                 </ul>
             </div>
 
@@ -943,16 +967,16 @@
                     </div>
                     <div>
                         <h3>Agente de Citas</h3>
-                        <span class="agent-tag">Automatización Total</span>
+                        <span class="agent-tag">Google Calendar</span>
                     </div>
                 </div>
-                <p>Sistema de agendamiento completamente automatizado que gestiona citas sin intervención humana.</p>
+                <p>Agendamiento 24/7 integrado nativamente con Google Calendar vía OAuth 2.0.</p>
                 <ul class="agent-features">
-                    <li>Agendamiento automático con integración Selenium</li>
-                    <li>Verificación de disponibilidad en tiempo real</li>
-                    <li>Modificación y cancelación inteligente</li>
-                    <li>Reagendamiento automático por cambios</li>
-                    <li>Manejo completo de datos del cliente</li>
+                    <li>Integración nativa con Google Calendar (OAuth)</li>
+                    <li>Creación automática de eventos con recordatorios</li>
+                    <li>Sincronización bidireccional en tiempo real</li>
+                    <li>Confirmaciones automáticas por mensaje</li>
+                    <li>Modificación y cancelación sin intervención</li>
                 </ul>
             </div>
 
@@ -964,16 +988,16 @@
                     </div>
                     <div>
                         <h3>Agente de Disponibilidad</h3>
-                        <span class="agent-tag">Tiempo Real</span>
+                        <span class="agent-tag">Conciencia Temporal</span>
                     </div>
                 </div>
-                <p>Consultor de horarios que optimiza la disponibilidad según la duración específica de cada servicio.</p>
+                <p>Consultor con conciencia temporal que entiende "mañana", "la próxima semana" y verifica horarios en tiempo real.</p>
                 <ul class="agent-features">
-                    <li>Consulta de disponibilidad por fecha específica</li>
-                    <li>Filtrado automático por duración de servicio</li>
+                    <li>Parseo inteligente de fechas en lenguaje natural</li>
+                    <li>Verificación en tiempo real con Google Calendar</li>
+                    <li>Buffer times entre citas automático</li>
                     <li>Sugerencia de horarios alternativos</li>
-                    <li>Reconoce más de 20 tipos de servicios</li>
-                    <li>Optimización inteligente de calendario</li>
+                    <li>Timezone-aware para clientes internacionales</li>
                 </ul>
             </div>
 
@@ -985,16 +1009,37 @@
                     </div>
                     <div>
                         <h3>Agente de Soporte</h3>
-                        <span class="agent-tag">Escalación Inteligente</span>
+                        <span class="agent-tag">Chatwoot + RAG</span>
                     </div>
                 </div>
-                <p>Especialista en consultas generales con capacidad de escalación automática a agentes humanos cuando es necesario.</p>
+                <p>Resuelve dudas frecuentes con RAG y escala automáticamente a agentes humanos en Chatwoot cuando es necesario.</p>
                 <ul class="agent-features">
-                    <li>Información institucional completa</li>
-                    <li>Procesos y políticas empresariales</li>
-                    <li>Escalación inteligente a humanos</li>
-                    <li>Resolución de consultas generales</li>
-                    <li>Integración completa con CRM existente</li>
+                    <li>Base de conocimiento con RAG para FAQs</li>
+                    <li>Detección de escalamiento por sentimiento</li>
+                    <li>Transferencia suave a Chatwoot</li>
+                    <li>Historial completo de conversaciones</li>
+                    <li>Seguimiento de tickets de soporte</li>
+                </ul>
+            </div>
+
+            <!-- Sexto Agente: Email Marketing -->
+            <div class="agent-card slide-in-right" style="border-left: 4px solid #F97316;">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fas fa-envelope-open-text" style="color: #F97316;"></i>
+                    </div>
+                    <div>
+                        <h3>Email Marketing</h3>
+                        <span class="agent-tag">Multi-Proveedor</span>
+                    </div>
+                </div>
+                <p>Campañas y seguimientos automatizados con fallback entre proveedores (SMTP, SendGrid, Mailgun).</p>
+                <ul class="agent-features">
+                    <li>Seguimientos automáticos post-conversación</li>
+                    <li>Templates HTML personalizables</li>
+                    <li>Multi-proveedor con fallback automático</li>
+                    <li>Retry con backoff exponencial</li>
+                    <li>Soporte para attachments</li>
                 </ul>
             </div>
         </div>
@@ -1010,48 +1055,48 @@
                 <div class="tech-item fade-in">
                     <i class="fas fa-brain"></i>
                     <div>
-                        <h4>Orquestador Inteligente</h4>
-                        <p>Sistema que analiza cada consulta y enruta automáticamente al agente más especializado con 99.2% de precisión.</p>
+                        <h4>Orquestación Híbrida LangGraph</h4>
+                        <p>Rule Engine para decisiones rápidas + LLM para escenarios complejos. 50+ nodos con routing condicional.</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
                     <i class="fas fa-database"></i>
                     <div>
-                        <h4>Sistema RAG Avanzado</h4>
-                        <p>Retrieval-Augmented Generation que mantiene información siempre actualizada con búsqueda vectorial semántica.</p>
+                        <h4>RAG con Búsqueda Híbrida</h4>
+                        <p>BM25 + semántica con alpha adaptativo, cross-encoder reranking y Reciprocal Rank Fusion (RRF).</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
-                    <i class="fas fa-robot"></i>
+                    <i class="fas fa-sitemap"></i>
                     <div>
-                        <h4>Automatización Selenium</h4>
-                        <p>Microservicio local que automatiza completamente el agendamiento sin intervención humana.</p>
+                        <h4>Multi-Tenant Nativo</h4>
+                        <p>Aislamiento completo por empresa: Redis prefixes, vector namespaces separados, configs independientes.</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
                     <i class="fas fa-memory"></i>
                     <div>
-                        <h4>Memoria Conversacional</h4>
-                        <p>Mantiene contexto a largo plazo y recuerda preferencias del cliente entre sesiones.</p>
+                        <h4>Estado Compartido Redis</h4>
+                        <p>SharedStateStore con dataclasses tipados para pricing, scheduling, handoffs y audit trail.</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
                     <i class="fas fa-shield-alt"></i>
                     <div>
-                        <h4>Arquitectura Empresarial</h4>
-                        <p>Sistema robusto con health checks automáticos, fallbacks y recuperación ante fallos.</p>
+                        <h4>OAuth + Fernet Encryption</h4>
+                        <p>Credenciales encriptadas en PostgreSQL, refresh automático de tokens, multi-proveedor.</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
-                    <i class="fas fa-tachometer-alt"></i>
+                    <i class="fas fa-tasks"></i>
                     <div>
-                        <h4>Rendimiento Optimizado</h4>
-                        <p>Cache inteligente, procesamiento asíncrono y respuestas en menos de 2 segundos promedio.</p>
+                        <h4>Celery + Redis Queue</h4>
+                        <p>Procesamiento asíncrono de webhooks, retry con backoff exponencial, sin pérdida de mensajes.</p>
                     </div>
                 </div>
             </div>
@@ -1061,23 +1106,23 @@
     <!-- Estadísticas -->
     <section class="section">
         <div class="stats-section fade-in">
-            <h2>Resultados Comprobados</h2>
+            <h2>Impacto Esperado</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number">99.2%</span>
-                    <span class="stat-label">Precisión en Clasificación</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">< 2s</span>
-                    <span class="stat-label">Tiempo de Respuesta</span>
+                    <span class="stat-number">70%</span>
+                    <span class="stat-label">Reducción Carga Soporte</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">24/7</span>
-                    <span class="stat-label">Disponibilidad</span>
+                    <span class="stat-label">Disponibilidad Total</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Automatización</span>
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Más Citas Agendadas</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Canales Unificados</span>
                 </div>
             </div>
         </div>
@@ -1132,39 +1177,51 @@
     <!-- Integración CRM -->
     <section class="section" id="integracion">
         <div class="crm-integration">
-            <h2>Integración Sin Fricciones</h2>
-            <p class="section-subtitle">Conecta con tu sistema actual en minutos, no meses</p>
-            
+            <h2>CRM Multicanal con Chatwoot</h2>
+            <p class="section-subtitle">Panel de agente humano para supervisión + Frontend embebido para gestión de bots</p>
+
             <div class="integration-flow">
                 <div class="flow-step">
                     <div class="flow-icon">
-                        <i class="fas fa-plug"></i>
+                        <i class="fab fa-whatsapp"></i>
                     </div>
-                    <h4>Conexión API</h4>
-                    <p>Integración directa con Chatwoot, Salesforce, HubSpot y más</p>
+                    <h4>Canales de Entrada</h4>
+                    <p>WhatsApp, Instagram, Messenger llegan a Chatwoot</p>
                 </div>
                 <div class="flow-arrow">→</div>
                 <div class="flow-step">
                     <div class="flow-icon">
-                        <i class="fas fa-sync"></i>
+                        <i class="fas fa-robot"></i>
                     </div>
-                    <h4>Sincronización</h4>
-                    <p>Datos de clientes y servicios se sincronizan automáticamente</p>
+                    <h4>Procesamiento IA</h4>
+                    <p>Hachi responde automáticamente con agentes especializados</p>
                 </div>
                 <div class="flow-arrow">→</div>
                 <div class="flow-step">
                     <div class="flow-icon">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <h4>Sistema Activo</h4>
-                    <p>Hachi comienza a trabajar inmediatamente con tus datos</p>
+                    <h4>Escalamiento</h4>
+                    <p>Agente humano toma el control cuando es necesario</p>
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <p style="font-size: 1.1rem; opacity: 0.9;">
-                    <strong>Compatibilidad Garantizada:</strong> Chatwoot • Salesforce • HubSpot • Zoho • Pipedrive • Sistemas Propietarios
-                </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: rgba(30, 64, 175, 0.1); padding: 1.5rem; border-radius: 15px; text-align: center;">
+                    <i class="fas fa-comments" style="font-size: 2rem; color: #1E40AF; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #1E40AF; margin-bottom: 0.5rem;">Chatwoot CRM</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Panel de supervisión, historial unificado, etiquetas y contactos</p>
+                </div>
+                <div style="background: rgba(249, 115, 22, 0.1); padding: 1.5rem; border-radius: 15px; text-align: center;">
+                    <i class="fas fa-cogs" style="font-size: 2rem; color: #F97316; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #F97316; margin-bottom: 0.5rem;">Panel de Bots</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Frontend embebido para configurar prompts, RAG y comportamiento</p>
+                </div>
+                <div style="background: rgba(46, 204, 113, 0.1); padding: 1.5rem; border-radius: 15px; text-align: center;">
+                    <i class="fas fa-calendar-alt" style="font-size: 2rem; color: #2ECC71; margin-bottom: 1rem;"></i>
+                    <h4 style="color: #2ECC71; margin-bottom: 0.5rem;">Google Calendar</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">OAuth nativo para agendamiento y disponibilidad en tiempo real</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1217,15 +1274,15 @@
             <!-- Plan Starter -->
             <div class="pricing-card fade-in">
                 <h3>Starter</h3>
-                <div class="price">$299<span style="font-size: 1rem; opacity: 0.7;">/mes</span></div>
-                <p>Perfecto para pequeños negocios que inician su transformación digital</p>
+                <div class="price">Consultar</div>
+                <p>Perfecto para pequeños negocios que inician con automatización</p>
                 <ul class="price-features">
-                    <li>Hasta 1,000 conversaciones/mes</li>
-                    <li>3 agentes especializados</li>
-                    <li>Integración básica con CRM</li>
+                    <li>1 canal (WhatsApp o Instagram)</li>
+                    <li>1 agente IA (ventas o soporte)</li>
+                    <li>Base de conocimiento hasta 50 docs</li>
+                    <li>Email marketing básico</li>
                     <li>Soporte por email</li>
-                    <li>Dashboard de métricas básicas</li>
-                    <li>Automatización de agendamiento</li>
+                    <li>Dashboard de métricas</li>
                 </ul>
                 <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Empezar Ahora</a>
             </div>
@@ -1233,17 +1290,17 @@
             <!-- Plan Professional -->
             <div class="pricing-card featured fade-in">
                 <h3>Professional</h3>
-                <div class="price">$599<span style="font-size: 1rem; opacity: 0.7;">/mes</span></div>
-                <p>La solución completa para empresas en crecimiento</p>
+                <div class="price">Consultar</div>
+                <p>La solución completa para negocios en crecimiento</p>
                 <ul class="price-features">
-                    <li>Conversaciones ilimitadas</li>
-                    <li>5 agentes especializados completos</li>
-                    <li>Integración avanzada con múltiples CRM</li>
-                    <li>Soporte prioritario 24/7</li>
-                    <li>Analytics avanzados y reportes</li>
-                    <li>Personalización de respuestas</li>
-                    <li>Sistema RAG completo</li>
-                    <li>API para integraciones custom</li>
+                    <li>3 canales (WhatsApp + Instagram + Messenger)</li>
+                    <li>Todos los agentes IA especializados</li>
+                    <li>Base de conocimiento hasta 200 docs</li>
+                    <li>Integración Google Calendar</li>
+                    <li>Email marketing avanzado</li>
+                    <li>Chatwoot CRM completo</li>
+                    <li>Panel de gestión de bots</li>
+                    <li>Soporte prioritario</li>
                 </ul>
                 <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Elegir Professional</a>
             </div>
@@ -1254,14 +1311,14 @@
                 <div class="price">Personalizado</div>
                 <p>Solución enterprise con desarrollo a medida</p>
                 <ul class="price-features">
-                    <li>Agentes personalizados ilimitados</li>
-                    <li>Integración con sistemas legacy</li>
-                    <li>Desarrollo de funcionalidades custom</li>
-                    <li>Soporte dedicado con SLA</li>
-                    <li>Implementación asistida</li>
-                    <li>Capacitación del equipo</li>
-                    <li>Escalabilidad enterprise</li>
-                    <li>Cumplimiento regulatorio</li>
+                    <li>Todos los canales + Web Chat</li>
+                    <li>Agentes IA personalizados</li>
+                    <li>Base de conocimiento ilimitada</li>
+                    <li>Integraciones custom (CRM, ERP)</li>
+                    <li>Email marketing enterprise</li>
+                    <li>Account manager dedicado</li>
+                    <li>SLA garantizado</li>
+                    <li>Multi-tenant aislado</li>
                 </ul>
                 <a href="#contacto" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Solicitar Cotización</a>
             </div>
@@ -1271,18 +1328,27 @@
     <!-- Footer CTA -->
     <section class="footer-cta" id="contacto">
         <div class="section">
-            <h2>¿Listo para Transformar tu Atención al Cliente?</h2>
+            <h2>¿Listo para Automatizar tus Conversaciones?</h2>
             <p style="font-size: 1.3rem; opacity: 0.9; margin: 2rem 0;">
-                Únete a las empresas que ya están revolucionando su servicio al cliente con Hachi
+                Descubre cómo Hachi puede transformar tu atención al cliente en WhatsApp, Instagram y Messenger
             </p>
             <div class="cta-buttons" style="margin-top: 3rem;">
-                <a href="mailto:contacto@hachi.io" class="cta-button">Solicitar Demo</a>
-                <a href="tel:+573001234567" class="cta-button cta-secondary">Llamar Ahora</a>
+                <a href="mailto:ceo@hachi.live" class="cta-button">Solicitar Demo</a>
+                <a href="mailto:ceo@hachi.live" class="cta-button cta-secondary">Contactar</a>
             </div>
             <p style="margin-top: 2rem; opacity: 0.7;">
-                📞 +57 300 123 4567 | 📧 contacto@hachi.io | 🌐 hachi.io
+                📧 ceo@hachi.live
             </p>
-            <p style="margin-top: 1.5rem; opacity: 0.5; font-size: 0.9rem;">
+
+            <!-- Verticales de Negocio -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Ideal para:</p>
+                <p style="font-size: 1rem; opacity: 0.8;">
+                    Clínicas Médicas • Spas y Bienestar • Clínicas Dentales • Estudios de Fitness • Restaurantes
+                </p>
+            </div>
+
+            <p style="margin-top: 2rem; opacity: 0.5; font-size: 0.9rem;">
                 <a href="privacy-policy.html" style="color: #888; text-decoration: none;">Privacy Policy</a> |
                 <a href="#" style="color: #888; text-decoration: none;">Terms of Service</a>
             </p>
