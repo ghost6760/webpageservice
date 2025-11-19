@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hachi - Conversational AI Agents + Multichannel CRM for WhatsApp, Instagram & Messenger</title>
-    <meta name="description" content="SaaS platform of specialized AI agents that automate sales, support, and scheduling on WhatsApp, Instagram, and Messenger. Integrated Chatwoot CRM + Email Marketing.">
+    <title>Hachi - Agentes IA Conversacionales + CRM Multicanal para WhatsApp, Instagram y Messenger</title>
+    <meta name="description" content="Plataforma SaaS de agentes IA especializados que automatizan ventas, soporte y agendamiento en WhatsApp, Instagram y Messenger. CRM Chatwoot integrado + Email Marketing.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -12,7 +12,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #0f0f23;
@@ -20,8 +20,8 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        /* Enhanced background particles */
+        
+        /* Partículas de fondo mejoradas */
         .particles {
             position: fixed;
             top: 0;
@@ -31,34 +31,34 @@
             z-index: -1;
             opacity: 0.15;
         }
-
+        
         .particle {
             position: absolute;
             border-radius: 50%;
             animation: float 8s infinite linear;
         }
-
+        
         .particle.neural {
             width: 3px;
             height: 3px;
             background: #1E40AF;
             box-shadow: 0 0 10px rgba(30, 64, 175, 0.5);
         }
-
+        
         .particle.data {
             width: 2px;
             height: 2px;
             background: #F97316;
         }
-
+        
         @keyframes float {
             0% { transform: translateY(100vh) translateX(0px) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
         }
-
-        /* Enhanced header */
+        
+        /* Header mejorado */
         .header {
             position: fixed;
             top: 0;
@@ -69,7 +69,7 @@
             padding: 1rem 0;
             border-bottom: 1px solid rgba(30, 64, 175, 0.2);
         }
-
+        
         .nav {
             max-width: 1400px;
             margin: 0 auto;
@@ -78,18 +78,18 @@
             align-items: center;
             padding: 0 2rem;
         }
-
+        
         .logo-nav {
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-
+        
         .logo-nav svg {
             width: 45px;
             height: 45px;
         }
-
+        
         .nav-links {
             display: flex;
             gap: 2.5rem;
@@ -133,7 +133,7 @@
             background: rgba(30, 64, 175, 0.2);
         }
 
-        /* Enhanced Hero Section */
+        /* Hero Section mejorado */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -144,19 +144,19 @@
             background: radial-gradient(ellipse at center, rgba(30, 64, 175, 0.1) 0%, #0f0f23 70%);
             position: relative;
         }
-
+        
         .hero-content {
             max-width: 900px;
             z-index: 10;
         }
-
+        
         .hero-logo {
             width: 180px;
             height: 180px;
             margin: 0 auto 2rem;
             filter: drop-shadow(0 0 40px rgba(30, 64, 175, 0.4));
         }
-
+        
         .hero h1 {
             font-size: 3.8rem;
             font-weight: 300;
@@ -166,7 +166,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .hero .subtitle {
             font-size: 1.4rem;
             opacity: 0.9;
@@ -174,21 +174,21 @@
             color: #1E40AF;
             font-weight: 600;
         }
-
+        
         .hero p {
             font-size: 1.2rem;
             opacity: 0.85;
             margin-bottom: 2.5rem;
             line-height: 1.8;
         }
-
+        
         .cta-buttons {
             display: flex;
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
-
+        
         .cta-button {
             display: inline-block;
             padding: 1.2rem 2.8rem;
@@ -204,7 +204,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .cta-button::before {
             content: '';
             position: absolute;
@@ -215,34 +215,34 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s;
         }
-
+        
         .cta-button:hover::before {
             left: 100%;
         }
-
+        
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 20px 40px rgba(30, 64, 175, 0.4);
         }
-
+        
         .cta-secondary {
             background: transparent;
             border: 2px solid #1E40AF;
             color: #1E40AF;
         }
-
+        
         .cta-secondary:hover {
             background: #1E40AF;
             color: #0f0f23;
         }
-
-        /* Enhanced Sections */
+        
+        /* Sections mejoradas */
         .section {
             padding: 6rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
         }
-
+        
         .section h2 {
             font-size: 2.8rem;
             text-align: center;
@@ -252,7 +252,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .section-subtitle {
             text-align: center;
             font-size: 1.2rem;
@@ -262,8 +262,8 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        /* Multi-Agent System - Main Section */
+        
+        /* Sistema Multi-Agente - Sección principal */
         .multi-agent-hero {
             background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(249, 115, 22, 0.1));
             border-radius: 30px;
@@ -273,7 +273,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .multi-agent-hero::before {
             content: '';
             position: absolute;
@@ -284,15 +284,15 @@
             background: radial-gradient(circle, rgba(30, 64, 175, 0.05) 0%, transparent 70%);
             animation: rotate 20s linear infinite;
         }
-
-        /* Specialized Agents */
+        
+        /* Agentes Especializados */
         .agents-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 2.5rem;
             margin: 4rem 0;
         }
-
+        
         .agent-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
@@ -303,7 +303,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .agent-card::before {
             content: '';
             position: absolute;
@@ -315,44 +315,44 @@
             transform: scaleX(0);
             transition: transform 0.4s ease;
         }
-
+        
         .agent-card:hover::before {
             transform: scaleX(1);
         }
-
+        
         .agent-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 25px 50px rgba(30, 64, 175, 0.3);
             border-color: rgba(30, 64, 175, 0.5);
         }
-
+        
         .agent-card.emergency {
             border-left: 4px solid #E74C3C;
         }
-
+        
         .agent-card.sales {
             border-left: 4px solid #F39C12;
         }
-
+        
         .agent-card.schedule {
             border-left: 4px solid #3498DB;
         }
-
+        
         .agent-card.availability {
             border-left: 4px solid #9B59B6;
         }
-
+        
         .agent-card.support {
             border-left: 4px solid #2ECC71;
         }
-
+        
         .agent-header {
             display: flex;
             align-items: center;
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
-
+        
         .agent-icon {
             font-size: 2.5rem;
             width: 60px;
@@ -363,12 +363,12 @@
             border-radius: 15px;
             background: rgba(30, 64, 175, 0.1);
         }
-
+        
         .agent-card h3 {
             font-size: 1.4rem;
             margin-bottom: 0.5rem;
         }
-
+        
         .agent-tag {
             background: rgba(30, 64, 175, 0.2);
             color: #1E40AF;
@@ -377,32 +377,32 @@
             font-size: 0.9rem;
             font-weight: 600;
         }
-
+        
         .agent-features {
             list-style: none;
             margin-top: 1.5rem;
         }
-
+        
         .agent-features li {
             padding: 0.7rem 0;
             padding-left: 2rem;
             position: relative;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-
+        
         .agent-features li:last-child {
             border-bottom: none;
         }
-
+        
         .agent-features li::before {
-            content: "";
+            content: "⚡";
             position: absolute;
             left: 0;
             color: #1E40AF;
             font-size: 1.2rem;
         }
-
-        /* Technical Features */
+        
+        /* Características Técnicas */
         .tech-features {
             background: rgba(15, 15, 35, 0.8);
             border-radius: 25px;
@@ -410,14 +410,14 @@
             margin: 4rem 0;
             border: 1px solid rgba(30, 64, 175, 0.2);
         }
-
+        
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
-
+        
         .tech-item {
             display: flex;
             align-items: flex-start;
@@ -427,34 +427,34 @@
             border-radius: 20px;
             border-left: 4px solid #1E40AF;
         }
-
+        
         .tech-item i {
             color: #1E40AF;
             font-size: 2rem;
             margin-top: 0.5rem;
         }
-
+        
         .tech-item h4 {
             color: #1E40AF;
             margin-bottom: 0.5rem;
             font-size: 1.2rem;
         }
-
-        /* Benefits for Landing Page */
+        
+        /* Beneficios para Landing Page */
         .benefits-section {
             background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(14, 165, 233, 0.1));
             border-radius: 30px;
             padding: 4rem;
             margin: 4rem 0;
         }
-
+        
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-
+        
         .benefit-card {
             background: rgba(255, 255, 255, 0.08);
             padding: 2rem;
@@ -462,25 +462,25 @@
             text-align: center;
             transition: all 0.3s ease;
         }
-
+        
         .benefit-card:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.12);
         }
-
+        
         .benefit-card i {
             font-size: 3rem;
             color: #F97316;
             margin-bottom: 1rem;
         }
-
+        
         .benefit-card h4 {
             color: #1E40AF;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
-
-        /* Enhanced CRM Integration */
+        
+        /* Integración CRM mejorada */
         .crm-integration {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 30px;
@@ -489,7 +489,7 @@
             text-align: center;
             position: relative;
         }
-
+        
         .integration-flow {
             display: flex;
             justify-content: space-between;
@@ -498,13 +498,13 @@
             gap: 2rem;
             margin: 3rem 0;
         }
-
+        
         .flow-step {
             flex: 1;
             min-width: 200px;
             text-align: center;
         }
-
+        
         .flow-icon {
             width: 80px;
             height: 80px;
@@ -517,21 +517,21 @@
             font-size: 2rem;
             color: white;
         }
-
+        
         .flow-arrow {
             font-size: 2rem;
             color: #1E40AF;
             align-self: center;
         }
-
-        /* Enhanced Testimonials */
+        
+        /* Testimoniales mejorados */
         .testimonials {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 2.5rem;
             margin: 4rem 0;
         }
-
+        
         .testimonial {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
@@ -539,7 +539,7 @@
             border-left: 4px solid #F97316;
             position: relative;
         }
-
+        
         .testimonial::before {
             content: '"';
             position: absolute;
@@ -549,14 +549,14 @@
             color: #1E40AF;
             opacity: 0.3;
         }
-
+        
         .testimonial-author {
             margin-top: 1.5rem;
             display: flex;
             align-items: center;
             gap: 1rem;
         }
-
+        
         .author-avatar {
             width: 50px;
             height: 50px;
@@ -568,15 +568,15 @@
             font-weight: bold;
             font-size: 1.2rem;
         }
-
-        /* Enhanced Pricing */
+        
+        /* Precios mejorados */
         .pricing {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2.5rem;
             margin: 4rem 0;
         }
-
+        
         .pricing-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 25px;
@@ -586,15 +586,15 @@
             transition: all 0.4s ease;
             position: relative;
         }
-
+        
         .pricing-card.featured {
             border-color: #1E40AF;
             transform: scale(1.05);
             background: rgba(30, 64, 175, 0.1);
         }
-
+        
         .pricing-card.featured::before {
-            content: 'MOST POPULAR';
+            content: 'MÁS POPULAR';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -605,47 +605,47 @@
             font-size: 0.9rem;
             font-weight: bold;
         }
-
+        
         .pricing-card:hover {
             transform: translateY(-10px);
             border-color: #1E40AF;
             box-shadow: 0 20px 40px rgba(30, 64, 175, 0.2);
         }
-
+        
         .price {
             font-size: 3rem;
             color: #1E40AF;
             font-weight: bold;
             margin: 1.5rem 0;
         }
-
+        
         .price-features {
             list-style: none;
             text-align: left;
             margin: 2rem 0;
         }
-
+        
         .price-features li {
             padding: 0.5rem 0;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-
+        
         .price-features li::before {
-            content: "";
+            content: "✓";
             color: #2ECC71;
             font-weight: bold;
         }
-
-        /* Enhanced Footer CTA */
+        
+        /* Footer CTA mejorado */
         .footer-cta {
             background: linear-gradient(135deg, #0f0f23, #1a1a2e);
             text-align: center;
             padding: 6rem 2rem;
             position: relative;
         }
-
+        
         .footer-cta::before {
             content: '';
             position: absolute;
@@ -655,7 +655,7 @@
             height: 2px;
             background: linear-gradient(90deg, #1E40AF, #F97316, #7C3AED);
         }
-
+        
         /* Stats counter animation */
         .stats-section {
             background: rgba(255, 255, 255, 0.03);
@@ -663,21 +663,21 @@
             padding: 3rem;
             margin: 4rem 0;
         }
-
+        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-
+        
         .stat-item {
             text-align: center;
             padding: 1.5rem;
             background: rgba(30, 64, 175, 0.05);
             border-radius: 15px;
         }
-
+        
         .stat-number {
             font-size: 2.5rem;
             font-weight: bold;
@@ -685,108 +685,108 @@
             display: block;
             margin-bottom: 0.5rem;
         }
-
+        
         .stat-label {
             font-size: 1rem;
             opacity: 0.8;
         }
-
-        /* Enhanced Responsive */
+        
+        /* Responsive mejorado */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
-
+            
             .hero .subtitle {
                 font-size: 1.2rem;
             }
-
+            
             .hero p {
                 font-size: 1rem;
             }
-
+            
             .section {
                 padding: 4rem 1rem;
             }
-
+            
             .agents-grid {
                 grid-template-columns: 1fr;
             }
-
+            
             .pricing-card.featured {
                 transform: none;
             }
-
+        
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-
+        
             .flow-arrow {
                 display: none;
             }
         }
-
-        /* Enhanced animations */
+        
+        /* Animaciones mejoradas */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-
+        
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
+        
         .slide-in-left {
             opacity: 0;
             transform: translateX(-50px);
             transition: all 0.8s ease;
         }
-
+        
         .slide-in-left.visible {
             opacity: 1;
             transform: translateX(0);
         }
-
+        
         .slide-in-right {
             opacity: 0;
             transform: translateX(50px);
             transition: all 0.8s ease;
         }
-
+        
         .slide-in-right.visible {
             opacity: 1;
             transform: translateX(0);
         }
-
+        
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-
+        
         @keyframes pulse {
             0%, 100% { opacity: 0.8; }
             50% { opacity: 1; }
         }
-
+        
         .orbit {
             animation: rotate 12s linear infinite;
             transform-origin: center;
         }
-
+        
         .neural-network {
             animation: pulse 3s infinite;
         }
     </style>
 </head>
 <body>
-    <!-- Background particles -->
+    <!-- Partículas de fondo -->
     <div class="particles" id="particles"></div>
 
     <!-- Header -->
@@ -833,22 +833,22 @@
                 <span style="font-size: 1.6rem; font-weight: bold; background: linear-gradient(45deg, #1E40AF, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Hachi</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#agents">Agents</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#integration">Integration</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#agentes">Agentes</a></li>
+                <li><a href="#tecnologia">Tecnología</a></li>
+                <li><a href="#integracion">Integración</a></li>
+                <li><a href="#precios">Precios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
                 <li class="lang-selector">
-                    <a href="index.html" class="active">EN</a>
-                    <a href="es.html">ES</a>
+                    <a href="index.html">EN</a>
+                    <a href="es.html" class="active">ES</a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="inicio">
         <div class="hero-content fade-in">
             <div class="hero-logo">
                 <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
@@ -897,25 +897,25 @@
                 </svg>
             </div>
             <h1>Hachi</h1>
-            <div class="subtitle">Conversational AI Agents + Multichannel CRM</div>
-            <p>Automate your conversations on <strong>WhatsApp, Instagram, Messenger, and Email</strong> with specialized AI agents that understand your business. Integrated Chatwoot CRM for human supervision + bot management panel.</p>
+            <div class="subtitle">Agentes IA Conversacionales + CRM Multicanal</div>
+            <p>Automatiza tus conversaciones en <strong>WhatsApp, Instagram, Messenger y Email</strong> con agentes IA especializados que entienden tu negocio. CRM Chatwoot integrado para supervisión humana + panel de gestión de bots.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="cta-button">Request Demo</a>
-                <a href="#pricing" class="cta-button cta-secondary">View Plans</a>
+                <a href="#contacto" class="cta-button">Solicitar Demo</a>
+                <a href="#precios" class="cta-button cta-secondary">Ver Planes</a>
             </div>
         </div>
     </section>
 
-    <!-- Multi-Agent System Hero -->
+    <!-- Sistema Multi-Agente Hero -->
     <section class="section">
         <div class="multi-agent-hero fade-in">
-            <h2 style="margin-bottom: 1.5rem;">Multi-Agent Orchestration with LangGraph</h2>
+            <h2 style="margin-bottom: 1.5rem;">🤖 Orquestación Multi-Agente con LangGraph</h2>
             <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
-                Specialized agents orchestrated with <strong>LangGraph</strong> that use your documentation, pricing, and services through an <strong>advanced RAG system</strong>. These are not generic chatbots: they understand the specific context of your business.
+                Agentes especializados orquestados con <strong>LangGraph</strong> que utilizan tu documentación, precios y servicios gracias a un sistema <strong>RAG avanzado</strong>. No son chatbots genéricos: entienden el contexto específico de tu negocio.
             </p>
         </div>
 
-        <!-- Supported Channels -->
+        <!-- Canales Soportados -->
         <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem; padding: 2rem; background: rgba(30, 64, 175, 0.05); border-radius: 20px;">
             <div style="text-align: center;">
                 <i class="fab fa-whatsapp" style="font-size: 2.5rem; color: #25D366;"></i>
@@ -940,118 +940,118 @@
         </div>
     </section>
 
-    <!-- Specialized Agents -->
-    <section class="section" id="agents">
-        <h2>Specialized Agents</h2>
-        <p class="section-subtitle">Each agent is designed for a specific function, ensuring expert responses and automated actions</p>
-
+    <!-- Agentes Especializados -->
+    <section class="section" id="agentes">
+        <h2>Agentes Especializados</h2>
+        <p class="section-subtitle">Cada agente está diseñado para una función específica, garantizando respuestas expertas y acciones automatizadas</p>
+        
         <div class="agents-grid">
-            <!-- Emergency Agent -->
+            <!-- Agente de Emergencias -->
             <div class="agent-card emergency fade-in">
                 <div class="agent-header">
                     <div class="agent-icon">
                         <i class="fas fa-exclamation-triangle" style="color: #E74C3C;"></i>
                     </div>
                     <div>
-                        <h3>Emergency Agent</h3>
-                        <span class="agent-tag">Response < 3 min</span>
+                        <h3>Agente de Emergencias</h3>
+                        <span class="agent-tag">Respuesta < 3 min</span>
                     </div>
                 </div>
-                <p>Urgency specialist that automatically detects critical situations and activates immediate escalation protocols.</p>
+                <p>Especialista en urgencias que detecta automáticamente situaciones críticas y activa protocolos de escalación inmediata.</p>
                 <ul class="agent-features">
-                    <li>Automatic detection of emergency keywords</li>
-                    <li>Response protocol in less than 3 minutes</li>
-                    <li>Automatic escalation to medical staff</li>
-                    <li>Empathetic but urgent and professional tone</li>
-                    <li>24/7 availability without interruptions</li>
+                    <li>Detección automática de palabras clave de emergencia</li>
+                    <li>Protocolo de respuesta en menos de 3 minutos</li>
+                    <li>Escalación automática a personal médico</li>
+                    <li>Tono empático pero urgente y profesional</li>
+                    <li>Disponibilidad 24/7 sin interrupciones</li>
                 </ul>
             </div>
 
-            <!-- Sales Agent -->
+            <!-- Agente de Ventas -->
             <div class="agent-card sales slide-in-left">
                 <div class="agent-header">
                     <div class="agent-icon">
                         <i class="fas fa-chart-line" style="color: #F39C12;"></i>
                     </div>
                     <div>
-                        <h3>Sales Agent</h3>
-                        <span class="agent-tag">Hybrid RAG</span>
+                        <h3>Agente de Ventas</h3>
+                        <span class="agent-tag">RAG Híbrido</span>
                     </div>
                 </div>
-                <p>Commercial advisor with hybrid search (BM25 + semantic) that finds precise information from your catalog.</p>
+                <p>Asesora comercial con búsqueda híbrida (BM25 + semántica) que encuentra información precisa de tu catálogo.</p>
                 <ul class="agent-features">
-                    <li>Hybrid search with cross-encoder reranking</li>
-                    <li>Updated prices, promotions, and packages</li>
-                    <li>Responses adapted to your brand tone</li>
-                    <li>Automatic purchase intent detection</li>
-                    <li>Intelligent handoff to appointment agent</li>
+                    <li>Búsqueda híbrida con cross-encoder reranking</li>
+                    <li>Precios, promociones y paquetes actualizados</li>
+                    <li>Respuestas adaptadas al tono de tu marca</li>
+                    <li>Detección automática de intención de compra</li>
+                    <li>Handoff inteligente a agente de citas</li>
                 </ul>
             </div>
 
-            <!-- Scheduling Agent -->
+            <!-- Agente de Citas -->
             <div class="agent-card schedule slide-in-right">
                 <div class="agent-header">
                     <div class="agent-icon">
                         <i class="fas fa-calendar-check" style="color: #3498DB;"></i>
                     </div>
                     <div>
-                        <h3>Scheduling Agent</h3>
+                        <h3>Agente de Citas</h3>
                         <span class="agent-tag">Google Calendar</span>
                     </div>
                 </div>
-                <p>24/7 scheduling natively integrated with Google Calendar via OAuth 2.0.</p>
+                <p>Agendamiento 24/7 integrado nativamente con Google Calendar vía OAuth 2.0.</p>
                 <ul class="agent-features">
-                    <li>Native Google Calendar integration (OAuth)</li>
-                    <li>Automatic event creation with reminders</li>
-                    <li>Real-time bidirectional synchronization</li>
-                    <li>Automatic confirmations via message</li>
-                    <li>Modification and cancellation without intervention</li>
+                    <li>Integración nativa con Google Calendar (OAuth)</li>
+                    <li>Creación automática de eventos con recordatorios</li>
+                    <li>Sincronización bidireccional en tiempo real</li>
+                    <li>Confirmaciones automáticas por mensaje</li>
+                    <li>Modificación y cancelación sin intervención</li>
                 </ul>
             </div>
 
-            <!-- Availability Agent -->
+            <!-- Agente de Disponibilidad -->
             <div class="agent-card availability fade-in">
                 <div class="agent-header">
                     <div class="agent-icon">
                         <i class="fas fa-clock" style="color: #9B59B6;"></i>
                     </div>
                     <div>
-                        <h3>Availability Agent</h3>
-                        <span class="agent-tag">Temporal Awareness</span>
+                        <h3>Agente de Disponibilidad</h3>
+                        <span class="agent-tag">Conciencia Temporal</span>
                     </div>
                 </div>
-                <p>Consultant with temporal awareness that understands "tomorrow", "next week" and verifies schedules in real time.</p>
+                <p>Consultor con conciencia temporal que entiende "mañana", "la próxima semana" y verifica horarios en tiempo real.</p>
                 <ul class="agent-features">
-                    <li>Intelligent natural language date parsing</li>
-                    <li>Real-time verification with Google Calendar</li>
-                    <li>Automatic buffer times between appointments</li>
-                    <li>Alternative time slot suggestions</li>
-                    <li>Timezone-aware for international clients</li>
+                    <li>Parseo inteligente de fechas en lenguaje natural</li>
+                    <li>Verificación en tiempo real con Google Calendar</li>
+                    <li>Buffer times entre citas automático</li>
+                    <li>Sugerencia de horarios alternativos</li>
+                    <li>Timezone-aware para clientes internacionales</li>
                 </ul>
             </div>
 
-            <!-- Support Agent -->
+            <!-- Agente de Soporte -->
             <div class="agent-card support slide-in-left">
                 <div class="agent-header">
                     <div class="agent-icon">
                         <i class="fas fa-headset" style="color: #2ECC71;"></i>
                     </div>
                     <div>
-                        <h3>Support Agent</h3>
+                        <h3>Agente de Soporte</h3>
                         <span class="agent-tag">Chatwoot + RAG</span>
                     </div>
                 </div>
-                <p>Resolves frequently asked questions with RAG and automatically escalates to human agents in Chatwoot when needed.</p>
+                <p>Resuelve dudas frecuentes con RAG y escala automáticamente a agentes humanos en Chatwoot cuando es necesario.</p>
                 <ul class="agent-features">
-                    <li>Knowledge base with RAG for FAQs</li>
-                    <li>Escalation detection by sentiment</li>
-                    <li>Smooth transfer to Chatwoot</li>
-                    <li>Complete conversation history</li>
-                    <li>Support ticket tracking</li>
+                    <li>Base de conocimiento con RAG para FAQs</li>
+                    <li>Detección de escalamiento por sentimiento</li>
+                    <li>Transferencia suave a Chatwoot</li>
+                    <li>Historial completo de conversaciones</li>
+                    <li>Seguimiento de tickets de soporte</li>
                 </ul>
             </div>
 
-            <!-- Sixth Agent: Email Marketing -->
+            <!-- Sexto Agente: Email Marketing -->
             <div class="agent-card slide-in-right" style="border-left: 4px solid #F97316;">
                 <div class="agent-header">
                     <div class="agent-icon">
@@ -1059,57 +1059,57 @@
                     </div>
                     <div>
                         <h3>Email Marketing</h3>
-                        <span class="agent-tag">Multi-Provider</span>
+                        <span class="agent-tag">Multi-Proveedor</span>
                     </div>
                 </div>
-                <p>Automated campaigns and follow-ups with fallback between providers (SMTP, SendGrid, Mailgun).</p>
+                <p>Campañas y seguimientos automatizados con fallback entre proveedores (SMTP, SendGrid, Mailgun).</p>
                 <ul class="agent-features">
-                    <li>Automatic post-conversation follow-ups</li>
-                    <li>Customizable HTML templates</li>
-                    <li>Multi-provider with automatic fallback</li>
-                    <li>Retry with exponential backoff</li>
-                    <li>Attachment support</li>
+                    <li>Seguimientos automáticos post-conversación</li>
+                    <li>Templates HTML personalizables</li>
+                    <li>Multi-proveedor con fallback automático</li>
+                    <li>Retry con backoff exponencial</li>
+                    <li>Soporte para attachments</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Technical Features -->
-    <section class="section" id="technology">
+    <!-- Características Técnicas -->
+    <section class="section" id="tecnologia">
         <div class="tech-features">
-            <h2>Cutting-Edge Technology</h2>
-            <p class="section-subtitle">Enterprise architecture designed for maximum performance, reliability, and scalability</p>
-
+            <h2>Tecnología de Vanguardia</h2>
+            <p class="section-subtitle">Arquitectura empresarial diseñada para máximo rendimiento, confiabilidad y escalabilidad</p>
+            
             <div class="tech-grid">
                 <div class="tech-item fade-in">
                     <i class="fas fa-brain"></i>
                     <div>
-                        <h4>Hybrid LangGraph Orchestration</h4>
-                        <p>Rule Engine for fast decisions + LLM for complex scenarios. 50+ nodes with conditional routing.</p>
+                        <h4>Orquestación Híbrida LangGraph</h4>
+                        <p>Rule Engine para decisiones rápidas + LLM para escenarios complejos. 50+ nodos con routing condicional.</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
                     <i class="fas fa-database"></i>
                     <div>
-                        <h4>RAG with Hybrid Search</h4>
-                        <p>BM25 + semantic with adaptive alpha, cross-encoder reranking, and Reciprocal Rank Fusion (RRF).</p>
+                        <h4>RAG con Búsqueda Híbrida</h4>
+                        <p>BM25 + semántica con alpha adaptativo, cross-encoder reranking y Reciprocal Rank Fusion (RRF).</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
                     <i class="fas fa-sitemap"></i>
                     <div>
-                        <h4>Native Multi-Tenant</h4>
-                        <p>Complete isolation per company: Redis prefixes, separate vector namespaces, independent configs.</p>
+                        <h4>Multi-Tenant Nativo</h4>
+                        <p>Aislamiento completo por empresa: Redis prefixes, vector namespaces separados, configs independientes.</p>
                     </div>
                 </div>
 
                 <div class="tech-item fade-in">
                     <i class="fas fa-memory"></i>
                     <div>
-                        <h4>Redis Shared State</h4>
-                        <p>SharedStateStore with typed dataclasses for pricing, scheduling, handoffs, and audit trail.</p>
+                        <h4>Estado Compartido Redis</h4>
+                        <p>SharedStateStore con dataclasses tipados para pricing, scheduling, handoffs y audit trail.</p>
                     </div>
                 </div>
 
@@ -1117,7 +1117,7 @@
                     <i class="fas fa-shield-alt"></i>
                     <div>
                         <h4>OAuth + Fernet Encryption</h4>
-                        <p>Encrypted credentials in PostgreSQL, automatic token refresh, multi-provider.</p>
+                        <p>Credenciales encriptadas en PostgreSQL, refresh automático de tokens, multi-proveedor.</p>
                     </div>
                 </div>
 
@@ -1125,113 +1125,113 @@
                     <i class="fas fa-tasks"></i>
                     <div>
                         <h4>Celery + Redis Queue</h4>
-                        <p>Asynchronous webhook processing, retry with exponential backoff, no message loss.</p>
+                        <p>Procesamiento asíncrono de webhooks, retry con backoff exponencial, sin pérdida de mensajes.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Statistics -->
+    <!-- Estadísticas -->
     <section class="section">
         <div class="stats-section fade-in">
-            <h2>Expected Impact</h2>
+            <h2>Impacto Esperado</h2>
             <div class="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number">70%</span>
-                    <span class="stat-label">Support Load Reduction</span>
+                    <span class="stat-label">Reducción Carga Soporte</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">24/7</span>
-                    <span class="stat-label">Total Availability</span>
+                    <span class="stat-label">Disponibilidad Total</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">30%</span>
-                    <span class="stat-label">More Appointments Scheduled</span>
+                    <span class="stat-label">Más Citas Agendadas</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">5</span>
-                    <span class="stat-label">Unified Channels</span>
+                    <span class="stat-label">Canales Unificados</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Benefits -->
+    <!-- Beneficios -->
     <section class="section">
         <div class="benefits-section">
-            <h2>Transformative Benefits</h2>
-            <p class="section-subtitle">Revolutionize your customer service with technology that actually works</p>
-
+            <h2>Beneficios Transformadores</h2>
+            <p class="section-subtitle">Revoluciona tu atención al cliente con tecnología que realmente funciona</p>
+            
             <div class="benefits-grid">
                 <div class="benefit-card fade-in">
                     <i class="fas fa-rocket"></i>
-                    <h4>Rapid Implementation</h4>
-                    <p>System ready to operate in 48 hours. Complete integration with your existing CRM without operational interruptions.</p>
+                    <h4>Implementación Rápida</h4>
+                    <p>Sistema listo para funcionar en 48 horas. Integración completa con tu CRM existente sin interrupciones operativas.</p>
                 </div>
 
                 <div class="benefit-card fade-in">
                     <i class="fas fa-dollar-sign"></i>
-                    <h4>Immediate ROI</h4>
-                    <p>Reduce operational costs by up to 70% while increasing customer satisfaction and sales conversions.</p>
+                    <h4>ROI Inmediato</h4>
+                    <p>Reduce costos operativos hasta 70% mientras aumentas la satisfacción del cliente y las conversiones de venta.</p>
                 </div>
 
                 <div class="benefit-card fade-in">
                     <i class="fas fa-users"></i>
-                    <h4>Superior Experience</h4>
-                    <p>Instant responses, automatic scheduling, and personalized attention that exceeds expectations.</p>
+                    <h4>Experiencia Superior</h4>
+                    <p>Respuestas instantáneas, agendamiento automático y atención personalizada que supera las expectativas.</p>
                 </div>
 
                 <div class="benefit-card fade-in">
                     <i class="fas fa-chart-bar"></i>
-                    <h4>Infinite Scalability</h4>
-                    <p>Handle thousands of simultaneous conversations without losing quality or increasing operational costs.</p>
+                    <h4>Escalabilidad Infinita</h4>
+                    <p>Maneja miles de conversaciones simultáneas sin perder calidad ni aumentar costos operativos.</p>
                 </div>
 
                 <div class="benefit-card fade-in">
                     <i class="fas fa-cog"></i>
-                    <h4>Minimal Maintenance</h4>
-                    <p>Self-managed system with automatic updates and proactive performance monitoring.</p>
+                    <h4>Mantenimiento Mínimo</h4>
+                    <p>Sistema autogestionado con actualizaciones automáticas y monitoreo proactivo de rendimiento.</p>
                 </div>
 
                 <div class="benefit-card fade-in">
-                    <i class="fas fa-chart-line"></i>
-                    <h4>Advanced Analytics</h4>
-                    <p>Detailed performance metrics, usage patterns, and continuous optimization opportunities.</p>
+                    <i class="fas fa-analytics"></i>
+                    <h4>Analytics Avanzados</h4>
+                    <p>Métricas detalladas de rendimiento, patrones de uso y oportunidades de optimización continua.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CRM Integration -->
-    <section class="section" id="integration">
+    <!-- Integración CRM -->
+    <section class="section" id="integracion">
         <div class="crm-integration">
-            <h2>Multichannel CRM with Chatwoot</h2>
-            <p class="section-subtitle">Human agent panel for supervision + Embedded frontend for bot management</p>
+            <h2>CRM Multicanal con Chatwoot</h2>
+            <p class="section-subtitle">Panel de agente humano para supervisión + Frontend embebido para gestión de bots</p>
 
             <div class="integration-flow">
                 <div class="flow-step">
                     <div class="flow-icon">
                         <i class="fab fa-whatsapp"></i>
                     </div>
-                    <h4>Input Channels</h4>
-                    <p>WhatsApp, Instagram, Messenger arrive at Chatwoot</p>
+                    <h4>Canales de Entrada</h4>
+                    <p>WhatsApp, Instagram, Messenger llegan a Chatwoot</p>
                 </div>
-                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-arrow">→</div>
                 <div class="flow-step">
                     <div class="flow-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h4>AI Processing</h4>
-                    <p>Hachi responds automatically with specialized agents</p>
+                    <h4>Procesamiento IA</h4>
+                    <p>Hachi responde automáticamente con agentes especializados</p>
                 </div>
-                <div class="flow-arrow">&rarr;</div>
+                <div class="flow-arrow">→</div>
                 <div class="flow-step">
                     <div class="flow-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h4>Escalation</h4>
-                    <p>Human agent takes control when needed</p>
+                    <h4>Escalamiento</h4>
+                    <p>Agente humano toma el control cuando es necesario</p>
                 </div>
             </div>
 
@@ -1239,141 +1239,141 @@
                 <div style="background: rgba(30, 64, 175, 0.1); padding: 1.5rem; border-radius: 15px; text-align: center;">
                     <i class="fas fa-comments" style="font-size: 2rem; color: #1E40AF; margin-bottom: 1rem;"></i>
                     <h4 style="color: #1E40AF; margin-bottom: 0.5rem;">Chatwoot CRM</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">Supervision panel, unified history, tags, and contacts</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Panel de supervisión, historial unificado, etiquetas y contactos</p>
                 </div>
                 <div style="background: rgba(249, 115, 22, 0.1); padding: 1.5rem; border-radius: 15px; text-align: center;">
                     <i class="fas fa-cogs" style="font-size: 2rem; color: #F97316; margin-bottom: 1rem;"></i>
-                    <h4 style="color: #F97316; margin-bottom: 0.5rem;">Bot Panel</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">Embedded frontend to configure prompts, RAG, and behavior</p>
+                    <h4 style="color: #F97316; margin-bottom: 0.5rem;">Panel de Bots</h4>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">Frontend embebido para configurar prompts, RAG y comportamiento</p>
                 </div>
                 <div style="background: rgba(46, 204, 113, 0.1); padding: 1.5rem; border-radius: 15px; text-align: center;">
                     <i class="fas fa-calendar-alt" style="font-size: 2rem; color: #2ECC71; margin-bottom: 1rem;"></i>
                     <h4 style="color: #2ECC71; margin-bottom: 0.5rem;">Google Calendar</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.8;">Native OAuth for real-time scheduling and availability</p>
+                    <p style="font-size: 0.9rem; opacity: 0.8;">OAuth nativo para agendamiento y disponibilidad en tiempo real</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimoniales -->
     <section class="section">
-        <h2>What Our Clients Say</h2>
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
         <div class="testimonials">
             <div class="testimonial fade-in">
-                <p>Hachi completely transformed our customer service. In the first month, we saw a 65% reduction in response time and a 40% increase in customer satisfaction.</p>
+                <p>Hachi transformó completamente nuestra atención al cliente. En el primer mes vimos una reducción del 65% en tiempo de respuesta y un aumento del 40% en satisfacción del cliente.</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">MR</div>
                     <div>
-                        <strong>Maria Rodriguez</strong><br>
-                        <span style="opacity: 0.7;">Operations Director, EstheticLife Clinic</span>
+                        <strong>María Rodríguez</strong><br>
+                        <span style="opacity: 0.7;">Directora de Operaciones, Clínica EstéticaVida</span>
                     </div>
                 </div>
             </div>
 
             <div class="testimonial fade-in">
-                <p>The scheduling automation is incredible. Our clients can book appointments at any hour and the system never makes mistakes. It has freed our team to focus on what really matters.</p>
+                <p>La automatización del agendamiento es increíble. Nuestros clientes pueden agendar citas a cualquier hora y el sistema nunca se equivoca. Ha liberado a nuestro equipo para enfocarse en lo realmente importante.</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">CP</div>
                     <div>
-                        <strong>Carlos Perez</strong><br>
-                        <span style="opacity: 0.7;">CEO, Integral Medical Center</span>
+                        <strong>Carlos Pérez</strong><br>
+                        <span style="opacity: 0.7;">CEO, Centro Médico Integral</span>
                     </div>
                 </div>
             </div>
 
             <div class="testimonial fade-in">
-                <p>The ROI was immediate. In 3 months we recovered the investment and now we're saving thousands of dollars monthly in operational costs while providing better service.</p>
+                <p>El ROI fue inmediato. En 3 meses recuperamos la inversión y ahora estamos ahorrando miles de dólares mensuales en costos operativos mientras brindamos mejor servicio.</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">LP</div>
                     <div>
-                        <strong>Laura Patino</strong><br>
-                        <span style="opacity: 0.7;">General Manager, Wellness Plus Spa</span>
+                        <strong>Laura Patiño</strong><br>
+                        <span style="opacity: 0.7;">Gerente General, Spa Wellness Plus</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
-    <section class="section" id="pricing">
-        <h2>Investment Plans</h2>
-        <p class="section-subtitle">Scalable solutions designed for your business growth</p>
-
+    <!-- Precios -->
+    <section class="section" id="precios">
+        <h2>Planes de Inversión</h2>
+        <p class="section-subtitle">Soluciones escalables diseñadas para el crecimiento de tu negocio</p>
+        
         <div class="pricing">
-            <!-- Starter Plan -->
+            <!-- Plan Starter -->
             <div class="pricing-card fade-in">
                 <h3>Starter</h3>
-                <div class="price">Contact Us</div>
-                <p>Perfect for small businesses starting with automation</p>
+                <div class="price">Consultar</div>
+                <p>Perfecto para pequeños negocios que inician con automatización</p>
                 <ul class="price-features">
-                    <li>1 channel (WhatsApp or Instagram)</li>
-                    <li>1 AI agent (sales or support)</li>
-                    <li>Knowledge base up to 50 docs</li>
-                    <li>Basic email marketing</li>
-                    <li>Email support</li>
-                    <li>Metrics dashboard</li>
+                    <li>1 canal (WhatsApp o Instagram)</li>
+                    <li>1 agente IA (ventas o soporte)</li>
+                    <li>Base de conocimiento hasta 50 docs</li>
+                    <li>Email marketing básico</li>
+                    <li>Soporte por email</li>
+                    <li>Dashboard de métricas</li>
                 </ul>
-                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Get Started</a>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Empezar Ahora</a>
             </div>
 
-            <!-- Professional Plan -->
+            <!-- Plan Professional -->
             <div class="pricing-card featured fade-in">
                 <h3>Professional</h3>
-                <div class="price">Contact Us</div>
-                <p>The complete solution for growing businesses</p>
+                <div class="price">Consultar</div>
+                <p>La solución completa para negocios en crecimiento</p>
                 <ul class="price-features">
-                    <li>3 channels (WhatsApp + Instagram + Messenger)</li>
-                    <li>All specialized AI agents</li>
-                    <li>Knowledge base up to 200 docs</li>
-                    <li>Google Calendar integration</li>
-                    <li>Advanced email marketing</li>
-                    <li>Complete Chatwoot CRM</li>
-                    <li>Bot management panel</li>
-                    <li>Priority support</li>
+                    <li>3 canales (WhatsApp + Instagram + Messenger)</li>
+                    <li>Todos los agentes IA especializados</li>
+                    <li>Base de conocimiento hasta 200 docs</li>
+                    <li>Integración Google Calendar</li>
+                    <li>Email marketing avanzado</li>
+                    <li>Chatwoot CRM completo</li>
+                    <li>Panel de gestión de bots</li>
+                    <li>Soporte prioritario</li>
                 </ul>
-                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Choose Professional</a>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Elegir Professional</a>
             </div>
 
-            <!-- Enterprise Plan -->
+            <!-- Plan Enterprise -->
             <div class="pricing-card fade-in">
                 <h3>Enterprise</h3>
-                <div class="price">Custom</div>
-                <p>Enterprise solution with custom development</p>
+                <div class="price">Personalizado</div>
+                <p>Solución enterprise con desarrollo a medida</p>
                 <ul class="price-features">
-                    <li>All channels + Web Chat</li>
-                    <li>Custom AI agents</li>
-                    <li>Unlimited knowledge base</li>
-                    <li>Custom integrations (CRM, ERP)</li>
-                    <li>Enterprise email marketing</li>
-                    <li>Dedicated account manager</li>
-                    <li>Guaranteed SLA</li>
-                    <li>Isolated multi-tenant</li>
+                    <li>Todos los canales + Web Chat</li>
+                    <li>Agentes IA personalizados</li>
+                    <li>Base de conocimiento ilimitada</li>
+                    <li>Integraciones custom (CRM, ERP)</li>
+                    <li>Email marketing enterprise</li>
+                    <li>Account manager dedicado</li>
+                    <li>SLA garantizado</li>
+                    <li>Multi-tenant aislado</li>
                 </ul>
-                <a href="#contact" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Request Quote</a>
+                <a href="#contacto" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Solicitar Cotización</a>
             </div>
         </div>
     </section>
 
     <!-- Footer CTA -->
-    <section class="footer-cta" id="contact">
+    <section class="footer-cta" id="contacto">
         <div class="section">
-            <h2>Ready to Automate Your Conversations?</h2>
+            <h2>¿Listo para Automatizar tus Conversaciones?</h2>
             <p style="font-size: 1.3rem; opacity: 0.9; margin: 2rem 0;">
-                Discover how Hachi can transform your customer service on WhatsApp, Instagram, and Messenger
+                Descubre cómo Hachi puede transformar tu atención al cliente en WhatsApp, Instagram y Messenger
             </p>
             <div class="cta-buttons" style="margin-top: 3rem;">
-                <a href="mailto:ceo@hachi.live" class="cta-button">Request Demo</a>
-                <a href="mailto:ceo@hachi.live" class="cta-button cta-secondary">Contact Us</a>
+                <a href="mailto:ceo@hachi.live" class="cta-button">Solicitar Demo</a>
+                <a href="mailto:ceo@hachi.live" class="cta-button cta-secondary">Contactar</a>
             </div>
             <p style="margin-top: 2rem; opacity: 0.7;">
-                ceo@hachi.live
+                📧 ceo@hachi.live
             </p>
 
-            <!-- Business Verticals -->
+            <!-- Verticales de Negocio -->
             <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Ideal for:</p>
+                <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Ideal para:</p>
                 <p style="font-size: 1rem; opacity: 0.8;">
-                    Medical Clinics &bull; Spas & Wellness &bull; Dental Clinics &bull; Fitness Studios &bull; Restaurants
+                    Clínicas Médicas • Spas y Bienestar • Clínicas Dentales • Estudios de Fitness • Restaurantes
                 </p>
             </div>
 
@@ -1382,13 +1382,13 @@
                 <a href="#" style="color: #888; text-decoration: none;">Terms of Service</a>
             </p>
             <p style="margin-top: 1rem; opacity: 0.4; font-size: 0.8rem;">
-                &copy; 2025 Hachi. All rights reserved.
+                © 2025 Hachi. All rights reserved.
             </p>
         </div>
     </section>
 
     <script>
-        // Create background particles
+        // Crear partículas de fondo
         function createParticles() {
             const container = document.getElementById('particles');
             const particleCount = 50;
@@ -1396,20 +1396,20 @@
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = Math.random() > 0.5 ? 'particle neural' : 'particle data';
-
-                // Random initial position
+                
+                // Posición inicial aleatoria
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.animationDelay = Math.random() * 8 + 's';
                 particle.style.animationDuration = (8 + Math.random() * 4) + 's';
-
+                
                 container.appendChild(particle);
             }
         }
 
-        // Scroll animations
+        // Animaciones de scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1426,21 +1426,21 @@
             });
         }
 
-        // Animated counter for statistics
+        // Contador animado para estadísticas
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
-
+            
             counters.forEach(counter => {
                 const target = counter.textContent;
                 const isPercentage = target.includes('%');
                 const isTime = target.includes('s');
                 const isAvailability = target.includes('/');
-
+                
                 if (!isTime && !isAvailability) {
                     const numericValue = parseFloat(target);
                     const increment = numericValue / 100;
                     let current = 0;
-
+                    
                     const updateCounter = () => {
                         if (current < numericValue) {
                             current += increment;
@@ -1454,8 +1454,8 @@
                             counter.textContent = target;
                         }
                     };
-
-                    // Start animation when element is visible
+                    
+                    // Iniciar animación cuando el elemento sea visible
                     const observer = new IntersectionObserver((entries) => {
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
@@ -1464,13 +1464,13 @@
                             }
                         });
                     });
-
+                    
                     observer.observe(counter);
                 }
             });
         }
 
-        // Smooth scroll for navigation
+        // Smooth scroll para navegación
         function initSmoothScroll() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -1486,7 +1486,7 @@
             });
         }
 
-        // Initialize everything when page loads
+        // Inicializar todo cuando la página cargue
         document.addEventListener('DOMContentLoaded', function() {
             createParticles();
             animateOnScroll();
@@ -1494,12 +1494,12 @@
             initSmoothScroll();
         });
 
-        // Smooth parallax effect for hero
+        // Efecto parallax suave para el hero
         window.addEventListener('scroll', function() {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
             const rate = scrolled * -0.5;
-
+            
             if (hero) {
                 hero.style.transform = `translateY(${rate}px)`;
             }
