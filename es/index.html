@@ -1037,6 +1037,205 @@
             </p>
         </div>
 
+        <!-- Tabla Comparativa -->
+        <div style="margin-top: 3rem; overflow-x: auto;">
+            <h3 style="text-align: center; margin-bottom: 1.5rem; color: #8B5CF6;">Comparativa de Frameworks de Agentes</h3>
+            <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden;">
+                <thead>
+                    <tr style="background: rgba(139, 92, 246, 0.2);">
+                        <th style="padding: 1rem; text-align: left; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">Característica</th>
+                        <th style="padding: 1rem; text-align: center; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
+                            <i class="fas fa-brain" style="color: #8B5CF6;"></i> LangGraph
+                        </th>
+                        <th style="padding: 1rem; text-align: center; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
+                            <i class="fas fa-link" style="color: #6B7280;"></i> LangChain Agents
+                        </th>
+                        <th style="padding: 1rem; text-align: center; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
+                            <i class="fas fa-project-diagram" style="color: #6B7280;"></i> n8n
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ejecución de Flujos Dinámicos -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-random" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Ejecución de Flujos Dinámicos
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Adaptación en tiempo real</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Solo bucle ReAct</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Flujos predefinidos</div>
+                        </td>
+                    </tr>
+                    <!-- Gestión de Estado -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-database" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Gestión de Estado
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Primera clase con TypedDict</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Scratchpad del agente</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Sin soporte nativo</div>
+                        </td>
+                    </tr>
+                    <!-- Auto-corrección y Reintentos -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-sync-alt" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Auto-corrección y Reintentos
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Ciclos y condicionales nativos</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Limitado por max iteraciones</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Sin soporte cíclico</div>
+                        </td>
+                    </tr>
+                    <!-- Persistencia de Memoria -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-memory" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Persistencia de Memoria
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Checkpoints + Largo plazo</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Buffer de conversación</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Solo variables de workflow</div>
+                        </td>
+                    </tr>
+                    <!-- Orquestación Multi-Agente -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-users-cog" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Orquestación Multi-Agente
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Supervisor + handoffs</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Implementación manual</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Solo nodos secuenciales</div>
+                        </td>
+                    </tr>
+                    <!-- Human-in-the-Loop -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-user-check" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Humano en el Bucle
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Interrumpir y aprobar</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Callbacks manuales</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Esperar webhook</div>
+                        </td>
+                    </tr>
+                    <!-- Streaming en Tiempo Real -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-stream" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Streaming en Tiempo Real
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Token + eventos</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Streaming de tokens</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Respuestas en lote</div>
+                        </td>
+                    </tr>
+                    <!-- Ejecución Paralela -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-code-branch" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Ejecución Paralela
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Fan-out/fan-in nativo</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Llamadas paralelas</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Nodos split/merge</div>
+                        </td>
+                    </tr>
+                    <!-- Escalabilidad de Herramientas -->
+                    <tr>
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-tools" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Escalabilidad de Herramientas
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">100+ tools por agente</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">~10-20 óptimo</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">400+ integraciones</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;">
+                <i class="fas fa-check-circle" style="color: #10B981;"></i> Soporte completo
+                <i class="fas fa-minus-circle" style="color: #F59E0B; margin-left: 1rem;"></i> Parcial/Limitado
+                <i class="fas fa-times-circle" style="color: #EF4444; margin-left: 1rem;"></i> No soportado
+            </p>
+        </div>
+
         <!-- Canales Soportados -->
         <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin-top: 3rem; padding: 2rem; background: rgba(139, 92, 246, 0.05); border-radius: 20px;">
             <div style="text-align: center;">
