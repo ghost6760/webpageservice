@@ -909,9 +909,9 @@
     <!-- Sistema Multi-Agente Hero -->
     <section class="section">
         <div class="multi-agent-hero fade-in">
-            <h2 style="margin-bottom: 1.5rem;">🤖 Orquestación Multi-Agente con LangGraph</h2>
+            <h2 style="margin-bottom: 1.5rem;">Agentes Cognitivos con Flujos Dinámicos</h2>
             <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
-                Agentes especializados orquestados con <strong>LangGraph</strong> que utilizan tu documentación, precios y servicios gracias a un sistema <strong>RAG avanzado</strong>. No son chatbots genéricos: entienden el contexto específico de tu negocio.
+                A diferencia de herramientas de automatización rígidas como n8n o agentes tradicionales de LangChain, nuestros <strong>agentes cognitivos LangGraph</strong> ejecutan flujos de trabajo dinámicos que se adaptan para lograr objetivos. No necesitan flujos predefinidos para cada escenario—razonan, reintentan y se autocorrigen hasta tener éxito.
             </p>
         </div>
 
@@ -1070,6 +1070,73 @@
                     <li>Retry con backoff exponencial</li>
                     <li>Soporte para attachments</li>
                 </ul>
+            </div>
+
+            <!-- Séptimo Agente: Campañas Masivas WhatsApp -->
+            <div class="agent-card fade-in" style="border-left: 4px solid #25D366;">
+                <div class="agent-header">
+                    <div class="agent-icon">
+                        <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                    </div>
+                    <div>
+                        <h3>Campañas WhatsApp</h3>
+                        <span class="agent-tag">10K msgs/día</span>
+                    </div>
+                </div>
+                <p>Microservicio de campañas masivas automatizadas que envía hasta 10,000 mensajes de plantillas WhatsApp por día sin intervención humana.</p>
+                <ul class="agent-features">
+                    <li>Hasta 10,000 mensajes de plantilla por día</li>
+                    <li>Plantillas aprobadas de WhatsApp Business</li>
+                    <li>Programación y encolamiento automático</li>
+                    <li>Seguimiento de entregas y analíticas</li>
+                    <li>Segmentación de audiencia objetivo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Diferenciadores Clave -->
+    <section class="section">
+        <div class="benefits-section" style="background: linear-gradient(135deg, rgba(30, 64, 175, 0.15), rgba(249, 115, 22, 0.1));">
+            <h2>¿Por Qué Elegir Hachi?</h2>
+            <p class="section-subtitle">Diferenciadores clave que nos distinguen de las herramientas de automatización tradicionales</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>Flujos Dinámicos vs Flujos Rígidos</h4>
+                    <p>A diferencia de n8n o agentes LangChain que siguen flujos predefinidos rígidos, nuestros agentes cognitivos se adaptan dinámicamente para lograr objetivos, reintentando y autocorrigiéndose sin intervención manual.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-file-upload"></i>
+                    <h4>Actualización Instantánea de Conocimiento</h4>
+                    <p>Sube documentos bien estructurados y los agentes aprenden automáticamente vía RAG. Cambia promociones o servicios al instante—sin necesidad de soporte especializado. Reduce drásticamente tiempo y costos de mantenimiento.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                    <h4>Escala a Cientos de Herramientas</h4>
+                    <p>Nuestra arquitectura backend probada está lista para escalar rápidamente a cientos de agentes e integraciones. Los agentes de servicio al cliente son solo el inicio—la plataforma soporta cualquier tipo de flujo de trabajo.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-history"></i>
+                    <h4>Memoria de 30 Mensajes por Conversación</h4>
+                    <p>Los agentes recuerdan contexto de los últimos 30 mensajes por cliente: nombres, servicios consultados, promociones enviadas previamente. Interacciones personalizadas que se sienten humanas y generan confianza.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-sliders-h"></i>
+                    <h4>Prompts de Agentes Personalizables</h4>
+                    <p>Los sub-prompts son completamente configurables y se almacenan en PostgreSQL por usuario. Personaliza la personalidad, tono y comportamiento de los agentes para que coincidan con tu marca sin tocar código.</p>
+                </div>
+
+                <div class="benefit-card fade-in">
+                    <i class="fas fa-lock"></i>
+                    <h4>Encolamiento Inteligente de Mensajes</h4>
+                    <p>Workers de Celery con locks por chat previenen el procesamiento simultáneo de mensajes de la misma conversación, asegurando respuestas coherentes que nunca pierden contexto.</p>
+                </div>
             </div>
         </div>
     </section>
