@@ -225,6 +225,47 @@
             background: rgba(139, 92, 246, 0.2);
         }
 
+        .nav-auth-buttons {
+            display: flex;
+            gap: 0.8rem;
+            margin-left: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-login-btn {
+            color: #E5E7EB;
+            text-decoration: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .nav-login-btn:hover {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: #8B5CF6;
+            color: #8B5CF6;
+        }
+
+        .nav-signup-btn {
+            padding: 0.5rem 1.2rem;
+            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .nav-signup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+
         /* Enhanced Hero Section */
         .hero {
             min-height: 100vh;
@@ -789,6 +830,10 @@
                 display: none;
             }
 
+            .nav-auth-buttons {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -1111,6 +1156,10 @@
                     <a href="/es/">ES</a>
                 </li>
             </ul>
+            <div class="nav-auth-buttons">
+                <a href="https://crm.hachi.live/app/login" class="nav-login-btn">Login</a>
+                <a href="https://crm.hachi.live/app/auth/signup" class="nav-signup-btn">Sign Up</a>
+            </div>
         </nav>
     </header>
 
