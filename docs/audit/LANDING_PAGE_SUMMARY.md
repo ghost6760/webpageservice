@@ -851,5 +851,242 @@ Para que los meta tags funcionen correctamente, crear:
 
 ---
 
+## 8. Archivos para Optimización de IA y Seguridad
+
+### Última actualización: 2025-11-20
+
+---
+
+### llms.txt - Guía para Buscadores de IA
+
+**Ubicación**: `/llms.txt`
+
+**Propósito**: Archivo emergente estándar que guía a modelos de lenguaje (ChatGPT, Claude, Perplexity, Gemini) hacia el contenido más relevante del sitio.
+
+**¿Por qué es importante?**
+
+A diferencia de robots.txt que bloquea o permite crawlers, llms.txt es una "carta de presentación" para IAs:
+- **Reduce tiempo de inferencia**: Las IAs encuentran información clave sin parsear HTML complejo
+- **Mejora citaciones**: Mayor probabilidad de ser citado en respuestas de IA
+- **Control del mensaje**: Defines qué información quieres que las IAs prioricen
+- **Futuro del SEO**: Se espera que sea estándar como robots.txt en 2-3 años
+
+**Estado de adopción**:
+- Anthropic ya publica su propio llms.txt
+- OpenAI, Google aún no lo implementan oficialmente pero se espera adopción
+- Herramientas como Mintlify ya generan llms.txt automáticamente
+
+**Contenido implementado**:
+
+```markdown
+# Hachi AI
+
+> Conversational AI Agents + Multichannel CRM Platform
+
+## Core Pages
+- Homepage (English/Spanish)
+
+## Key Sections
+- AI Agents, Features, Pricing, Contact
+
+## Product Information
+- Descripción del producto
+- Stack tecnológico
+- Ventajas competitivas vs LangChain/n8n
+- Industrias objetivo
+
+## Company Information
+- Contacto, idiomas soportados
+```
+
+**Mejores prácticas implementadas**:
+- Formato Markdown limpio (fácil de parsear)
+- Jerarquía clara con headers
+- URLs absolutas
+- Descripción concisa pero completa
+- Información de contacto
+
+---
+
+### security.txt - Contacto de Seguridad
+
+**Ubicación**: `/.well-known/security.txt`
+
+**Propósito**: Archivo estándar (RFC 9116) que indica cómo reportar vulnerabilidades de seguridad.
+
+**¿Por qué es importante?**
+
+- **Estándar de la industria**: Empresas como Google, Facebook, GitHub lo usan
+- **Protección legal**: Proporciona canal oficial para reportes responsables
+- **Profesionalismo**: Demuestra que la seguridad es prioridad
+- **Bug bounty ready**: Base para programas de recompensas futuras
+
+**Contenido implementado**:
+
+```
+Contact: mailto:security@hachi.live
+Contact: mailto:alex@hachi.live
+Preferred-Languages: en, es
+Canonical: https://hachi.live/.well-known/security.txt
+Expires: 2026-11-20T00:00:00.000Z
+```
+
+**Campos incluidos**:
+
+| Campo | Descripción | Valor |
+|-------|-------------|-------|
+| Contact | Email(s) para reportes | security@hachi.live, alex@hachi.live |
+| Preferred-Languages | Idiomas aceptados | en, es |
+| Canonical | URL oficial del archivo | https://hachi.live/.well-known/security.txt |
+| Expires | Fecha de expiración | 2026-11-20 (actualizar anualmente) |
+
+**Campos opcionales para futuro**:
+- `Acknowledgments`: Página de agradecimientos a investigadores
+- `Encryption`: Clave PGP para comunicación cifrada
+- `Policy`: Política de divulgación responsable
+- `Hiring`: Página de carreras en seguridad
+
+---
+
+### Recomendaciones Futuras (No Implementadas)
+
+#### FAQPage Schema
+
+**¿Qué es?**: Structured data JSON-LD para preguntas frecuentes.
+
+**Beneficios**:
+- Google muestra FAQ directamente en resultados de búsqueda
+- Ocupa más espacio visual en SERP (mayor CTR)
+- Las IAs extraen respuestas directamente
+
+**Implementación sugerida**:
+
+```html
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "¿Qué diferencia a Hachi de un chatbot tradicional?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Hachi usa agentes cognitivos con LangGraph que tienen memoria persistente, auto-corrección y flujos dinámicos, no respuestas pre-programadas."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo toma implementar Hachi?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La implementación básica toma 1-2 semanas. Incluye conexión de canales, entrenamiento con tu documentación y configuración de agentes."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "¿Mis datos están seguros?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Usamos arquitectura multi-tenant con aislamiento completo. Cada empresa tiene bases de datos y vectores separados."
+            }
+        }
+    ]
+}
+</script>
+```
+
+**Por qué no se implementó ahora**: Requiere definir las FAQs oficiales del producto. Se recomienda agregar cuando la landing tenga sección de FAQ visible.
+
+---
+
+#### Organization Schema
+
+**¿Qué es?**: Structured data que define información de la empresa.
+
+**Beneficios**:
+- Google Knowledge Panel con logo, redes sociales, contacto
+- Mejora confianza y reconocimiento de marca
+- Conecta presencia en múltiples plataformas
+
+**Implementación sugerida**:
+
+```html
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hachi AI",
+    "url": "https://hachi.live",
+    "logo": "https://hachi.live/images/logo.png",
+    "description": "Conversational AI Agents + Multichannel CRM Platform",
+    "foundingDate": "2024",
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-XXX-XXX-XXXX",
+        "contactType": "sales",
+        "email": "alex@hachi.live",
+        "availableLanguage": ["English", "Spanish"]
+    },
+    "sameAs": [
+        "https://twitter.com/hachi_ai",
+        "https://linkedin.com/company/hachi-ai",
+        "https://github.com/hachi-ai"
+    ],
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "US"
+    }
+}
+</script>
+```
+
+**Por qué no se implementó ahora**: Requiere:
+- Logo oficial en URL pública
+- Perfiles de redes sociales creados
+- Número de teléfono de contacto
+- Dirección física (opcional pero recomendado)
+
+Se recomienda agregar cuando estos elementos estén disponibles.
+
+---
+
+### Estrategia de Optimización para IA (GEO/AEO)
+
+Basado en investigación de expertos en SEO para 2025:
+
+#### Datos Clave sobre Citaciones de IA
+
+| Plataforma | Fuente Principal | Estrategia |
+|------------|------------------|------------|
+| Perplexity | Reddit (46.7%), YouTube (13.9%) | Presencia en subreddits relevantes, videos |
+| ChatGPT | Wikipedia (47.9%), Reddit (11.3%) | Aparecer en Wikipedia, directorios |
+| Google AI Overview | Reddit (21%), Top ranking | SEO tradicional + Reddit |
+
+#### Recomendaciones para Aumentar Citaciones
+
+1. **Contenido Q&A estructurado**: Formato pregunta → respuesta corta
+2. **Datos específicos**: "127 clientes" vs "muchos clientes"
+3. **Participación en Reddit**: r/SaaS, r/startups, r/artificial (sin spam)
+4. **Videos en YouTube**: Demos, tutoriales, comparativas
+5. **Directorios de productos**: Product Hunt, G2, Capterra, AlternativeTo
+6. **Wikipedia**: Crear artículo cuando haya notoriedad suficiente
+
+#### Ventaja Competitiva
+
+> "A diferencia del SEO tradicional, las IAs no priorizan por autoridad de dominio. Sitios nuevos pueden competir con empresas establecidas si tienen contenido bien estructurado y específico."
+
+---
+
+## Archivos Creados/Modificados
+
+| Archivo | Tipo | Descripción |
+|---------|------|-------------|
+| `/llms.txt` | Nuevo | Guía de contenido para modelos de IA |
+| `/.well-known/security.txt` | Nuevo | Contacto para reportes de seguridad |
+| `/docs/audit/LANDING_PAGE_SUMMARY.md` | Actualizado | Documentación de cambios |
+
+---
+
 **Documento generado automáticamente basado en auditoría técnica completa.**
 **Para actualizaciones, re-ejecutar análisis de capas de auditoría.**

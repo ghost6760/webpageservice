@@ -1,0 +1,57 @@
+# Hachi AI
+
+> Conversational AI Agents + Multichannel CRM Platform
+
+Hachi is an enterprise-grade platform that combines cognitive AI agents built with LangGraph with a unified multichannel CRM. Our agents feature dynamic conversation flows, persistent memory, self-correction capabilities, and human-in-the-loop supervision.
+
+## Core Pages
+
+- [Homepage (English)](https://hachi.live/): Main landing page with product overview, features, pricing, and contact form
+- [Homepage (Spanish)](https://hachi.live/es/): Spanish version of the landing page
+
+## Key Sections
+
+- [AI Agents](https://hachi.live/#agents): Details about our cognitive AI agents and their capabilities
+- [Features](https://hachi.live/#features): Platform features including multichannel integration, analytics, and automation
+- [Pricing](https://hachi.live/#pricing): Three pricing tiers - Starter ($99/mo), Professional ($249/mo), Enterprise ($499/mo)
+- [Contact](https://hachi.live/#contact): Request a demo or get in touch
+
+## Product Information
+
+### What Hachi Does
+- **Conversational AI Agents**: Cognitive agents with dynamic flows, not simple chatbots
+- **Multichannel CRM**: Unified inbox for WhatsApp, Instagram, Facebook, Telegram, Email, SMS, Web Chat
+- **LangGraph Architecture**: State machines with memory, self-correction, and parallel processing
+- **Human-in-the-Loop**: Seamless handoff to human agents when needed
+
+### Technology Stack
+- Built with LangGraph (superior to LangChain ReAct agents)
+- Supports Claude, OpenAI, DeepSeek, and other LLM providers
+- Integrations: Twilio, Meta Business API, LinkedIn
+
+### Target Industries
+- Healthcare & Hospitals
+- E-commerce & Retail
+- Customer Service
+- Sales Automation
+
+### Competitive Advantages vs Alternatives
+Compared to LangChain agents and n8n workflows, Hachi's LangGraph-based agents offer:
+- Dynamic conversation flow control
+- Persistent cross-session memory
+- Self-correction and error recovery
+- True multi-agent coordination
+- Streaming responses
+- Parallel tool execution
+
+## Company Information
+
+- **Product**: Hachi - Conversational AI Agents + Multichannel CRM
+- **Website**: https://hachi.live
+- **Languages**: English, Spanish
+- **Contact**: alex@hachi.live
+
+## Optional
+
+- [Privacy Policy](https://hachi.live/privacy-policy.html): Data handling and privacy information
+- [Sitemap](https://hachi.live/sitemap.xml): XML sitemap for all pages
