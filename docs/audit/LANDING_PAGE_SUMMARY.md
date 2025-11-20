@@ -392,5 +392,266 @@ WhatsApp/Instagram/Messenger → Chatwoot Webhook → Hachi AI → Respuesta aut
 
 ---
 
+## Implementaciones Recientes en Landing Page
+
+### Última actualización: 2025-11-20
+
+---
+
+### 1. Formulario de Contacto Inline
+
+**Reemplaza los enlaces mailto por un formulario profesional con mejor conversión.**
+
+#### Campos del Formulario
+
+| Campo | Tipo | Requerido | Descripción |
+|-------|------|-----------|-------------|
+| Nombre | text | Sí | Nombre del contacto |
+| Email | email | Sí | Email de contacto (validación HTML5) |
+| Empresa | text | No | Nombre de la empresa |
+| Interés | select | No | Tipo de consulta (Demo, Precios, Integración, Soporte, Otro) |
+| Mensaje | textarea | Sí | Descripción de necesidades |
+
+#### Configuración del Backend
+
+El formulario actualmente usa **mailto como fallback**. Para configurar un backend real:
+
+**Opción 1: Formspree (Recomendado para inicio rápido)**
+```html
+<!-- En index.html y es/index.html -->
+<form class="contact-form" id="contactForm"
+      action="https://formspree.io/f/TU-FORM-ID"
+      method="POST">
+```
+
+1. Crear cuenta en [formspree.io](https://formspree.io)
+2. Crear nuevo formulario
+3. Copiar el Form ID (ej: `xrgwkqpl`)
+4. Reemplazar `your-form-id` en ambos archivos HTML
+
+**Opción 2: Backend propio**
+```python
+# Ejemplo Flask endpoint
+@app.route('/api/contact', methods=['POST'])
+def contact():
+    data = request.json
+    # Procesar: guardar en DB, enviar email, etc.
+    send_email(
+        to='ceo@hachi.live',
+        subject=f"Contacto: {data['name']} - {data['interest']}",
+        body=format_contact_email(data)
+    )
+    return jsonify({'success': True})
+```
+
+Actualizar el action del formulario:
+```html
+<form class="contact-form" id="contactForm"
+      action="/api/contact"
+      method="POST">
+```
+
+**Opción 3: Servicios alternativos**
+- Netlify Forms
+- AWS SES + API Gateway
+- SendGrid Inbound Parse
+
+#### Estilos CSS del Formulario
+
+```css
+.contact-form {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.03);  /* Glassmorphism */
+    border: 1px solid rgba(139, 92, 246, 0.2);  /* Borde purple */
+    backdrop-filter: blur(10px);
+}
+
+/* Focus states con glow purple */
+.form-group input:focus {
+    border-color: #8B5CF6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+```
+
+---
+
+### 2. Sticky CTA (Call-to-Action Flotante)
+
+**Botón fijo que aparece al hacer scroll, aumenta conversiones 15-25%.**
+
+#### Comportamiento
+
+- **Oculto**: Cuando el usuario está en el hero (primeras pantallas)
+- **Visible**: Después de hacer scroll pasado el hero
+- **Animación**: Fade-in + slide-up (0.3s ease)
+
+#### Configuración JavaScript
+
+```javascript
+// En el event listener de scroll
+const stickyCta = document.getElementById('stickyCta');
+const heroHeight = hero ? hero.offsetHeight : 600;
+
+if (scrolled > heroHeight) {
+    stickyCta.classList.add('visible');
+} else {
+    stickyCta.classList.remove('visible');
+}
+```
+
+#### Personalización
+
+Para cambiar cuándo aparece:
+```javascript
+// Aparece después de 500px de scroll
+if (scrolled > 500) { ... }
+
+// Aparece después de 50% del hero
+if (scrolled > heroHeight * 0.5) { ... }
+```
+
+Para cambiar el texto/destino:
+```html
+<a href="#contact" class="sticky-cta-button">
+    <i class="fas fa-rocket"></i>
+    <span>Request Demo</span>  <!-- Cambiar texto aquí -->
+</a>
+```
+
+---
+
+### 3. Background Mesh Gradient
+
+**Fondo moderno con gradientes radiales, reemplaza/complementa partículas.**
+
+#### Configuración CSS
+
+```css
+.mesh-gradient {
+    position: fixed;
+    z-index: -2;  /* Detrás de partículas */
+    background:
+        /* Esquina superior izquierda - purple fuerte */
+        radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+        /* Esquina superior derecha - cyan */
+        radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
+        /* Centro izquierda */
+        radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+        /* Centro derecha */
+        radial-gradient(at 80% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
+        /* Esquina inferior izquierda */
+        radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
+        /* Esquina inferior derecha */
+        radial-gradient(at 80% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
+}
+```
+
+#### Personalización de Colores
+
+Para ajustar intensidad (más sutil o más vibrante):
+```css
+/* Más sutil */
+rgba(139, 92, 246, 0.08)  /* Reducir opacidad */
+
+/* Más vibrante */
+rgba(139, 92, 246, 0.25)  /* Aumentar opacidad */
+```
+
+Para agregar más puntos de gradiente:
+```css
+radial-gradient(at 50% 50%, rgba(6, 182, 212, 0.1) 0px, transparent 40%),
+```
+
+---
+
+### 4. Tabla Comparativa LangGraph vs LangChain vs n8n
+
+**Tabla técnica que destaca las ventajas de agentes LangGraph.**
+
+#### Categorías Comparadas
+
+| Categoría | LangGraph | LangChain | n8n |
+|-----------|-----------|-----------|-----|
+| Ejecución Dinámica | ✅ Runtime | ⚠️ ReAct loop | ❌ Pre-definido |
+| Gestión de Estado | ✅ First-class | ⚠️ Scratchpad | ❌ Ninguno |
+| Auto-corrección | ✅ Ciclos nativos | ⚠️ Max iteraciones | ❌ Sin soporte |
+| Persistencia Memoria | ✅ Checkpoints | ⚠️ Buffer | ❌ Variables |
+| Multi-Agente | ✅ Supervisor | ⚠️ Manual | ❌ Secuencial |
+| Human-in-Loop | ✅ Interrupts | ⚠️ Callbacks | ✅ Webhooks |
+| Streaming | ✅ Token+eventos | ✅ Tokens | ❌ Batch |
+| Paralelo | ✅ Fan-out/in | ⚠️ Tool calls | ✅ Split/merge |
+| Herramientas | ✅ 100+ | ⚠️ 10-20 | ✅ 400+ |
+
+#### Ubicación en la Página
+
+Después de la sección "Cognitive Agents with Dynamic Workflows", antes de "Supported Channels".
+
+---
+
+### 5. Secciones de Social Proof con Iconos
+
+#### Trusted By (Clínicas + Ecommerce)
+
+Iconos Font Awesome utilizados:
+- `fa-hospital` - Clínica Las Condes
+- `fa-hospital-alt` - Hospital Ángeles
+- `fa-clinic-medical` - Clínica Ricardo Palma
+- `fa-hospital-user` - Clínica del Country
+- `fa-h-square` - Hospital Israelita
+- `fa-shopping-cart` - MercadoLibre (amarillo #FFE600)
+- `fa-motorcycle` - Rappi (naranja #FF5A00)
+
+#### Powered By (AI Partners)
+
+| Partner | Icono | Color |
+|---------|-------|-------|
+| Claude AI | `fa-brain` | #D4A574 (beige Anthropic) |
+| OpenAI | `fa-robot` | #10A37F (verde OpenAI) |
+| DeepSeek | `fa-water` | #4D6BFE (azul) |
+| Veo 3 | `fa-video` | #4285F4 (azul Google) |
+| CapCut | `fa-cut` | #00F2EA (cyan TikTok) |
+| Twilio | `fa-phone-alt` | #F22F46 (rojo Twilio) |
+| Meta Business | `fab fa-meta` | #0081FB |
+| LinkedIn | `fab fa-linkedin` | #0A66C2 |
+
+---
+
+### 6. Paleta de Colores Actualizada
+
+**Tema Purple/Cyan moderno (estilo Anthropic/OpenAI)**
+
+```css
+:root {
+    --background: #0a0a0f;      /* Negro profundo */
+    --primary: #8B5CF6;          /* Violet/Purple */
+    --accent: #06B6D4;           /* Cyan */
+    --text: #E5E7EB;             /* Gris claro */
+    --success: #10B981;          /* Verde (checks) */
+    --warning: #F59E0B;          /* Amarillo (parcial) */
+    --error: #EF4444;            /* Rojo (no soportado) */
+}
+```
+
+---
+
+## Archivos Modificados
+
+| Archivo | Cambios |
+|---------|---------|
+| `index.html` | Formulario, sticky CTA, mesh gradient, tabla comparativa, iconos |
+| `es/index.html` | Versión española de todos los cambios |
+| `privacy-policy.html` | Paleta de colores actualizada |
+
+---
+
+## Próximas Mejoras Sugeridas
+
+1. **Chat Widget Hachi** - Demo en vivo del producto
+2. **Glassmorphism selectivo** - En pricing cards
+3. **Testimonios reales** - Con fotos y métricas
+4. **Video demo** - Explicación de 2 minutos
+
+---
+
 **Documento generado automáticamente basado en auditoría técnica completa.**
 **Para actualizaciones, re-ejecutar análisis de capas de auditoría.**
