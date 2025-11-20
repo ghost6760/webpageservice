@@ -1,0 +1,67 @@
+# Robots.txt for Hachi AI Platform
+# https://hachi.live
+# Last updated: 2025-11-20
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+Allow: /es/
+
+# Disallow admin and private paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /.well-known/
+Disallow: /*.json$
+Disallow: /*.xml$
+
+# Specific crawlers optimization
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /assets/
+
+# Block AI training bots (optional - remove if you want to be included)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://hachi.live/sitemap.xml
+
+# Host directive (for Yandex)
+Host: https://hachi.live
