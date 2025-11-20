@@ -45,6 +45,14 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://hachi.live/terms-of-service.html</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Section anchors for better indexing -->
   <!-- Agents Section -->
   <url>
