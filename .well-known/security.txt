@@ -1,0 +1,28 @@
+# Hachi Security Contact Information
+# This file follows the security.txt standard (RFC 9116)
+# https://securitytxt.org/
+
+# Security contact for reporting vulnerabilities
+Contact: mailto:security@hachi.live
+Contact: mailto:alex@hachi.live
+
+# Preferred language for security reports
+Preferred-Languages: en, es
+
+# Canonical URL for this security.txt file
+Canonical: https://hachi.live/.well-known/security.txt
+
+# Expiration date for this file (update annually)
+Expires: 2026-11-20T00:00:00.000Z
+
+# Acknowledgments page (optional - create when you have security contributors)
+# Acknowledgments: https://hachi.live/security/acknowledgments
+
+# Encryption key for secure communication (optional)
+# Encryption: https://hachi.live/.well-known/pgp-key.txt
+
+# Hiring security researchers (optional)
+# Hiring: https://hachi.live/careers
+
+# Our security policy
+# Policy: https://hachi.live/security-policy

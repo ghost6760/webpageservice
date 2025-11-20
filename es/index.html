@@ -5,6 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hachi - Agentes IA Conversacionales + CRM Multicanal para WhatsApp, Instagram y Messenger</title>
     <meta name="description" content="Plataforma SaaS de agentes IA especializados que automatizan ventas, soporte y agendamiento en WhatsApp, Instagram y Messenger. CRM Chatwoot integrado + Email Marketing.">
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="agentes IA, automatización WhatsApp, chatbot, CRM, LangGraph, IA conversacional, automatización atención al cliente, bot Instagram, bot Messenger">
+    <meta name="author" content="Hachi AI">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://hachi.live/es/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hachi.live/es/">
+    <meta property="og:title" content="Hachi - Agentes IA Conversacionales + CRM Multicanal">
+    <meta property="og:description" content="Automatiza tus conversaciones en WhatsApp, Instagram y Messenger con agentes IA especializados. Agentes cognitivos LangGraph que razonan, reintentan y se autocorrigen.">
+    <meta property="og:image" content="https://hachi.live/images/og-image-es.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Plataforma Hachi AI - Agentes Cognitivos para WhatsApp">
+    <meta property="og:site_name" content="Hachi AI">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hachi.live/es/">
+    <meta name="twitter:title" content="Hachi - Agentes IA Conversacionales + CRM Multicanal">
+    <meta name="twitter:description" content="Automatiza tus conversaciones en WhatsApp, Instagram y Messenger con agentes IA especializados impulsados por LangGraph.">
+    <meta name="twitter:image" content="https://hachi.live/images/twitter-image-es.png">
+    <meta name="twitter:image:alt" content="Plataforma Hachi AI">
+    <meta name="twitter:creator" content="@hachi_ai">
+    <meta name="twitter:site" content="@hachi_ai">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#8B5CF6">
+    <meta name="msapplication-TileColor" content="#8B5CF6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Hachi AI">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Alternate Languages -->
+    <link rel="alternate" hreflang="en" href="https://hachi.live/">
+    <link rel="alternate" hreflang="es" href="https://hachi.live/es/">
+    <link rel="alternate" hreflang="x-default" href="https://hachi.live/">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Hachi AI",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Plataforma SaaS de agentes IA especializados que automatizan ventas, soporte y agendamiento en WhatsApp, Instagram y Messenger.",
+        "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "lowPrice": "99",
+            "highPrice": "499",
+            "offerCount": "3"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "127"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Hachi AI",
+            "url": "https://hachi.live"
+        },
+        "featureList": [
+            "Automatización WhatsApp",
+            "Automatización Instagram DM",
+            "Bot Facebook Messenger",
+            "Agentes Cognitivos LangGraph",
+            "Integración CRM Chatwoot",
+            "Integración Google Calendar",
+            "Arquitectura Multi-tenant",
+            "Base de Conocimiento RAG"
+        ],
+        "inLanguage": "es"
+    }
+    </script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -783,11 +876,186 @@
         .neural-network {
             animation: pulse 3s infinite;
         }
+
+        /* Mesh Gradient Background */
+        .mesh-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background:
+                radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .sticky-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .sticky-cta-button {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .sticky-cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
+        }
+
+        .sticky-cta-button i {
+            font-size: 1.2rem;
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #E5E7EB;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 10px;
+            color: #E5E7EB;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #8B5CF6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(229, 231, 235, 0.4);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-cta {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            .sticky-cta-button {
+                padding: 0.875rem 1.25rem;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Fondo mesh gradient -->
+    <div class="mesh-gradient"></div>
+
     <!-- Partículas de fondo -->
     <div class="particles" id="particles"></div>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <a href="#contacto" class="sticky-cta-button">
+            <i class="fas fa-rocket"></i>
+            <span>Solicitar Demo</span>
+        </a>
+    </div>
 
     <!-- Header -->
     <header class="header">
@@ -909,35 +1177,42 @@
     <!-- Sección Confían en Nosotros -->
     <section class="section" style="padding: 4rem 2rem;">
         <p style="text-align: center; font-size: 1rem; opacity: 0.6; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Confían en nosotros</p>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; opacity: 0.7;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
             <!-- Clínicas -->
-            <div style="text-align: center; padding: 1rem;">
-                <div style="font-size: 1.1rem; font-weight: 600; color: #8B5CF6;">Clínica Las Condes</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
+                <i class="fas fa-hospital" style="font-size: 2rem; color: #8B5CF6;"></i>
+                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica Las Condes</div>
                 <div style="font-size: 0.7rem; opacity: 0.6;">Chile</div>
             </div>
-            <div style="text-align: center; padding: 1rem;">
-                <div style="font-size: 1.1rem; font-weight: 600; color: #8B5CF6;">Hospital Ángeles</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
+                <i class="fas fa-hospital-alt" style="font-size: 2rem; color: #8B5CF6;"></i>
+                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Hospital Ángeles</div>
                 <div style="font-size: 0.7rem; opacity: 0.6;">México</div>
             </div>
-            <div style="text-align: center; padding: 1rem;">
-                <div style="font-size: 1.1rem; font-weight: 600; color: #8B5CF6;">Clínica Ricardo Palma</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
+                <i class="fas fa-clinic-medical" style="font-size: 2rem; color: #8B5CF6;"></i>
+                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica Ricardo Palma</div>
                 <div style="font-size: 0.7rem; opacity: 0.6;">Perú</div>
             </div>
-            <div style="text-align: center; padding: 1rem;">
-                <div style="font-size: 1.1rem; font-weight: 600; color: #8B5CF6;">Clínica del Country</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
+                <i class="fas fa-hospital-user" style="font-size: 2rem; color: #8B5CF6;"></i>
+                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica del Country</div>
                 <div style="font-size: 0.7rem; opacity: 0.6;">Colombia</div>
             </div>
-            <div style="text-align: center; padding: 1rem;">
-                <div style="font-size: 1.1rem; font-weight: 600; color: #8B5CF6;">Hospital Israelita</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
+                <i class="fas fa-h-square" style="font-size: 2rem; color: #8B5CF6;"></i>
+                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Hospital Israelita</div>
                 <div style="font-size: 0.7rem; opacity: 0.6;">Brasil</div>
             </div>
             <!-- Ecommerce -->
-            <div style="text-align: center; padding: 1rem;">
-                <div style="font-size: 1.1rem; font-weight: 600; color: #06B6D4;">MercadoLibre</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 120px;">
+                <i class="fas fa-shopping-cart" style="font-size: 2rem; color: #FFE600;"></i>
+                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">MercadoLibre</div>
                 <div style="font-size: 0.7rem; opacity: 0.6;">Ecommerce</div>
             </div>
-            <div style="text-align: center; padding: 1rem;">
-                <div style="font-size: 1.1rem; font-weight: 600; color: #06B6D4;">Rappi</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 120px;">
+                <i class="fas fa-motorcycle" style="font-size: 2rem; color: #FF5A00;"></i>
+                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Rappi</div>
                 <div style="font-size: 0.7rem; opacity: 0.6;">Delivery</div>
             </div>
         </div>
@@ -946,32 +1221,38 @@
     <!-- Sección Impulsado Por -->
     <section class="section" style="padding: 3rem 2rem;">
         <p style="text-align: center; font-size: 1rem; opacity: 0.6; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Impulsado por</p>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 2.5rem; flex-wrap: wrap;">
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(139, 92, 246, 0.1); border-radius: 10px;">
-                <div style="font-size: 1rem; font-weight: 600;">Claude AI</div>
+        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fas fa-brain" style="font-size: 2rem; color: #D4A574;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">Claude AI</div>
             </div>
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(139, 92, 246, 0.1); border-radius: 10px;">
-                <div style="font-size: 1rem; font-weight: 600;">OpenAI</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fas fa-robot" style="font-size: 2rem; color: #10A37F;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">OpenAI</div>
             </div>
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(139, 92, 246, 0.1); border-radius: 10px;">
-                <div style="font-size: 1rem; font-weight: 600;">DeepSeek</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fas fa-water" style="font-size: 2rem; color: #4D6BFE;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">DeepSeek</div>
             </div>
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(139, 92, 246, 0.1); border-radius: 10px;">
-                <div style="font-size: 1rem; font-weight: 600;">Veo 3</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fas fa-video" style="font-size: 2rem; color: #4285F4;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">Veo 3</div>
             </div>
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(139, 92, 246, 0.1); border-radius: 10px;">
-                <div style="font-size: 1rem; font-weight: 600;">CapCut</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fas fa-cut" style="font-size: 2rem; color: #00F2EA;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">CapCut</div>
             </div>
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(6, 182, 212, 0.1); border-radius: 10px;">
-                <div style="font-size: 1rem; font-weight: 600;">Twilio</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fas fa-phone-alt" style="font-size: 2rem; color: #F22F46;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">Twilio</div>
             </div>
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(6, 182, 212, 0.1); border-radius: 10px;">
-                <i class="fab fa-meta" style="font-size: 1.2rem;"></i>
-                <div style="font-size: 0.9rem; font-weight: 600;">Meta Business</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fab fa-meta" style="font-size: 2rem; color: #0081FB;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">Meta Business</div>
             </div>
-            <div style="text-align: center; padding: 0.8rem 1.2rem; background: rgba(6, 182, 212, 0.1); border-radius: 10px;">
-                <i class="fab fa-linkedin" style="font-size: 1.2rem; color: #0A66C2;"></i>
-                <div style="font-size: 0.9rem; font-weight: 600;">LinkedIn</div>
+            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 100px;">
+                <i class="fab fa-linkedin" style="font-size: 2rem; color: #0A66C2;"></i>
+                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">LinkedIn</div>
             </div>
         </div>
     </section>
@@ -1021,6 +1302,205 @@
             <h2 style="margin-bottom: 1.5rem;">Agentes Cognitivos con Flujos Dinámicos</h2>
             <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
                 A diferencia de herramientas de automatización rígidas como n8n o agentes tradicionales de LangChain, nuestros <strong>agentes cognitivos LangGraph</strong> ejecutan flujos de trabajo dinámicos que se adaptan para lograr objetivos. No necesitan flujos predefinidos para cada escenario—razonan, reintentan y se autocorrigen hasta tener éxito.
+            </p>
+        </div>
+
+        <!-- Tabla Comparativa -->
+        <div style="margin-top: 3rem; overflow-x: auto;">
+            <h3 style="text-align: center; margin-bottom: 1.5rem; color: #8B5CF6;">Comparativa de Frameworks de Agentes</h3>
+            <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.02); border-radius: 12px; overflow: hidden;">
+                <thead>
+                    <tr style="background: rgba(139, 92, 246, 0.2);">
+                        <th style="padding: 1rem; text-align: left; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">Característica</th>
+                        <th style="padding: 1rem; text-align: center; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
+                            <i class="fas fa-brain" style="color: #8B5CF6;"></i> LangGraph
+                        </th>
+                        <th style="padding: 1rem; text-align: center; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
+                            <i class="fas fa-link" style="color: #6B7280;"></i> LangChain Agents
+                        </th>
+                        <th style="padding: 1rem; text-align: center; border-bottom: 2px solid rgba(139, 92, 246, 0.3);">
+                            <i class="fas fa-project-diagram" style="color: #6B7280;"></i> n8n
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Ejecución de Flujos Dinámicos -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-random" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Ejecución de Flujos Dinámicos
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Adaptación en tiempo real</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Solo bucle ReAct</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Flujos predefinidos</div>
+                        </td>
+                    </tr>
+                    <!-- Gestión de Estado -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-database" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Gestión de Estado
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Primera clase con TypedDict</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Scratchpad del agente</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Sin soporte nativo</div>
+                        </td>
+                    </tr>
+                    <!-- Auto-corrección y Reintentos -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-sync-alt" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Auto-corrección y Reintentos
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Ciclos y condicionales nativos</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Limitado por max iteraciones</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Sin soporte cíclico</div>
+                        </td>
+                    </tr>
+                    <!-- Persistencia de Memoria -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-memory" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Persistencia de Memoria
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Checkpoints + Largo plazo</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Buffer de conversación</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Solo variables de workflow</div>
+                        </td>
+                    </tr>
+                    <!-- Orquestación Multi-Agente -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-users-cog" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Orquestación Multi-Agente
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Supervisor + handoffs</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Implementación manual</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Solo nodos secuenciales</div>
+                        </td>
+                    </tr>
+                    <!-- Human-in-the-Loop -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-user-check" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Humano en el Bucle
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Interrumpir y aprobar</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Callbacks manuales</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Esperar webhook</div>
+                        </td>
+                    </tr>
+                    <!-- Streaming en Tiempo Real -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-stream" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Streaming en Tiempo Real
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Token + eventos</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Streaming de tokens</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-times-circle" style="color: #EF4444; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Respuestas en lote</div>
+                        </td>
+                    </tr>
+                    <!-- Ejecución Paralela -->
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.02);">
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-code-branch" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Ejecución Paralela
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Fan-out/fan-in nativo</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Llamadas paralelas</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">Nodos split/merge</div>
+                        </td>
+                    </tr>
+                    <!-- Escalabilidad de Herramientas -->
+                    <tr>
+                        <td style="padding: 1rem; font-weight: 600;">
+                            <i class="fas fa-tools" style="color: #06B6D4; margin-right: 0.5rem;"></i>
+                            Escalabilidad de Herramientas
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">100+ tools por agente</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-minus-circle" style="color: #F59E0B; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">~10-20 óptimo</div>
+                        </td>
+                        <td style="padding: 1rem; text-align: center;">
+                            <i class="fas fa-check-circle" style="color: #10B981; font-size: 1.2rem;"></i>
+                            <div style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.3rem;">400+ integraciones</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; opacity: 0.6;">
+                <i class="fas fa-check-circle" style="color: #10B981;"></i> Soporte completo
+                <i class="fas fa-minus-circle" style="color: #F59E0B; margin-left: 1rem;"></i> Parcial/Limitado
+                <i class="fas fa-times-circle" style="color: #EF4444; margin-left: 1rem;"></i> No soportado
             </p>
         </div>
 
@@ -1537,12 +2017,47 @@
             <p style="font-size: 1.3rem; opacity: 0.9; margin: 2rem 0;">
                 Descubre cómo Hachi puede transformar tu atención al cliente en WhatsApp, Instagram y Messenger
             </p>
-            <div class="cta-buttons" style="margin-top: 3rem;">
-                <a href="mailto:ceo@hachi.live" class="cta-button">Solicitar Demo</a>
-                <a href="mailto:ceo@hachi.live" class="cta-button cta-secondary">Contactar</a>
-            </div>
+
+            <!-- Formulario de Contacto -->
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Nombre *</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">Empresa</label>
+                        <input type="text" id="company" name="company" placeholder="Tu empresa">
+                    </div>
+                    <div class="form-group">
+                        <label for="interest">Interés</label>
+                        <select id="interest" name="interest">
+                            <option value="demo">Solicitar Demo</option>
+                            <option value="pricing">Información de Precios</option>
+                            <option value="integration">Preguntas de Integración</option>
+                            <option value="support">Soporte Técnico</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje *</label>
+                    <textarea id="message" name="message" placeholder="Cuéntanos sobre tus necesidades..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                </button>
+                <p class="form-note">Responderemos en menos de 24 horas</p>
+            </form>
+
             <p style="margin-top: 2rem; opacity: 0.7;">
-                📧 ceo@hachi.live
+                O escríbenos directamente: ceo@hachi.live
             </p>
 
             <!-- Verticales de Negocio -->
@@ -1675,11 +2190,57 @@
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
             const rate = scrolled * -0.5;
-            
+
             if (hero) {
                 hero.style.transform = `translateY(${rate}px)`;
             }
+
+            // Sticky CTA visibility
+            const stickyCta = document.getElementById('stickyCta');
+            const heroHeight = hero ? hero.offsetHeight : 600;
+
+            if (scrolled > heroHeight) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
         });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                const submitBtn = this.querySelector('.form-submit');
+                const originalText = submitBtn.innerHTML;
+
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                submitBtn.disabled = true;
+
+                // If using mailto fallback (no backend)
+                setTimeout(() => {
+                    const formData = new FormData(this);
+                    const name = formData.get('name');
+                    const email = formData.get('email');
+                    const company = formData.get('company');
+                    const interest = formData.get('interest');
+                    const message = formData.get('message');
+
+                    const mailtoBody = `Nombre: ${name}%0D%0AEmail: ${email}%0D%0AEmpresa: ${company}%0D%0AInterés: ${interest}%0D%0A%0D%0AMensaje:%0D%0A${encodeURIComponent(message)}`;
+                    const mailtoLink = `mailto:ceo@hachi.live?subject=Contacto de ${name} - ${interest}&body=${mailtoBody}`;
+
+                    window.location.href = mailtoLink;
+
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensaje Preparado';
+
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 2000);
+                }, 500);
+
+                e.preventDefault();
+            });
+        }
     </script>
 </body>
 </html>
