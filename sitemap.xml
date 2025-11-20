@@ -37,6 +37,14 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Data Deletion Instructions -->
+  <url>
+    <loc>https://hachi.live/data-deletion.html</loc>
+    <lastmod>2025-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Section anchors for better indexing -->
   <!-- Agents Section -->
   <url>
