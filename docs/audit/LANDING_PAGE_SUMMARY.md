@@ -644,12 +644,210 @@ Iconos Font Awesome utilizados:
 
 ---
 
+---
+
+## 7. Archivos SEO y Optimización
+
+### Última actualización: 2025-11-20
+
+---
+
+### robots.txt
+
+**Ubicación**: `/robots.txt`
+
+**Propósito**: Controla qué bots pueden rastrear el sitio y qué secciones indexar.
+
+**Características implementadas**:
+- Permite crawlers principales (Googlebot, Bingbot)
+- **Bloquea bots de IA** para evitar scraping de contenido:
+  - GPTBot, ChatGPT-User, CCBot, anthropic-ai, Claude-Web
+- Bloquea scrapers SEO agresivos (AhrefsBot, SemrushBot, MJ12bot)
+- Crawl-delay diferenciado (Google: 1s, Bing: 2s)
+- Referencia al sitemap.xml
+- Directiva Host para Yandex
+
+**Por qué es importante**:
+- Evita que tu contenido sea usado para entrenar modelos de IA sin permiso
+- Reduce carga del servidor de crawlers innecesarios
+- Guía a buscadores legítimos hacia contenido indexable
+
+---
+
+### sitemap.xml
+
+**Ubicación**: `/sitemap.xml`
+
+**Propósito**: Mapa de todas las páginas para que buscadores las descubran e indexen correctamente.
+
+**Características implementadas**:
+- Schema XSD válido con namespace `xhtml` para hreflang
+- **hreflang bidireccional** entre EN y ES con `x-default`
+- Metadatos por página:
+  - `<lastmod>`: Fecha de última modificación
+  - `<changefreq>`: Frecuencia de cambios (weekly/monthly)
+  - `<priority>`: Importancia relativa (1.0 para home, 0.3 para legal)
+- Incluye secciones anchor (#agents, #pricing, #contact)
+
+**Por qué es importante**:
+- Google descubre páginas nuevas más rápido (crítico para sitios nuevos)
+- Indica a buscadores la relación entre versiones de idioma
+- Prioriza páginas importantes para indexación
+
+**Registro en Google Search Console**:
+```
+https://search.google.com/search-console
+→ Sitemaps → Agregar: /sitemap.xml
+```
+
+---
+
+### manifest.json
+
+**Ubicación**: `/manifest.json`
+
+**Propósito**: Convierte la landing page en una Progressive Web App (PWA) instalable.
+
+**Características implementadas**:
+- Metadatos de app (name, short_name, description)
+- **8 tamaños de iconos** para diferentes dispositivos (72px a 512px)
+- Screenshots para desktop y mobile
+- **Shortcuts** para acciones rápidas:
+  - "Request Demo" → /#contact
+  - "View Pricing" → /#pricing
+- theme_color y background_color coordinados con paleta
+- Categorías: business, productivity, utilities
+- launch_handler para comportamiento de apertura
+
+**Por qué es importante**:
+- Permite "Agregar a pantalla de inicio" en móviles
+- Mejora engagement (usuarios vuelven desde su home screen)
+- Requisito para algunas características de PWA (notificaciones, etc.)
+
+**Archivos de iconos necesarios** (crear en `/icons/`):
+```
+icon-72x72.png, icon-96x96.png, icon-128x128.png
+icon-144x144.png, icon-152x152.png, icon-192x192.png
+icon-384x384.png, icon-512x512.png
+favicon-16x16.png, favicon-32x32.png
+apple-touch-icon.png (180x180)
+```
+
+---
+
+### Meta Tags SEO (Open Graph, Twitter, JSON-LD)
+
+**Ubicación**: `<head>` de `index.html` y `es/index.html`
+
+#### Open Graph (Facebook, LinkedIn, WhatsApp)
+
+```html
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hachi - Conversational AI Agents...">
+<meta property="og:description" content="Automate your conversations...">
+<meta property="og:image" content="https://hachi.live/images/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_ES">
+```
+
+**Por qué es importante**: Controla cómo se ve tu link al compartirlo. Sin esto, las plataformas generan preview aleatorio.
+
+**Imagen requerida**: `/images/og-image.png` (1200x630px)
+
+---
+
+#### Twitter Card
+
+```html
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hachi - Conversational AI Agents...">
+<meta name="twitter:image" content="https://hachi.live/images/twitter-image.png">
+<meta name="twitter:creator" content="@hachi_ai">
+```
+
+**Por qué es importante**: Twitter usa su propio sistema de cards. Sin esto, solo muestra URL plana.
+
+**Imagen requerida**: `/images/twitter-image.png` (1200x630px)
+
+---
+
+#### Structured Data (JSON-LD)
+
+```json
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Hachi AI",
+    "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "99",
+        "highPrice": "499"
+    },
+    "aggregateRating": {
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+    },
+    "featureList": ["WhatsApp Automation", ...]
+}
+```
+
+**Por qué es importante**:
+- Google muestra **rich snippets** con estrellas, precios, etc.
+- Mejora CTR significativamente en resultados de búsqueda
+- Indica a Google que es una aplicación de software con precios
+
+---
+
+#### Tags Adicionales
+
+| Tag | Propósito |
+|-----|-----------|
+| `<link rel="canonical">` | Evita contenido duplicado |
+| `<link rel="alternate" hreflang>` | Indica versiones de idioma |
+| `<meta name="robots">` | Directivas de indexación |
+| `<meta name="theme-color">` | Color de barra en móviles |
+| `<link rel="preconnect">` | Optimiza carga de CDN |
+
+---
+
+### Imágenes Requeridas
+
+Para que los meta tags funcionen correctamente, crear:
+
+| Archivo | Tamaño | Uso |
+|---------|--------|-----|
+| `/images/og-image.png` | 1200x630px | Facebook, LinkedIn, WhatsApp |
+| `/images/og-image-es.png` | 1200x630px | Versión española |
+| `/images/twitter-image.png` | 1200x630px | Twitter |
+| `/images/twitter-image-es.png` | 1200x630px | Twitter español |
+
+**Recomendaciones para las imágenes**:
+- Logo de Hachi prominente
+- Texto corto con propuesta de valor
+- Colores de la paleta (purple #8B5CF6, cyan #06B6D4)
+- Fondo oscuro (#0a0a0f) o gradiente mesh
+
+---
+
+### Verificación de Implementación
+
+**Herramientas para probar**:
+
+1. **Open Graph**: https://developers.facebook.com/tools/debug/
+2. **Twitter Card**: https://cards-dev.twitter.com/validator
+3. **Structured Data**: https://search.google.com/test/rich-results
+4. **Sitemap**: https://www.xml-sitemaps.com/validate-xml-sitemap.html
+
+---
+
 ## Próximas Mejoras Sugeridas
 
 1. **Chat Widget Hachi** - Demo en vivo del producto
 2. **Glassmorphism selectivo** - En pricing cards
 3. **Testimonios reales** - Con fotos y métricas
 4. **Video demo** - Explicación de 2 minutos
+5. **Crear imágenes OG/Twitter** - Para social sharing
+6. **Generar favicons** - Desde logo en múltiples tamaños
 
 ---
 
