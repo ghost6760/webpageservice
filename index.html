@@ -70,8 +70,8 @@
         "offers": {
             "@type": "AggregateOffer",
             "priceCurrency": "USD",
-            "lowPrice": "99",
-            "highPrice": "499",
+            "lowPrice": "299",
+            "highPrice": "649",
             "offerCount": "3"
         },
         "aggregateRating": {
@@ -727,7 +727,7 @@
         }
 
         .pricing-card.featured::before {
-            content: 'MOST POPULAR';
+            content: 'RECOMMENDED';
             position: absolute;
             top: -15px;
             left: 50%;
@@ -769,6 +769,107 @@
             content: "";
             color: #2ECC71;
             font-weight: bold;
+        }
+
+        /* Pricing Comparison Table */
+        .pricing-comparison {
+            margin: 3rem 0 1rem;
+        }
+
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 0.9rem 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            vertical-align: middle;
+        }
+
+        .pricing-table th {
+            background: rgba(139, 92, 246, 0.2);
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .pricing-table th:first-child {
+            text-align: left;
+        }
+
+        .pricing-table td:not(:first-child) {
+            text-align: center;
+        }
+
+        .pricing-table th span {
+            font-size: 0.75rem;
+            opacity: 0.7;
+            font-weight: 400;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        .pricing-table .feature-col {
+            font-weight: 500;
+            opacity: 0.9;
+            width: 30%;
+        }
+
+        .pricing-table td.featured-col,
+        .pricing-table th.featured-col {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 2px solid rgba(139, 92, 246, 0.4);
+            border-right: 2px solid rgba(139, 92, 246, 0.4);
+        }
+
+        .pricing-table th.featured-col {
+            background: rgba(139, 92, 246, 0.35);
+            color: #e0d7ff;
+        }
+
+        .pricing-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .pricing-table tr:hover td.featured-col {
+            background: rgba(139, 92, 246, 0.15);
+        }
+
+        .pricing-table .section-row td {
+            background: rgba(255, 255, 255, 0.04);
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #8B5CF6;
+            padding: 0.6rem 1.2rem;
+        }
+
+        .feature-yes {
+            color: #2ECC71;
+            font-weight: 600;
+        }
+
+        .feature-no {
+            opacity: 0.4;
+        }
+
+        .feature-addon {
+            color: #06B6D4;
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .pricing-table th,
+            .pricing-table td {
+                padding: 0.7rem 0.8rem;
+                font-size: 0.8rem;
+            }
         }
 
         /* Enhanced Footer CTA */
@@ -2001,59 +2102,222 @@
     <!-- Pricing -->
     <section class="section" id="pricing">
         <h2>Investment Plans</h2>
-        <p class="section-subtitle">Scalable solutions designed for your business growth</p>
+        <p class="section-subtitle">Virtual Employees for Medical Clinics — Fully Autonomous, 24/7</p>
 
+        <!-- Plan Cards -->
         <div class="pricing">
             <!-- Starter Plan -->
             <div class="pricing-card fade-in">
                 <h3>Starter</h3>
-                <div class="price">Contact Us</div>
-                <p>Perfect for small businesses starting with automation</p>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">For Independent Professionals</p>
+                <div class="price">$299<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> USD/mo</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ $500 USD Setup (one-time)</p>
+                <p style="font-size: 0.95rem;"><strong>1 Virtual Employee</strong><br>Independent physicians or small aesthetic practices</p>
                 <ul class="price-features">
-                    <li>1 channel (WhatsApp or Instagram)</li>
-                    <li>1 AI agent (sales or support)</li>
-                    <li>Knowledge base up to 50 docs</li>
-                    <li>Basic email marketing</li>
-                    <li>Email support</li>
-                    <li>Metrics dashboard</li>
+                    <li>✅ Up to 800 conversations/month</li>
+                    <li>✅ Official WhatsApp, Instagram &amp; Messenger</li>
+                    <li>✅ Support Agent + Scheduler</li>
+                    <li>✅ Native Google Calendar (no external links)</li>
+                    <li>✅ Free-Reasoning AI (goodbye to button mazes)</li>
+                    <li>✅ Processes voice audios &amp; compound intents</li>
+                    <li>✅ Autonomous escalation to human</li>
+                    <li>✅ CRM: Unified inbox (1 human user)</li>
+                    <li>✅ 100% autonomous maintenance</li>
+                    <li>❌ Proactive follow-up</li>
+                    <li>❌ Phone Reception</li>
                 </ul>
                 <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Get Started</a>
             </div>
 
-            <!-- Professional Plan -->
+            <!-- Clinic Pro Plan (Featured) -->
             <div class="pricing-card featured fade-in">
-                <h3>Professional</h3>
-                <div class="price">Contact Us</div>
-                <p>The complete solution for growing businesses</p>
+                <h3>Clinic Pro</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Recommended</p>
+                <div class="price">$649<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> USD/mo</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ $500–$1,000 USD Setup (one-time)</p>
+                <p style="font-size: 0.95rem;"><strong>Team of 3 Virtual Employees</strong><br>Clinics with overwhelmed reception staff</p>
                 <ul class="price-features">
-                    <li>3 channels (WhatsApp + Instagram + Messenger)</li>
-                    <li>All specialized AI agents</li>
-                    <li>Knowledge base up to 200 docs</li>
-                    <li>Google Calendar integration</li>
-                    <li>Advanced email marketing</li>
-                    <li>Complete Chatwoot CRM</li>
-                    <li>Bot management panel</li>
-                    <li>Priority support</li>
+                    <li>✅ Up to 2,500 conversations/month</li>
+                    <li>✅ WhatsApp, Instagram, Messenger + WebChat</li>
+                    <li>✅ Support + Scheduler + Sales Recovery Agent</li>
+                    <li>✅ Multi-schedule (multiple specialists &amp; rooms)</li>
+                    <li>✅ Free AI + Long-term Hierarchical Memory</li>
+                    <li>✅ Audio + Hybrid Medical RAG (reads your PDFs)</li>
+                    <li>✅ Auto-escalation + Priority alerts to management</li>
+                    <li>✅ CRM: Inbox + Chat assignment (3 users)</li>
+                    <li>✅ Upload a PDF — AI learns automatically</li>
+                    <li>✅ Proactive follow-up (cold quotes)</li>
+                    <li>➕ Phone Reception (+$200/mo add-on)</li>
                 </ul>
-                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Choose Professional</a>
+                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Choose Clinic Pro</a>
             </div>
 
             <!-- Enterprise Plan -->
             <div class="pricing-card fade-in">
                 <h3>Enterprise</h3>
-                <div class="price">Custom</div>
-                <p>Enterprise solution with custom development</p>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Hospitals &amp; Franchises</p>
+                <div class="price" style="font-size: 2rem;">Custom</div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: 0.5rem 0 1.5rem;">Custom setup pricing</p>
+                <p style="font-size: 0.95rem;"><strong>Custom Infrastructure</strong><br>Multiple locations with different specialties</p>
                 <ul class="price-features">
-                    <li>All channels + Web Chat</li>
-                    <li>Custom AI agents</li>
-                    <li>Unlimited knowledge base</li>
-                    <li>Custom integrations (CRM, ERP)</li>
-                    <li>Enterprise email marketing</li>
-                    <li>Dedicated account manager</li>
-                    <li>Guaranteed SLA</li>
-                    <li>Isolated multi-tenant</li>
+                    <li>✅ Massive conversation volume</li>
+                    <li>✅ All channels + Custom API integration</li>
+                    <li>✅ Multiple specialized roles per medical area</li>
+                    <li>✅ Direct HIS/EMR system integration</li>
+                    <li>✅ Dedicated Multi-Agent cluster</li>
+                    <li>✅ Unlimited RAG &amp; external databases</li>
+                    <li>✅ Custom routing rules</li>
+                    <li>✅ Advanced panel. Unlimited users.</li>
+                    <li>✅ SLA &amp; 24/7 priority technical support</li>
+                    <li>✅ Proactive follow-up included</li>
+                    <li>✅ Unlimited Phone Reception</li>
                 </ul>
                 <a href="#contact" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Request Quote</a>
+            </div>
+        </div>
+
+        <!-- Trust Strip based on real system architecture -->
+        <div class="pricing-trust-strip fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 2rem 0 0; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
+                <span style="font-size: 1.2rem;">🔒</span>
+                <span><strong>Self-hosted on your own server</strong> — Your medical data never leaves your infrastructure. GDPR/HIPAA compliance guaranteed.</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
+                <span style="font-size: 1.2rem;">📞</span>
+                <span><strong>Active voice infrastructure</strong> — AI phone reception available as add-on (Pro) or included (Enterprise).</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
+                <span style="font-size: 1.2rem;">⚡</span>
+                <span><strong>Zero visual flows to maintain</strong> — The system learns from your documents. No manual flow redesign ever.</span>
+            </div>
+        </div>
+
+        <!-- Detailed Comparison Table -->
+        <div class="pricing-comparison fade-in">
+            <h3 style="text-align: center; margin-bottom: 0.5rem; font-size: 1.4rem; opacity: 0.9;">Full Feature Comparison</h3>
+            <p style="text-align: center; opacity: 0.55; font-size: 0.9rem; margin-bottom: 2rem;">All the details so you can choose with confidence</p>
+            <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th class="feature-col">Feature / Benefit</th>
+                            <th>Starter<br><span>Independent Professionals</span></th>
+                            <th class="featured-col">⭐ Clinic Pro<br><span>Recommended</span></th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="section-row"><td colspan="4">💰 Investment</td></tr>
+                        <tr>
+                            <td class="feature-col">Monthly Investment</td>
+                            <td><strong>$299 USD</strong></td>
+                            <td class="featured-col"><strong>$649 USD</strong></td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Initial Setup (Turnkey)</td>
+                            <td>$500 USD (one-time)</td>
+                            <td class="featured-col">$500 – $1,000 USD (one-time)</td>
+                            <td>Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Core Concept</td>
+                            <td>1 Virtual Employee</td>
+                            <td class="featured-col">Team of 3 Virtual Employees</td>
+                            <td>Custom Infrastructure</td>
+                        </tr>
+                        <tr class="section-row"><td colspan="4">🤖 Agents &amp; Roles</td></tr>
+                        <tr>
+                            <td class="feature-col">Included Multi-Agent Roles</td>
+                            <td>Support · Scheduler</td>
+                            <td class="featured-col">Support · Scheduler · Sales Recovery</td>
+                            <td>Multiple roles per medical area</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Ideal Profile</td>
+                            <td>Independent physicians or small aesthetic practices (1 specialist)</td>
+                            <td class="featured-col">Clinics with medium/high volume and overwhelmed reception</td>
+                            <td>Hospitals or franchises with multiple locations</td>
+                        </tr>
+                        <tr class="section-row"><td colspan="4">📊 Capacity &amp; Channels</td></tr>
+                        <tr>
+                            <td class="feature-col">Included Volume</td>
+                            <td>Up to 800 conversations/month</td>
+                            <td class="featured-col">Up to 2,500 conversations/month</td>
+                            <td>Massive Volume</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Omnichannel Coverage</td>
+                            <td>Official WhatsApp, Instagram &amp; Messenger</td>
+                            <td class="featured-col">WhatsApp, IG, Messenger + WebChat</td>
+                            <td>All channels + Custom API integration</td>
+                        </tr>
+                        <tr class="section-row"><td colspan="4">🧠 Intelligence &amp; Understanding</td></tr>
+                        <tr>
+                            <td class="feature-col">Intelligence Engine</td>
+                            <td>Free-Reasoning AI<br><small style="opacity:0.65">(Goodbye to button mazes)</small></td>
+                            <td class="featured-col">Free AI + Long-term Hierarchical Memory</td>
+                            <td>Dedicated Multi-Agent cluster</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Advanced Understanding</td>
+                            <td>Processes voice audios &amp; compound intents</td>
+                            <td class="featured-col">Audio + Hybrid Medical RAG<br><small style="opacity:0.65">(Reads your PDFs perfectly)</small></td>
+                            <td>Unlimited RAG &amp; external databases</td>
+                        </tr>
+                        <tr class="section-row"><td colspan="4">📅 Scheduling</td></tr>
+                        <tr>
+                            <td class="feature-col">Transactional Scheduling</td>
+                            <td>Native Google Calendar<br><small style="opacity:0.65">(No external links for patients)</small></td>
+                            <td class="featured-col">Multi-schedule<br><small style="opacity:0.65">(Multiple specialists &amp; rooms)</small></td>
+                            <td>Direct integration with HIS/EMR software</td>
+                        </tr>
+                        <tr class="section-row"><td colspan="4">🚨 Escalation &amp; CRM</td></tr>
+                        <tr>
+                            <td class="feature-col">Autonomous Escalation</td>
+                            <td><span class="feature-yes">✅</span> Detects urgencies and transfers to a human automatically</td>
+                            <td class="featured-col"><span class="feature-yes">✅</span> Auto-escalation + Priority alerts to management</td>
+                            <td><span class="feature-yes">✅</span> Custom routing rules</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">All-in-One CRM (Panel)</td>
+                            <td>Unified inbox.<br>Includes 1 human user.</td>
+                            <td class="featured-col">Unified inbox + Chat assignment.<br>Up to 3 human users.</td>
+                            <td>Advanced panel. Unlimited users.</td>
+                        </tr>
+                        <tr class="section-row"><td colspan="4">⚙️ Operations &amp; Support</td></tr>
+                        <tr>
+                            <td class="feature-col">Operational Maintenance</td>
+                            <td>100% Autonomous. Zero visual flows to redesign.</td>
+                            <td class="featured-col">100% Autonomous. Upload a PDF and the AI learns by itself.</td>
+                            <td>SLA &amp; 24/7 priority technical support.</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Proactive Follow-up</td>
+                            <td><span class="feature-no">❌ Not included</span></td>
+                            <td class="featured-col"><span class="feature-yes">✅ Included</span><br><small style="opacity:0.65">(Chases cold quotes after 1 hour of inactivity)</small></td>
+                            <td><span class="feature-yes">✅ Included</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col">Phone Reception (Voice)</td>
+                            <td><span class="feature-no">❌ Not included</span></td>
+                            <td class="featured-col"><span class="feature-addon">➕ Add-on available (+$200/mo)</span></td>
+                            <td><span class="feature-yes">✅ Included (Unlimited)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="feature-col"></td>
+                            <td style="padding: 1.5rem; text-align: center;">
+                                <a href="#contact" class="cta-button" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Get Started</a>
+                            </td>
+                            <td class="featured-col" style="padding: 1.5rem; text-align: center;">
+                                <a href="#contact" class="cta-button" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Choose Clinic Pro</a>
+                            </td>
+                            <td style="padding: 1.5rem; text-align: center;">
+                                <a href="#contact" class="cta-button cta-secondary" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Request Quote</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
