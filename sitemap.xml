@@ -53,6 +53,22 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Privacy Policy - Spanish -->
+  <url>
+    <loc>https://hachi.live/es/privacy-policy.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Terms of Service - Spanish -->
+  <url>
+    <loc>https://hachi.live/es/terms-of-service.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Section anchors for better indexing -->
   <!-- Agents Section -->
   <url>
