@@ -2643,7 +2643,16 @@
             </p>
 
             <!-- Formulario de Contacto -->
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <form class="contact-form" id="contactForm" method="POST" novalidate>
+                <!-- Trampa anti-bot: invisible para una persona, irresistible
+                     para un rellenador automático. Si llega con contenido, el
+                     servidor descarta el mensaje y responde 200 igualmente
+                     para no enseñarle al bot a esquivarla. -->
+                <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                    <label for="web">No rellenes este campo</label>
+                    <input type="text" id="web" name="web" tabindex="-1" autocomplete="off">
+                </div>
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Nombre *</label>
@@ -2668,6 +2677,12 @@
                             <option value="support">Soporte Técnico</option>
                             <option value="other">Otro</option>
                         </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Teléfono <span style="opacity:0.5;font-weight:400;">(opcional)</span></label>
+                        <input type="tel" id="phone" name="telefono" placeholder="+34 600 000 000">
                     </div>
                 </div>
                 <div class="form-group">
@@ -2830,39 +2845,67 @@
             }
         });
 
-        // Form submission handling
+        // Envío del formulario de contacto contra nuestro propio endpoint.
+        //
+        // No se usa un servicio de terceros a propósito: la página promete que
+        // los datos no salen a un tercero, y un formulario que los mandase a
+        // otro proveedor contradiría ese texto.
         const contactForm = document.getElementById('contactForm');
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
+            const ENDPOINT_CONTACTO = 'https://api.hachi.live/api/contacto';
+
+            contactForm.addEventListener('submit', async function (e) {
+                e.preventDefault();
+
                 const submitBtn = this.querySelector('.form-submit');
-                const originalText = submitBtn.innerHTML;
+                const nota = this.querySelector('.form-note');
+                const textoOriginal = submitBtn.innerHTML;
+                const notaOriginal = nota ? nota.innerHTML : '';
+
+                const mostrar = (mensaje, color) => {
+                    if (!nota) return;
+                    nota.innerHTML = mensaje;
+                    nota.style.color = color || '';
+                };
 
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
                 submitBtn.disabled = true;
+                mostrar('');
 
-                // If using mailto fallback (no backend)
-                setTimeout(() => {
-                    const formData = new FormData(this);
-                    const name = formData.get('name');
-                    const email = formData.get('email');
-                    const company = formData.get('company');
-                    const interest = formData.get('interest');
-                    const message = formData.get('message');
+                const datos = Object.fromEntries(new FormData(this).entries());
 
-                    const mailtoBody = `Nombre: ${name}%0D%0AEmail: ${email}%0D%0AEmpresa: ${company}%0D%0AInterés: ${interest}%0D%0A%0D%0AMensaje:%0D%0A${encodeURIComponent(message)}`;
-                    const mailtoLink = `mailto:ceo@hachi.live?subject=Contacto de ${name} - ${interest}&body=${mailtoBody}`;
+                try {
+                    const respuesta = await fetch(ENDPOINT_CONTACTO, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(datos)
+                    });
+                    const cuerpo = await respuesta.json().catch(() => ({}));
 
-                    window.location.href = mailtoLink;
+                    if (respuesta.ok) {
+                        submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensaje enviado';
+                        mostrar(cuerpo.message || 'Mensaje recibido. Te respondemos en menos de 24 horas.', '#10B981');
+                        this.reset();
+                        setTimeout(() => {
+                            submitBtn.innerHTML = textoOriginal;
+                            submitBtn.disabled = false;
+                            mostrar(notaOriginal);
+                        }, 6000);
+                        return;
+                    }
 
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Mensaje Preparado';
-
-                    setTimeout(() => {
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                }, 500);
-
-                e.preventDefault();
+                    // El servidor sabe por qué ha fallado; se le hace caso a él
+                    // antes que a un mensaje genérico.
+                    throw new Error(cuerpo.message || 'No hemos podido enviar tu mensaje.');
+                } catch (error) {
+                    submitBtn.innerHTML = textoOriginal;
+                    submitBtn.disabled = false;
+                    mostrar(
+                        (error && error.message ? error.message : 'No hemos podido enviar tu mensaje.') +
+                        ' Escríbenos a <strong>ceo@hachi.live</strong>.',
+                        '#F87171'
+                    );
+                }
             });
         }
     </script>
