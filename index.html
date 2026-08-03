@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hachi - Conversational AI Agents + Multichannel CRM for WhatsApp, Instagram & Messenger</title>
-    <meta name="description" content="SaaS platform of specialized AI agents that automate sales, support, and scheduling on WhatsApp, Instagram, and Messenger. Integrated Chatwoot CRM + Email Marketing.">
+    <title>Hachi · AI that answers your WhatsApp, books real appointments and cuts no-shows</title>
+    <meta name="description" content="An AI assistant that answers WhatsApp 24/7, checks your real calendar and books the appointment. Reminders that cut no-shows by 40-60%. From €149/month. 7-day free trial, no card. GDPR compliant.">
 
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="AI agents, WhatsApp automation, chatbot, CRM, LangGraph, conversational AI, customer service automation, Instagram bot, Messenger bot">
     <meta name="author" content="Hachi AI">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
@@ -16,7 +15,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hachi.live/">
-    <meta property="og:title" content="Hachi - Conversational AI Agents + Multichannel CRM">
+    <meta property="og:title" content="Hachi · AI that answers your WhatsApp and books real appointments">
     <meta property="og:description" content="Automate your conversations on WhatsApp, Instagram, and Messenger with specialized AI agents. LangGraph cognitive agents that reason, retry, and self-correct.">
     <meta property="og:image" content="https://hachi.live/images/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -29,7 +28,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://hachi.live/">
-    <meta name="twitter:title" content="Hachi - Conversational AI Agents + Multichannel CRM">
+    <meta name="twitter:title" content="Hachi · AI that answers your WhatsApp and books real appointments">
     <meta name="twitter:description" content="Automate your conversations on WhatsApp, Instagram, and Messenger with specialized AI agents powered by LangGraph.">
     <meta name="twitter:image" content="https://hachi.live/images/twitter-image.png">
     <meta name="twitter:image:alt" content="Hachi AI Platform">
@@ -62,37 +61,159 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Hachi AI",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "description": "SaaS platform of specialized AI agents that automate sales, support, and scheduling on WhatsApp, Instagram, and Messenger.",
-        "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "USD",
-            "lowPrice": "299",
-            "highPrice": "649",
-            "offerCount": "3"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "127"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "Hachi AI",
-            "url": "https://hachi.live"
-        },
-        "featureList": [
-            "WhatsApp Automation",
-            "Instagram DM Automation",
-            "Facebook Messenger Bot",
-            "LangGraph Cognitive Agents",
-            "Chatwoot CRM Integration",
-            "Google Calendar Integration",
-            "Multi-tenant Architecture",
-            "RAG Knowledge Base"
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://hachi.live/#organization",
+                "name": "Hachi AI",
+                "url": "https://hachi.live",
+                "logo": "https://hachi.live/hachi-logo-1024x1024.png",
+                "email": "ceo@hachi.live",
+                "description": "An artificial intelligence assistant that answers WhatsApp, Instagram and Messenger, checks the business's real calendar and executes bookings, cancellations and appointment reminders.",
+                "areaServed": [
+                    { "@type": "Country", "name": "Spain" },
+                    { "@type": "Place", "name": "European Union" }
+                ],
+                "knowsLanguage": ["es", "en"],
+                "sameAs": ["https://hachi.live"]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://hachi.live/#software",
+                "name": "Hachi",
+                "applicationCategory": "BusinessApplication",
+                "applicationSubCategory": "Customer service automation and appointment management",
+                "operatingSystem": "Web",
+                "url": "https://hachi.live/",
+                "publisher": { "@id": "https://hachi.live/#organization" },
+                "description": "A system of AI agents that converses over WhatsApp, Instagram and Messenger and also executes: it checks real availability, books, cancels, reschedules and sends appointment reminders. Neuro-symbolic architecture with rules enforced in code, not only in the prompt.",
+                "inLanguage": "en",
+                "featureList": [
+                    "24/7 automated answering on WhatsApp, Instagram and Messenger",
+                    "Real booking against the business calendar",
+                    "Appointment reminders that reduce no-shows",
+                    "Proactive follow-up on unanswered quotes",
+                    "WhatsApp campaigns with Meta-approved templates",
+                    "AI voice reception",
+                    "Meta Lead Ads capture",
+                    "Unified inbox with human supervision",
+                    "Your own knowledge base (RAG) built from your documents",
+                    "Multi-tenant isolation and GDPR compliance"
+                ],
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Solo plan",
+                        "price": "149",
+                        "priceCurrency": "EUR",
+                        "description": "One professional, one calendar, one number. 250 conversations per month. One-off implementation fee of EUR 290.",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Essential plan",
+                        "price": "390",
+                        "priceCurrency": "EUR",
+                        "description": "750 conversations per month, multiple calendars and your own knowledge base. One-off implementation fee of EUR 690.",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Professional plan",
+                        "price": "690",
+                        "priceCurrency": "EUR",
+                        "description": "1,500 conversations and 400 voice minutes per month, with proactive follow-up. One-off implementation fee of EUR 1,190.",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Complete plan",
+                        "price": "990",
+                        "priceCurrency": "EUR",
+                        "description": "3,000 conversations and 800 voice minutes per month, campaigns and reminders included. One-off implementation fee of EUR 1,690.",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Multi-site / White label plan",
+                        "price": "1690",
+                        "priceCurrency": "EUR",
+                        "description": "Multiple sites in one account, your own branding and the right to resell the service. From EUR 1,690 per month.",
+                        "availability": "https://schema.org/InStock"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://hachi.live/#faq",
+                "inLanguage": "en",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How much does Hachi cost?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "There are five plans: Solo at EUR 149/month, Essential at EUR 390/month, Professional at EUR 690/month, Complete at EUR 990/month and Multi-site from EUR 1,690/month. On top of that there is a one-off implementation fee between EUR 290 and EUR 1,690 depending on the plan, charged only if you decide to continue after the free trial."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is the trial free? Do you ask for a card?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, it is free and no card is required. First there is a demo video call at no cost, then 7 days of trial with your assistant already configured. If you decide not to continue, you pay nothing."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Will Hachi message my patients without their permission?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Hachi does not start conversations on its own. Proactive follow-up only acts on conversations that person opened themselves. The only exception is campaigns, where you supply the list and are the data controller for it; we act as processor under an Article 28 GDPR agreement."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need to be a clinic to use Hachi?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. It works for any appointment-based business: solo practitioners, small practices, sole traders without a company, and sectors outside healthcare such as hair salons, barbers, photography, consultancies or academies."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the difference between WhatsApp Business and the WhatsApp API?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "They are not the same. The WhatsApp Business app runs on a phone and only one person can use it. The API is handled from a computer, lets several people answer at once, and is the only way for a system to automate replies. Meta does not allow the same number on both at the same time, so you must decide between a new SIM and migrating your existing number."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I lose my contacts and conversations if I migrate my number to the API?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The history and contacts stored in the WhatsApp Business app stop being accessible once the number is migrated to the API. They can be rescued beforehand, but that is database work rather than automation and is quoted separately."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why do quotes range from EUR 29 to EUR 900 for the same thing?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Because they are not the same thing. There are three tiers: drawn flows at EUR 29 to 199 per month, which cannot see your calendar; assistants that converse well but do not execute, at EUR 150 to 500; and systems that converse and also execute against your real calendar, at EUR 460 to 1,840 with implementation fees of EUR 2,000 to 15,000. Hachi is in the third tier and sits below the range of its own tier on both the monthly fee and the implementation fee."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can the assistant confirm an appointment that does not exist?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No, because the booking is not decided by the language model. The model interprets what the person wants, but the availability check and the calendar write are executed by verified code. If the slot is not free there is no appointment, whatever the conversation says."
+                        }
+                    }
+                ]
+            }
         ]
     }
     </script>
@@ -1247,10 +1368,12 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#agents">Agents</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#integration">Integration</a></li>
+                <li><a href="#agents">What it does</a></li>
+                <li><a href="#tiers">Comparison</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#gdpr">GDPR</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#technology">Technology</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="lang-selector">
                     <a href="/" class="active">EN</a>
@@ -1314,57 +1437,40 @@
                 </svg>
             </div>
             <h1>Hachi</h1>
-            <div class="subtitle">Conversational AI Agents + Multichannel CRM</div>
-            <p>Automate your conversations on <strong>WhatsApp, Instagram, Messenger, and Email</strong> with specialized AI agents that understand your business. Integrated Chatwoot CRM for human supervision + bot management panel.</p>
+            <div class="subtitle">The employee who answers your WhatsApp at 3 in the morning</div>
+            <p>Hachi answers <strong>WhatsApp, Instagram and Messenger</strong> around the clock, <strong>checks your real calendar</strong> and books the appointment. Then it reminds people, so they turn up. Not a button menu: it understands what people write, in text or voice notes, and escalates to a human when something falls outside the script.</p>
+            <p style="font-size: 1rem; opacity: 0.75; margin-top: 1rem;">From <strong>€149/month</strong> · 7-day free trial, no card · GDPR compliant</p>
             <div class="cta-buttons">
-                <a href="#contact" class="cta-button">Request Demo</a>
-                <a href="#pricing" class="cta-button cta-secondary">View Plans</a>
+                <a href="#contact" class="cta-button">Book a Free Demo</a>
+                <a href="#pricing" class="cta-button cta-secondary">See Plans and Pricing</a>
             </div>
         </div>
     </section>
 
-    <!-- Trusted By Section -->
+    <!-- In production · verifiable facts, not borrowed logos -->
     <section class="section" style="padding: 4rem 2rem;">
-        <p style="text-align: center; font-size: 1rem; opacity: 0.6; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Trusted by leading companies</p>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
-            <!-- Clinics -->
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-hospital" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica Las Condes</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Chile</div>
+        <p style="text-align: center; font-size: 1rem; opacity: 0.6; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">In production today</p>
+        <div style="display: flex; justify-content: center; align-items: stretch; gap: 1.5rem; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.08); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">24/7</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Serving real clinics<br>without interruption</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-hospital-alt" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Hospital Ángeles</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">México</div>
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.08); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">63</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Critical rules enforced in<br>code, not in the prompt</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-clinic-medical" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica Ricardo Palma</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Perú</div>
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.08); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3-5</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Working days from<br>signing to going live</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-hospital-user" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica del Country</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Colombia</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-h-square" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Hospital Israelita</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Brasil</div>
-            </div>
-            <!-- Ecommerce -->
-            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-shopping-cart" style="font-size: 2rem; color: #FFE600;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">MercadoLibre</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Ecommerce</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-motorcycle" style="font-size: 2rem; color: #FF5A00;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Rappi</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Delivery</div>
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(6, 182, 212, 0.08); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Flows to maintain.<br>It learns from your documents</div>
             </div>
         </div>
+        <p style="text-align: center; font-size: 0.85rem; opacity: 0.5; margin-top: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            We do not display logos of companies that are not clients. If you want to speak to someone already using Hachi, ask during the demo and we will put you in touch.
+        </p>
     </section>
 
     <!-- Powered By Section -->
@@ -1382,14 +1488,6 @@
             <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
                 <i class="fas fa-water" style="font-size: 2rem; color: #4D6BFE;"></i>
                 <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">DeepSeek</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
-                <i class="fas fa-video" style="font-size: 2rem; color: #4285F4;"></i>
-                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">Veo 3</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
-                <i class="fas fa-cut" style="font-size: 2rem; color: #00F2EA;"></i>
-                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">CapCut</div>
             </div>
             <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 100px;">
                 <i class="fas fa-phone-alt" style="font-size: 2rem; color: #F22F46;"></i>
@@ -1681,7 +1779,7 @@
     <!-- Specialized Agents -->
     <section class="section" id="agents">
         <h2>Specialized Agents</h2>
-        <p class="section-subtitle">Each agent is designed for a specific function, ensuring expert responses and automated actions</p>
+        <p class="section-subtitle">Under the hood there is not one bot but several specialists that hand the conversation between them as needed. You see a single conversation; this is what happens behind it.</p>
 
         <div class="agents-grid">
             <!-- Emergency Agent -->
@@ -1698,7 +1796,7 @@
                 <p>Urgency specialist that automatically detects critical situations and activates immediate escalation protocols.</p>
                 <ul class="agent-features">
                     <li>Automatic detection of emergency keywords</li>
-                    <li>Response protocol in less than 3 minutes</li>
+                    <li>Immediate escalation to a real person</li>
                     <li>Automatic escalation to medical staff</li>
                     <li>Empathetic but urgent and professional tone</li>
                     <li>24/7 availability without interruptions</li>
@@ -1880,7 +1978,7 @@
     </section>
 
     <!-- Technical Features -->
-    <section class="section" id="technology">
+    <section class="section" id="stack">
         <div class="tech-features">
             <h2>Cutting-Edge Technology</h2>
             <p class="section-subtitle">Enterprise architecture designed for maximum performance, reliability, and scalability</p>
@@ -1940,23 +2038,23 @@
     <!-- Statistics -->
     <section class="section">
         <div class="stats-section fade-in">
-            <h2>Expected Impact</h2>
+            <h2>What changes in your day</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number">70%</span>
-                    <span class="stat-label">Support Load Reduction</span>
+                    <span class="stat-number">40-60%</span>
+                    <span class="stat-label">Fewer no-shows, thanks to reminders</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">24/7</span>
-                    <span class="stat-label">Total Availability</span>
+                    <span class="stat-label">Answering, including nights and holidays</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">30%</span>
-                    <span class="stat-label">More Appointments Scheduled</span>
+                    <span class="stat-number">Seconds</span>
+                    <span class="stat-label">To reply, instead of the next morning</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Unified Channels</span>
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Flows to redraw when your prices change</span>
                 </div>
             </div>
         </div>
@@ -2060,264 +2158,444 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonials">
-            <div class="testimonial fade-in">
-                <p>Hachi completely transformed our customer service. In the first month, we saw a 65% reduction in response time and a 40% increase in customer satisfaction.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MR</div>
-                    <div>
-                        <strong>Maria Rodriguez</strong><br>
-                        <span style="opacity: 0.7;">Operations Director, EstheticLife Clinic</span>
-                    </div>
-                </div>
-            </div>
+    <!-- The three market tiers -->
+    <section class="section" id="tiers">
+        <h2>Why quotes range from €29 to €900 for "the same thing"</h2>
+        <p class="section-subtitle">If you are collecting quotes, you will see wildly different numbers described identically: "an AI assistant that answers WhatsApp and books appointments." They are not the same. They are three different technologies.</p>
 
-            <div class="testimonial fade-in">
-                <p>The scheduling automation is incredible. Our clients can book appointments at any hour and the system never makes mistakes. It has freed our team to focus on what really matters.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">CP</div>
-                    <div>
-                        <strong>Carlos Perez</strong><br>
-                        <span style="opacity: 0.7;">CEO, Integral Medical Center</span>
-                    </div>
-                </div>
-            </div>
+        <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); margin-top: 3rem;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col">The question that separates them</th>
+                        <th>Tier 1<br><span>Drawn flows</span></th>
+                        <th>Tier 2<br><span>Assistants that talk</span></th>
+                        <th class="featured-col">⭐ Tier 3<br><span>Talk AND execute</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-col">Price per month</td>
+                        <td>€29 – €199</td>
+                        <td>€150 – €500</td>
+                        <td class="featured-col"><strong>€460 – €1,840</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Implementation</td>
+                        <td>€0 – €300</td>
+                        <td>€0 – €1,000</td>
+                        <td class="featured-col"><strong>€2,000 – €15,000</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Does it understand free text?</td>
+                        <td><span class="feature-no">❌</span> Only if you press the right button</td>
+                        <td><span class="feature-yes">✅</span> Yes, it converses well</td>
+                        <td class="featured-col"><span class="feature-yes">✅</span> Yes, including voice notes and mixed intents</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col"><strong>Does it check your real calendar before offering a slot?</strong></td>
+                        <td><span class="feature-no">❌ No</span></td>
+                        <td><span class="feature-no">❌ No</span></td>
+                        <td class="featured-col"><span class="feature-yes">✅ Yes</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col"><strong>Does it write the booking into your calendar?</strong></td>
+                        <td><span class="feature-no">❌</span> It sends a link</td>
+                        <td><span class="feature-no">❌</span> It pings you to do it</td>
+                        <td class="featured-col"><span class="feature-yes">✅</span> Books, cancels and reschedules</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Can it confirm a slot that is already taken?</td>
+                        <td>Yes — it cannot see your calendar</td>
+                        <td>Yes — it can hallucinate one</td>
+                        <td class="featured-col"><strong>No. Code prevents it, not the prompt</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Who maintains it</td>
+                        <td>You, redrawing flows every time something changes</td>
+                        <td>You, rewriting instructions</td>
+                        <td class="featured-col">Nobody. You upload a document and it learns</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="testimonial fade-in">
-                <p>The ROI was immediate. In 3 months we recovered the investment and now we're saving thousands of dollars monthly in operational costs while providing better service.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">LP</div>
-                    <div>
-                        <strong>Laura Patino</strong><br>
-                        <span style="opacity: 0.7;">General Manager, Wellness Plus Spa</span>
-                    </div>
-                </div>
-            </div>
+        <div style="max-width: 780px; margin: 3rem auto 0; padding: 2rem; background: rgba(139, 92, 246, 0.08); border-radius: 20px; border: 1px solid rgba(139,92,246,0.2);">
+            <p style="font-size: 1.1rem; line-height: 1.7;">Hachi is tier 3, and it <strong>costs less than its own tier</strong>: our most complete plan is €990/month where the market reaches €1,840, and our highest implementation fee is €1,690 where that range starts at €2,000.</p>
+            <p style="font-size: 1.05rem; line-height: 1.7; margin-top: 1.2rem; opacity: 0.85;">When you compare €99 against €390, the question is not "why is it more expensive?" It is: <strong style="color: #06B6D4;">what does it cost you when the €99 one confirms a slot that was already booked?</strong></p>
         </div>
     </section>
 
     <!-- Pricing -->
     <section class="section" id="pricing">
-        <h2>Investment Plans</h2>
-        <p class="section-subtitle">Virtual Employees for Medical Clinics — Fully Autonomous, 24/7</p>
+        <h2>Plans and Pricing</h2>
+        <p class="section-subtitle">Prices in euros, VAT not included. No lock-in. <strong>Nothing is charged until the 7-day trial ends and you decide to continue.</strong></p>
 
-        <!-- Plan Cards -->
         <div class="pricing">
-            <!-- Starter Plan -->
             <div class="pricing-card fade-in">
-                <h3>Starter</h3>
-                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">For Independent Professionals</p>
-                <div class="price">$299<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> USD/mo</span></div>
-                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ $500 USD Setup (one-time)</p>
-                <p style="font-size: 0.95rem;"><strong>1 Virtual Employee</strong><br>Independent physicians or small aesthetic practices</p>
+                <h3>Solo</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">You work on your own</p>
+                <div class="price">€149<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)">/mo</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €290 implementation (one-off)</p>
+                <p style="font-size: 0.95rem;"><strong>One calendar, one number</strong><br>No team behind you</p>
                 <ul class="price-features">
-                    <li>✅ Up to 800 conversations/month</li>
-                    <li>✅ Official WhatsApp, Instagram &amp; Messenger</li>
-                    <li>✅ Support Agent + Scheduler</li>
-                    <li>✅ Native Google Calendar (no external links)</li>
-                    <li>✅ Free-Reasoning AI (goodbye to button mazes)</li>
-                    <li>✅ Processes voice audios &amp; compound intents</li>
-                    <li>✅ Autonomous escalation to human</li>
-                    <li>✅ CRM: Unified inbox (1 human user)</li>
-                    <li>✅ 100% autonomous maintenance</li>
-                    <li>❌ Proactive follow-up</li>
-                    <li>❌ Phone Reception</li>
+                    <li>✅ WhatsApp assistant, 24/7</li>
+                    <li>✅ Answers prices, services, questions and location</li>
+                    <li>✅ <strong>Books into your real calendar</strong>, checking availability first</li>
+                    <li>✅ Cancellations and rescheduling</li>
+                    <li>✅ Automatic appointment reminders</li>
+                    <li>✅ Up to 250 conversations/month</li>
+                    <li>✅ Control panel</li>
+                    <li>❌ Voice calls</li>
+                    <li>❌ Campaigns and proactive follow-up</li>
                 </ul>
-                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Get Started</a>
+                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
             </div>
 
-            <!-- Clinic Pro Plan (Featured) -->
+            <div class="pricing-card fade-in">
+                <h3>Essential</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">You have a team</p>
+                <div class="price">€390<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)">/mo</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €690 implementation (one-off)</p>
+                <p style="font-size: 0.95rem;"><strong>Everything in Solo, plus:</strong></p>
+                <ul class="price-features">
+                    <li>✅ Up to 750 conversations/month</li>
+                    <li>✅ <strong>Multiple calendars or practitioners</strong>, each with their own hours</li>
+                    <li>✅ Full panel with metrics</li>
+                    <li>✅ Edit answers and behaviour from the panel</li>
+                    <li>✅ Your own knowledge base: upload your PDFs and it learns</li>
+                    <li>❌ Voice calls</li>
+                    <li>❌ Campaigns and proactive follow-up</li>
+                </ul>
+                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
+            </div>
+
+            <div class="pricing-card fade-in">
+                <h3>Professional</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Plus the phone line</p>
+                <div class="price">€690<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)">/mo</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €1,190 implementation (one-off)</p>
+                <p style="font-size: 0.95rem;"><strong>Everything in Essential, plus:</strong></p>
+                <ul class="price-features">
+                    <li>✅ <strong>AI voice reception</strong> that books during the call itself</li>
+                    <li>✅ Up to 1,500 conversations/month</li>
+                    <li>✅ 400 call minutes included</li>
+                    <li>✅ Proactive follow-up on cold quotes</li>
+                    <li>❌ Campaigns and outbound calls</li>
+                </ul>
+                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
+            </div>
+
             <div class="pricing-card featured fade-in">
-                <h3>Clinic Pro</h3>
-                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Recommended</p>
-                <div class="price">$649<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> USD/mo</span></div>
-                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ $500–$1,000 USD Setup (one-time)</p>
-                <p style="font-size: 0.95rem;"><strong>Team of 3 Virtual Employees</strong><br>Clinics with overwhelmed reception staff</p>
+                <h3>Complete</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">⭐ Most chosen</p>
+                <div class="price">€990<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)">/mo</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €1,690 implementation (one-off)</p>
+                <p style="font-size: 0.95rem;"><strong>Everything in Professional, plus:</strong></p>
                 <ul class="price-features">
-                    <li>✅ Up to 2,500 conversations/month</li>
-                    <li>✅ WhatsApp, Instagram, Messenger + WebChat</li>
-                    <li>✅ Support + Scheduler + Sales Recovery Agent</li>
-                    <li>✅ Multi-schedule (multiple specialists &amp; rooms)</li>
-                    <li>✅ Free AI + Long-term Hierarchical Memory</li>
-                    <li>✅ Audio + Hybrid Medical RAG (reads your PDFs)</li>
-                    <li>✅ Auto-escalation + Priority alerts to management</li>
-                    <li>✅ CRM: Inbox + Chat assignment (3 users)</li>
-                    <li>✅ Upload a PDF — AI learns automatically</li>
-                    <li>✅ Proactive follow-up (cold quotes)</li>
-                    <li>➕ Phone Reception (+$200/mo add-on)</li>
+                    <li>✅ <strong>Proactive follow-up</strong>: re-engages people who asked and never came back</li>
+                    <li>✅ <strong>WhatsApp campaigns</strong> to your client base</li>
+                    <li>✅ Outbound AI voice calls</li>
+                    <li>✅ Up to 3,000 conversations/month</li>
+                    <li>✅ 800 call minutes included</li>
+                    <li>✅ Meta Lead Ads capture</li>
                 </ul>
-                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Choose Clinic Pro</a>
+                <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
             </div>
 
-            <!-- Enterprise Plan -->
             <div class="pricing-card fade-in">
-                <h3>Enterprise</h3>
-                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Hospitals &amp; Franchises</p>
-                <div class="price" style="font-size: 2rem;">Custom</div>
-                <p style="font-size: 0.82rem; opacity: 0.55; margin: 0.5rem 0 1.5rem;">Custom setup pricing</p>
-                <p style="font-size: 0.95rem;"><strong>Custom Infrastructure</strong><br>Multiple locations with different specialties</p>
+                <h3>Multi-site / White label</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Groups and resellers</p>
+                <div class="price" style="font-size: 2.4rem;">from €1,690<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)">/mo</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">Implementation quoted per case</p>
+                <p style="font-size: 0.95rem;"><strong>Sell it under your own brand</strong></p>
                 <ul class="price-features">
-                    <li>✅ Massive conversation volume</li>
-                    <li>✅ All channels + Custom API integration</li>
-                    <li>✅ Multiple specialized roles per medical area</li>
-                    <li>✅ Direct HIS/EMR system integration</li>
-                    <li>✅ Dedicated Multi-Agent cluster</li>
-                    <li>✅ Unlimited RAG &amp; external databases</li>
-                    <li>✅ Custom routing rules</li>
-                    <li>✅ Advanced panel. Unlimited users.</li>
-                    <li>✅ SLA &amp; 24/7 priority technical support</li>
-                    <li>✅ Proactive follow-up included</li>
-                    <li>✅ Unlimited Phone Reception</li>
+                    <li>✅ Multiple sites or companies in one account</li>
+                    <li>✅ Your own branding in the panel</li>
+                    <li>✅ You onboard your clients and set your own prices</li>
+                    <li>✅ Your margin is yours</li>
+                    <li>✅ Priority support and training</li>
+                    <li>✅ Volume and minutes tailored to you</li>
                 </ul>
-                <a href="#contact" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Request Quote</a>
+                <a href="#contact" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Talk about reselling</a>
             </div>
         </div>
 
-        <!-- Trust Strip based on real system architecture -->
-        <div class="pricing-trust-strip fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 2rem 0 0; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
-            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
-                <span style="font-size: 1.2rem;">🔒</span>
-                <span><strong>Self-hosted on your own server</strong> — Your medical data never leaves your infrastructure. GDPR/HIPAA compliance guaranteed.</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
-                <span style="font-size: 1.2rem;">📞</span>
-                <span><strong>Active voice infrastructure</strong> — AI phone reception available as add-on (Pro) or included (Enterprise).</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
-                <span style="font-size: 1.2rem;">⚡</span>
-                <span><strong>Zero visual flows to maintain</strong> — The system learns from your documents. No manual flow redesign ever.</span>
-            </div>
-        </div>
-
-        <!-- Detailed Comparison Table -->
-        <div class="pricing-comparison fade-in">
-            <h3 style="text-align: center; margin-bottom: 0.5rem; font-size: 1.4rem; opacity: 0.9;">Full Feature Comparison</h3>
-            <p style="text-align: center; opacity: 0.55; font-size: 0.9rem; margin-bottom: 2rem;">All the details so you can choose with confidence</p>
+        <div style="max-width: 780px; margin: 1rem auto 0;">
+            <h3 style="text-align: center; font-size: 1.3rem; margin-bottom: 1.5rem; opacity: 0.9;">When you pay what, with no small print</h3>
             <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);">
                 <table class="pricing-table">
                     <thead>
-                        <tr>
-                            <th class="feature-col">Feature / Benefit</th>
-                            <th>Starter<br><span>Independent Professionals</span></th>
-                            <th class="featured-col">⭐ Clinic Pro<br><span>Recommended</span></th>
-                            <th>Enterprise</th>
-                        </tr>
+                        <tr><th class="feature-col">Moment</th><th>What you pay</th></tr>
                     </thead>
                     <tbody>
-                        <tr class="section-row"><td colspan="4">💰 Investment</td></tr>
-                        <tr>
-                            <td class="feature-col">Monthly Investment</td>
-                            <td><strong>$299 USD</strong></td>
-                            <td class="featured-col"><strong>$649 USD</strong></td>
-                            <td>Custom</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Initial Setup (Turnkey)</td>
-                            <td>$500 USD (one-time)</td>
-                            <td class="featured-col">$500 – $1,000 USD (one-time)</td>
-                            <td>Custom</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Core Concept</td>
-                            <td>1 Virtual Employee</td>
-                            <td class="featured-col">Team of 3 Virtual Employees</td>
-                            <td>Custom Infrastructure</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">🤖 Agents &amp; Roles</td></tr>
-                        <tr>
-                            <td class="feature-col">Included Multi-Agent Roles</td>
-                            <td>Support · Scheduler</td>
-                            <td class="featured-col">Support · Scheduler · Sales Recovery</td>
-                            <td>Multiple roles per medical area</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Ideal Profile</td>
-                            <td>Independent physicians or small aesthetic practices (1 specialist)</td>
-                            <td class="featured-col">Clinics with medium/high volume and overwhelmed reception</td>
-                            <td>Hospitals or franchises with multiple locations</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">📊 Capacity &amp; Channels</td></tr>
-                        <tr>
-                            <td class="feature-col">Included Volume</td>
-                            <td>Up to 800 conversations/month</td>
-                            <td class="featured-col">Up to 2,500 conversations/month</td>
-                            <td>Massive Volume</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Omnichannel Coverage</td>
-                            <td>Official WhatsApp, Instagram &amp; Messenger</td>
-                            <td class="featured-col">WhatsApp, IG, Messenger + WebChat</td>
-                            <td>All channels + Custom API integration</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">🧠 Intelligence &amp; Understanding</td></tr>
-                        <tr>
-                            <td class="feature-col">Intelligence Engine</td>
-                            <td>Free-Reasoning AI<br><small style="opacity:0.65">(Goodbye to button mazes)</small></td>
-                            <td class="featured-col">Free AI + Long-term Hierarchical Memory</td>
-                            <td>Dedicated Multi-Agent cluster</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Advanced Understanding</td>
-                            <td>Processes voice audios &amp; compound intents</td>
-                            <td class="featured-col">Audio + Hybrid Medical RAG<br><small style="opacity:0.65">(Reads your PDFs perfectly)</small></td>
-                            <td>Unlimited RAG &amp; external databases</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">📅 Scheduling</td></tr>
-                        <tr>
-                            <td class="feature-col">Transactional Scheduling</td>
-                            <td>Native Google Calendar<br><small style="opacity:0.65">(No external links for patients)</small></td>
-                            <td class="featured-col">Multi-schedule<br><small style="opacity:0.65">(Multiple specialists &amp; rooms)</small></td>
-                            <td>Direct integration with HIS/EMR software</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">🚨 Escalation &amp; CRM</td></tr>
-                        <tr>
-                            <td class="feature-col">Autonomous Escalation</td>
-                            <td><span class="feature-yes">✅</span> Detects urgencies and transfers to a human automatically</td>
-                            <td class="featured-col"><span class="feature-yes">✅</span> Auto-escalation + Priority alerts to management</td>
-                            <td><span class="feature-yes">✅</span> Custom routing rules</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">All-in-One CRM (Panel)</td>
-                            <td>Unified inbox.<br>Includes 1 human user.</td>
-                            <td class="featured-col">Unified inbox + Chat assignment.<br>Up to 3 human users.</td>
-                            <td>Advanced panel. Unlimited users.</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">⚙️ Operations &amp; Support</td></tr>
-                        <tr>
-                            <td class="feature-col">Operational Maintenance</td>
-                            <td>100% Autonomous. Zero visual flows to redesign.</td>
-                            <td class="featured-col">100% Autonomous. Upload a PDF and the AI learns by itself.</td>
-                            <td>SLA &amp; 24/7 priority technical support.</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Proactive Follow-up</td>
-                            <td><span class="feature-no">❌ Not included</span></td>
-                            <td class="featured-col"><span class="feature-yes">✅ Included</span><br><small style="opacity:0.65">(Chases cold quotes after 1 hour of inactivity)</small></td>
-                            <td><span class="feature-yes">✅ Included</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Phone Reception (Voice)</td>
-                            <td><span class="feature-no">❌ Not included</span></td>
-                            <td class="featured-col"><span class="feature-addon">➕ Add-on available (+$200/mo)</span></td>
-                            <td><span class="feature-yes">✅ Included (Unlimited)</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col"></td>
-                            <td style="padding: 1.5rem; text-align: center;">
-                                <a href="#contact" class="cta-button" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Get Started</a>
-                            </td>
-                            <td class="featured-col" style="padding: 1.5rem; text-align: center;">
-                                <a href="#contact" class="cta-button" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Choose Clinic Pro</a>
-                            </td>
-                            <td style="padding: 1.5rem; text-align: center;">
-                                <a href="#contact" class="cta-button cta-secondary" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Request Quote</a>
-                            </td>
-                        </tr>
+                        <tr><td class="feature-col">Demo video call</td><td><strong>€0</strong></td></tr>
+                        <tr><td class="feature-col">Setting up your assistant</td><td><strong>€0</strong></td></tr>
+                        <tr><td class="feature-col">The 7-day trial</td><td><strong>€0</strong> · no card required</td></tr>
+                        <tr><td class="feature-col">If you decide to continue</td><td>First month + implementation</td></tr>
+                        <tr><td class="feature-col">If you decide not to</td><td><strong>€0</strong></td></tr>
                     </tbody>
                 </table>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; opacity: 0.7; margin-top: 1.5rem;">
+                Pay a quarter up front and <strong>the implementation fee is waived</strong>.<br>
+                Conversations beyond your plan: €0.25 each. Extra call minutes: €0.20. Service is never cut off.
+            </p>
+        </div>
+
+        <div class="pricing-trust-strip fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 3rem 0 0; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
+                <span style="font-size: 1.2rem;">🔒</span>
+                <span><strong>GDPR compliant</strong> — Data processing agreement signed, data hosted in the EU.</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
+                <span style="font-size: 1.2rem;">⚡</span>
+                <span><strong>Live in 3-5 working days</strong> — And no visual flows to redraw every month.</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
+                <span style="font-size: 1.2rem;">🚪</span>
+                <span><strong>No lock-in</strong> — You stay because it works, not because you signed.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI -->
+    <section class="section" id="roi">
+        <h2>When does it pay for itself?</h2>
+        <p class="section-subtitle">The most honest arithmetic we can show you: how many saved appointments per month cover the fee.</p>
+
+        <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); max-width: 780px; margin: 3rem auto 0;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col">Plan</th>
+                        <th>Monthly fee</th>
+                        <th class="featured-col">Saved appointments/month<br><span>at a €200 average ticket</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="feature-col">Solo</td><td>€149</td><td class="featured-col"><strong>1</strong></td></tr>
+                    <tr><td class="feature-col">Essential</td><td>€390</td><td class="featured-col"><strong>2</strong></td></tr>
+                    <tr><td class="feature-col">Professional</td><td>€690</td><td class="featured-col"><strong>4</strong></td></tr>
+                    <tr><td class="feature-col">Complete</td><td>€990</td><td class="featured-col"><strong>5</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="text-align: center; font-size: 0.9rem; opacity: 0.65; margin-top: 1.2rem;">At a €400 average ticket, halve every figure.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 3rem auto 0;">
+            <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">📅 No-shows</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Automatic reminders cut no-shows by <strong>40-60%</strong>. Every slot that does not sit empty is revenue you had already lost.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">⏱️ The 11pm enquiry</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Someone who writes at 23:40 and hears nothing until 10:00 has already messaged three competitors. Replying in seconds <strong>is not convenience — it is the sale</strong>.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👻 The ones who vanish</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">They asked the price and never wrote again. Proactive follow-up picks them back up on its own, without anyone having to remember.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 The honest comparison</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">A receptionist in Spain costs <strong>€25,000-€35,000 a year</strong> fully loaded, and takes days off. Hachi does not replace your team: it takes off their plate what they should not be doing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- You do not need to be a clinic -->
+    <section class="section" id="verticals">
+        <h2>You do not need to be a clinic</h2>
+        <p class="section-subtitle">Hachi grew up serving clinics, but what it solves is not a medical problem: it is the problem of any appointment-based business.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👩‍⚕️ You work alone</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Psychology, physiotherapy, nutrition, podiatry, therapies. One calendar, one number, and a phone buzzing while you are with someone.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🏥 Practice or clinic</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Aesthetics, dental, spa, beauty, veterinary. Several calendars, several rooms, one overwhelmed front desk.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">✂️ Outside healthcare</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Hair, barbers, tattoo studios, photography, consultancies, academies, personal trainers. If people book a time, it fits.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 You do not need a company</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Sole trader, your own tax ID, no legal entity. The Solo plan exists exactly for that; there is no minimum below which we turn you away.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GDPR -->
+    <section class="section" id="gdpr">
+        <h2>Data protection, taken seriously</h2>
+        <p class="section-subtitle">You handle personal data and, in healthcare, special-category data. This is not a checkbox.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
+            <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🤐 Hachi never messages first</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">The assistant <strong>does not start conversations on its own</strong>. Proactive follow-up only acts on conversations that person opened themselves. Nobody gets a message without having written first.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📣 The one exception, said out loud</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Campaigns. <strong>You supply the list</strong>, and with it the responsibility for holding consent. We neither buy nor provide contact databases.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📄 Paperwork in order</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">You are the <strong>data controller</strong>; we are the <strong>processor</strong>. We sign the <strong>Article 28 GDPR</strong> agreement before touching a single record.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🏥 Health data</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Treated as <strong>special category (Art. 9)</strong>, with the safeguards that requires. And you can exercise erasure for a specific person when they ask.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why it cannot invent an appointment -->
+    <section class="section" id="guarantees">
+        <h2>Why it cannot invent an appointment</h2>
+        <p class="section-subtitle">This is the point that separates Hachi from almost everything else, and it deserves an honest explanation.</p>
+
+        <div style="max-width: 860px; margin: 3rem auto 0;">
+            <p style="font-size: 1.15rem; line-height: 1.8; text-align: center; margin-bottom: 2.5rem;">
+                A language model is persuasive even when it is wrong. If you let it decide <em>on its own</em> whether Thursday 17:00 is free, one day it will say yes when it is not — and the person who deals with that is your client, at your front desk.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px; border-left: 3px solid #8B5CF6;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">The AI decides</h4>
+                    <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">It works out what the person wants, even in a voice note, half-finished, or with three requests in one message. That it does well, and that is what it is for.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px; border-left: 3px solid #06B6D4;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">The code enforces</h4>
+                    <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Checking availability, writing to the calendar, not double-booking, not dropping a message: that runs on verified code. If the slot is not free, there is no booking, whatever the conversation says.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2.5rem; padding: 2rem; background: rgba(139, 92, 246, 0.1); border-radius: 20px; border: 1px solid rgba(139,92,246,0.25); text-align: center;">
+                <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">63</div>
+                <p style="font-size: 1.05rem; line-height: 1.7; margin-top: 0.5rem;"><strong>critical rules enforced in code</strong>, not entrusted to the model's instructions.</p>
+                <p style="font-size: 0.92rem; opacity: 0.7; margin-top: 1rem;">Each one answers the same question: <em>if the model gets it wrong right here, what stops it?</em> It is slow, unglamorous work, and it is exactly the difference between an assistant that dazzles in the demo and one that survives six months without you checking what it says.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp API vs Business -->
+    <section class="section" id="whatsapp-api">
+        <h2>The WhatsApp API is not WhatsApp Business</h2>
+        <p class="section-subtitle">Almost nobody explains this before you sign, and it drives the most important decision of all: your number.</p>
+
+        <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); max-width: 860px; margin: 3rem auto 0;">
+            <table class="pricing-table">
+                <thead>
+                    <tr><th class="feature-col"></th><th>WhatsApp Business app</th><th class="featured-col">WhatsApp API</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td class="feature-col">Where you use it</td><td>On the phone</td><td class="featured-col"><strong>From a computer</strong>, in the browser</td></tr>
+                    <tr><td class="feature-col">Who answers</td><td>One person</td><td class="featured-col">Several people at once</td></tr>
+                    <tr><td class="feature-col">Can it be automated?</td><td><span class="feature-no">❌</span> Quick replies only</td><td class="featured-col"><span class="feature-yes">✅</span> It is the only way</td></tr>
+                    <tr><td class="feature-col">Anything to install?</td><td>Yes, the app</td><td class="featured-col">No</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 2.5rem auto 0;">
+            <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">Path A · New SIM</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">A new number for the assistant. Your usual WhatsApp stays untouched on the phone. Fastest route, nothing is lost.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">Path B · Migrate your number</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Clients keep writing to the number they know. In exchange, <strong>the history and contacts stored in the app stop being there</strong>. Meta does not allow the same number on the app and the API at once.</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 0.95rem; opacity: 0.75; margin-top: 2rem; max-width: 760px; margin-left: auto; margin-right: auto;">
+            That history <strong>can be rescued before migrating</strong>. It is not automation: it is database work, and we quote it separately. We say so now, not once there is no way back.
+        </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <h2>Frequently asked questions</h2>
+        <p class="section-subtitle">The ones we get most, answered without hedging.</p>
+
+        <div style="max-width: 820px; margin: 3rem auto 0; display: grid; gap: 1.2rem;">
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">Is the demo free? Do you ask for a card?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">Free, and no card. First a video call where we show it working, then 7 days of trial with your assistant already configured. If you do not continue, you pay nothing.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">Will it message my patients without permission?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No. Hachi does not start conversations. Follow-up only acts on conversations that person opened themselves. The exception is campaigns, where you supply the list and are responsible for holding consent.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">Can it confirm an appointment that does not exist?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No, because the booking is not decided by the language model. Availability checks and calendar writes run on verified code. If the slot is not free, there is no appointment.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">Can I keep my usual number?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">Yes, but decide it with the facts in front of you. Meta does not allow the same number on the WhatsApp Business app and the API at the same time. Either you use a new SIM, or you migrate your usual one accepting that the history stored in the app stops being accessible. It can be rescued beforehand, quoted separately.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">How long until it is running?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">Three to five working days once we have your details and the number question settled. We do the setup; you build nothing.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">What if I exceed my plan's conversations?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">Service is not cut off. Extra conversations bill at €0.25 each and extra call minutes at €0.20. If the overage is constant we suggest moving plan, because it works out cheaper for you.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">Is there a lock-in period?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No. You can leave whenever you want. Implementation is charged once on signing, and is waived if you pay a quarter up front.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">Does it replace my receptionist?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No, and anyone who says otherwise is selling you smoke. It takes the repetitive part off their plate — opening hours, prices, directions, moving an appointment — so their time goes where a person is actually needed. And it covers nights and weekends, when there is nobody.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- For technical readers and investors -->
+    <section class="section" id="technology">
+        <h2>For readers who came for the architecture</h2>
+        <p class="section-subtitle">If you got this far looking for engineering rather than pricing, this part is for you.</p>
+
+        <div style="max-width: 900px; margin: 3rem auto 0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🧩 Neuro-symbolic architecture</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Graph nodes emit typed signals that a router <em>with no LLM in the loop</em> turns into flow decisions. The model proposes; the state machine disposes. <strong>Check-Signal-Act</strong> in every node.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🛡️ Guarded invariants</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">63 properties the system guarantees in code, with an explicit cut-off rule: <em>if Python guarantees the outcome it is an invariant; if only the prompt asks for it, it is a suggestion</em>.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🏢 Real multi-tenancy</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Per-tenant isolation down to the conversation checkpointer key. Every query is parameterised and scoped by tenant: one client's state cannot leak into another's.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔀 Agents that build themselves</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">The graph can be compiled from the database: a new agent is defined with typed extraction fields and its own tools, with no code deploy.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">♻️ Idempotency and compensation</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Safe retry across the whole external surface. A duplicated webhook does not create two appointments; a retried campaign does not send twice.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(6, 182, 212, 0.06); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔌 Multi-provider inference</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">The inference layer is decoupled: provider and model are selected per tenant. No dependency on a single vendor or a single model family.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2.5rem; padding: 2rem; background: rgba(139, 92, 246, 0.08); border-radius: 20px; border: 1px solid rgba(139,92,246,0.2);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">What that means in money</h4>
+                <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7;">The variable cost of serving one client — messaging, inference and telephony — is measured in <strong>tens of euros per month</strong>, against fees of €390 to €990. Margin does not depend on scaling headcount, because maintaining the assistant is autonomous: there are no flows to redraw when a business changes its prices or its hours.</p>
+                <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin-top: 1rem;">And the moat is not the model, which anyone can rent. It is the slow work of turning 63 critical behaviours into verifiable guarantees. That does not get replicated in a weekend with a flow builder.</p>
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 1.5rem;">Investing, or building things like this? Write to <strong>ceo@hachi.live</strong> with "technical" or "investment" in the subject and I will answer personally.</p>
             </div>
         </div>
     </section>
@@ -2325,7 +2603,7 @@
     <!-- Footer CTA -->
     <section class="footer-cta" id="contact">
         <div class="section">
-            <h2>Ready to Automate Your Conversations?</h2>
+            <h2>Start with a video call. Free.</h2>
             <p style="font-size: 1.3rem; opacity: 0.9; margin: 2rem 0;">
                 Discover how Hachi can transform your customer service on WhatsApp, Instagram, and Messenger
             </p>
@@ -2374,9 +2652,9 @@
 
             <!-- Business Verticals -->
             <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Ideal for:</p>
+                <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Works for any appointment-based business:</p>
                 <p style="font-size: 1rem; opacity: 0.8;">
-                    Medical Clinics &bull; Spas & Wellness &bull; Dental Clinics &bull; Fitness Studios &bull; Restaurants
+                    Aesthetic medicine &bull; Dental clinics &bull; Spa and wellness &bull; Physiotherapy and psychology &bull; Veterinary &bull; Hair and barbers &bull; Tattoo studios &bull; Photography &bull; Consultancies and academies &bull; Solo practitioners
                 </p>
             </div>
 

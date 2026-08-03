@@ -1,53 +1,70 @@
-# Robots.txt for Hachi AI Platform
+# Robots.txt · Hachi
 # https://hachi.live
-# Last updated: 2025-11-20
 
-# Allow all search engines to crawl the site
+# ---------------------------------------------------------------------------
+# Buscadores tradicionales
+# ---------------------------------------------------------------------------
 User-agent: *
 Allow: /
 Allow: /es/
 
-# Disallow admin and private paths
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
 Disallow: /.well-known/
-Disallow: /*.json$
-Disallow: /*.xml$
 
-# Specific crawlers optimization
-# Google
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
-# Bing
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 2
 
-# Google Images
 User-agent: Googlebot-Image
 Allow: /images/
 Allow: /assets/
 
-# Block AI training bots (optional - remove if you want to be included)
-User-agent: GPTBot
-Disallow: /
-
+# ---------------------------------------------------------------------------
+# Buscadores de IA
+#
+# Se distinguen dos cosas que suelen confundirse:
+#
+#   · Los que RESPONDEN y CITAN (ChatGPT-User, OAI-SearchBot, PerplexityBot,
+#     Claude-Web...). Cuando alguien pregunta «¿qué es Hachi?» o «¿cuánto
+#     cuesta?», estos son los que leen la web para contestar. Bloquearlos
+#     equivale a no existir en esa búsqueda. Se permiten: para eso está
+#     llms.txt, que es literalmente un archivo escrito para ellos.
+#
+#   · Los que RECOPILAN PARA ENTRENAR en bloque (GPTBot, CCBot). No devuelven
+#     visitas. Se mantienen bloqueados. Si algún día interesa aparecer también
+#     ahí, basta con borrar sus dos bloques.
+# ---------------------------------------------------------------------------
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
 Disallow: /
 
 User-agent: CCBot
 Disallow: /
 
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-# Block bad bots and scrapers
+# ---------------------------------------------------------------------------
+# Rastreadores de análisis de la competencia: no aportan visitas
+# ---------------------------------------------------------------------------
 User-agent: AhrefsBot
 Disallow: /
 
@@ -60,8 +77,5 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Sitemap location
 Sitemap: https://hachi.live/sitemap.xml
-
-# Host directive (for Yandex)
 Host: https://hachi.live

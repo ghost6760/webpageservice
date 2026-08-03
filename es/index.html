@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hachi - Agentes IA Conversacionales + CRM Multicanal para WhatsApp, Instagram y Messenger</title>
-    <meta name="description" content="Plataforma SaaS de agentes IA especializados que automatizan ventas, soporte y agendamiento en WhatsApp, Instagram y Messenger. CRM Chatwoot integrado + Email Marketing.">
+    <title>Hachi · IA que atiende tu WhatsApp, agenda citas reales y reduce ausencias | España</title>
+    <meta name="description" content="Asistente de IA que contesta tu WhatsApp 24/7, consulta tu agenda de verdad y reserva la cita. Recordatorios que reducen las ausencias un 40-60 %. Desde 149 €/mes. 7 días de prueba gratis, sin tarjeta. Cumple el RGPD.">
 
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="agentes IA, automatización WhatsApp, chatbot, CRM, LangGraph, IA conversacional, automatización atención al cliente, bot Instagram, bot Messenger">
     <meta name="author" content="Hachi AI">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1">
@@ -16,9 +15,9 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hachi.live/es/">
-    <meta property="og:title" content="Hachi - Agentes IA Conversacionales + CRM Multicanal">
-    <meta property="og:description" content="Automatiza tus conversaciones en WhatsApp, Instagram y Messenger con agentes IA especializados. Agentes cognitivos LangGraph que razonan, reintentan y se autocorrigen.">
-    <meta property="og:image" content="https://hachi.live/images/og-image-es.png">
+    <meta property="og:title" content="Hachi · IA que atiende tu WhatsApp y agenda citas de verdad">
+    <meta property="og:description" content="No es un chatbot de botones. Consulta tu agenda real, reserva, recuerda la cita y avisa si algo se sale de lo previsto. Desde 149 €/mes, 7 días gratis sin tarjeta.">
+    <meta property="og:image" content="https://hachi.live/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Plataforma Hachi AI - Agentes Cognitivos para WhatsApp">
@@ -29,9 +28,9 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://hachi.live/es/">
-    <meta name="twitter:title" content="Hachi - Agentes IA Conversacionales + CRM Multicanal">
-    <meta name="twitter:description" content="Automatiza tus conversaciones en WhatsApp, Instagram y Messenger con agentes IA especializados impulsados por LangGraph.">
-    <meta name="twitter:image" content="https://hachi.live/images/twitter-image-es.png">
+    <meta name="twitter:title" content="Hachi · IA que atiende tu WhatsApp y agenda citas de verdad">
+    <meta name="twitter:description" content="Consulta tu agenda real y reserva la cita. Recordatorios que reducen las ausencias un 40-60 %. Desde 149 €/mes en España.">
+    <meta name="twitter:image" content="https://hachi.live/images/twitter-image.png">
     <meta name="twitter:image:alt" content="Plataforma Hachi AI">
     <meta name="twitter:creator" content="@hachi_ai">
     <meta name="twitter:site" content="@hachi_ai">
@@ -62,39 +61,167 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Hachi AI",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "description": "Plataforma SaaS de agentes IA especializados que automatizan ventas, soporte y agendamiento en WhatsApp, Instagram y Messenger.",
-        "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "USD",
-            "lowPrice": "299",
-            "highPrice": "649",
-            "offerCount": "3"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "ratingCount": "127"
-        },
-        "author": {
-            "@type": "Organization",
-            "name": "Hachi AI",
-            "url": "https://hachi.live"
-        },
-        "featureList": [
-            "Automatización WhatsApp",
-            "Automatización Instagram DM",
-            "Bot Facebook Messenger",
-            "Agentes Cognitivos LangGraph",
-            "Integración CRM Chatwoot",
-            "Integración Google Calendar",
-            "Arquitectura Multi-tenant",
-            "Base de Conocimiento RAG"
-        ],
-        "inLanguage": "es"
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://hachi.live/#organization",
+                "name": "Hachi AI",
+                "url": "https://hachi.live",
+                "logo": "https://hachi.live/hachi-logo-1024x1024.png",
+                "email": "ceo@hachi.live",
+                "description": "Asistente de inteligencia artificial que atiende WhatsApp, Instagram y Messenger, consulta la agenda real del negocio y ejecuta reservas, cancelaciones y recordatorios de citas.",
+                "areaServed": [
+                    { "@type": "Country", "name": "España" },
+                    { "@type": "Place", "name": "Unión Europea" }
+                ],
+                "knowsLanguage": ["es", "en"],
+                "sameAs": ["https://hachi.live"]
+            },
+            {
+                "@type": "SoftwareApplication",
+                "@id": "https://hachi.live/#software",
+                "name": "Hachi",
+                "applicationCategory": "BusinessApplication",
+                "applicationSubCategory": "Automatización de atención al cliente y gestión de citas",
+                "operatingSystem": "Web",
+                "url": "https://hachi.live/es/",
+                "publisher": { "@id": "https://hachi.live/#organization" },
+                "description": "Sistema de agentes de IA que conversa por WhatsApp, Instagram y Messenger y además ejecuta: consulta la disponibilidad real, reserva, cancela, reprograma y envía recordatorios de cita. Arquitectura neuro-simbólica con reglas verificadas en código, no solo en el prompt.",
+                "inLanguage": "es",
+                "featureList": [
+                    "Atención automática 24/7 en WhatsApp, Instagram y Messenger",
+                    "Agendamiento real contra la agenda del negocio",
+                    "Recordatorios de cita que reducen las ausencias",
+                    "Seguimiento proactivo de presupuestos sin respuesta",
+                    "Campañas de WhatsApp con plantillas aprobadas por Meta",
+                    "Recepción telefónica con IA",
+                    "Captura de leads de Meta Lead Ads",
+                    "Bandeja unificada con supervisión humana",
+                    "Base de conocimiento propia (RAG) a partir de tus documentos",
+                    "Aislamiento multi-tenant y cumplimiento del RGPD"
+                ],
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Plan Autónomo",
+                        "price": "149",
+                        "priceCurrency": "EUR",
+                        "description": "Un profesional, una agenda, un número. 250 conversaciones al mes. Implantación única de 290 €.",
+                        "availability": "https://schema.org/InStock",
+                        "priceSpecification": {
+                            "@type": "UnitPriceSpecification",
+                            "price": "149",
+                            "priceCurrency": "EUR",
+                            "unitCode": "MON",
+                            "billingIncrement": "1"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Plan Esencial",
+                        "price": "390",
+                        "priceCurrency": "EUR",
+                        "description": "750 conversaciones al mes, multi-agenda y base de conocimiento propia. Implantación única de 690 €.",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Plan Profesional",
+                        "price": "690",
+                        "priceCurrency": "EUR",
+                        "description": "1.500 conversaciones y 400 minutos de voz al mes, con seguimiento proactivo. Implantación única de 1.190 €.",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Plan Clínica Completa",
+                        "price": "990",
+                        "priceCurrency": "EUR",
+                        "description": "3.000 conversaciones y 800 minutos de voz al mes, campañas y recordatorios incluidos. Implantación única de 1.690 €.",
+                        "availability": "https://schema.org/InStock"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Plan Multi-sede / Marca blanca",
+                        "price": "1690",
+                        "priceCurrency": "EUR",
+                        "description": "Varias sedes en una cuenta, marca propia y reventa del servicio. Desde 1.690 € al mes.",
+                        "availability": "https://schema.org/InStock"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://hachi.live/es/#faq",
+                "inLanguage": "es",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "¿Cuánto cuesta Hachi?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Hay cinco planes: Autónomo 149 €/mes, Esencial 390 €/mes, Profesional 690 €/mes, Clínica Completa 990 €/mes y Multi-sede desde 1.690 €/mes. A eso se añade una implantación de pago único de entre 290 € y 1.690 € según el plan, que solo se cobra si decides continuar tras la prueba gratuita."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿La prueba es gratis? ¿Piden tarjeta?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sí, es gratis y no se pide tarjeta. Primero hay una videollamada de demostración sin coste, después 7 días de prueba con tu asistente ya configurado. Si decides no continuar, no pagas nada."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Hachi va a escribir a mis pacientes sin su permiso?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Hachi no inicia conversaciones por su cuenta. El seguimiento proactivo solo actúa sobre conversaciones que esa persona abrió ella misma. La única excepción son las campañas, donde la lista la aportas tú y eres responsable del tratamiento de esos datos; nosotros actuamos como encargado, con el contrato del artículo 28 del RGPD."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Hace falta ser una clínica para usar Hachi?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Funciona para cualquier negocio con cita previa: profesionales que trabajan solos, consultorios pequeños, autónomos sin sociedad y también sectores fuera de la salud como peluquerías, barberías, fotografía, asesorías o academias."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Qué diferencia hay entre WhatsApp Business y la API de WhatsApp?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No son lo mismo. La app de WhatsApp Business se usa en el móvil y solo la maneja una persona. La API se atiende desde el ordenador, permite que varias personas respondan a la vez y es la única forma de que un sistema automatice respuestas. Meta no permite tener el mismo número en las dos a la vez: o app, o API. Por eso hay que decidir si se usa una SIM nueva o se migra el número de siempre."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Pierdo mis contactos y conversaciones si migro mi número a la API?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "El historial y los contactos guardados en la app de WhatsApp Business dejan de estar accesibles al migrar el número a la API. Se pueden rescatar antes de la migración, pero eso es un trabajo de base de datos, no automatización, y se presupuesta aparte."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Por qué hay ofertas de 29 € y ofertas de 900 € para lo mismo?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Porque no son lo mismo. Hay tres niveles: flujos dibujados de 29 a 199 € al mes, que no consultan tu agenda; asistentes que conversan bien pero no ejecutan, de 150 a 500 €; y sistemas que conversan y además ejecutan contra tu agenda real, de 460 a 1.840 € con implantaciones de 2.000 a 15.000 €. Hachi es del tercer nivel y está por debajo del rango de su nivel tanto en cuota como en implantación."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "¿Puede el asistente confirmar una cita que en realidad no existe?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No, porque la reserva no la decide el modelo de lenguaje. El modelo interpreta lo que quiere la persona, pero la comprobación de disponibilidad y la escritura en la agenda las ejecuta código verificado. Si el hueco no está libre, no hay cita, diga lo que diga la conversación."
+                        }
+                    }
+                ]
+            }
+        ]
     }
     </script>
 
@@ -1248,10 +1375,12 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#agentes">Agentes</a></li>
-                <li><a href="#tecnologia">Tecnología</a></li>
-                <li><a href="#integracion">Integración</a></li>
+                <li><a href="#agentes">Qué hace</a></li>
+                <li><a href="#niveles">Comparativa</a></li>
                 <li><a href="#precios">Precios</a></li>
+                <li><a href="#rgpd">RGPD</a></li>
+                <li><a href="#faq">Preguntas</a></li>
+                <li><a href="#tecnologia">Tecnología</a></li>
                 <li><a href="#contacto">Contacto</a></li>
                 <li class="lang-selector">
                     <a href="/">EN</a>
@@ -1315,57 +1444,40 @@
                 </svg>
             </div>
             <h1>Hachi</h1>
-            <div class="subtitle">Agentes IA Conversacionales + CRM Multicanal</div>
-            <p>Automatiza tus conversaciones en <strong>WhatsApp, Instagram, Messenger y Email</strong> con agentes IA especializados que entienden tu negocio. CRM Chatwoot integrado para supervisión humana + panel de gestión de bots.</p>
+            <div class="subtitle">El empleado que contesta tu WhatsApp a las 3 de la mañana</div>
+            <p>Hachi atiende <strong>WhatsApp, Instagram y Messenger</strong> las 24 horas, <strong>consulta tu agenda de verdad</strong> y reserva la cita. Luego la recuerda, para que no te dejen plantado. No es un menú de botones: entiende lo que le escriben, en audio o por escrito, y cuando algo se sale de lo previsto avisa a una persona.</p>
+            <p style="font-size: 1rem; opacity: 0.75; margin-top: 1rem;">Desde <strong>149 €/mes</strong> · 7 días de prueba gratis, sin tarjeta · Cumple el RGPD</p>
             <div class="cta-buttons">
-                <a href="#contacto" class="cta-button">Solicitar Demo</a>
-                <a href="#precios" class="cta-button cta-secondary">Ver Planes</a>
+                <a href="#contacto" class="cta-button">Solicitar Demo Gratuita</a>
+                <a href="#precios" class="cta-button cta-secondary">Ver Planes y Precios</a>
             </div>
         </div>
     </section>
 
-    <!-- Sección Confían en Nosotros -->
+    <!-- En producción · hechos verificables, no logotipos prestados -->
     <section class="section" style="padding: 4rem 2rem;">
-        <p style="text-align: center; font-size: 1rem; opacity: 0.6; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Confían en nosotros</p>
-        <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
-            <!-- Clínicas -->
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-hospital" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica Las Condes</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Chile</div>
+        <p style="text-align: center; font-size: 1rem; opacity: 0.6; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">En producción, hoy</p>
+        <div style="display: flex; justify-content: center; align-items: stretch; gap: 1.5rem; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.08); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">24/7</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Atendiendo clínicas reales<br>sin interrupciones</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-hospital-alt" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Hospital Ángeles</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">México</div>
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.08); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">63</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Reglas críticas verificadas<br>en código, no en el prompt</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-clinic-medical" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica Ricardo Palma</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Perú</div>
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(139, 92, 246, 0.08); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">3-5</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Días laborables<br>de la firma al alta</div>
             </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-hospital-user" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Clínica del Country</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Colombia</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-h-square" style="font-size: 2rem; color: #8B5CF6;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Hospital Israelita</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Brasil</div>
-            </div>
-            <!-- Ecommerce -->
-            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-shopping-cart" style="font-size: 2rem; color: #FFE600;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">MercadoLibre</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Ecommerce</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 120px;">
-                <i class="fas fa-motorcycle" style="font-size: 2rem; color: #FF5A00;"></i>
-                <div style="font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Rappi</div>
-                <div style="font-size: 0.7rem; opacity: 0.6;">Delivery</div>
+            <div style="flex: 1 1 200px; text-align: center; padding: 1.5rem; background: rgba(6, 182, 212, 0.08); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
+                <div style="font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">0</div>
+                <div style="font-size: 0.85rem; opacity: 0.75; margin-top: 0.4rem;">Flujos que mantener.<br>Aprende de tus documentos</div>
             </div>
         </div>
+        <p style="text-align: center; font-size: 0.85rem; opacity: 0.5; margin-top: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            No publicamos logotipos de empresas que no son clientes. Si quieres hablar con alguien que ya usa Hachi, lo pides en la demostración y te lo ponemos por delante.
+        </p>
     </section>
 
     <!-- Sección Impulsado Por -->
@@ -1383,14 +1495,6 @@
             <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
                 <i class="fas fa-water" style="font-size: 2rem; color: #4D6BFE;"></i>
                 <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">DeepSeek</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
-                <i class="fas fa-video" style="font-size: 2rem; color: #4285F4;"></i>
-                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">Veo 3</div>
-            </div>
-            <div style="text-align: center; padding: 1rem; background: rgba(139, 92, 246, 0.1); border-radius: 12px; min-width: 100px;">
-                <i class="fas fa-cut" style="font-size: 2rem; color: #00F2EA;"></i>
-                <div style="font-size: 0.8rem; margin-top: 0.5rem; font-weight: 600;">CapCut</div>
             </div>
             <div style="text-align: center; padding: 1rem; background: rgba(6, 182, 212, 0.1); border-radius: 12px; min-width: 100px;">
                 <i class="fas fa-phone-alt" style="font-size: 2rem; color: #F22F46;"></i>
@@ -1682,7 +1786,7 @@
     <!-- Agentes Especializados -->
     <section class="section" id="agentes">
         <h2>Agentes Especializados</h2>
-        <p class="section-subtitle">Cada agente está diseñado para una función específica, garantizando respuestas expertas y acciones automatizadas</p>
+        <p class="section-subtitle">Por dentro no hay un solo bot, sino varios especialistas que se pasan la conversación entre ellos según lo que haga falta. En la práctica tú ves una sola conversación; esto es lo que ocurre detrás.</p>
         
         <div class="agents-grid">
             <!-- Agente de Emergencias -->
@@ -1699,7 +1803,7 @@
                 <p>Especialista en urgencias que detecta automáticamente situaciones críticas y activa protocolos de escalación inmediata.</p>
                 <ul class="agent-features">
                     <li>Detección automática de palabras clave de emergencia</li>
-                    <li>Protocolo de respuesta en menos de 3 minutos</li>
+                    <li>Escalación inmediata a una persona real</li>
                     <li>Escalación automática a personal médico</li>
                     <li>Tono empático pero urgente y profesional</li>
                     <li>Disponibilidad 24/7 sin interrupciones</li>
@@ -1881,7 +1985,7 @@
     </section>
 
     <!-- Características Técnicas -->
-    <section class="section" id="tecnologia">
+    <section class="section" id="stack">
         <div class="tech-features">
             <h2>Tecnología de Vanguardia</h2>
             <p class="section-subtitle">Arquitectura empresarial diseñada para máximo rendimiento, confiabilidad y escalabilidad</p>
@@ -1941,23 +2045,23 @@
     <!-- Estadísticas -->
     <section class="section">
         <div class="stats-section fade-in">
-            <h2>Impacto Esperado</h2>
+            <h2>Lo que cambia en tu día a día</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number">70%</span>
-                    <span class="stat-label">Reducción Carga Soporte</span>
+                    <span class="stat-number">40-60%</span>
+                    <span class="stat-label">Menos ausencias, gracias a los recordatorios</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">24/7</span>
-                    <span class="stat-label">Disponibilidad Total</span>
+                    <span class="stat-label">Contestando, también de noche y en festivos</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">30%</span>
-                    <span class="stat-label">Más Citas Agendadas</span>
+                    <span class="stat-number">Segundos</span>
+                    <span class="stat-label">En responder, en vez de la mañana siguiente</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Canales Unificados</span>
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Flujos que rediseñar cuando cambien tus precios</span>
                 </div>
             </div>
         </div>
@@ -2061,264 +2165,468 @@
         </div>
     </section>
 
-    <!-- Testimoniales -->
-    <section class="section">
-        <h2>Lo Que Dicen Nuestros Clientes</h2>
-        <div class="testimonials">
-            <div class="testimonial fade-in">
-                <p>Hachi transformó completamente nuestra atención al cliente. En el primer mes vimos una reducción del 65% en tiempo de respuesta y un aumento del 40% en satisfacción del cliente.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MR</div>
-                    <div>
-                        <strong>María Rodríguez</strong><br>
-                        <span style="opacity: 0.7;">Directora de Operaciones, Clínica EstéticaVida</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Los tres niveles del mercado -->
+    <section class="section" id="niveles">
+        <h2>Por qué hay ofertas de 29 € y ofertas de 900 €</h2>
+        <p class="section-subtitle">Si estás pidiendo presupuestos, te vas a encontrar cifras muy distintas descritas igual: «un asistente de IA que atiende tu WhatsApp y agenda citas». No son lo mismo. Son tres tecnologías distintas.</p>
 
-            <div class="testimonial fade-in">
-                <p>La automatización del agendamiento es increíble. Nuestros clientes pueden agendar citas a cualquier hora y el sistema nunca se equivoca. Ha liberado a nuestro equipo para enfocarse en lo realmente importante.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">CP</div>
-                    <div>
-                        <strong>Carlos Pérez</strong><br>
-                        <span style="opacity: 0.7;">CEO, Centro Médico Integral</span>
-                    </div>
-                </div>
-            </div>
+        <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); margin-top: 3rem;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col">La pregunta que los separa</th>
+                        <th>Nivel 1<br><span>Flujos dibujados</span></th>
+                        <th>Nivel 2<br><span>Asistentes que conversan</span></th>
+                        <th class="featured-col">⭐ Nivel 3<br><span>Conversan Y ejecutan</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-col">Precio al mes</td>
+                        <td>29 – 199 €</td>
+                        <td>150 – 500 €</td>
+                        <td class="featured-col"><strong>460 – 1.840 €</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Implantación</td>
+                        <td>0 – 300 €</td>
+                        <td>0 – 1.000 €</td>
+                        <td class="featured-col"><strong>2.000 – 15.000 €</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">¿Entiende lo que le escriben?</td>
+                        <td><span class="feature-no">❌</span> Solo si pulsas el botón correcto</td>
+                        <td><span class="feature-yes">✅</span> Sí, conversa bien</td>
+                        <td class="featured-col"><span class="feature-yes">✅</span> Sí, incluidos audios e intenciones mezcladas</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col"><strong>¿Consulta tu agenda real antes de proponer una hora?</strong></td>
+                        <td><span class="feature-no">❌ No</span></td>
+                        <td><span class="feature-no">❌ No</span></td>
+                        <td class="featured-col"><span class="feature-yes">✅ Sí</span></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col"><strong>¿Escribe la cita en tu agenda?</strong></td>
+                        <td><span class="feature-no">❌</span> Te manda un enlace</td>
+                        <td><span class="feature-no">❌</span> Te avisa para que la metas tú</td>
+                        <td class="featured-col"><span class="feature-yes">✅</span> La reserva, la cancela y la mueve</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">¿Puede confirmar una hora ya ocupada?</td>
+                        <td>Sí, no sabe qué hay en tu agenda</td>
+                        <td>Sí, puede inventársela</td>
+                        <td class="featured-col"><strong>No. Lo impide el código, no el prompt</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Quién lo mantiene</td>
+                        <td>Tú, rediseñando flujos cada vez que cambia algo</td>
+                        <td>Tú, reescribiendo instrucciones</td>
+                        <td class="featured-col">Nadie. Subes un documento y aprende</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-col">Ejemplos del mercado</td>
+                        <td>Constructores de flujos y bots de menú</td>
+                        <td>Asistentes conversacionales genéricos</td>
+                        <td class="featured-col"><strong>Hachi</strong> y agencias de desarrollo a medida</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="testimonial fade-in">
-                <p>El ROI fue inmediato. En 3 meses recuperamos la inversión y ahora estamos ahorrando miles de dólares mensuales en costos operativos mientras brindamos mejor servicio.</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">LP</div>
-                    <div>
-                        <strong>Laura Patiño</strong><br>
-                        <span style="opacity: 0.7;">Gerente General, Spa Wellness Plus</span>
-                    </div>
-                </div>
-            </div>
+        <div style="max-width: 780px; margin: 3rem auto 0; padding: 2rem; background: rgba(139, 92, 246, 0.08); border-radius: 20px; border: 1px solid rgba(139,92,246,0.2);">
+            <p style="font-size: 1.1rem; line-height: 1.7;">Hachi es de nivel 3, y <strong>cuesta menos que su nivel</strong>: nuestro plan más completo son 990 €/mes cuando el mercado llega a 1.840 €, y nuestra implantación más cara son 1.690 € cuando ese rango empieza en 2.000 €.</p>
+            <p style="font-size: 1.05rem; line-height: 1.7; margin-top: 1.2rem; opacity: 0.85;">Cuando compares 99 € con 390 €, la pregunta no es «¿por qué es más caro?». Es: <strong style="color: #06B6D4;">¿cuánto te cuesta que el de 99 € le confirme a un cliente una hora que ya estaba ocupada?</strong></p>
         </div>
     </section>
 
     <!-- Precios -->
     <section class="section" id="precios">
-        <h2>Planes de Inversión</h2>
-        <p class="section-subtitle">Empleados Virtuales para Clínicas y Consultorios — Autónomos 24/7</p>
+        <h2>Planes y Precios</h2>
+        <p class="section-subtitle">Precios en euros, IVA no incluido. Sin permanencia. <strong>Nada se paga hasta terminar los 7 días de prueba y decidir continuar.</strong></p>
 
-        <!-- Tarjetas de Plan -->
         <div class="pricing">
-            <!-- Plan Starter -->
+            <!-- Autónomo -->
             <div class="pricing-card fade-in">
-                <h3>Starter</h3>
-                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Para Autónomos</p>
-                <div class="price">$299<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> USD/mes</span></div>
-                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ Setup $500 USD (pago único)</p>
-                <p style="font-size: 0.95rem;"><strong>1 Empleado Virtual</strong><br>Médicos independientes o micro-estéticas (1 especialista)</p>
+                <h3>Autónomo</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Trabajas por tu cuenta</p>
+                <div class="price">149<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> €/mes</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 290 € de implantación (pago único)</p>
+                <p style="font-size: 0.95rem;"><strong>Una agenda, un número</strong><br>Sin equipo detrás</p>
                 <ul class="price-features">
-                    <li>✅ Hasta 800 conversaciones/mes</li>
-                    <li>✅ WhatsApp Oficial, Instagram y Messenger</li>
-                    <li>✅ Soporte + Agendador</li>
-                    <li>✅ Google Calendar Nativo (sin links externos)</li>
-                    <li>✅ IA de Razonamiento Libre (sin laberintos de botones)</li>
-                    <li>✅ Procesa audios de voz e intenciones compuestas</li>
-                    <li>✅ Escalamiento autónomo a humano</li>
-                    <li>✅ CRM: Bandeja unificada (1 usuario humano)</li>
-                    <li>✅ Mantenimiento 100% autónomo</li>
-                    <li>❌ Seguimiento proactivo</li>
-                    <li>❌ Recepción Telefónica</li>
+                    <li>✅ Asistente en WhatsApp 24/7</li>
+                    <li>✅ Responde precios, servicios, dudas y ubicación</li>
+                    <li>✅ <strong>Agenda en tu agenda real</strong>, comprobando antes si hay hueco</li>
+                    <li>✅ Cancelaciones y reagendamientos</li>
+                    <li>✅ Recordatorios automáticos de cita</li>
+                    <li>✅ Hasta 250 conversaciones/mes</li>
+                    <li>✅ Panel de control</li>
+                    <li>❌ Llamadas de voz</li>
+                    <li>❌ Campañas y seguimiento proactivo</li>
                 </ul>
-                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Empezar Ahora</a>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
             </div>
 
-            <!-- Plan Clínica Pro (Destacado) -->
+            <!-- Esencial -->
+            <div class="pricing-card fade-in">
+                <h3>Esencial</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Tienes equipo</p>
+                <div class="price">390<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> €/mes</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 690 € de implantación (pago único)</p>
+                <p style="font-size: 0.95rem;"><strong>Todo lo del plan Autónomo, más:</strong></p>
+                <ul class="price-features">
+                    <li>✅ Hasta 750 conversaciones/mes</li>
+                    <li>✅ <strong>Varias agendas o profesionales</strong> con sus propios horarios</li>
+                    <li>✅ Panel completo con métricas</li>
+                    <li>✅ Editas respuestas y comportamiento desde el panel</li>
+                    <li>✅ Base de conocimiento propia: subes tus PDFs y aprende</li>
+                    <li>❌ Llamadas de voz</li>
+                    <li>❌ Campañas y seguimiento proactivo</li>
+                </ul>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
+            </div>
+
+            <!-- Profesional -->
+            <div class="pricing-card fade-in">
+                <h3>Profesional</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Además, el teléfono</p>
+                <div class="price">690<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> €/mes</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 1.190 € de implantación (pago único)</p>
+                <p style="font-size: 0.95rem;"><strong>Todo lo del plan Esencial, más:</strong></p>
+                <ul class="price-features">
+                    <li>✅ <strong>Atención telefónica con voz de IA</strong>, que agenda durante la propia llamada</li>
+                    <li>✅ Hasta 1.500 conversaciones/mes</li>
+                    <li>✅ 400 minutos de llamada incluidos</li>
+                    <li>✅ Seguimiento proactivo de presupuestos fríos</li>
+                    <li>❌ Campañas y llamadas salientes</li>
+                </ul>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
+            </div>
+
+            <!-- Clínica Completa (destacado) -->
             <div class="pricing-card featured fade-in">
-                <h3>Clínica Pro</h3>
-                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Recomendado</p>
-                <div class="price">$649<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> USD/mes</span></div>
-                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ Setup $500–$1.000 USD (pago único)</p>
-                <p style="font-size: 0.95rem;"><strong>Equipo de 3 Empleados Virtuales</strong><br>Clínicas con recepción saturada</p>
+                <h3>Clínica Completa</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">⭐ El más contratado</p>
+                <div class="price">990<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> €/mes</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 1.690 € de implantación (pago único)</p>
+                <p style="font-size: 0.95rem;"><strong>Todo lo del plan Profesional, más:</strong></p>
                 <ul class="price-features">
-                    <li>✅ Hasta 2.500 conversaciones/mes</li>
-                    <li>✅ WhatsApp, Instagram, Messenger + WebChat</li>
-                    <li>✅ Soporte + Agendador + Recuperador de Ventas</li>
-                    <li>✅ Multi-agenda (varios especialistas y cabinas)</li>
-                    <li>✅ IA Libre + Memoria Jerárquica a largo plazo</li>
-                    <li>✅ Audios + RAG Médico Híbrido (lee sus PDFs)</li>
-                    <li>✅ Auto-escalamiento + Alertas a gerencia</li>
-                    <li>✅ CRM: Bandeja + Asignación (3 usuarios)</li>
-                    <li>✅ Usted sube un PDF y la IA aprende sola</li>
-                    <li>✅ Seguimiento proactivo (cotizaciones frías)</li>
-                    <li>➕ Recepción Telefónica (+$200/mes add-on)</li>
+                    <li>✅ <strong>Seguimiento proactivo</strong>: recupera solo a quien preguntó y no volvió</li>
+                    <li>✅ <strong>Campañas de WhatsApp</strong> a tu base de clientes</li>
+                    <li>✅ Llamadas salientes con voz de IA</li>
+                    <li>✅ Hasta 3.000 conversaciones/mes</li>
+                    <li>✅ 800 minutos de llamada incluidos</li>
+                    <li>✅ Captura de leads de Meta Lead Ads</li>
                 </ul>
-                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Elegir Clínica Pro</a>
+                <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
             </div>
 
-            <!-- Plan Enterprise -->
+            <!-- Multi-sede -->
             <div class="pricing-card fade-in">
-                <h3>Enterprise</h3>
-                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Hospitales y Franquicias</p>
-                <div class="price" style="font-size: 2rem;">A Medida</div>
-                <p style="font-size: 0.82rem; opacity: 0.55; margin: 0.5rem 0 1.5rem;">Setup personalizado</p>
-                <p style="font-size: 0.95rem;"><strong>Infraestructura a Medida</strong><br>Múltiples sedes con diferentes especialidades</p>
+                <h3>Multi-sede / Marca blanca</h3>
+                <p style="opacity: 0.65; font-size: 0.88rem; margin: 0.3rem 0;">Grupos y revendedores</p>
+                <div class="price" style="font-size: 2.4rem;">desde 1.690<span style="font-size: 1.1rem; font-weight: 400; color: rgba(255,255,255,0.7)"> €/mes</span></div>
+                <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">Implantación a presupuesto</p>
+                <p style="font-size: 0.95rem;"><strong>Véndelo con tu propia marca</strong></p>
                 <ul class="price-features">
-                    <li>✅ Volumen Masivo de conversaciones</li>
-                    <li>✅ Todos los canales + Integración API personalizada</li>
-                    <li>✅ Múltiples roles especializados por área médica</li>
-                    <li>✅ Integración directa con HIS/EMR</li>
-                    <li>✅ Multi-Agentes Dedicados en clúster</li>
-                    <li>✅ RAG Ilimitado y bases de datos externas</li>
-                    <li>✅ Reglas de ruteo personalizadas a medida</li>
-                    <li>✅ Panel avanzado. Usuarios Ilimitados.</li>
-                    <li>✅ SLA y soporte técnico prioritario 24/7</li>
-                    <li>✅ Seguimiento proactivo incluido</li>
-                    <li>✅ Recepción Telefónica Ilimitada</li>
+                    <li>✅ Varias sedes o empresas en una sola cuenta</li>
+                    <li>✅ Marca propia en el panel</li>
+                    <li>✅ Das de alta a tus clientes y decides qué les cobras</li>
+                    <li>✅ Tu margen es tuyo</li>
+                    <li>✅ Soporte prioritario y formación</li>
+                    <li>✅ Volumen y minutos a medida</li>
                 </ul>
-                <a href="#contacto" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Solicitar Cotización</a>
+                <a href="#contacto" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Hablar de reventa</a>
             </div>
         </div>
 
-        <!-- Trust Strip basado en arquitectura real del sistema -->
-        <div class="pricing-trust-strip fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 2rem 0 0; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
-            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
-                <span style="font-size: 1.2rem;">🔒</span>
-                <span><strong>Auto-alojado en servidor propio</strong> — Sus datos médicos nunca salen de su infraestructura. Cumplimiento RGPD/LOPD garantizado.</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
-                <span style="font-size: 1.2rem;">📞</span>
-                <span><strong>Infraestructura de voz activa</strong> — Recepción telefónica con IA disponible como add-on (Pro) o incluida (Enterprise).</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85;">
-                <span style="font-size: 1.2rem;">⚡</span>
-                <span><strong>Sin flujos visuales que mantener</strong> — El sistema aprende de sus documentos. Cero rediseño manual de flujos cada mes.</span>
-            </div>
-        </div>
-
-        <!-- Tabla Comparativa Detallada -->
-        <div class="pricing-comparison fade-in">
-            <h3 style="text-align: center; margin-bottom: 0.5rem; font-size: 1.4rem; opacity: 0.9;">Comparativa Completa</h3>
-            <p style="text-align: center; opacity: 0.55; font-size: 0.9rem; margin-bottom: 2rem;">Todos los detalles para que elijas con claridad</p>
+        <!-- Qué se paga y cuándo -->
+        <div style="max-width: 780px; margin: 1rem auto 0;">
+            <h3 style="text-align: center; font-size: 1.3rem; margin-bottom: 1.5rem; opacity: 0.9;">El orden de los pagos, sin letra pequeña</h3>
             <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);">
                 <table class="pricing-table">
                     <thead>
                         <tr>
-                            <th class="feature-col">Característica / Beneficio</th>
-                            <th>Starter<br><span>Autónomos</span></th>
-                            <th class="featured-col">⭐ Clínica Pro<br><span>Recomendado</span></th>
-                            <th>Enterprise</th>
+                            <th class="feature-col">Momento</th>
+                            <th>Qué pagas</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="section-row"><td colspan="4">💰 Inversión</td></tr>
-                        <tr>
-                            <td class="feature-col">Inversión Mensual</td>
-                            <td><strong>$299 USD</strong></td>
-                            <td class="featured-col"><strong>$649 USD</strong></td>
-                            <td>A Medida</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Setup Inicial (Llave en Mano)</td>
-                            <td>$500 USD (pago único)</td>
-                            <td class="featured-col">$500 – $1.000 USD (pago único)</td>
-                            <td>A Medida</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Concepto Central</td>
-                            <td>1 Empleado Virtual</td>
-                            <td class="featured-col">Equipo de 3 Empleados Virtuales</td>
-                            <td>Infraestructura a Medida</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">🤖 Agentes y Roles</td></tr>
-                        <tr>
-                            <td class="feature-col">Roles Multi-Agente Incluidos</td>
-                            <td>Soporte · Agendador</td>
-                            <td class="featured-col">Soporte · Agendador · Recuperador de Ventas</td>
-                            <td>Múltiples roles por área médica</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Perfil Ideal</td>
-                            <td>Médicos independientes o micro-estéticas (1 especialista)</td>
-                            <td class="featured-col">Clínicas con flujo medio/alto y recepción saturada</td>
-                            <td>Hospitales o franquicias con múltiples sedes</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">📊 Capacidad y Canales</td></tr>
-                        <tr>
-                            <td class="feature-col">Volumen Incluido</td>
-                            <td>Hasta 800 conversaciones/mes</td>
-                            <td class="featured-col">Hasta 2.500 conversaciones/mes</td>
-                            <td>Volumen Masivo</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Cobertura Omnicanal</td>
-                            <td>WhatsApp Oficial, Instagram y Messenger</td>
-                            <td class="featured-col">WhatsApp, IG, Messenger + WebChat</td>
-                            <td>Todos + Integración API personalizada</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">🧠 Inteligencia y Comprensión</td></tr>
-                        <tr>
-                            <td class="feature-col">Motor de Inteligencia</td>
-                            <td>IA de Razonamiento Libre<br><small style="opacity:0.65">(Adiós a los laberintos de botones)</small></td>
-                            <td class="featured-col">IA Libre + Memoria Jerárquica a largo plazo</td>
-                            <td>Multi-Agentes Dedicados en clúster</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Comprensión Avanzada</td>
-                            <td>Procesa audios de voz e intenciones compuestas</td>
-                            <td class="featured-col">Audios + RAG Médico Híbrido<br><small style="opacity:0.65">(Lee sus PDFs a la perfección)</small></td>
-                            <td>RAG Ilimitado y bases de datos externas</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">📅 Agendamiento</td></tr>
-                        <tr>
-                            <td class="feature-col">Agendamiento Transaccional</td>
-                            <td>Google Calendar Nativo<br><small style="opacity:0.65">(Sin mandar al paciente a enlaces externos)</small></td>
-                            <td class="featured-col">Multi-agenda<br><small style="opacity:0.65">(Gestión de varios especialistas y cabinas)</small></td>
-                            <td>Integración directa con su software HIS/EMR</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">🚨 Escalamiento y CRM</td></tr>
-                        <tr>
-                            <td class="feature-col">Escalamiento Autónomo</td>
-                            <td><span class="feature-yes">✅</span> Detecta urgencias y transfiere a un humano automáticamente</td>
-                            <td class="featured-col"><span class="feature-yes">✅</span> Auto-escalamiento + Alertas prioritarias a gerencia</td>
-                            <td><span class="feature-yes">✅</span> Reglas de ruteo personalizadas a medida</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">CRM Todo en Uno (Panel)</td>
-                            <td>Bandeja unificada.<br>Incluye 1 usuario humano.</td>
-                            <td class="featured-col">Bandeja unificada + Asignación de chats.<br>Hasta 3 usuarios humanos.</td>
-                            <td>Panel avanzado. Usuarios Ilimitados.</td>
-                        </tr>
-                        <tr class="section-row"><td colspan="4">⚙️ Operaciones y Soporte</td></tr>
-                        <tr>
-                            <td class="feature-col">Mantenimiento Operativo</td>
-                            <td>100% Autónomo. Cero flujos visuales que rediseñar o actualizar.</td>
-                            <td class="featured-col">100% Autónomo. Usted sube un PDF y la IA aprende sola.</td>
-                            <td>SLA y soporte técnico prioritario 24/7.</td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Seguimiento Proactivo</td>
-                            <td><span class="feature-no">❌ No incluido</span></td>
-                            <td class="featured-col"><span class="feature-yes">✅ Incluido</span><br><small style="opacity:0.65">(Persigue cotizaciones frías tras 1 hora de inactividad)</small></td>
-                            <td><span class="feature-yes">✅ Incluido</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col">Recepción Telefónica (Voz)</td>
-                            <td><span class="feature-no">❌ No incluido</span></td>
-                            <td class="featured-col"><span class="feature-addon">➕ Add-on disponible (+$200/mes)</span></td>
-                            <td><span class="feature-yes">✅ Incluido (Ilimitado)</span></td>
-                        </tr>
-                        <tr>
-                            <td class="feature-col"></td>
-                            <td style="padding: 1.5rem; text-align: center;">
-                                <a href="#contacto" class="cta-button" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Empezar Ahora</a>
-                            </td>
-                            <td class="featured-col" style="padding: 1.5rem; text-align: center;">
-                                <a href="#contacto" class="cta-button" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Elegir Clínica Pro</a>
-                            </td>
-                            <td style="padding: 1.5rem; text-align: center;">
-                                <a href="#contacto" class="cta-button cta-secondary" style="display: inline-block; padding: 0.8rem 1.5rem; font-size: 0.9rem;">Solicitar Cotización</a>
-                            </td>
-                        </tr>
+                        <tr><td class="feature-col">Videollamada de demostración</td><td><strong>0 €</strong></td></tr>
+                        <tr><td class="feature-col">Configuración de tu asistente</td><td><strong>0 €</strong></td></tr>
+                        <tr><td class="feature-col">Los 7 días de prueba</td><td><strong>0 €</strong> · no se pide tarjeta</td></tr>
+                        <tr><td class="feature-col">Si decides continuar</td><td>Primera cuota + implantación</td></tr>
+                        <tr><td class="feature-col">Si decides no continuar</td><td><strong>0 €</strong></td></tr>
                     </tbody>
                 </table>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; opacity: 0.7; margin-top: 1.5rem;">
+                Si contratas un trimestre por adelantado, <strong>la implantación se elimina</strong>.<br>
+                Conversaciones por encima del plan: 0,25 € cada una. Minutos extra de llamada: 0,20 €. Nunca se corta el servicio.
+            </p>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="pricing-trust-strip fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 3rem 0 0; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
+                <span style="font-size: 1.2rem;">🔒</span>
+                <span><strong>Cumplimiento del RGPD</strong> — Contrato de encargado del tratamiento y datos alojados en la UE.</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
+                <span style="font-size: 1.2rem;">⚡</span>
+                <span><strong>Listo en 3-5 días laborables</strong> — Y sin flujos visuales que rediseñar cada mes.</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
+                <span style="font-size: 1.2rem;">🚪</span>
+                <span><strong>Sin permanencia</strong> — Te quedas porque funciona, no porque firmaste.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuánto tiene que pasar para que se pague solo -->
+    <section class="section" id="roi">
+        <h2>¿Cuándo se paga solo?</h2>
+        <p class="section-subtitle">La cuenta más honesta que podemos enseñarte: cuántas citas salvadas al mes hacen falta para cubrir la cuota.</p>
+
+        <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); max-width: 780px; margin: 3rem auto 0;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col">Plan</th>
+                        <th>Cuota</th>
+                        <th class="featured-col">Citas salvadas al mes<br><span>con ticket medio de 200 €</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="feature-col">Autónomo</td><td>149 €</td><td class="featured-col"><strong>1</strong></td></tr>
+                    <tr><td class="feature-col">Esencial</td><td>390 €</td><td class="featured-col"><strong>2</strong></td></tr>
+                    <tr><td class="feature-col">Profesional</td><td>690 €</td><td class="featured-col"><strong>4</strong></td></tr>
+                    <tr><td class="feature-col">Clínica Completa</td><td>990 €</td><td class="featured-col"><strong>5</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="text-align: center; font-size: 0.9rem; opacity: 0.65; margin-top: 1.2rem;">Con un ticket medio de 400 €, la mitad en cada caso.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 3rem auto 0;">
+            <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">📅 Las ausencias</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Los recordatorios automáticos reducen las ausencias entre un <strong>40 % y un 60 %</strong>. Cada hueco que no se queda vacío es dinero que ya estaba perdido.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">⏱️ Los que preguntan de noche</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Quien escribe a las 23:40 y no recibe respuesta hasta las 10:00 ya ha escrito a otros tres sitios. Contestar en segundos <strong>no es comodidad: es la venta</strong>.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👻 Los que desaparecen</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Preguntaron el precio y no volvieron a escribir. El seguimiento proactivo los retoma solo, sin que nadie tenga que acordarse.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 La comparación honesta</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Una recepcionista en España cuesta entre <strong>25.000 € y 35.000 € al año</strong> con costes de empresa, y libra. Hachi no sustituye a tu equipo: le quita de encima lo que no debería estar haciendo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- No hace falta ser una clínica -->
+    <section class="section" id="sectores">
+        <h2>No hace falta ser una clínica</h2>
+        <p class="section-subtitle">Hachi nació atendiendo clínicas, pero lo que resuelve no es un problema médico: es el de cualquier negocio que trabaja con cita previa.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👩‍⚕️ Trabajas por tu cuenta</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Psicología, fisioterapia, nutrición, podología, terapias. Una agenda, un número, y el móvil sonando mientras estás con alguien.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🏥 Consultorio o clínica</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Estética, dental, spa, centros de belleza, veterinaria. Varias agendas, varias cabinas, una recepción desbordada.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">✂️ Fuera de la salud</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Peluquería, barbería, tatuajes, fotografía, asesorías, academias, entrenadores personales. Si se reserva hora, encaja.</p>
+            </div>
+            <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 No hace falta ser una empresa</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Autónomo sin sociedad, con tu NIF. El plan Autónomo está pensado exactamente para eso; no hay mínimo por debajo del cual no te atendemos.</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 0.95rem; opacity: 0.7; margin-top: 2.5rem; max-width: 760px; margin-left: auto; margin-right: auto;">
+            Lo único que cambia fuera de la salud son las palabras: el asistente dirá «cliente» en vez de «paciente» y «servicio» en vez de «tratamiento». El resto funciona igual.
+        </p>
+    </section>
+
+    <!-- RGPD -->
+    <section class="section" id="rgpd">
+        <h2>Protección de datos, en serio</h2>
+        <p class="section-subtitle">Trabajas con datos personales y, si eres sanitario, con datos de categoría especial. Esto no es una casilla que marcar.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
+            <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🤐 Hachi no escribe primero</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">El asistente <strong>no inicia conversaciones por su cuenta</strong>. El seguimiento proactivo solo actúa sobre conversaciones que esa persona abrió ella misma. Nadie recibe un mensaje sin haber escrito antes.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📣 La única excepción, dicha en voz alta</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Las campañas. <strong>La lista la aportas tú</strong>, y con ella la responsabilidad de tener el consentimiento. Nosotros no compramos ni aportamos bases de datos.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📄 Los papeles en regla</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Tú eres el <strong>responsable del tratamiento</strong>; nosotros, el <strong>encargado</strong>. Firmamos el contrato del <strong>artículo 28 del RGPD</strong> antes de tocar un solo dato.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🏥 Datos de salud</h4>
+                <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Se tratan como <strong>categoría especial (art. 9)</strong>, con las garantías que eso exige. Y puedes ejercer supresión sobre una persona concreta cuando te lo pida.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- El diferenciador técnico, contado para cualquiera -->
+    <section class="section" id="garantias">
+        <h2>Por qué no puede inventarse una cita</h2>
+        <p class="section-subtitle">Este es el punto que separa a Hachi de casi todo lo demás, y merece una explicación honesta.</p>
+
+        <div style="max-width: 860px; margin: 3rem auto 0;">
+            <p style="font-size: 1.15rem; line-height: 1.8; text-align: center; margin-bottom: 2.5rem;">
+                Un modelo de lenguaje es convincente incluso cuando se equivoca. Si le dejas decidir <em>solo a él</em> si hay hueco el jueves a las 17:00, algún día dirá que sí cuando no lo hay — y quien se lleva el disgusto es tu cliente, en tu recepción.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px; border-left: 3px solid #8B5CF6;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">La IA decide</h4>
+                    <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Entiende qué quiere la persona, aunque lo diga en un audio, a medias, o mezclando tres cosas en un mismo mensaje. Eso lo hace bien, y para eso está.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px; border-left: 3px solid #06B6D4;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">El código hace cumplir</h4>
+                    <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Comprobar la disponibilidad, escribir en la agenda, no duplicar una reserva, no perder un mensaje: eso lo ejecuta código verificado. Si el hueco no está libre, no hay cita, diga lo que diga la conversación.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2.5rem; padding: 2rem; background: rgba(139, 92, 246, 0.1); border-radius: 20px; border: 1px solid rgba(139,92,246,0.25); text-align: center;">
+                <div style="font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">63</div>
+                <p style="font-size: 1.05rem; line-height: 1.7; margin-top: 0.5rem;"><strong>reglas críticas verificadas en código</strong>, no confiadas a las instrucciones del modelo.</p>
+                <p style="font-size: 0.92rem; opacity: 0.7; margin-top: 1rem;">Cada una responde a la misma pregunta: <em>si el modelo se equivoca justo aquí, ¿qué lo impide?</em> Es trabajo lento y aburrido, y es exactamente la diferencia entre un asistente que impresiona en la demostración y uno que aguanta seis meses sin que tengas que revisar lo que dice.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp API vs WhatsApp Business -->
+    <section class="section" id="whatsapp-api">
+        <h2>WhatsApp API no es WhatsApp Business</h2>
+        <p class="section-subtitle">Casi nadie te cuenta esto antes de contratar, y condiciona la decisión más importante: tu número.</p>
+
+        <div style="overflow-x: auto; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); max-width: 860px; margin: 3rem auto 0;">
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col"></th>
+                        <th>App de WhatsApp Business</th>
+                        <th class="featured-col">API de WhatsApp</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="feature-col">Dónde se usa</td><td>En el móvil</td><td class="featured-col"><strong>Desde el ordenador</strong>, en el navegador</td></tr>
+                    <tr><td class="feature-col">Quién atiende</td><td>Una persona</td><td class="featured-col">Varias personas a la vez</td></tr>
+                    <tr><td class="feature-col">¿Se puede automatizar?</td><td><span class="feature-no">❌</span> Solo respuestas rápidas</td><td class="featured-col"><span class="feature-yes">✅</span> Es la única forma</td></tr>
+                    <tr><td class="feature-col">¿Hay que instalar algo?</td><td>Sí, la app</td><td class="featured-col">No</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 2.5rem auto 0;">
+            <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">Camino A · SIM nueva</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Un número nuevo para el asistente. Tu WhatsApp de siempre sigue intacto en el móvil. Es lo más rápido y no se pierde nada.</p>
+            </div>
+            <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">Camino B · Migrar tu número</h4>
+                <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Tus clientes te siguen escribiendo al de siempre. A cambio, <strong>el historial y los contactos guardados en la app dejan de estar ahí</strong>. Meta no permite el mismo número en la app y en la API a la vez.</p>
+            </div>
+        </div>
+
+        <p style="text-align: center; font-size: 0.95rem; opacity: 0.75; margin-top: 2rem; max-width: 760px; margin-left: auto; margin-right: auto;">
+            Ese historial <strong>se puede rescatar antes de migrar</strong>. No es automatización: es trabajo de base de datos, y lo presupuestamos aparte. Lo decimos ahora y no cuando ya no hay marcha atrás.
+        </p>
+    </section>
+
+    <!-- Preguntas frecuentes -->
+    <section class="section" id="faq">
+        <h2>Preguntas frecuentes</h2>
+        <p class="section-subtitle">Las que más nos hacen, contestadas sin rodeos.</p>
+
+        <div style="max-width: 820px; margin: 3rem auto 0; display: grid; gap: 1.2rem;">
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿La demo es gratis? ¿Me piden tarjeta?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">Gratis y sin tarjeta. Primero una videollamada donde te lo enseñamos funcionando, después 7 días de prueba con tu asistente ya configurado. Si no continúas, no pagas nada.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿Va a escribir a mis pacientes sin permiso?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No. Hachi no inicia conversaciones. El seguimiento solo actúa sobre conversaciones que esa persona abrió ella misma. La excepción son las campañas, donde la lista la aportas tú y eres responsable de tener el consentimiento.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿Puede confirmar una cita que en realidad no existe?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No, porque la reserva no la decide el modelo de lenguaje. La comprobación de disponibilidad y la escritura en la agenda las ejecuta código verificado. Si el hueco no está libre, no hay cita.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿Puedo usar mi número de siempre?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">Sí, pero hay que decidirlo con la información delante. Meta no permite el mismo número en la app de WhatsApp Business y en la API a la vez. O usas una SIM nueva, o migras el de siempre asumiendo que el historial guardado en la app deja de estar accesible. Se puede rescatar antes, y se presupuesta aparte.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿Cuánto se tarda en tenerlo funcionando?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">Entre 3 y 5 días laborables desde que tenemos tus datos y tu número resuelto. La configuración la hacemos nosotros; tú no montas nada.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿Qué pasa si me paso de las conversaciones del plan?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No se corta el servicio. Las conversaciones de más se facturan a 0,25 € cada una, y los minutos de llamada extra a 0,20 €. Si el exceso es constante, te proponemos cambiar de plan porque te sale más barato.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿Hay permanencia?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No. Puedes irte cuando quieras. La implantación se cobra una sola vez al contratar, y se elimina si contratas un trimestre por adelantado.</p>
+            </details>
+            <details style="padding: 1.5rem 1.8rem; background: rgba(255,255,255,0.04); border-radius: 14px; border: 1px solid rgba(255,255,255,0.07);">
+                <summary style="cursor: pointer; font-weight: 600; font-size: 1.02rem;">¿Sustituye a mi recepcionista?</summary>
+                <p style="margin-top: 1rem; font-size: 0.94rem; opacity: 0.82; line-height: 1.7;">No, y quien te diga que sí te está vendiendo humo. Le quita de encima lo repetitivo —el horario, el precio, la dirección, mover una cita— para que dedique el tiempo a lo que sí requiere una persona. Y cubre las noches y los fines de semana, que es cuando no hay nadie.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Para quien invierte o quiere construir esto -->
+    <section class="section" id="tecnologia">
+        <h2>Para quien mira esto con ojos técnicos</h2>
+        <p class="section-subtitle">Si has llegado hasta aquí buscando arquitectura en vez de precios, esta parte es para ti.</p>
+
+        <div style="max-width: 900px; margin: 3rem auto 0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🧩 Arquitectura neuro-simbólica</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Los nodos del grafo emiten señales tipadas que un router <em>sin LLM</em> traduce en decisiones de flujo. El modelo propone; la máquina de estados dispone. Patrón <strong>Check-Signal-Act</strong> en cada nodo.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🛡️ Invariantes custodiadas</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">63 propiedades que el sistema garantiza en código, con la regla de corte explícita: <em>si Python garantiza el resultado, es invariante; si solo lo pide el prompt, es una sugerencia</em>.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🏢 Multi-tenant de verdad</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Aislamiento por empresa hasta en la clave del checkpointer de conversación. Toda consulta va filtrada y parametrizada por empresa: el estado de un cliente no puede filtrarse al de otro.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔀 Agentes que se construyen solos</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Un grafo puede compilarse desde la base de datos: se define un agente nuevo, con sus campos de detección tipados y sus herramientas, sin desplegar código.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">♻️ Idempotencia y compensación</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Reintento seguro en toda la superficie externa. Un webhook duplicado no crea dos citas; una campaña reintentada no envía dos veces.</p>
+                </div>
+                <div style="padding: 2rem; background: rgba(6, 182, 212, 0.06); border-radius: 16px;">
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔌 Multi-proveedor de modelo</h4>
+                    <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">La capa de inferencia está desacoplada: el proveedor y el modelo se eligen por empresa. No hay dependencia de un único proveedor ni de una única familia de modelos.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2.5rem; padding: 2rem; background: rgba(139, 92, 246, 0.08); border-radius: 20px; border: 1px solid rgba(139,92,246,0.2);">
+                <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Lo que esto significa en dinero</h4>
+                <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7;">El coste variable de atender a un cliente —mensajería, modelo y telefonía— se mide en <strong>decenas de euros al mes</strong>, frente a cuotas de 390 a 990 €. El margen no depende de escalar plantilla, porque el mantenimiento del asistente es autónomo: no hay flujos que rediseñar cuando el negocio cambia de precios o de horarios.</p>
+                <p style="font-size: 0.95rem; opacity: 0.85; line-height: 1.7; margin-top: 1rem;">Y el foso no es el modelo, que cualquiera puede alquilar. Es el trabajo lento de convertir 63 comportamientos críticos en garantías verificables. Eso no se replica en un fin de semana con un constructor de flujos.</p>
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 1.5rem;">¿Inviertes, o construyes cosas así? Escribe a <strong>ceo@hachi.live</strong> con «técnico» o «inversión» en el asunto y te contesto yo.</p>
             </div>
         </div>
     </section>
@@ -2326,9 +2634,12 @@
     <!-- Footer CTA -->
     <section class="footer-cta" id="contacto">
         <div class="section">
-            <h2>¿Listo para Automatizar tus Conversaciones?</h2>
-            <p style="font-size: 1.3rem; opacity: 0.9; margin: 2rem 0;">
-                Descubre cómo Hachi puede transformar tu atención al cliente en WhatsApp, Instagram y Messenger
+            <h2>Empieza por una videollamada. Gratis.</h2>
+            <p style="font-size: 1.3rem; opacity: 0.9; margin: 2rem 0 1rem;">
+                Te lo enseñamos funcionando, resolvemos lo de tu número y, si te encaja, pasas a <strong>7 días de prueba con tu propio asistente</strong>.
+            </p>
+            <p style="font-size: 1rem; opacity: 0.7; margin-bottom: 2rem;">
+                No se pide tarjeta. No se paga nada hasta que decides continuar.
             </p>
 
             <!-- Formulario de Contacto -->
@@ -2375,9 +2686,9 @@
 
             <!-- Verticales de Negocio -->
             <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Ideal para:</p>
+                <p style="font-size: 0.9rem; opacity: 0.6; margin-bottom: 1rem;">Funciona para cualquier negocio con cita previa:</p>
                 <p style="font-size: 1rem; opacity: 0.8;">
-                    Clínicas Médicas • Spas y Bienestar • Clínicas Dentales • Estudios de Fitness • Restaurantes
+                    Medicina estética • Clínicas dentales • Spa y bienestar • Fisioterapia y psicología • Veterinaria • Peluquería y barbería • Tatuajes • Fotografía • Asesorías y academias • Profesionales independientes
                 </p>
             </div>
 
