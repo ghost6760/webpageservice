@@ -29,7 +29,7 @@ const T = {
     preguntas: 'Frequently asked questions',
     seguirLeyendo: 'Keep reading',
     pie: ['Home', 'Plans', 'Calculator', 'FAQ'],
-    piePaths: ['/', '/#pricing', '/calculator.html', '/es/preguntas.html'],
+    piePaths: ['/', '/#pricing', '/calculator.html', '/faq.html'],
     otroIdioma: 'Versión en español',
     codigoIdioma: 'ES'
   }

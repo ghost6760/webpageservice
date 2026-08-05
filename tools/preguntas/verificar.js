@@ -11,7 +11,10 @@ const vm = require('vm');
 const path = require('path');
 
 const R = path.join(__dirname, '..', '..');
-const HTML = fs.readFileSync(path.join(R, 'es/preguntas.html'), 'utf8');
+const LANG = process.env.LANG_PAGINA || 'es';
+const RUTA = LANG === 'es' ? 'es/preguntas.html' : 'faq.html';
+const ALTERNA = LANG === 'es' ? 'faq.html' : 'es/preguntas.html';
+const HTML = fs.readFileSync(path.join(R, RUTA), 'utf8');
 
 let fallos = 0, ok = 0;
 const c = (d, cond, det) => cond
@@ -30,7 +33,7 @@ console.log('\n[1] Estructura HTML');
   const b = (m.match(new RegExp('</' + t + '>', 'g')) || []).length;
   c('<' + t + '> equilibrado (' + a + '/' + b + ')', a === b);
 });
-c('lang="es"', /<html lang="es">/.test(HTML));
+c('lang="' + LANG + '"', HTML.includes('<html lang="' + LANG + '">'));
 c('un solo <h1>', (HTML.match(/<h1[\s>]/g) || []).length === 1);
 
 // ─────────────────────────────────────────────── 2. anclas
@@ -71,8 +74,9 @@ c('hay un BreadcrumbList', !!migas);
 c('FAQPage con 75 Question', faq && faq.mainEntity.length === 75,
   faq ? faq.mainEntity.length + '' : '—');
 c('canónica del FAQPage correcta',
-  faq && faq.url === 'https://hachi.live/es/preguntas.html');
-c('inLanguage es-ES', faq && faq.inLanguage === 'es-ES');
+  faq && faq.url === 'https://hachi.live/' + RUTA);
+c('inLanguage declarado', faq &&
+  faq.inLanguage === (LANG === 'es' ? 'es-ES' : 'en'), faq && faq.inLanguage);
 
 // El texto de cada respuesta del schema DEBE estar en la página.
 // Se compara sobre el texto visible normalizado.
@@ -179,53 +183,79 @@ catch (e) { c('el script del buscador corre sin lanzar', false, e.message); r = 
 
 if (r) {
   c('sin filtro se ven las 75', r.visibles === 75, r.visibles + '');
-  const rp = correrBuscador('precio');
-  c('«precio» encuentra preguntas', rp.visibles > 0 && rp.visibles < 75,
+  const B = LANG === 'es'
+    ? { uno: 'precio', acento: ['numero', 'número'], mayus: 'RGPD',
+        varios: 'ventana 24 horas' }
+    : { uno: 'pricing', acento: ['telefono', 'teléfono'], mayus: 'GDPR',
+        varios: '24-hour window' };
+  const rp = correrBuscador(B.uno);
+  c('«' + B.uno + '» encuentra preguntas', rp.visibles > 0 && rp.visibles < 75,
     rp.visibles + '');
-  const ra = correrBuscador('numero');           // sin tilde
-  const rb = correrBuscador('número');           // con tilde
-  c('la búsqueda ignora acentos («numero» = «número»)',
-    ra.visibles === rb.visibles && ra.visibles > 0,
+  // El índice normaliza acentos: la versión inglesa también tiene que hacerlo,
+  // porque un hispanohablante buscando en la web inglesa escribe con tilde.
+  const ra = correrBuscador(B.acento[0]);
+  const rb = correrBuscador(B.acento[1]);
+  c('la búsqueda ignora acentos («' + B.acento[0] + '» = «' + B.acento[1] + '»)',
+    ra.visibles === rb.visibles,
     ra.visibles + ' vs ' + rb.visibles);
-  const rc = correrBuscador('RGPD');
+  const rc = correrBuscador(B.mayus);
   c('la búsqueda ignora mayúsculas', rc.visibles > 0, rc.visibles + '');
-  const rd = correrBuscador('ventana 24 horas');  // varios términos
+  const rd = correrBuscador(B.varios);
   c('varios términos se combinan con Y', rd.visibles > 0 && rd.visibles < 10,
     rd.visibles + '');
   const re = correrBuscador('zzzzqqq');
   c('sin resultados no rompe', re.visibles === 0);
-  c('el contador informa del subconjunto', /de 75$/.test(rp.contador), rp.contador);
+  c('el contador informa del subconjunto',
+    /(?: de | of )75$/.test(rp.contador), rp.contador);
 }
 
 // ─────────────────────────────────────────────── 5. cifras coherentes
 console.log('\n[5] Coherencia de cifras con la landing y la calculadora');
-const landing = fs.readFileSync(path.join(R, 'es/index.html'), 'utf8');
+const landing = fs.readFileSync(
+  path.join(R, LANG === 'es' ? 'es/index.html' : 'index.html'), 'utf8');
 
 c('ROI en margen (2/3/6/8), NO en ingreso (1/2/4/5)',
-  /2 citas para Autónomo, 3 para Esencial, 6 para Profesional y 8 para/.test(
-    HTML.replace(/\s+/g, ' ')));
+  LANG === 'es'
+    ? /2 citas para Autónomo, 3 para Esencial, 6 para Profesional y 8 para/
+        .test(HTML.replace(/\s+/g, ' '))
+    : /2 appointments for Solo, 3 for Essential, 6 for Professional and 8 for/
+        .test(HTML.replace(/\s+/g, ' ')));
 c('no aparece la tabla vieja 1/2/4/5',
-  !/1 cita para Autónomo|Autónomo.*?<strong>1<\/strong>/s.test(HTML));
+  !/1 cita para Autónomo|1 appointment for Solo/.test(HTML));
 c('menciona el margen de contribución del 65 %',
-  /margen de contribución del 65 %/.test(HTML.replace(/\s+/g, ' ')));
+  LANG === 'es' ? /margen de contribución del 65 %/.test(HTML.replace(/\s+/g, ' '))
+                : /65% contribution margin/.test(HTML.replace(/\s+/g, ' ')));
 
-[['149', 'Autónomo'], ['390', 'Esencial'], ['690', 'Profesional'],
- ['990', 'Clínica Completa']].forEach(([p, n]) => {
-  c('precio ' + n + ' = ' + p + ' € coincide con la landing',
-    HTML.includes(p + ' €') && landing.includes(p + ' €'));
+// Las mismas cifras, con el formato de cada idioma.
+const F = LANG === 'es'
+  ? { precio: (p) => p + ' €', planes: ['Autónomo', 'Esencial', 'Profesional', 'Clínica Completa'],
+      implantacion: /290 € a 1\.690 €/, extras: ['0,25 €', '0,20 €'],
+      conv: ['250 conversaciones', '750 conversaciones', '1.500 conversaciones',
+             '3.000 conversaciones'],
+      rango: /40 % al 60 %/, bajo: /el 40 %.*extremo bajo/s,
+      demo: /20 minutos/, prueba: /7 días/, montaje: /3 a 5 días laborables/,
+      recepcion: /25\.000 € y 35\.000 €/ }
+  : { precio: (p) => '€' + p, planes: ['Solo', 'Essential', 'Professional', 'Complete'],
+      implantacion: /€290 to €1,690/, extras: ['€0.25', '€0.20'],
+      conv: ['250 conversations', '750 conversations', '1,500 conversations',
+             '3,000 conversations'],
+      rango: /40% to 60%/, bajo: /40%.*the low end/s,
+      demo: /[Tt]wenty minutes|20 minutes/, prueba: /7[- ]day|7 days/,
+      montaje: /[Tt]hree to five working days/,
+      recepcion: /€25,000 to €35,000/ };
+
+['149', '390', '690', '990'].forEach((p, i) => {
+  c('precio ' + F.planes[i] + ' = ' + F.precio(p) + ' coincide con la landing',
+    HTML.includes(F.precio(p)) && landing.includes(F.precio(p)));
 });
-c('implantación 290–1.690 €', /290 € a 1\.690 €/.test(HTML));
-c('extras 0,25 €/conversación y 0,20 €/minuto',
-  HTML.includes('0,25 €') && HTML.includes('0,20 €'));
-c('conversaciones por plan 250/750/1.500/3.000',
-  ['250 conversaciones', '750 conversaciones', '1.500 conversaciones',
-   '3.000 conversaciones'].every((s) => HTML.includes(s)));
-c('rango de ausencias evitables 40–60 %', /40 % al 60 %/.test(HTML));
-c('usa el 40 % (extremo bajo) como supuesto', /el 40 %.*extremo bajo/s.test(HTML));
-c('demo 20 minutos y prueba 7 días',
-  /20 minutos/.test(HTML) && /7 días/.test(HTML));
-c('3 a 5 días laborables de montaje', /3 a 5 días laborables/.test(HTML));
-c('recepcionista 25.000–35.000 €', /25\.000 € y 35\.000 €/.test(HTML));
+c('implantación 290–1.690 €', F.implantacion.test(HTML));
+c('extras por conversación y por minuto', F.extras.every((x) => HTML.includes(x)));
+c('conversaciones por plan 250/750/1.500/3.000', F.conv.every((x) => HTML.includes(x)));
+c('rango de ausencias evitables 40–60 %', F.rango.test(HTML));
+c('usa el 40 % (extremo bajo) como supuesto', F.bajo.test(HTML));
+c('demo 20 minutos y prueba 7 días', F.demo.test(HTML) && F.prueba.test(HTML));
+c('3 a 5 días laborables de montaje', F.montaje.test(HTML));
+c('recepcionista 25.000–35.000 €', F.recepcion.test(HTML));
 
 // ─────────────────────────────────────────────── 6. nada del espacio-solución
 console.log('\n[6] No se ha filtrado el espacio de la solución');
@@ -237,22 +267,30 @@ const filtrados = prohibido.filter((p) => HTML.includes(p));
 c('sin detalles de arquitectura ni de proveedores',
   filtrados.length === 0, filtrados.join(', '));
 c('describe QUÉ garantiza, no CÓMO se construye',
-  /es código que se ejecuta siempre/.test(HTML));
+  /es código que se ejecuta siempre|is code that runs every time/.test(HTML));
 
 // ─────────────────────────────────────────────── 7. SEO
 console.log('\n[7] SEO y enlaces');
 c('canonical propio',
-  /rel="canonical" href="https:\/\/hachi\.live\/es\/preguntas\.html"/.test(HTML));
+  HTML.includes('rel="canonical" href="https://hachi.live/' + RUTA + '"'));
+c('hreflang a la versión alterna',
+  HTML.includes('href="https://hachi.live/' + ALTERNA + '"'));
+c('se autorreferencia en hreflang',
+  HTML.includes('hreflang="' + LANG + '" href="https://hachi.live/' + RUTA + '"'));
+c('la alterna le devuelve el hreflang',
+  fs.readFileSync(path.join(R, ALTERNA), 'utf8')
+    .includes('hreflang="' + LANG + '" href="https://hachi.live/' + RUTA + '"'));
 const titulo = (HTML.match(/<title>([^<]*)<\/title>/) || [])[1] || '';
 c('title presente y <= 75 caracteres', titulo.length > 0 && titulo.length <= 75,
   titulo.length + ': ' + titulo);
 const desc = (HTML.match(/<meta name="description" content="([^"]*)"/) || [])[1] || '';
 c('meta description entre 120 y 175 caracteres',
   desc.length >= 120 && desc.length <= 175, desc.length + '');
-c('og:url correcta', /og:url" content="https:\/\/hachi\.live\/es\/preguntas\.html"/.test(HTML));
+c('og:url correcta', HTML.includes('og:url" content="https://hachi.live/' + RUTA + '"'));
 c('miga de pan visible además del schema', /<nav class="migas"/.test(HTML));
 
-['/es/', '/es/#precios', '/es/#contacto', '/es/calculadora.html'].forEach((h) => {
+(LANG === 'es' ? ['/es/', '/es/#precios', '/es/#contacto', '/es/calculadora.html']
+               : ['/', '/#pricing', '/#contact', '/calculator.html']).forEach((h) => {
   c('enlaza a ' + h, HTML.includes('href="' + h + '"'));
 });
 const externos = (HTML.match(/(?:src|href)="https?:\/\/(?!hachi\.live)[^"]+"/g) || [])

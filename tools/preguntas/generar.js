@@ -1,15 +1,119 @@
 /**
- * Genera /es/preguntas.html a partir de datos.js.
+ * Genera /es/preguntas.html y /faq.html a partir de datos.es.js y datos.en.js.
  *
  * El HTML visible y el JSON-LD (FAQPage) salen del MISMO array, así que no
  * pueden divergir. Marcar en el schema una respuesta que no está en la página
  * es lo que Google considera marcado engañoso.
+ *
+ * Las dos versiones llevan las mismas nueve secciones y las mismas 75
+ * preguntas, para que sigan siendo comparables; sólo cambia la redacción.
  */
 const fs = require('fs');
 const path = require('path');
-const secciones = require('./datos.js');
 
-const SALIDA = path.join(__dirname, '..', '..', 'es', 'preguntas.html');
+// Todo lo que difiere entre idiomas vive aquí y en nada más.
+const IDIOMAS = {
+  es: {
+    datos: './datos.es.js',
+    ruta: 'es/preguntas.html',
+    alterna: 'faq.html',
+    raiz: '/es/',
+    calculadora: '/es/calculadora.html',
+    contacto: '/es/#contacto',
+    precios: '/es/#precios',
+    privacidad: '/es/privacy-policy.html',
+    codigoAlterno: 'EN',
+    titulo: 'Preguntas frecuentes sobre Hachi · Precios, WhatsApp API, agenda y RGPD',
+    descripcion: (n) => n + ' preguntas respondidas sobre Hachi: precios y planes, ' +
+      'WhatsApp Business API y la ventana de 24 h, migrar tu número, cómo agenda ' +
+      'las citas, ausencias y RGPD.',
+    ogTitulo: 'Preguntas frecuentes sobre Hachi',
+    ogDescripcion: 'Precios, WhatsApp API, tu número, cómo agenda las citas, ' +
+      'ausencias, RGPD e implantación. Respondido entero, incluida la parte que ' +
+      'juega en nuestra contra.',
+    nombreSchema: 'Preguntas frecuentes sobre Hachi',
+    idiomaSchema: 'es-ES',
+    inicio: 'Inicio',
+    migaFinal: 'Preguntas frecuentes',
+    verPlanes: 'Ver planes →',
+    enlaceCalculadora: 'Calculadora',
+    h1: 'Todo lo que preguntan antes de <em>contratar</em>',
+    entradilla: (n) => n + ' preguntas respondidas enteras, incluidas las que juegan ' +
+      'en nuestra\n    contra: qué pierdes si migras tu número, cuándo <strong>no</strong> ' +
+      'te compensa\n    contratarnos y en qué caso una herramienta de 29 € es la ' +
+      'decisión correcta.',
+    buscar: 'Buscar: precio, número, RGPD, ausencias…',
+    buscarAria: 'Buscar entre las preguntas',
+    porTemas: 'Por temas',
+    indiceAria: 'Índice de secciones',
+    sinResultados: 'No hay ninguna pregunta con ese texto.<br>\n  Escríbenos y te la ' +
+      'respondemos: <a href="/es/#contacto">formulario de contacto</a>.',
+    ctaH2: '¿No está tu pregunta?',
+    ctaP: 'Escríbenos y te la respondemos con tu caso concreto. Y si quieres números\n' +
+      '    en vez de respuestas, la calculadora hace la cuenta con los tuyos.',
+    ctaBoton: 'Solicitar una demostración',
+    ctaBotonSec: '📊 Calcular mi retorno',
+    pieInicio: 'Inicio', piePlanes: 'Planes', pieCalc: 'Calculadora',
+    piePriv: 'Privacidad',
+    unaPregunta: ' pregunta', variasPreguntas: ' preguntas', de: ' de ',
+    sinResultadosPara: 'Sin resultados para «',
+    cierreComilla: '»',
+    anclaAria: 'Enlace a esta pregunta'
+  },
+  en: {
+    datos: './datos.en.js',
+    ruta: 'faq.html',
+    alterna: 'es/preguntas.html',
+    raiz: '/',
+    calculadora: '/calculator.html',
+    contacto: '/#contact',
+    precios: '/#pricing',
+    privacidad: '/privacy-policy.html',
+    codigoAlterno: 'ES',
+    titulo: 'Hachi FAQ · Pricing, WhatsApp API, booking and GDPR',
+    descripcion: (n) => n + ' questions answered about Hachi: pricing and plans, ' +
+      'WhatsApp Business API and the 24-hour window, migrating your number, how ' +
+      'appointments are booked, no-shows and GDPR.',
+    ogTitulo: 'Frequently asked questions about Hachi',
+    ogDescripcion: 'Pricing, WhatsApp API, your number, how appointments are booked, ' +
+      'no-shows, GDPR and implementation. Answered in full, including the parts that ' +
+      'argue against us.',
+    nombreSchema: 'Frequently asked questions about Hachi',
+    idiomaSchema: 'en',
+    inicio: 'Home',
+    migaFinal: 'Frequently asked questions',
+    verPlanes: 'See plans →',
+    enlaceCalculadora: 'Calculator',
+    h1: 'Everything people ask before <em>buying</em>',
+    entradilla: (n) => n + ' questions answered in full, including the ones that argue ' +
+      'against us:\n    what you lose by migrating your number, when Hachi is ' +
+      '<strong>not</strong> worth it,\n    and the case in which a €29 tool is the ' +
+      'right decision.',
+    buscar: 'Search: pricing, number, GDPR, no-shows…',
+    buscarAria: 'Search the questions',
+    porTemas: 'By topic',
+    indiceAria: 'Section index',
+    sinResultados: 'No question matches that text.<br>\n  Write to us and we will ' +
+      'answer it: <a href="/#contact">contact form</a>.',
+    ctaH2: 'Is your question missing?',
+    ctaP: 'Write to us and we will answer it for your specific case. And if you want\n' +
+      '    numbers rather than answers, the calculator runs the maths on yours.',
+    ctaBoton: 'Book a demo',
+    ctaBotonSec: '📊 Calculate my return',
+    pieInicio: 'Home', piePlanes: 'Plans', pieCalc: 'Calculator',
+    piePriv: 'Privacy',
+    unaPregunta: ' question', variasPreguntas: ' questions', de: ' of ',
+    sinResultadosPara: 'No results for \u201c',
+    cierreComilla: '\u201d',
+    anclaAria: 'Link to this question'
+  }
+};
+
+const LANG = process.env.LANG_PAGINA || 'es';
+const T = IDIOMAS[LANG];
+const secciones = require(T.datos);
+
+const SALIDA = path.join(__dirname, '..', '..', T.ruta);
 
 // ── utilidades ─────────────────────────────────────────────────────
 const slug = (s) => s
@@ -74,16 +178,16 @@ secciones.forEach((s) => s.preguntas.forEach((p) => {
 const faqPage = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  name: 'Preguntas frecuentes sobre Hachi',
-  url: 'https://hachi.live/es/preguntas.html',
-  inLanguage: 'es-ES',
+  name: T.nombreSchema,
+  url: 'https://hachi.live/' + T.ruta,
+  inLanguage: T.idiomaSchema,
   mainEntity: []
 };
 secciones.forEach((s) => s.preguntas.forEach((p) => {
   faqPage.mainEntity.push({
     '@type': 'Question',
     name: p.q,
-    url: 'https://hachi.live/es/preguntas.html#' + slug(p.q),
+    url: 'https://hachi.live/' + T.ruta + '#' + slug(p.q),
     acceptedAnswer: { '@type': 'Answer', text: aTexto(p.r) }
   });
 }));
@@ -92,9 +196,10 @@ const migas = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://hachi.live/es/' },
-    { '@type': 'ListItem', position: 2, name: 'Preguntas frecuentes',
-      item: 'https://hachi.live/es/preguntas.html' }
+    { '@type': 'ListItem', position: 1, name: T.inicio,
+      item: 'https://hachi.live' + T.raiz },
+    { '@type': 'ListItem', position: 2, name: T.migaFinal,
+      item: 'https://hachi.live/' + T.ruta }
   ]
 };
 
@@ -109,7 +214,7 @@ const cuerpo = secciones.map((s, i) => `
   <p class="intro">${s.intro}</p>
 ${s.preguntas.map((p) => `
   <article class="pregunta" id="${slug(p.q)}">
-    <h3>${p.q}<a class="ancla" href="#${slug(p.q)}" aria-label="Enlace a esta pregunta">#</a></h3>
+    <h3>${p.q}<a class="ancla" href="#${slug(p.q)}" aria-label="${T.anclaAria}">#</a></h3>
     <div class="respuesta">
 ${p.r.split('\n').map((l) => '      ' + l.trim()).filter((l) => l.trim()).join('\n')}
     </div>
@@ -117,20 +222,22 @@ ${p.r.split('\n').map((l) => '      ' + l.trim()).filter((l) => l.trim()).join('
 </section>`).join('\n');
 
 const html = `<!DOCTYPE html>
-<html lang="es">
+<html lang="${LANG}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preguntas frecuentes sobre Hachi · Precios, WhatsApp API, agenda y RGPD</title>
-<meta name="description" content="${total} preguntas respondidas sobre Hachi: precios y planes, WhatsApp Business API y la ventana de 24 h, migrar tu número, cómo agenda las citas, ausencias y RGPD.">
-<link rel="canonical" href="https://hachi.live/es/preguntas.html">
-<link rel="alternate" hreflang="es" href="https://hachi.live/es/preguntas.html">
+<title>${T.titulo}</title>
+<meta name="description" content="${T.descripcion(total)}">
+<link rel="canonical" href="https://hachi.live/${T.ruta}">
+<link rel="alternate" hreflang="${LANG}" href="https://hachi.live/${T.ruta}">
+<link rel="alternate" hreflang="${LANG === 'es' ? 'en' : 'es'}" href="https://hachi.live/${T.alterna}">
+<link rel="alternate" hreflang="x-default" href="https://hachi.live/${LANG === 'en' ? T.ruta : T.alterna}">
 <link rel="icon" href="/favicon.ico">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://hachi.live/es/preguntas.html">
-<meta property="og:title" content="Preguntas frecuentes sobre Hachi">
-<meta property="og:description" content="Precios, WhatsApp API, tu número, cómo agenda las citas, ausencias, RGPD e implantación. Respondido entero, incluida la parte que juega en nuestra contra.">
+<meta property="og:url" content="https://hachi.live/${T.ruta}">
+<meta property="og:title" content="${T.ogTitulo}">
+<meta property="og:description" content="${T.ogDescripcion}">
 <meta property="og:image" content="https://hachi.live/images/og-image.png">
 
 <script type="application/ld+json">
@@ -236,65 +343,62 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 
 <nav class="nav">
   <div class="envoltorio">
-    <a href="/es/" class="marca">Hachi<span>.</span></a>
+    <a href="${T.raiz}" class="marca">Hachi<span>.</span></a>
     <div>
-      <a href="/es/calculadora.html" style="margin-right:16px">Calculadora</a>
-      <a href="/es/#precios">Ver planes →</a>
+      <a href="/${T.alterna}" style="margin-right:16px">${T.codigoAlterno}</a>
+      <a href="${T.calculadora}" style="margin-right:16px">${T.enlaceCalculadora}</a>
+      <a href="${T.precios}">${T.verPlanes}</a>
     </div>
   </div>
 </nav>
 
 <div class="envoltorio">
 
-<nav class="migas" aria-label="Ruta">
-  <a href="/es/">Inicio</a> › Preguntas frecuentes
+<nav class="migas" aria-label="${T.inicio}">
+  <a href="${T.raiz}">${T.inicio}</a> › ${T.migaFinal}
 </nav>
 
 <header class="hero">
-  <h1>Todo lo que preguntan antes de <em>contratar</em></h1>
+  <h1>${T.h1}</h1>
   <p class="entradilla">
-    ${total} preguntas respondidas enteras, incluidas las que juegan en nuestra
-    contra: qué pierdes si migras tu número, cuándo <strong>no</strong> te compensa
-    contratarnos y en qué caso una herramienta de 29 € es la decisión correcta.
+    ${T.entradilla(total)}
   </p>
 </header>
 
 <div class="buscador">
-  <input type="search" id="q" placeholder="Buscar: precio, número, RGPD, ausencias…"
-         aria-label="Buscar entre las preguntas" autocomplete="off">
+  <input type="search" id="q" placeholder="${T.buscar}"
+         aria-label="${T.buscarAria}" autocomplete="off">
 </div>
 <p class="contador" id="contador" role="status" aria-live="polite"></p>
 
-<nav class="indice" id="indice" aria-label="Índice de secciones">
-  <h2>Por temas</h2>
+<nav class="indice" id="indice" aria-label="${T.indiceAria}">
+  <h2>${T.porTemas}</h2>
   <div>
 ${indice}
   </div>
 </nav>
 
 <p class="sinresultados" id="sinresultados">
-  No hay ninguna pregunta con ese texto.<br>
-  Escríbenos y te la respondemos: <a href="/es/#contacto">formulario de contacto</a>.
+  ${T.sinResultados}
 </p>
 ${cuerpo}
 
 <div class="cta">
-  <h2>¿No está tu pregunta?</h2>
+  <h2>${T.ctaH2}</h2>
   <p>
-    Escríbenos y te la respondemos con tu caso concreto. Y si quieres números
-    en vez de respuestas, la calculadora hace la cuenta con los tuyos.
+    ${T.ctaP}
   </p>
-  <a href="/es/#contacto" class="boton">Solicitar una demostración</a>
-  <a href="/es/calculadora.html" class="boton sec">📊 Calcular mi retorno</a>
+  <a href="${T.contacto}" class="boton">${T.ctaBoton}</a>
+  <a href="${T.calculadora}" class="boton sec">${T.ctaBotonSec}</a>
 </div>
 
 </div>
 
 <footer>
   <div class="envoltorio">
-    Hachi · <a href="/es/">Inicio</a> · <a href="/es/#precios">Planes</a> ·
-    <a href="/es/calculadora.html">Calculadora</a> ·
-    <a href="/es/privacy-policy.html">Privacidad</a>
+    Hachi · <a href="${T.raiz}">${T.pieInicio}</a> · <a href="${T.precios}">${T.piePlanes}</a> ·
+    <a href="${T.calculadora}">${T.pieCalc}</a> ·
+    <a href="${T.privacidad}">${T.piePriv}</a>
   </div>
 </footer>
 
@@ -344,8 +448,8 @@ ${cuerpo}
     indice.style.display = 'none';
     vacio.classList.toggle('visible', n === 0);
     contador.textContent = n === 0
-      ? 'Sin resultados para «' + caja.value.trim() + '»'
-      : n + (n === 1 ? ' pregunta' : ' preguntas') + ' de ' + total;
+      ? ${JSON.stringify(T.sinResultadosPara)} + caja.value.trim() + ${JSON.stringify(T.cierreComilla)}
+      : n + (n === 1 ? ${JSON.stringify(T.unaPregunta)} : ${JSON.stringify(T.variasPreguntas)}) + ${JSON.stringify(T.de)} + total;
   }
 
   caja.addEventListener('input', filtrar);
@@ -370,7 +474,7 @@ ${cuerpo}
 `;
 
 fs.writeFileSync(SALIDA, html);
-console.log('Escrito ' + SALIDA);
+console.log('Escrito ' + T.ruta + '  (' + LANG + ')');
 console.log('  secciones: ' + secciones.length);
 console.log('  preguntas: ' + total);
 console.log('  tamaño:    ' + (Buffer.byteLength(html) / 1024).toFixed(1) + ' KB');
