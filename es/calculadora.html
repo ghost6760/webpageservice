@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de retorno · Cuánto cuestan las ausencias y las horas de recepción | Hachi</title>
+<meta name="description" content="Calcula con tus propios números cuánto pierde tu clínica por ausencias y cuántas horas de recepción se van en contestar mensajes. Modelo con margen de contribución y coste laboral totalmente cargado. Sin registro.">
+<link rel="canonical" href="https://hachi.live/es/calculadora.html">
+<link rel="alternate" hreflang="es" href="https://hachi.live/es/calculadora.html">
+<link rel="icon" href="/favicon.ico">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hachi.live/es/calculadora.html">
+<meta property="og:title" content="Calculadora de retorno para clínicas · Hachi">
+<meta property="og:description" content="Cuánto cuestan las ausencias y las horas de recepción, con tus números. Modelo económico abierto: se ve cada fórmula.">
+<meta property="og:image" content="https://hachi.live/images/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de retorno para clínicas",
+  "url": "https://hachi.live/es/calculadora.html",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requiere JavaScript",
+  "description": "Calcula el coste mensual de las ausencias y de las horas de recepción dedicadas a contestar mensajes, con margen de contribución y coste laboral totalmente cargado.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "isPartOf": { "@type": "WebSite", "name": "Hachi", "url": "https://hachi.live" },
+  "publisher": { "@type": "Organization", "name": "Hachi", "url": "https://hachi.live" }
+}
+</script>
+
+<style>
+:root{
+  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
+  --verde:#10B981; --ambar:#F59E0B; --rojo:#EF4444;
+  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
+  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:var(--fondo);color:var(--texto);line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--cian);text-decoration:none}
+a:hover{text-decoration:underline}
+.envoltorio{max-width:1080px;margin:0 auto;padding:0 20px}
+
+.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
+  background:rgba(10,10,15,.92);backdrop-filter:blur(8px);z-index:10}
+.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marca{font-weight:700;font-size:1.2rem;color:#fff}
+.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+header.hero{padding:56px 0 32px;text-align:center}
+h1{font-size:2.3rem;line-height:1.2;margin-bottom:14px;color:#fff}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.entradilla{color:var(--tenue);max-width:720px;margin:0 auto;font-size:1.05rem}
+
+.aviso{background:var(--panel);border:1px solid var(--borde);border-left:3px solid var(--cian);
+  border-radius:10px;padding:16px 18px;margin:26px 0;font-size:.95rem;color:var(--tenue)}
+.aviso strong{color:var(--texto)}
+
+.tarjeta{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
+  padding:26px;margin-bottom:26px}
+.tarjeta h2{font-size:1.45rem;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.tarjeta .sub{color:var(--tenue);font-size:.95rem;margin-bottom:22px}
+
+.campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.campo label{display:block;font-size:.87rem;color:var(--tenue);margin-bottom:6px}
+.campo label b{color:var(--texto);font-weight:600}
+.campo input[type=number]{width:100%;padding:10px 12px;background:var(--panel2);
+  border:1px solid var(--borde);border-radius:8px;color:var(--texto);font-size:1rem;
+  font-family:inherit}
+.campo input[type=number]:focus{outline:2px solid var(--violeta);outline-offset:1px}
+.campo input[type=range]{width:100%;accent-color:var(--violeta);margin-top:4px}
+.rango{display:flex;justify-content:space-between;font-size:.75rem;color:var(--tenue);margin-top:2px}
+.supuesto label b::after{content:" · supuesto";color:var(--ambar);font-weight:400;font-size:.8rem}
+
+.operacion{margin-top:24px;background:var(--panel2);border:1px solid var(--borde);
+  border-radius:10px;overflow:hidden}
+.operacion table{width:100%;border-collapse:collapse;font-size:.92rem}
+.operacion td{padding:9px 14px;border-bottom:1px solid var(--borde)}
+.operacion tr:last-child td{border-bottom:none}
+.operacion td:nth-child(2){color:var(--tenue);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem}
+.operacion td:nth-child(3){text-align:right;font-weight:600;white-space:nowrap}
+.operacion tr.total td{background:rgba(139,92,246,.1);font-size:1rem}
+.operacion tr.total td:nth-child(3){color:var(--verde);font-size:1.15rem}
+.operacion tr.total.malo td:nth-child(3){color:var(--rojo)}
+
+.titular{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+.dato{flex:1;min-width:150px;background:var(--panel2);border:1px solid var(--borde);
+  border-radius:10px;padding:16px}
+.dato .k{font-size:.78rem;color:var(--tenue);text-transform:uppercase;letter-spacing:.04em}
+.dato .v{font-size:1.7rem;font-weight:700;color:#fff;margin-top:4px}
+.dato .v.verde{color:var(--verde)} .dato .v.rojo{color:var(--rojo)}
+.dato .n{font-size:.8rem;color:var(--tenue);margin-top:2px}
+
+.veredicto{margin-top:20px;padding:16px 18px;border-radius:10px;font-size:.95rem}
+.veredicto.ok{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.35)}
+.veredicto.no{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.4)}
+.veredicto b{color:#fff}
+
+select{padding:10px 12px;background:var(--panel2);border:1px solid var(--borde);
+  border-radius:8px;color:var(--texto);font-size:1rem;font-family:inherit}
+
+table.simple{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:14px}
+table.simple th,table.simple td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--borde)}
+table.simple th{color:var(--tenue);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+table.simple td:not(:first-child){text-align:right}
+table.simple tr.destacada td{background:rgba(139,92,246,.09);font-weight:600}
+
+details{background:var(--panel);border:1px solid var(--borde);border-radius:12px;
+  padding:18px 22px;margin-bottom:26px}
+details summary{cursor:pointer;font-weight:600;color:#fff;font-size:1.05rem}
+details[open] summary{margin-bottom:14px}
+details h3{font-size:1rem;color:#fff;margin:18px 0 8px}
+details p,details li{color:var(--tenue);font-size:.93rem}
+details ul{margin-left:20px;margin-top:6px}
+details code{background:var(--panel2);padding:2px 6px;border-radius:4px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;color:var(--cian)}
+
+.cta{text-align:center;padding:40px 0 60px}
+.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
+  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
+.boton:hover{text-decoration:none;opacity:.92}
+.cta p{color:var(--tenue);margin-top:12px;font-size:.9rem}
+
+footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);font-size:.87rem;text-align:center}
+
+@media(max-width:640px){
+  h1{font-size:1.7rem}
+  .tarjeta{padding:20px 16px}
+  .operacion td:nth-child(2){display:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="envoltorio">
+    <a href="/es/" class="marca">Hachi<span>.</span></a>
+    <a href="/es/#precios">Ver planes →</a>
+  </div>
+</nav>
+
+<div class="envoltorio">
+
+<header class="hero">
+  <h1>Cuánto te cuesta <em>de verdad</em> una agenda que se cae</h1>
+  <p class="entradilla">
+    Dos cálculos con <strong>tus</strong> números: lo que se pierde por ausencias y
+    lo que se va en contestar los mismos mensajes de siempre. Sin registro y con
+    todas las fórmulas a la vista.
+  </p>
+</header>
+
+<div class="aviso">
+  <strong>Cómo leer esto.</strong> Los datos de tu clínica los pones tú, porque
+  solo tú los sabes. Lo único que hay que suponer va marcado en ámbar, con
+  deslizador y con el valor <strong>más conservador</strong> puesto por defecto:
+  si te parece optimista, bájalo y mira qué pasa. El resultado cambia delante de ti.
+</div>
+
+<!-- ===================== CALCULADORA A ===================== -->
+<section class="tarjeta">
+  <h2>📉 1 · Lo que se pierde por ausencias</h2>
+  <p class="sub">
+    Un paciente que no aparece deja un hueco que ya está pagado: la sala, el
+    equipo y el profesional siguen ahí. Lo que se pierde es el margen de esa cita.
+  </p>
+
+  <div class="campos">
+    <div class="campo">
+      <label for="citas"><b>Citas programadas al mes</b></label>
+      <input type="number" id="citas" value="180" min="1" max="5000" step="1">
+    </div>
+    <div class="campo">
+      <label for="ticket"><b>Ticket medio</b> (€ por cita)</label>
+      <input type="number" id="ticket" value="200" min="1" max="10000" step="10">
+    </div>
+    <div class="campo">
+      <label for="ausencias"><b>Ausencias hoy</b> · <span id="vAusencias">15</span>%</label>
+      <input type="range" id="ausencias" value="15" min="0" max="50" step="1">
+      <div class="rango"><span>0 %</span><span>50 %</span></div>
+    </div>
+    <div class="campo">
+      <label for="variable"><b>Coste variable</b> sobre el ticket · <span id="vVariable">35</span>%</label>
+      <input type="range" id="variable" value="35" min="0" max="90" step="1">
+      <div class="rango"><span>producto y consumibles</span><span>90 %</span></div>
+    </div>
+    <div class="campo">
+      <label for="reasignadas"><b>Huecos que ya rellenas hoy</b> · <span id="vReasignadas">25</span>%</label>
+      <input type="range" id="reasignadas" value="25" min="0" max="100" step="5">
+      <div class="rango"><span>ninguno</span><span>todos</span></div>
+    </div>
+    <div class="campo supuesto">
+      <label for="evitables"><b>Ausencias evitables con recordatorio</b> · <span id="vEvitables">40</span>%</label>
+      <input type="range" id="evitables" value="40" min="0" max="80" step="5">
+      <div class="rango"><span>0 %</span><span>rango habitual 40–60 %</span></div>
+    </div>
+  </div>
+
+  <div class="operacion">
+    <table>
+      <tr><td>Ausencias al mes</td><td id="fA"></td><td id="rA"></td></tr>
+      <tr><td>De ésas, evitables</td><td id="fB"></td><td id="rB"></td></tr>
+      <tr><td>Descontando las que ya rellenas</td><td id="fC"></td><td id="rC"></td></tr>
+      <tr><td>Ingreso recuperado</td><td id="fD"></td><td id="rD"></td></tr>
+      <tr class="total"><td><b>Margen de contribución recuperado</b></td><td id="fE"></td><td id="rE"></td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== CALCULADORA B ===================== -->
+<section class="tarjeta">
+  <h2>⏱️ 2 · Lo que se va en contestar mensajes</h2>
+  <p class="sub">
+    Aquí no hay estimación de ingresos: es aritmética sobre el coste real de una
+    hora de trabajo, con la cotización de la empresa incluida.
+  </p>
+
+  <div class="campos">
+    <div class="campo">
+      <label for="mensajes"><b>Mensajes entrantes al día</b></label>
+      <input type="number" id="mensajes" value="40" min="0" max="2000" step="5">
+    </div>
+    <div class="campo">
+      <label for="dias"><b>Días operativos al mes</b></label>
+      <input type="number" id="dias" value="22" min="1" max="31" step="1">
+    </div>
+    <div class="campo">
+      <label for="minutos"><b>Minutos por gestión</b> (leer, responder, agendar)</label>
+      <input type="number" id="minutos" value="3" min="0.5" max="60" step="0.5">
+    </div>
+    <div class="campo">
+      <label for="salario"><b>Salario bruto anual</b> de recepción (€)</label>
+      <input type="number" id="salario" value="18000" min="0" max="200000" step="500">
+    </div>
+    <div class="campo">
+      <label for="ss"><b>Cotización de la empresa</b> · <span id="vSS">32</span>%</label>
+      <input type="range" id="ss" value="32" min="0" max="45" step="1">
+      <div class="rango"><span>0 %</span><span>régimen general ≈ 32 %</span></div>
+    </div>
+    <div class="campo supuesto">
+      <label for="automatiza"><b>Se resuelve sin intervención humana</b> · <span id="vAuto">60</span>%</label>
+      <input type="range" id="automatiza" value="60" min="0" max="95" step="5">
+      <div class="rango"><span>0 %</span><span>95 %</span></div>
+    </div>
+  </div>
+
+  <div class="operacion">
+    <table>
+      <tr><td>Mensajes al mes</td><td id="fF"></td><td id="rF"></td></tr>
+      <tr><td>Horas al mes dedicadas a contestarlos</td><td id="fG"></td><td id="rG"></td></tr>
+      <tr><td>Horas que dejaría de hacer una persona</td><td id="fH"></td><td id="rH"></td></tr>
+      <tr><td>Coste real de una hora de trabajo</td><td id="fI"></td><td id="rI"></td></tr>
+      <tr class="total"><td><b>Valor de la capacidad liberada</b></td><td id="fJ"></td><td id="rJ"></td></tr>
+    </table>
+  </div>
+
+  <div class="aviso" style="margin-bottom:0">
+    <strong>Ojo con este número:</strong> liberar horas no es ahorrar dinero
+    automáticamente. Si nadie deja de trabajar, lo que ganas es <strong>capacidad</strong>
+    —esas horas se dedican a otra cosa— y vale lo que genere esa otra cosa. Solo
+    se convierte en dinero cuando evitas una contratación, reduces jornada o dejas
+    de pagar horas extra.
+  </div>
+</section>
+
+<!-- ===================== RESULTADO ===================== -->
+<section class="tarjeta">
+  <h2>🧮 3 · Resultado con tu plan</h2>
+  <p class="sub">
+    Sumar los dos es legítimo porque miden cosas distintas: uno es ingreso que no
+    se perdía, el otro es coste que no se gastaba. No hay doble contabilidad.
+  </p>
+
+  <div class="campo" style="max-width:330px;margin-bottom:8px">
+    <label for="plan"><b>Plan</b></label>
+    <select id="plan">
+      <option value="149|290">Autónomo · 149 €/mes</option>
+      <option value="390|690" selected>Esencial · 390 €/mes</option>
+      <option value="690|1190">Profesional · 690 €/mes</option>
+      <option value="990|1690">Clínica Completa · 990 €/mes</option>
+    </select>
+  </div>
+
+  <div class="titular">
+    <div class="dato">
+      <div class="k">Valor recuperado</div>
+      <div class="v" id="tValor">—</div>
+      <div class="n">margen + capacidad, al mes</div>
+    </div>
+    <div class="dato">
+      <div class="k">Resultado neto</div>
+      <div class="v" id="tNeto">—</div>
+      <div class="n">después de pagar la cuota</div>
+    </div>
+    <div class="dato">
+      <div class="k">Punto de equilibrio</div>
+      <div class="v" id="tEquilibrio">—</div>
+      <div class="n">citas salvadas al mes para cubrir la cuota</div>
+    </div>
+    <div class="dato">
+      <div class="k">Implantación</div>
+      <div class="v" id="tPayback">—</div>
+      <div class="n">en recuperar el pago único</div>
+    </div>
+  </div>
+
+  <div id="veredicto" class="veredicto ok"></div>
+</section>
+
+<!-- ===================== SENSIBILIDAD ===================== -->
+<section class="tarjeta">
+  <h2>📊 4 · Si el supuesto se queda corto</h2>
+  <p class="sub">
+    El único número discutible es cuántas ausencias evita un recordatorio. Esto es
+    lo que pasa si es peor de lo previsto.
+  </p>
+  <table class="simple">
+    <thead><tr><th>Ausencias evitadas</th><th>Citas nuevas</th><th>Margen</th><th>Neto tras la cuota</th></tr></thead>
+    <tbody id="tablaSensibilidad"></tbody>
+  </table>
+</section>
+
+<!-- ===================== METODOLOGÍA ===================== -->
+<details>
+  <summary>De dónde sale cada número</summary>
+
+  <h3>Por qué margen de contribución y no ingreso</h3>
+  <p>
+    Una cita recuperada de 200 € no son 200 € de beneficio: consume producto,
+    consumibles y, si aplica, comisión del profesional. Solo el margen es
+    beneficio incremental. Presentar el ingreso bruto como «ahorro» es el error
+    más común de estas calculadoras y el primero que detecta un analista.
+  </p>
+  <p>
+    A favor del cálculo: los costes fijos —sala, equipo, el sueldo del profesional
+    que ya está allí— <strong>ya están pagados</strong> en esa franja. Por eso la
+    métrica correcta es el margen de contribución y no el margen neto.
+  </p>
+
+  <h3>Por qué se descuentan los huecos que ya rellenas</h3>
+  <p>
+    Casi ninguna clínica pierde el 100 % de sus ausencias: algunas se reasignan
+    por teléfono o desde la lista de espera. Si ya rellenas el 25 %, solo el 75 %
+    de lo evitado es ingreso <em>nuevo</em>. Sin este término, el cálculo se
+    sobreestima entre un 20 % y un 40 %.
+  </p>
+
+  <h3>Cómo se calcula el coste de una hora</h3>
+  <p>
+    No es el salario bruto entre las horas de convenio. Es el coste totalmente
+    cargado: <code>salario × (1 + cotización) ÷ horas efectivas</code>.
+  </p>
+  <ul>
+    <li><b>Cotización de la empresa (~32 %)</b>: contingencias comunes 23,60 % ·
+        desempleo 5,50 % · FOGASA 0,20 % · formación 0,60 % · MEI ~0,75 % ·
+        AT/EP según actividad. El tipo exacto depende del contrato y del epígrafe,
+        por eso el campo es editable.</li>
+    <li><b>Horas efectivas: 1.700 al año.</b> No son las de convenio (1.780–1.826,
+        con vacaciones y festivos ya descontados): hay que restar el absentismo
+        real. Usar las de convenio infravalora el coste por hora — y como aquí un
+        coste alto favorece al argumento, se usa el valor conservador.</li>
+  </ul>
+
+  <h3>El rango del 40–60 %</h3>
+  <p>
+    Es el efecto que se atribuye a los recordatorios con confirmación: el paciente
+    confirma o avisa a tiempo, y el hueco puede reasignarse. Por defecto se aplica
+    el <strong>40 %</strong>, el extremo bajo. Es un supuesto, no una promesa: por
+    eso está en un deslizador y no escondido en el código.
+  </p>
+
+  <h3>Lo que esta calculadora NO cuenta</h3>
+  <p>Suma, pero no se puede sostener con aritmética, así que se queda fuera:</p>
+  <ul>
+    <li>El valor de vida del paciente que no vuelve tras no aparecer.</li>
+    <li>El coste de oportunidad de la sala parada más allá del ticket.</li>
+    <li>El efecto en la reputación de una agenda que funciona.</li>
+    <li>Las consultas fuera de horario que hoy se contestan al día siguiente.</li>
+  </ul>
+  <p>Dejar valor fuera es lo que hace creíble el que sí está dentro.</p>
+</details>
+
+<div class="cta">
+  <a href="/es/#contacto" class="boton">Ver una demo con tus propios números</a>
+  <p>Demo gratis · 7 días de prueba · sin tarjeta · la implantación solo se cobra si continúas</p>
+</div>
+
+</div>
+
+<footer>
+  <div class="envoltorio">
+    Hachi · <a href="/es/">Inicio</a> · <a href="/es/#precios">Planes</a> ·
+    <a href="/es/#faq">Preguntas frecuentes</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var HORAS_EFECTIVAS = 1700;   // ver metodología
+  var $ = function (id) { return document.getElementById(id); };
+
+  var eur = new Intl.NumberFormat('es-ES', {
+    style: 'currency', currency: 'EUR', maximumFractionDigits: 0
+  });
+  var num = function (v, d) {
+    return new Intl.NumberFormat('es-ES', {
+      minimumFractionDigits: d || 0, maximumFractionDigits: d || 0
+    }).format(v);
+  };
+
+  function leer(id) {
+    var v = parseFloat($(id).value);
+    return isNaN(v) ? 0 : v;
+  }
+
+  function calcular() {
+    // ---- 1 · Ausencias ------------------------------------------------
+    var N = leer('citas'),
+        P = leer('ticket'),
+        t = leer('ausencias') / 100,
+        v = leer('variable') / 100,
+        q = leer('reasignadas') / 100,
+        r = leer('evitables') / 100;
+
+    var margenUnitario = P * (1 - v);
+    var A = N * t;              // ausencias/mes
+    var E = A * r;              // evitables
+    var I = E * (1 - q);        // incrementales
+    var R = I * P;              // ingreso recuperado
+    var M = R * (1 - v);        // margen de contribución
+
+    $('vAusencias').textContent = leer('ausencias');
+    $('vVariable').textContent = leer('variable');
+    $('vReasignadas').textContent = leer('reasignadas');
+    $('vEvitables').textContent = leer('evitables');
+
+    $('fA').textContent = num(N) + ' × ' + num(t * 100) + ' %';
+    $('rA').textContent = num(A, 1) + ' citas';
+    $('fB').textContent = num(A, 1) + ' × ' + num(r * 100) + ' %';
+    $('rB').textContent = num(E, 1) + ' citas';
+    $('fC').textContent = num(E, 1) + ' × (100 − ' + num(q * 100) + ') %';
+    $('rC').textContent = num(I, 1) + ' citas';
+    $('fD').textContent = num(I, 1) + ' × ' + eur.format(P);
+    $('rD').textContent = eur.format(R);
+    $('fE').textContent = eur.format(R) + ' × (100 − ' + num(v * 100) + ') %';
+    $('rE').textContent = eur.format(M);
+
+    // ---- 2 · Horas de recepción ---------------------------------------
+    var m = leer('mensajes'),
+        d = leer('dias'),
+        u = leer('minutos'),
+        a = leer('automatiza') / 100,
+        S = leer('salario'),
+        ss = leer('ss') / 100;
+
+    var mensajesMes = m * d;
+    var horasMes = mensajesMes * u / 60;
+    var horasLiberadas = horasMes * a;
+    var costeHora = HORAS_EFECTIVAS > 0 ? S * (1 + ss) / HORAS_EFECTIVAS : 0;
+    var V = horasLiberadas * costeHora;
+
+    $('vSS').textContent = leer('ss');
+    $('vAuto').textContent = leer('automatiza');
+
+    $('fF').textContent = num(m) + ' × ' + num(d);
+    $('rF').textContent = num(mensajesMes) + ' mensajes';
+    $('fG').textContent = num(mensajesMes) + ' × ' + num(u, 1) + ' min ÷ 60';
+    $('rG').textContent = num(horasMes, 1) + ' h';
+    $('fH').textContent = num(horasMes, 1) + ' × ' + num(a * 100) + ' %';
+    $('rH').textContent = num(horasLiberadas, 1) + ' h';
+    $('fI').textContent = eur.format(S) + ' × ' + num(1 + ss, 2) + ' ÷ ' + num(HORAS_EFECTIVAS);
+    $('rI').textContent = costeHora.toFixed(2).replace('.', ',') + ' €/h';
+    $('fJ').textContent = num(horasLiberadas, 1) + ' h × ' + costeHora.toFixed(2).replace('.', ',') + ' €';
+    $('rJ').textContent = eur.format(V);
+
+    // ---- 3 · Resultado -------------------------------------------------
+    var partes = $('plan').value.split('|');
+    var cuota = parseFloat(partes[0]);
+    var implantacion = parseFloat(partes[1]);
+
+    var valor = M + V;
+    var neto = valor - cuota;
+    var equilibrio = margenUnitario > 0 ? Math.ceil(cuota / margenUnitario) : Infinity;
+
+    $('tValor').textContent = eur.format(valor);
+    $('tNeto').textContent = (neto >= 0 ? '+' : '') + eur.format(neto);
+    $('tNeto').className = 'v ' + (neto >= 0 ? 'verde' : 'rojo');
+    $('tEquilibrio').textContent = isFinite(equilibrio) ? equilibrio : '—';
+    $('tPayback').textContent = neto > 0
+      ? (implantacion / neto < 1 ? 'menos de 1 mes' : num(Math.ceil(implantacion / neto)) + ' meses')
+      : '—';
+
+    // Veredicto honesto: la calculadora puede y debe decir que no compensa.
+    var ver = $('veredicto');
+    if (neto >= 0) {
+      ver.className = 'veredicto ok';
+      ver.innerHTML = 'Con tus números, el plan se cubre salvando <b>' + equilibrio +
+        ' cita' + (equilibrio === 1 ? '' : 's') + ' al mes</b> de las <b>' + num(A, 1) +
+        '</b> que hoy se caen. Todo lo que pase de ahí es margen que hoy no entra.';
+    } else {
+      ver.className = 'veredicto no';
+      ver.innerHTML = 'Con estos números <b>este plan no te compensa todavía</b>: ' +
+        'harían falta <b>' + equilibrio + ' citas salvadas al mes</b> y el volumen o el ' +
+        'ticket no dan para tanto. Prueba con un plan menor — y si tampoco sale, ' +
+        'te lo diremos igual: no tiene sentido vender algo que no se puede rentabilizar.';
+    }
+
+    // ---- 4 · Sensibilidad ----------------------------------------------
+    var filas = '';
+    [20, 30, 40, 50, 60].forEach(function (pct) {
+      var I2 = A * (pct / 100) * (1 - q);
+      var M2 = I2 * P * (1 - v);
+      var n2 = M2 + V - cuota;
+      var act = Math.abs(pct - r * 100) < 0.01 ? ' class="destacada"' : '';
+      filas += '<tr' + act + '><td>' + pct + ' %</td><td>' + num(I2, 1) +
+        '</td><td>' + eur.format(M2) + '</td><td style="color:' +
+        (n2 >= 0 ? 'var(--verde)' : 'var(--rojo)') + '">' +
+        (n2 >= 0 ? '+' : '') + eur.format(n2) + '</td></tr>';
+    });
+    $('tablaSensibilidad').innerHTML = filas;
+  }
+
+  ['citas', 'ticket', 'ausencias', 'variable', 'reasignadas', 'evitables',
+   'mensajes', 'dias', 'minutos', 'salario', 'ss', 'automatiza', 'plan']
+    .forEach(function (id) {
+      $(id).addEventListener('input', calcular);
+      $(id).addEventListener('change', calcular);
+    });
+
+  calcular();
+})();
+</script>
+</body>
+</html>
