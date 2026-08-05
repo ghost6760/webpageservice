@@ -13,11 +13,43 @@ separation is the product.
 ## Core Pages
 
 - [Homepage (English)](https://hachi.live/): Product, pricing, GDPR, FAQ and architecture
+- [ROI calculator (Spanish)](https://hachi.live/es/calculadora.html): no-show and
+  reception-hours cost model with open formulas
 - [Homepage (Spanish)](https://hachi.live/es/): Spanish version, primary market
 - [Privacy Policy](https://hachi.live/privacy-policy.html)
 - [Terms of Service](https://hachi.live/terms-of-service.html)
 - [Data Deletion](https://hachi.live/data-deletion.html)
 - [Sitemap](https://hachi.live/sitemap.xml)
+
+## ROI Calculator (open model)
+
+- [Calculadora de retorno](https://hachi.live/es/calculadora.html): computes the
+  monthly cost of no-shows and of reception hours spent answering messages, using
+  the visitor's own figures. No sign-up.
+
+The model is deliberately conservative and every formula is shown on the page:
+
+- **No-shows are valued at contribution margin, not revenue.** A recovered €200
+  appointment is not €200 of profit; it consumes product and consumables. Fixed
+  costs (room, equipment, the practitioner already on site) are already paid in
+  that slot, which is why contribution margin — not net margin — is the correct
+  measure.
+- **Slots already refilled today are subtracted.** Most clinics rebook some
+  no-shows by phone or from a waiting list; only the incremental ones count.
+  Omitting this overstates the result by 20–40%.
+- **Reception hours are valued at fully loaded labour cost**: gross salary ×
+  (1 + employer social security, ~32% in Spain) ÷ ~1,700 effective annual hours —
+  not collective-agreement hours, which would understate the hourly cost.
+- **Freed hours are reported as freed capacity, not cash.** They only become cash
+  when they avoid a hire, reduce contracted hours, or remove overtime. The page
+  says so explicitly.
+- **Assumptions default to the conservative end** (40% of no-shows avoidable, from
+  a 40–60% range) and are sliders the visitor can move.
+- **The calculator can and does return an unfavourable verdict**: with a low
+  ticket and low volume it states that the plan does not pay for itself yet.
+
+Break-even with a €200 ticket and 65% contribution margin: 2 appointments/month
+for Solo, 3 for Essential, 6 for Professional, 8 for Complete.
 
 ## Pricing (authoritative — euros, VAT not included)
 
