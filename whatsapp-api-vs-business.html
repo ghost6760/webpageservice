@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Business vs WhatsApp Business API: the real differences | Hachi</title>
+<meta name="description" content="What separates the WhatsApp Business app from the official API, why numbers get blocked, what the 24-hour window is, and what you lose by migrating your number.">
+<link rel="canonical" href="https://hachi.live/whatsapp-api-vs-business.html">
+<link rel="alternate" hreflang="en" href="https://hachi.live/whatsapp-api-vs-business.html">
+<link rel="alternate" hreflang="es" href="https://hachi.live/es/whatsapp-api-vs-business.html">
+<link rel="alternate" hreflang="x-default" href="https://hachi.live/whatsapp-api-vs-business.html">
+<link rel="icon" href="/favicon.ico">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hachi.live/whatsapp-api-vs-business.html">
+<meta property="og:title" content="WhatsApp Business vs API: what actually changes">
+<meta property="og:description" content="What separates the WhatsApp Business app from the official API, why numbers get blocked, what the 24-hour window is, and what you lose by migrating your number.">
+<meta property="og:image" content="https://hachi.live/images/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WhatsApp Business and WhatsApp Business API are not the same thing",
+  "description": "What separates the WhatsApp Business app from the official API, why numbers get blocked, what the 24-hour window is, and what you lose by migrating your number.",
+  "inLanguage": "en",
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-08-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hachi.live/whatsapp-api-vs-business.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Hachi",
+    "url": "https://hachi.live"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hachi",
+    "url": "https://hachi.live"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://hachi.live/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "WhatsApp Business vs API",
+      "item": "https://hachi.live/whatsapp-api-vs-business.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is WhatsApp Business API free?",
+      "url": "https://hachi.live/whatsapp-api-vs-business.html#is-whatsapp-business-api-free",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>The app is free; the API is not. Meta charges per business-initiated conversation — reminders and campaigns — while <strong>replying within 24 hours of the customer's message costs nothing</strong>. On top of that sits whatever your provider charges to run it.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I still reply from my phone?",
+      "url": "https://hachi.live/whatsapp-api-vs-business.html#can-i-still-reply-from-my-phone",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>With the API you work from a web console on a computer, not the WhatsApp app on a phone. The upside is that several people can handle chats at once with conversations assigned to them, and the history is centralised and searchable instead of living on a single handset.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does Meta take to approve a template?",
+      "url": "https://hachi.live/whatsapp-api-vs-business.html#how-long-does-meta-take-to-approve-a-template",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Usually 24 to 48 hours. If it is rejected, it does not go out — a barrier that depends on neither you nor your provider, and part of why the API is not used for spam.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I go back after migrating to the API?",
+      "url": "https://hachi.live/whatsapp-api-vs-business.html#can-i-go-back-after-migrating-to-the-api",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>A number can be returned to the app, but it is a process and it does not bring back what was left behind. That is why the decision that matters is the one before migrating, not the one after.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need the API if I only want to answer messages?",
+      "url": "https://hachi.live/whatsapp-api-vs-business.html#do-i-need-the-api-if-i-only-want-to-answer-messages",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>If you genuinely only reply, and never message first or send reminders, the app may be enough. The API becomes necessary as soon as you want to start conversations, have several people handling chats at once, or have an assistant reply automatically.</p>"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
+  --verde:#10B981; --ambar:#F59E0B; --rojo:#EF4444;
+  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
+  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:var(--fondo);color:var(--texto);line-height:1.7;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--cian);text-decoration:none}
+a:hover{text-decoration:underline}
+.envoltorio{max-width:800px;margin:0 auto;padding:0 20px}
+
+.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
+  background:rgba(10,10,15,.93);backdrop-filter:blur(8px);z-index:20}
+.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1000px}
+.marca{font-weight:700;font-size:1.2rem;color:#fff}
+.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.migas{font-size:.82rem;color:var(--tenue);padding:18px 0 0}
+.migas a{color:var(--tenue)}
+
+header.cabecera{padding:22px 0 8px}
+h1{font-size:2.15rem;line-height:1.22;margin-bottom:16px;color:#fff}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.entradilla{color:var(--tenue);font-size:1.08rem;line-height:1.65}
+.meta{font-size:.8rem;color:var(--tenue);margin-top:16px;opacity:.8}
+
+.sumario{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
+  padding:18px 22px;margin:30px 0 8px}
+.sumario h2{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--tenue);margin-bottom:10px;font-weight:600}
+.sumario ol{margin-left:20px}
+.sumario li{margin-bottom:4px;font-size:.93rem}
+
+section.bloque{margin-top:44px;scroll-margin-top:80px}
+h2{font-size:1.55rem;color:#fff;line-height:1.3}
+section.bloque>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
+h3{font-size:1.13rem;color:#fff;margin:26px 0 10px}
+p{margin-bottom:14px}
+ul,ol{margin:0 0 14px 24px}
+li{margin-bottom:8px}
+strong{color:#fff;font-weight:600}
+blockquote{border-left:3px solid var(--violeta);padding:4px 0 4px 18px;margin:20px 0;
+  color:var(--texto);font-size:1.05rem}
+
+.destacado{background:var(--panel);border:1px solid var(--borde);
+  border-left:3px solid var(--cian);border-radius:10px;padding:18px 20px;margin:22px 0}
+.destacado.aviso{border-left-color:var(--ambar)}
+.destacado.bien{border-left-color:var(--verde)}
+.destacado p:last-child,.destacado ul:last-child,.destacado ol:last-child{margin-bottom:0}
+
+.tabla{overflow-x:auto;margin:22px 0;border:1px solid var(--borde);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--borde);
+  vertical-align:top}
+thead th{background:var(--panel2);color:var(--tenue);font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.si{color:var(--verde)} td.no{color:var(--rojo)}
+tr.destacada td{background:rgba(139,92,246,.09)}
+tr.destacada td:first-child{color:#fff;font-weight:600}
+
+.faq{margin-top:44px}
+.faq>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
+.faq article{margin-bottom:22px;scroll-margin-top:80px}
+.faq h3{font-size:1.06rem;margin:0 0 6px}
+.faq .r{color:var(--tenue);font-size:.96rem}
+.faq .r p{margin-bottom:10px}
+
+.relacionadas{margin:46px 0 0}
+.relacionadas h2{font-size:1.2rem;margin-bottom:14px}
+.relacionadas div{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.relacionadas a{display:block;padding:15px 17px;background:var(--panel);
+  border:1px solid var(--borde);border-radius:12px;color:var(--texto);font-size:.93rem}
+.relacionadas a:hover{border-color:var(--violeta);text-decoration:none}
+.relacionadas a b{display:block;color:#fff;margin-bottom:3px;font-size:.97rem}
+.relacionadas a span{color:var(--tenue);font-size:.86rem}
+
+.cta{text-align:center;padding:36px 22px 40px;margin:46px 0 50px;
+  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(6,182,212,.10));
+  border:1px solid rgba(139,92,246,.28);border-radius:20px}
+.cta h2{font-size:1.4rem;margin-bottom:8px;border:none;padding:0}
+.cta p{color:var(--tenue);max-width:520px;margin:0 auto 20px;font-size:.97rem}
+.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
+  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
+.boton:hover{text-decoration:none;opacity:.92}
+.boton.sec{background:transparent;border:1px solid var(--borde);color:var(--texto);
+  margin-left:10px}
+
+footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
+  font-size:.87rem;text-align:center}
+
+@media(max-width:640px){
+  h1{font-size:1.62rem}
+  h2{font-size:1.3rem}
+  .boton.sec{margin-left:0;margin-top:10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="envoltorio">
+    <a href="/" class="marca">Hachi<span>.</span></a>
+    <div>
+      <a href="/es/whatsapp-api-vs-business.html" style="margin-right:16px">ES</a>
+      <a href="/#pricing">See plans →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="envoltorio">
+
+<nav class="migas" aria-label="Home">
+  <a href="/">Home</a> › WhatsApp Business vs API
+</nav>
+
+<header class="cabecera">
+  <h1>WhatsApp Business and WhatsApp Business API <em>are not the same thing</em></h1>
+  <p class="entradilla">Confusing the two is what gets business numbers blocked — usually the number
+    you have had for years, the one on your Google listing and your cards. Here is the
+    whole difference, including the part almost nobody mentions until it is too late.</p>
+  <p class="meta">Updated 2026-08-05</p>
+</header>
+
+<nav class="sumario" aria-label="On this page">
+  <h2>On this page</h2>
+  <ol>
+      <li><a href="#b1">Two different products, not two versions of one</a></li>
+      <li><a href="#b2">Why numbers on the normal app get blocked</a></li>
+      <li><a href="#b3">The 24-hour window, without the jargon</a></li>
+      <li><a href="#b4">The rule that decides whether you keep your number</a></li>
+      <li><a href="#b5">How to decide, in two questions</a></li>
+  </ol>
+</nav>
+
+<section class="bloque" id="b1">
+  <h2>Two different products, not two versions of one</h2>
+  <p>WhatsApp Business and WhatsApp Business API share a name and little else. The
+  <strong>app</strong> — the free one you install on a phone — is built for a small
+  business that <em>replies</em>. The <strong>API</strong> is Meta's official route for
+  companies that also <em>message first</em> and work at volume.</p>
+  <div class="tabla">
+  <table>
+  <thead><tr><th></th><th>WhatsApp Business app</th><th>WhatsApp Business API</th></tr></thead>
+  <tbody>
+  <tr><td>Where it runs</td><td>On a phone</td><td><strong>On a computer</strong>, in a web console</td></tr>
+  <tr><td>Who replies</td><td>One person, by hand</td><td>Your team <strong>and</strong> an assistant, at once</td></tr>
+  <tr><td>Messaging first</td><td class="no">Risk of a block</td><td class="si">Allowed, with an approved template</td></tr>
+  <tr><td>Several people handling chats</td><td class="no">No</td><td class="si">Yes, with conversations assigned</td></tr>
+  <tr><td>History and labels</td><td>Only on that phone</td><td>Centralised and searchable</td></tr>
+  <tr><td>Cost</td><td>Free</td><td>Charged per business-initiated conversation</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <div class="destacado">
+  <p><strong>The part that surprises everyone:</strong> the API <em>is not an app</em>. There
+  is nothing to download, nothing to install and it does not live on a phone. It is a
+  connection route, and what you actually look at is the web console wired to it. You
+  lose none of what you had — your conversations are still there and your team can still
+  reply by hand whenever they want. What changes is <strong>where</strong> the work
+  happens.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b2">
+  <h2>Why numbers on the normal app get blocked</h2>
+  <p>The app is designed for conversations the customer starts. The moment you begin sending
+  messages to people who did not write to you that day, or many messages in a row,
+  WhatsApp's anti-spam system reads it as exactly what it looks like:</p>
+  <ul>
+  <li>First it <strong>throttles your sending</strong>, without telling you.</li>
+  <li>Then it <strong>suspends the number</strong> temporarily.</li>
+  <li>If it happens again, it <strong>blocks it permanently</strong>.</li>
+  </ul>
+  <p>There is no recovery button and no one to call. The real damage is not the penalty
+  itself, it is <em>which number</em> you lose. It is usually the one you have spent years
+  publishing on your Google listing, your website, your signage and your cards. Losing it
+  means losing the channel your work arrives through.</p>
+  <div class="destacado aviso">
+  <p>If you are sending appointment reminders by hand from the app on a phone, you are
+  sitting in precisely the pattern that triggers a block. It works until it doesn't, and
+  there is no warning.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b3">
+  <h2>The 24-hour window, without the jargon</h2>
+  <p>This is the rule everything else follows from. Meta lets you message a person freely for
+  <strong>24 hours after their last message</strong>. After that you cannot send free
+  text — only a <strong>template approved by Meta in advance</strong>.</p>
+  <p>In practice:</p>
+  <ul>
+  <li>Someone messages at 22:00 asking about a service → you can reply however you like for
+  the next 24 hours.</li>
+  <li>They go quiet for three days and you want to follow up → they are outside the window,
+  so you reach them with an approved template
+  ("Hi {{name}}, shall we go ahead with your {{service}} enquiry?").</li>
+  <li>As soon as they reply, <strong>a fresh 24-hour window opens</strong> and the
+  conversation is unrestricted again.</li>
+  </ul>
+  <p>That window is, incidentally, the mechanism that keeps WhatsApp free of spam: you cannot
+  message anyone you like, whenever you like, with whatever you like.</p>
+  <div class="destacado bien">
+  <p>A competent assistant handles this on its own: it knows whether the person is inside or
+  outside the window and picks between free message and template without you thinking
+  about it. This is why a home-made bot or a DIY automation eventually fails — not because
+  it was built badly, but because <strong>without the official API and template handling
+  the message simply does not go out</strong>.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b4">
+  <h2>The rule that decides whether you keep your number</h2>
+  <p>Here is the part worth knowing beforehand rather than afterwards:</p>
+  <blockquote>A phone number can be on the WhatsApp Business app <strong>OR</strong> on the
+  API, but <strong>never on both at once</strong>.</blockquote>
+  <p>That is a Meta rule, not a limitation of any particular vendor. Two paths follow from
+  it.</p>
+  <h3>Path A · A new number</h3>
+  <p>A new SIM for the API. Your existing WhatsApp Business <strong>stays untouched on the
+  phone</strong>, with all its chats and contacts. Zero risk and no extra waiting.</p>
+  <p>The obvious drawback: it is a different number from the one you have published, so you
+  have to start promoting it or set up a redirect. Even so, it is what we recommend to
+  almost everyone, especially if your current WhatsApp has years of history in it.</p>
+  <h3>Path B · Migrating your long-standing number</h3>
+  <p>It can be done, and you stay reachable where people already know you. But:</p>
+  <div class="destacado aviso">
+  <p><strong>When you migrate a number to the API, the chat history and contacts that live in
+  the phone app stop being accessible.</strong> The API starts clean. They are not
+  magically wiped: that number stops working in the app, and with it goes your access to
+  those conversations from the new console.</p>
+  </div>
+  <p>Anyone who tells you "don't worry, we'll just connect your WhatsApp Business" is not
+  telling you this. You would find out the day you go looking for a customer conversation
+  from eight months ago and it is not there.</p>
+</section>
+
+<section class="bloque" id="b5">
+  <h2>How to decide, in two questions</h2>
+  <ol>
+  <li><strong>Is the number you use now published on your website, your Google listing and
+  your ads?</strong><br>If it isn't, take a new number and stop thinking about it.</li>
+  <li><strong>Do you need to keep reading old conversations?</strong><br>If you never look
+  at them, migrate without a rescue. If you consult them often — or they are part of how
+  you follow up with customers — it is worth rescuing them first.</li>
+  </ol>
+  <p>A rescue means extracting the contact list and the conversation history from the app,
+  organising them and loading them into the new system, and it has to happen
+  <strong>before</strong> migrating. That is not automation, it is data work: it is done
+  case by case depending on how much you have, which is why it is quoted separately.</p>
+  <p>It is a decision you make once, so it is worth making well. If you are unsure, put your
+  specific case on the table before signing anything with anyone.</p>
+</section>
+
+<section class="faq" id="faq">
+  <h2>Frequently asked questions</h2>
+  <article id="is-whatsapp-business-api-free">
+    <h3>Is WhatsApp Business API free?</h3>
+    <div class="r">
+      <p>The app is free; the API is not. Meta charges per business-initiated
+      conversation — reminders and campaigns — while <strong>replying within 24 hours of
+      the customer's message costs nothing</strong>. On top of that sits whatever your
+      provider charges to run it.</p>
+    </div>
+  </article>
+  <article id="can-i-still-reply-from-my-phone">
+    <h3>Can I still reply from my phone?</h3>
+    <div class="r">
+      <p>With the API you work from a web console on a computer, not the WhatsApp app on
+      a phone. The upside is that several people can handle chats at once with
+      conversations assigned to them, and the history is centralised and searchable
+      instead of living on a single handset.</p>
+    </div>
+  </article>
+  <article id="how-long-does-meta-take-to-approve-a-template">
+    <h3>How long does Meta take to approve a template?</h3>
+    <div class="r">
+      <p>Usually 24 to 48 hours. If it is rejected, it does not go out — a barrier that
+      depends on neither you nor your provider, and part of why the API is not used for
+      spam.</p>
+    </div>
+  </article>
+  <article id="can-i-go-back-after-migrating-to-the-api">
+    <h3>Can I go back after migrating to the API?</h3>
+    <div class="r">
+      <p>A number can be returned to the app, but it is a process and it does not bring
+      back what was left behind. That is why the decision that matters is the one before
+      migrating, not the one after.</p>
+    </div>
+  </article>
+  <article id="do-i-need-the-api-if-i-only-want-to-answer-messages">
+    <h3>Do I need the API if I only want to answer messages?</h3>
+    <div class="r">
+      <p>If you genuinely only reply, and never message first or send reminders, the app
+      may be enough. The API becomes necessary as soon as you want to start
+      conversations, have several people handling chats at once, or have an assistant
+      reply automatically.</p>
+    </div>
+  </article>
+</section>
+
+<nav class="relacionadas" aria-label="Keep reading">
+  <h2>Keep reading</h2>
+  <div>
+    <a href="/why-flow-based-bots-fail.html"><b>Why flow-based bots fail</b><span>The exact mechanism behind a duplicated booking</span></a>
+    <a href="/how-much-does-an-ai-assistant-cost.html"><b>What an AI assistant costs</b><span>What explains the €29-to-€900 spread</span></a>
+    <a href="/calculator.html"><b>ROI calculator</b><span>The maths on your own figures, no sign-up</span></a>
+  </div>
+</nav>
+
+<div class="cta">
+  <h2>Want us to set it up?</h2>
+  <p>We handle the official API, connect your number and prepare the templates. In the
+        demo we look at your specific case: whether a new number or a migration suits you,
+        and what each one means with your data.</p>
+  <a href="/#contact" class="boton">Book a demo</a>
+  <a href="/calculator.html" class="boton sec">📊 Calculate my return</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="envoltorio">
+    Hachi ·
+    <a href="/">Home</a> ·
+    <a href="/#pricing">Plans</a> ·
+    <a href="/calculator.html">Calculator</a> ·
+    <a href="/es/preguntas.html">FAQ</a> ·
+    <a href="/es/whatsapp-api-vs-business.html">Versión en español</a>
+  </div>
+</footer>
+</body>
+</html>

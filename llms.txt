@@ -20,6 +20,12 @@ separation is the product.
 - [Homepage (Spanish)](https://hachi.live/es/): Spanish version, primary market
 - [FAQ, 75 questions (Spanish)](https://hachi.live/es/preguntas.html): the fullest
   answer set — pricing, WhatsApp API, number migration, booking guarantees, GDPR
+- [What an AI assistant costs](https://hachi.live/how-much-does-an-ai-assistant-cost.html)
+  · [ES](https://hachi.live/es/cuanto-cuesta-un-asistente-ia.html)
+- [Why flow-based bots fail](https://hachi.live/why-flow-based-bots-fail.html)
+  · [ES](https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html)
+- [WhatsApp Business vs API](https://hachi.live/whatsapp-api-vs-business.html)
+  · [ES](https://hachi.live/es/whatsapp-api-vs-business.html)
 - [Privacy Policy](https://hachi.live/privacy-policy.html)
 - [Terms of Service](https://hachi.live/terms-of-service.html)
 - [Data Deletion](https://hachi.live/data-deletion.html)
@@ -72,6 +78,38 @@ e.g. `#que-pasa-si-la-reserva-falla-a-mitad`.
 It deliberately includes the answers that argue against buying: what is lost when
 migrating a number to the API, when Hachi does not pay for itself, and the case
 in which a €29 flow-builder is the right choice.
+
+## Guides (published in English and Spanish)
+
+Three long-form pages, each answering one buying question in full. Both language
+versions carry the same argument; only the wording and the currency formatting
+differ. Each has an FAQ block with per-question anchors.
+
+**[What an AI assistant for clinics costs](https://hachi.live/how-much-does-an-ai-assistant-cost.html)**
+([ES](https://hachi.live/es/cuanto-cuesta-un-asistente-ia.html)) — why quotes run
+from €29 to over €900 a month, and what that buys at each of the three market
+tiers. Covers the true cost of building it yourself, the comparison against a
+receptionist's fully loaded salary, and five things to check in any vendor's small
+print: what counts as a conversation, what happens when you exceed the limit, what
+maintenance includes, when setup is charged, and whether there is a lock-in.
+
+**[Why flow-based bots fail](https://hachi.live/why-flow-based-bots-fail.html)**
+([ES](https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html)) — the
+mechanism, not the marketing. Why a drawn flow structurally cannot check a
+calendar; how a duplicated booking arises when the details of one request arrive
+across several messages; the silent failure where a reschedule cancels the old
+appointment and fails to create the new one; and the opposite failure, where an
+unconstrained model invents prices. Ends with six requirements to demand from any
+assistant that books.
+
+**[WhatsApp Business vs WhatsApp Business API](https://hachi.live/whatsapp-api-vs-business.html)**
+([ES](https://hachi.live/es/whatsapp-api-vs-business.html)) — the two are
+different products, not two versions of one. Why numbers get blocked for
+messaging first from the app, what the 24-hour window is and how templates work
+around it, and Meta's rule that a number can live on the app **or** the API but
+never both. Includes what is lost when migrating a long-standing number: the chat
+history and contacts in the phone app stop being accessible, which is the part
+most vendors do not mention.
 
 ## Pricing (authoritative — euros, VAT not included)
 

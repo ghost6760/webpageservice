@@ -238,14 +238,24 @@ el contenido **ya está escrito** en `docs/` de `multibackendopenIA`.
 
 | # | URL | Origen | Intención que captura |
 |---|---|---|---|
-| 1 | `/es/calculadora.html` | ✅ **Hecha y enlazada** (nav, hero y sección ROI) | «cuánto pierdo por ausencias» |
-| 2 | `/es/preguntas.html` | RAG, 143 preguntas | Decenas de consultas de cola larga |
-| 3 | `/es/whatsapp-api-vs-business.html` | RAG § WhatsApp API | «diferencia whatsapp business api» |
-| 4 | `/es/cuanto-cuesta-un-asistente-ia.html` | Los tres niveles | «precio chatbot clínica» |
-| 5 | `/es/por-que-los-bots-de-flujo-fallan.html` | Los tres niveles | «bot no consulta agenda» |
+| 1 | `/es/calculadora.html` + `/calculator.html` | ✅ **Hechas y enlazadas** (nav, hero y sección ROI en los dos idiomas) | «cuánto pierdo por ausencias» |
+| 2 | `/es/preguntas.html` | ✅ **Hecha** — 75 preguntas del RAG, con ancla propia cada una | Decenas de consultas de cola larga |
+| 3 | `/es/whatsapp-api-vs-business.html` + `/whatsapp-api-vs-business.html` | ✅ **Hechas** | «diferencia whatsapp business api» |
+| 4 | `/es/cuanto-cuesta-un-asistente-ia.html` + `/how-much-does-an-ai-assistant-cost.html` | ✅ **Hechas** | «precio chatbot clínica» |
+| 5 | `/es/por-que-los-bots-de-flujo-fallan.html` + `/why-flow-based-bots-fail.html` | ✅ **Hechas** | «bot no consulta agenda» |
 | 6 | `/es/rgpd-clinicas-whatsapp.html` | § RGPD | «whatsapp rgpd clínica» |
 | 7 | `/es/migrar-numero-whatsapp-api.html` | RAG § migración | «migrar número perder contactos» |
 | 8 | `/es/test-nivel-asistente.html` | Nuevo | Herramienta compartible |
+
+**Corrección sobre el plan original:** las tres páginas de alta intención estaban
+previstas sólo en español. Se han hecho **en los dos idiomas**, porque los datos
+de Search Console dicen que España no aparece entre los ocho primeros países
+(Estados Unidos 396 impresiones, India 86, Japón 27, Suiza 27). Publicar sólo en
+español habría dejado fuera a la mayoría del tráfico que ya llega.
+
+**Estado: de 7 URLs a 16.** El `sitemap.xml` ya las recoge todas con `hreflang`
+recíproco. Queda reenviarlo desde Search Console — lleva sin releerse desde el
+7 de diciembre de 2025.
 
 Cada una con: `FAQPage` o `HowTo` propio, `BreadcrumbList`, canónica, entrada en
 `sitemap.xml` y línea en `llms.txt`.
@@ -296,9 +306,9 @@ ambos. Sin eso no hay forma de saber qué está indexado ni por qué no.
 |---|---|---|---|
 | 0 | ~~Corregir «63 invariantes» → 57~~ · ~~enlazar la calculadora~~ | — | ✅ Hecho |
 | 1 | **Desindexar `crm.` y `api.hachi.live`** + 301 de http a https | 30 min | Quita ruido y superficie innecesaria |
-| 2 | `/es/preguntas.html` con las 143 preguntas del RAG | Medio | **El mayor retorno de SEO** |
-| 3 | Reenviar sitemap (lleva 8 meses sin releerse) + alta en Bing Webmaster | 30 min | Search Console ya está; Bing no |
-| 4 | Las 3 páginas de contenido de alta intención (3, 4, 5) | Medio | Superficie de posicionamiento |
+| 2 | ~~`/es/preguntas.html`~~ ✅ hecha, 75 preguntas | — | **El mayor retorno de SEO** |
+| 3 | **Reenviar sitemap** (16 URLs ahora) + alta en Bing Webmaster | 30 min | **Lo siguiente.** Sin esto, lo publicado no se descubre |
+| 4 | ~~Las 3 páginas de alta intención~~ ✅ hechas, en ES y EN | — | Superficie de posicionamiento |
 | 5 | IndexNow | 30 min | Indexación en horas, gratis |
 | 6 | Test de nivel del asistente | Medio | La pieza más compartible |
 | 7 | `sameAs` en `Organization` hacia los perfiles oficiales | 20 min | Desambigua entre los muchos «hachi» |
