@@ -53,10 +53,6 @@
     <link rel="alternate" hreflang="es" href="https://hachi.live/es/">
     <link rel="alternate" hreflang="x-default" href="https://hachi.live/">
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -229,1102 +225,12 @@
     }
     </script>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0f;
-            color: #E5E7EB;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Partículas de fondo mejoradas */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.15;
-        }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            animation: float 8s infinite linear;
-        }
-        
-        .particle.neural {
-            width: 3px;
-            height: 3px;
-            background: #8B5CF6;
-            box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-        }
-        
-        .particle.data {
-            width: 2px;
-            height: 2px;
-            background: #06B6D4;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(100vh) translateX(0px) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
-        }
-        
-        /* Header mejorado */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .logo-nav svg {
-            width: 45px;
-            height: 45px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #E5E7EB;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #8B5CF6;
-            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-        }
-
-        .lang-selector {
-            display: flex;
-            gap: 0.5rem;
-            margin-left: 1rem;
-            padding-left: 1rem;
-            border-left: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .lang-selector a {
-            padding: 0.3rem 0.6rem;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-
-        .lang-selector a.active {
-            background: rgba(139, 92, 246, 0.3);
-            color: #8B5CF6;
-        }
-
-        .lang-selector a:hover {
-            background: rgba(139, 92, 246, 0.2);
-        }
-
-        .nav-auth-buttons {
-            display: flex;
-            gap: 0.8rem;
-            margin-left: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-login-btn {
-            color: #E5E7EB;
-            text-decoration: none;
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .nav-login-btn:hover {
-            background: rgba(139, 92, 246, 0.1);
-            border-color: #8B5CF6;
-            color: #8B5CF6;
-        }
-
-        .nav-signup-btn {
-            padding: 0.5rem 1.2rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .nav-signup-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
-        }
-
-        /* Hero Section mejorado */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, #0a0a0f 70%);
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            z-index: 10;
-        }
-        
-        .hero-logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 2rem;
-            filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
-        }
-        
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4, #7C3AED);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero .subtitle {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-            color: #8B5CF6;
-            font-weight: 600;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.85;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 2.8rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
-        }
-        
-        .cta-secondary {
-            background: transparent;
-            border: 2px solid #8B5CF6;
-            color: #8B5CF6;
-        }
-        
-        .cta-secondary:hover {
-            background: #8B5CF6;
-            color: #0a0a0f;
-        }
-        
-        /* Sections mejoradas */
-        .section {
-            padding: 6rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section h2 {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Sistema Multi-Agente - Sección principal */
-        .multi-agent-hero {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
-            border-radius: 30px;
-            padding: 4rem;
-            text-align: center;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .multi-agent-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-        
-        /* Agentes Especializados */
-        .agents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-        
-        .agent-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 2.5rem;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .agent-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #8B5CF6, #06B6D4, #7C3AED, #0EA5E9);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-        
-        .agent-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .agent-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
-            border-color: rgba(139, 92, 246, 0.5);
-        }
-        
-        .agent-card.emergency {
-            border-left: 4px solid #E74C3C;
-        }
-        
-        .agent-card.sales {
-            border-left: 4px solid #F39C12;
-        }
-        
-        .agent-card.schedule {
-            border-left: 4px solid #3498DB;
-        }
-        
-        .agent-card.availability {
-            border-left: 4px solid #9B59B6;
-        }
-        
-        .agent-card.support {
-            border-left: 4px solid #2ECC71;
-        }
-        
-        .agent-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .agent-icon {
-            font-size: 2.5rem;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 15px;
-            background: rgba(139, 92, 246, 0.1);
-        }
-        
-        .agent-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .agent-tag {
-            background: rgba(139, 92, 246, 0.2);
-            color: #8B5CF6;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        .agent-features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-        
-        .agent-features li {
-            padding: 0.7rem 0;
-            padding-left: 2rem;
-            position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .agent-features li:last-child {
-            border-bottom: none;
-        }
-        
-        .agent-features li::before {
-            content: "⚡";
-            position: absolute;
-            left: 0;
-            color: #8B5CF6;
-            font-size: 1.2rem;
-        }
-        
-        /* Características Técnicas */
-        .tech-features {
-            background: rgba(10, 10, 15, 0.8);
-            border-radius: 25px;
-            padding: 4rem;
-            margin: 4rem 0;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-        
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-        
-        .tech-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            background: rgba(139, 92, 246, 0.05);
-            border-radius: 20px;
-            border-left: 4px solid #8B5CF6;
-        }
-        
-        .tech-item i {
-            color: #8B5CF6;
-            font-size: 2rem;
-            margin-top: 0.5rem;
-        }
-        
-        .tech-item h4 {
-            color: #8B5CF6;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        
-        /* Beneficios para Landing Page */
-        .benefits-section {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(14, 165, 233, 0.1));
-            border-radius: 30px;
-            padding: 4rem;
-            margin: 4rem 0;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.12);
-        }
-        
-        .benefit-card i {
-            font-size: 3rem;
-            color: #06B6D4;
-            margin-bottom: 1rem;
-        }
-        
-        .benefit-card h4 {
-            color: #8B5CF6;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        /* Integración CRM mejorada */
-        .crm-integration {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 30px;
-            padding: 4rem;
-            margin: 4rem 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .integration-flow {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .flow-step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-        }
-        
-        .flow-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .flow-arrow {
-            font-size: 2rem;
-            color: #8B5CF6;
-            align-self: center;
-        }
-        
-        /* Testimoniales mejorados */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-        
-        .testimonial {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 2.5rem;
-            border-left: 4px solid #06B6D4;
-            position: relative;
-        }
-        
-        .testimonial::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: #8B5CF6;
-            opacity: 0.3;
-        }
-        
-        .testimonial-author {
-            margin-top: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        /* Precios mejorados */
-        .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-        
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 2.5rem;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .pricing-card.featured {
-            border-color: #8B5CF6;
-            transform: scale(1.05);
-            background: rgba(139, 92, 246, 0.1);
-        }
-        
-        .pricing-card.featured::before {
-            content: 'RECOMENDADO';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: #8B5CF6;
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-        }
-        
-        .price {
-            font-size: 3rem;
-            color: #8B5CF6;
-            font-weight: bold;
-            margin: 1.5rem 0;
-        }
-        
-        .price-features {
-            list-style: none;
-            text-align: left;
-            margin: 2rem 0;
-        }
-        
-        .price-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .price-features li::before {
-            content: "✓";
-            color: #2ECC71;
-            font-weight: bold;
-        }
-        
-        /* Pricing Comparison Table */
-        .pricing-comparison {
-            margin: 3rem 0 1rem;
-        }
-
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        .pricing-table th,
-        .pricing-table td {
-            padding: 0.9rem 1.2rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            vertical-align: middle;
-        }
-
-        .pricing-table th {
-            background: rgba(139, 92, 246, 0.2);
-            color: white;
-            font-weight: 700;
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        .pricing-table th:first-child {
-            text-align: left;
-        }
-
-        .pricing-table td:not(:first-child) {
-            text-align: center;
-        }
-
-        .pricing-table th span {
-            font-size: 0.75rem;
-            opacity: 0.7;
-            font-weight: 400;
-            display: block;
-            margin-top: 0.2rem;
-        }
-
-        .pricing-table .feature-col {
-            font-weight: 500;
-            opacity: 0.9;
-            width: 30%;
-        }
-
-        .pricing-table td.featured-col,
-        .pricing-table th.featured-col {
-            background: rgba(139, 92, 246, 0.1);
-            border-left: 2px solid rgba(139, 92, 246, 0.4);
-            border-right: 2px solid rgba(139, 92, 246, 0.4);
-        }
-
-        .pricing-table th.featured-col {
-            background: rgba(139, 92, 246, 0.35);
-            color: #e0d7ff;
-        }
-
-        .pricing-table tr:hover td {
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .pricing-table tr:hover td.featured-col {
-            background: rgba(139, 92, 246, 0.15);
-        }
-
-        .pricing-table .section-row td {
-            background: rgba(255, 255, 255, 0.04);
-            font-weight: 700;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #8B5CF6;
-            padding: 0.6rem 1.2rem;
-        }
-
-        .feature-yes {
-            color: #2ECC71;
-            font-weight: 600;
-        }
-
-        .feature-no {
-            opacity: 0.4;
-        }
-
-        .feature-addon {
-            color: #06B6D4;
-            font-weight: 600;
-        }
-
-        @media (max-width: 900px) {
-            .pricing-table th,
-            .pricing-table td {
-                padding: 0.7rem 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Footer CTA mejorado */
-        .footer-cta {
-            background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-        }
-        
-        .footer-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #8B5CF6, #06B6D4, #7C3AED);
-        }
-        
-        /* Stats counter animation */
-        .stats-section {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 25px;
-            padding: 3rem;
-            margin: 4rem 0;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(139, 92, 246, 0.05);
-            border-radius: 15px;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #8B5CF6;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-        
-        /* Responsive mejorado */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .nav-auth-buttons {
-                display: none;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section {
-                padding: 4rem 1rem;
-            }
-            
-            .agents-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .pricing-card.featured {
-                transform: none;
-            }
-        
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .flow-arrow {
-                display: none;
-            }
-        }
-        
-        /* Animaciones mejoradas */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-        
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease;
-        }
-        
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
-        }
-        
-        .orbit {
-            animation: rotate 12s linear infinite;
-            transform-origin: center;
-        }
-        
-        .neural-network {
-            animation: pulse 3s infinite;
-        }
-
-        /* Mesh Gradient Background */
-        .mesh-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background:
-                radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
-                radial-gradient(at 80% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
-        }
-
-        /* Sticky CTA */
-        .sticky-cta {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .sticky-cta.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all;
-        }
-
-        .sticky-cta-button {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.5rem;
-            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .sticky-cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
-        }
-
-        .sticky-cta-button i {
-            font-size: 1.2rem;
-        }
-
-        /* Contact Form Styles */
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto 0;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #E5E7EB;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 10px;
-            color: #E5E7EB;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #8B5CF6;
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(229, 231, 235, 0.4);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-        }
-
-        .form-submit:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-note {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            opacity: 0.6;
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .sticky-cta {
-                bottom: 1rem;
-                right: 1rem;
-            }
-
-            .sticky-cta-button {
-                padding: 0.875rem 1.25rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <link href="/assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/landing.css">
 </head>
 <body>
     <!-- Fondo mesh gradient -->
     <div class="mesh-gradient"></div>
-
-    <!-- Partículas de fondo -->
-    <div class="particles" id="particles"></div>
 
     <!-- Sticky CTA -->
     <div class="sticky-cta" id="stickyCta">
@@ -1375,9 +281,12 @@
                         </radialGradient>
                     </defs>
                 </svg>
-                <span style="font-size: 1.6rem; font-weight: bold; background: linear-gradient(45deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Hachi</span>
+                <span class="logo-word">Hachi</span>
             </div>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#agentes">Qué hace</a></li>
                 <li><a href="#niveles">Comparativa</a></li>
@@ -1388,6 +297,10 @@
                 <li><a href="/es/preguntas.html">Preguntas</a></li>
                 <li><a href="#tecnologia">Tecnología</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li class="mobile-auth">
+                    <a href="https://crm.hachi.live/app/login" class="nav-login-btn">Iniciar Sesión</a>
+                    <a href="https://crm.hachi.live/app/auth/signup" class="nav-signup-btn">Registrarse</a>
+                </li>
                 <li class="lang-selector">
                     <a href="/">EN</a>
                     <a href="/es/" class="active">ES</a>
@@ -1449,14 +362,14 @@
                     </defs>
                 </svg>
             </div>
-            <h1>Hachi</h1>
-            <div class="subtitle">El empleado que contesta tu WhatsApp a las 3 de la mañana</div>
-            <p>Hachi atiende <strong>WhatsApp, Instagram y Messenger</strong> las 24 horas, <strong>consulta tu agenda de verdad</strong> y reserva la cita. Luego la recuerda, para que no te dejen plantado. No es un menú de botones: entiende lo que le escriben, en audio o por escrito, y cuando algo se sale de lo previsto avisa a una persona.</p>
-            <p style="font-size: 1rem; opacity: 0.75; margin-top: 1rem;">Desde <strong>149 €/mes</strong> · 7 días de prueba gratis, sin tarjeta · Cumple el RGPD</p>
+            <div class="hero-eyebrow">Hachi · Asistente de IA</div>
+            <h1>El empleado que contesta tu WhatsApp a las 3 de la mañana</h1>
+            <p class="subtitle">Hachi atiende <strong>WhatsApp, Instagram y Messenger</strong> las 24 horas, <strong>consulta tu agenda de verdad</strong> y reserva la cita. Luego la recuerda, para que no te dejen plantado. No es un menú de botones: entiende lo que le escriben, en audio o por escrito, y cuando algo se sale de lo previsto avisa a una persona.</p>
+            <p class="hero-meta">Desde <strong>149 €/mes</strong> · 7 días de prueba gratis, sin tarjeta · Cumple el RGPD</p>
             <div class="cta-buttons">
                 <a href="#contacto" class="cta-button">Solicitar Demo Gratuita</a>
                 <a href="#precios" class="cta-button cta-secondary">Ver Planes y Precios</a>
-                <a href="/es/calculadora.html" class="cta-button cta-secondary">📊 Calcular mi retorno</a>
+                <a href="/es/calculadora.html" class="cta-button cta-secondary"><i class="fas fa-chart-line"></i> Calcular mi retorno</a>
             </div>
         </div>
     </section>
@@ -2202,21 +1115,21 @@
                     </tr>
                     <tr>
                         <td class="feature-col">¿Entiende lo que le escriben?</td>
-                        <td><span class="feature-no">❌</span> Solo si pulsas el botón correcto</td>
-                        <td><span class="feature-yes">✅</span> Sí, conversa bien</td>
-                        <td class="featured-col"><span class="feature-yes">✅</span> Sí, incluidos audios e intenciones mezcladas</td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i></span> Solo si pulsas el botón correcto</td>
+                        <td><span class="feature-yes"><i class="fas fa-check"></i></span> Sí, conversa bien</td>
+                        <td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i></span> Sí, incluidos audios e intenciones mezcladas</td>
                     </tr>
                     <tr>
                         <td class="feature-col"><strong>¿Consulta tu agenda real antes de proponer una hora?</strong></td>
-                        <td><span class="feature-no">❌ No</span></td>
-                        <td><span class="feature-no">❌ No</span></td>
-                        <td class="featured-col"><span class="feature-yes">✅ Sí</span></td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i> No</span></td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i> No</span></td>
+                        <td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i> Sí</span></td>
                     </tr>
                     <tr>
                         <td class="feature-col"><strong>¿Escribe la cita en tu agenda?</strong></td>
-                        <td><span class="feature-no">❌</span> Te manda un enlace</td>
-                        <td><span class="feature-no">❌</span> Te avisa para que la metas tú</td>
-                        <td class="featured-col"><span class="feature-yes">✅</span> La reserva, la cancela y la mueve</td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i></span> Te manda un enlace</td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i></span> Te avisa para que la metas tú</td>
+                        <td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i></span> La reserva, la cancela y la mueve</td>
                     </tr>
                     <tr>
                         <td class="feature-col">¿Puede confirmar una hora ya ocupada?</td>
@@ -2260,15 +1173,15 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 290 € de implantación (pago único)</p>
                 <p style="font-size: 0.95rem;"><strong>Una agenda, un número</strong><br>Sin equipo detrás</p>
                 <ul class="price-features">
-                    <li>✅ Asistente en WhatsApp 24/7</li>
-                    <li>✅ Responde precios, servicios, dudas y ubicación</li>
-                    <li>✅ <strong>Agenda en tu agenda real</strong>, comprobando antes si hay hueco</li>
-                    <li>✅ Cancelaciones y reagendamientos</li>
-                    <li>✅ Recordatorios automáticos de cita</li>
-                    <li>✅ Hasta 250 conversaciones/mes</li>
-                    <li>✅ Panel de control</li>
-                    <li>❌ Llamadas de voz</li>
-                    <li>❌ Campañas y seguimiento proactivo</li>
+                    <li>Asistente en WhatsApp 24/7</li>
+                    <li>Responde precios, servicios, dudas y ubicación</li>
+                    <li><strong>Agenda en tu agenda real</strong>, comprobando antes si hay hueco</li>
+                    <li>Cancelaciones y reagendamientos</li>
+                    <li>Recordatorios automáticos de cita</li>
+                    <li>Hasta 250 conversaciones/mes</li>
+                    <li>Panel de control</li>
+                    <li class="no-feature">Llamadas de voz</li>
+                    <li class="no-feature">Campañas y seguimiento proactivo</li>
                 </ul>
                 <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
             </div>
@@ -2281,13 +1194,13 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 690 € de implantación (pago único)</p>
                 <p style="font-size: 0.95rem;"><strong>Todo lo del plan Autónomo, más:</strong></p>
                 <ul class="price-features">
-                    <li>✅ Hasta 750 conversaciones/mes</li>
-                    <li>✅ <strong>Varias agendas o profesionales</strong> con sus propios horarios</li>
-                    <li>✅ Panel completo con métricas</li>
-                    <li>✅ Editas respuestas y comportamiento desde el panel</li>
-                    <li>✅ Base de conocimiento propia: subes tus PDFs y aprende</li>
-                    <li>❌ Llamadas de voz</li>
-                    <li>❌ Campañas y seguimiento proactivo</li>
+                    <li>Hasta 750 conversaciones/mes</li>
+                    <li><strong>Varias agendas o profesionales</strong> con sus propios horarios</li>
+                    <li>Panel completo con métricas</li>
+                    <li>Editas respuestas y comportamiento desde el panel</li>
+                    <li>Base de conocimiento propia: subes tus PDFs y aprende</li>
+                    <li class="no-feature">Llamadas de voz</li>
+                    <li class="no-feature">Campañas y seguimiento proactivo</li>
                 </ul>
                 <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
             </div>
@@ -2300,11 +1213,11 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 1.190 € de implantación (pago único)</p>
                 <p style="font-size: 0.95rem;"><strong>Todo lo del plan Esencial, más:</strong></p>
                 <ul class="price-features">
-                    <li>✅ <strong>Atención telefónica con voz de IA</strong>, que agenda durante la propia llamada</li>
-                    <li>✅ Hasta 1.500 conversaciones/mes</li>
-                    <li>✅ 400 minutos de llamada incluidos</li>
-                    <li>✅ Seguimiento proactivo de presupuestos fríos</li>
-                    <li>❌ Campañas y llamadas salientes</li>
+                    <li><strong>Atención telefónica con voz de IA</strong>, que agenda durante la propia llamada</li>
+                    <li>Hasta 1.500 conversaciones/mes</li>
+                    <li>400 minutos de llamada incluidos</li>
+                    <li>Seguimiento proactivo de presupuestos fríos</li>
+                    <li class="no-feature">Campañas y llamadas salientes</li>
                 </ul>
                 <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
             </div>
@@ -2317,12 +1230,12 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ 1.690 € de implantación (pago único)</p>
                 <p style="font-size: 0.95rem;"><strong>Todo lo del plan Profesional, más:</strong></p>
                 <ul class="price-features">
-                    <li>✅ <strong>Seguimiento proactivo</strong>: recupera solo a quien preguntó y no volvió</li>
-                    <li>✅ <strong>Campañas de WhatsApp</strong> a tu base de clientes</li>
-                    <li>✅ Llamadas salientes con voz de IA</li>
-                    <li>✅ Hasta 3.000 conversaciones/mes</li>
-                    <li>✅ 800 minutos de llamada incluidos</li>
-                    <li>✅ Captura de leads de Meta Lead Ads</li>
+                    <li><strong>Seguimiento proactivo</strong>: recupera solo a quien preguntó y no volvió</li>
+                    <li><strong>Campañas de WhatsApp</strong> a tu base de clientes</li>
+                    <li>Llamadas salientes con voz de IA</li>
+                    <li>Hasta 3.000 conversaciones/mes</li>
+                    <li>800 minutos de llamada incluidos</li>
+                    <li>Captura de leads de Meta Lead Ads</li>
                 </ul>
                 <a href="#contacto" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Probar 7 días gratis</a>
             </div>
@@ -2335,12 +1248,12 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">Implantación a presupuesto</p>
                 <p style="font-size: 0.95rem;"><strong>Véndelo con tu propia marca</strong></p>
                 <ul class="price-features">
-                    <li>✅ Varias sedes o empresas en una sola cuenta</li>
-                    <li>✅ Marca propia en el panel</li>
-                    <li>✅ Das de alta a tus clientes y decides qué les cobras</li>
-                    <li>✅ Tu margen es tuyo</li>
-                    <li>✅ Soporte prioritario y formación</li>
-                    <li>✅ Volumen y minutos a medida</li>
+                    <li>Varias sedes o empresas en una sola cuenta</li>
+                    <li>Marca propia en el panel</li>
+                    <li>Das de alta a tus clientes y decides qué les cobras</li>
+                    <li>Tu margen es tuyo</li>
+                    <li>Soporte prioritario y formación</li>
+                    <li>Volumen y minutos a medida</li>
                 </ul>
                 <a href="#contacto" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Hablar de reventa</a>
             </div>
@@ -2375,15 +1288,15 @@
         <!-- Trust strip -->
         <div class="pricing-trust-strip fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 3rem 0 0; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
             <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
-                <span style="font-size: 1.2rem;">🔒</span>
+                <span style="font-size: 1.2rem; color: #8B5CF6;"><i class="fas fa-lock"></i></span>
                 <span><strong>Cumplimiento del RGPD</strong> — Contrato de encargado del tratamiento y datos alojados en la UE.</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
-                <span style="font-size: 1.2rem;">⚡</span>
+                <span style="font-size: 1.2rem; color: #8B5CF6;"><i class="fas fa-bolt"></i></span>
                 <span><strong>Listo en 3-5 días laborables</strong> — Y sin flujos visuales que rediseñar cada mes.</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
-                <span style="font-size: 1.2rem;">🚪</span>
+                <span style="font-size: 1.2rem; color: #8B5CF6;"><i class="fas fa-door-open"></i></span>
                 <span><strong>Sin permanencia</strong> — Te quedas porque funciona, no porque firmaste.</span>
             </div>
         </div>
@@ -2415,19 +1328,19 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 3rem auto 0;">
             <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">📅 Las ausencias</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-calendar-xmark"></i> Las ausencias</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Los recordatorios automáticos reducen las ausencias entre un <strong>40 % y un 60 %</strong>. Cada hueco que no se queda vacío es dinero que ya estaba perdido.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">⏱️ Los que preguntan de noche</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-moon"></i> Los que preguntan de noche</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Quien escribe a las 23:40 y no recibe respuesta hasta las 10:00 ya ha escrito a otros tres sitios. Contestar en segundos <strong>no es comodidad: es la venta</strong>.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👻 Los que desaparecen</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-ghost"></i> Los que desaparecen</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Preguntaron el precio y no volvieron a escribir. El seguimiento proactivo los retoma solo, sin que nadie tenga que acordarse.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 La comparación honesta</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-scale-balanced"></i> La comparación honesta</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Una recepcionista en España cuesta entre <strong>25.000 € y 35.000 € al año</strong> con costes de empresa, y libra. Hachi no sustituye a tu equipo: le quita de encima lo que no debería estar haciendo.</p>
             </div>
         </div>
@@ -2435,7 +1348,7 @@
                 <div style="max-width: 780px; margin: 3rem auto 0; padding: 2.2rem; text-align: center; background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(6,182,212,0.10)); border: 1px solid rgba(139,92,246,0.28); border-radius: 20px;">
                     <h3 style="font-size: 1.5rem; margin-bottom: 0.6rem;">Hazlo con tus números, no con los nuestros</h3>
                     <p style="font-size: 1rem; opacity: 0.82; line-height: 1.65; max-width: 580px; margin: 0 auto 1.6rem;">Pon tu ticket, tus citas y tus ausencias reales, y mira la cuenta entera: lo que se pierde por ausencias y las horas de recepción que se van contestando lo mismo de siempre. <strong>Sin registro</strong> y con todas las fórmulas a la vista.</p>
-                    <a href="/es/calculadora.html" class="cta-button" style="display:inline-block;">📊 Calcular mi retorno</a>
+                    <a href="/es/calculadora.html" class="cta-button" style="display:inline-block;"><i class="fas fa-chart-line"></i> Calcular mi retorno</a>
                     <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 1rem;">Puede decirte que todavía no te compensa. Si sale así, lo dice.</p>
                 </div>
 </section>
@@ -2447,19 +1360,19 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👩‍⚕️ Trabajas por tu cuenta</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-user-doctor"></i> Trabajas por tu cuenta</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Psicología, fisioterapia, nutrición, podología, terapias. Una agenda, un número, y el móvil sonando mientras estás con alguien.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🏥 Consultorio o clínica</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-hospital"></i> Consultorio o clínica</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Estética, dental, spa, centros de belleza, veterinaria. Varias agendas, varias cabinas, una recepción desbordada.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">✂️ Fuera de la salud</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-scissors"></i> Fuera de la salud</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Peluquería, barbería, tatuajes, fotografía, asesorías, academias, entrenadores personales. Si se reserva hora, encaja.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 No hace falta ser una empresa</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-scale-balanced"></i> No hace falta ser una empresa</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Autónomo sin sociedad, con tu NIF. El plan Autónomo está pensado exactamente para eso; no hay mínimo por debajo del cual no te atendemos.</p>
             </div>
         </div>
@@ -2476,19 +1389,19 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
             <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🤐 Hachi no escribe primero</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-comment-slash"></i> Hachi no escribe primero</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">El asistente <strong>no inicia conversaciones por su cuenta</strong>. El seguimiento proactivo solo actúa sobre conversaciones que esa persona abrió ella misma. Nadie recibe un mensaje sin haber escrito antes.</p>
             </div>
             <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📣 La única excepción, dicha en voz alta</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-bullhorn"></i> La única excepción, dicha en voz alta</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Las campañas. <strong>La lista la aportas tú</strong>, y con ella la responsabilidad de tener el consentimiento. Nosotros no compramos ni aportamos bases de datos.</p>
             </div>
             <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📄 Los papeles en regla</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-file-contract"></i> Los papeles en regla</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Tú eres el <strong>responsable del tratamiento</strong>; nosotros, el <strong>encargado</strong>. Firmamos el contrato del <strong>artículo 28 del RGPD</strong> antes de tocar un solo dato.</p>
             </div>
             <div style="padding: 2rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🏥 Datos de salud</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-hospital"></i> Datos de salud</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Se tratan como <strong>categoría especial (art. 9)</strong>, con las garantías que eso exige. Y puedes ejercer supresión sobre una persona concreta cuando te lo pida.</p>
             </div>
         </div>
@@ -2540,7 +1453,7 @@
                 <tbody>
                     <tr><td class="feature-col">Dónde se usa</td><td>En el móvil</td><td class="featured-col"><strong>Desde el ordenador</strong>, en el navegador</td></tr>
                     <tr><td class="feature-col">Quién atiende</td><td>Una persona</td><td class="featured-col">Varias personas a la vez</td></tr>
-                    <tr><td class="feature-col">¿Se puede automatizar?</td><td><span class="feature-no">❌</span> Solo respuestas rápidas</td><td class="featured-col"><span class="feature-yes">✅</span> Es la única forma</td></tr>
+                    <tr><td class="feature-col">¿Se puede automatizar?</td><td><span class="feature-no"><i class="fas fa-xmark"></i></span> Solo respuestas rápidas</td><td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i></span> Es la única forma</td></tr>
                     <tr><td class="feature-col">¿Hay que instalar algo?</td><td>Sí, la app</td><td class="featured-col">No</td></tr>
                 </tbody>
             </table>
@@ -2616,15 +1529,15 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1050px; margin: 3rem auto 0;">
             <a href="/es/cuanto-cuesta-un-asistente-ia.html" style="display:block; padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.18); text-decoration:none; color:inherit;">
-                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;">💶 Cuánto cuesta un asistente de IA</h4>
+                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;"><i class="fas fa-euro-sign"></i> Cuánto cuesta un asistente de IA</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Por qué los presupuestos van de 29 € a más de 900 € al mes y qué se paga exactamente en cada nivel. Incluye qué mirar en la letra pequeña de cualquier oferta.</p>
             </a>
             <a href="/es/por-que-los-bots-de-flujo-fallan.html" style="display:block; padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.18); text-decoration:none; color:inherit;">
-                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;">🔁 Por qué tu bot no consulta la agenda</h4>
+                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;"><i class="fas fa-rotate"></i> Por qué tu bot no consulta la agenda</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">El mecanismo exacto de la cita duplicada, qué pasa cuando los datos llegan a trozos y el fallo silencioso que no aparece en ningún informe de errores.</p>
             </a>
             <a href="/es/whatsapp-api-vs-business.html" style="display:block; padding: 1.8rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.18); text-decoration:none; color:inherit;">
-                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;">📱 WhatsApp Business vs API</h4>
+                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;"><i class="fas fa-mobile-screen"></i> WhatsApp Business vs API</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Por qué bloquean números, qué es la ventana de 24 horas y qué pierdes exactamente si migras tu número de siempre. Esto último conviene saberlo antes.</p>
             </a>
         </div>
@@ -2638,27 +1551,27 @@
         <div style="max-width: 900px; margin: 3rem auto 0;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🧩 Arquitectura neuro-simbólica</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-puzzle-piece"></i> Arquitectura neuro-simbólica</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Los nodos del grafo emiten señales tipadas que un router <em>sin LLM</em> traduce en decisiones de flujo. El modelo propone; la máquina de estados dispone. Patrón <strong>Check-Signal-Act</strong> en cada nodo.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🛡️ Invariantes custodiadas</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-shield-halved"></i> Invariantes custodiadas</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">63 propiedades que el sistema garantiza en código, con la regla de corte explícita: <em>si Python garantiza el resultado, es invariante; si solo lo pide el prompt, es una sugerencia</em>.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🏢 Multi-tenant de verdad</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-building"></i> Multi-tenant de verdad</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Aislamiento por empresa hasta en la clave del checkpointer de conversación. Toda consulta va filtrada y parametrizada por empresa: el estado de un cliente no puede filtrarse al de otro.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔀 Agentes que se construyen solos</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-shuffle"></i> Agentes que se construyen solos</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Un grafo puede compilarse desde la base de datos: se define un agente nuevo, con sus campos de detección tipados y sus herramientas, sin desplegar código.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">♻️ Idempotencia y compensación</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-recycle"></i> Idempotencia y compensación</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Reintento seguro en toda la superficie externa. Un webhook duplicado no crea dos citas; una campaña reintentada no envía dos veces.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(6, 182, 212, 0.06); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔌 Multi-proveedor de modelo</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-plug"></i> Multi-proveedor de modelo</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">La capa de inferencia está desacoplada: el proveedor y el modelo se eligen por empresa. No hay dependencia de un único proveedor ni de una única familia de modelos.</p>
                 </div>
             </div>
@@ -2760,24 +1673,6 @@
     </section>
 
     <script>
-        // Crear partículas de fondo
-        function createParticles() {
-            const container = document.getElementById('particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = Math.random() > 0.5 ? 'particle neural' : 'particle data';
-                
-                // Posición inicial aleatoria
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (8 + Math.random() * 4) + 's';
-                
-                container.appendChild(particle);
-            }
-        }
-
         // Animaciones de scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
@@ -2858,9 +1753,31 @@
             });
         }
 
+        // Menú móvil (hamburguesa)
+        function initNavToggle() {
+            const toggle = document.getElementById('navToggle');
+            const links = document.getElementById('navLinks');
+            if (!toggle || !links) return;
+
+            toggle.addEventListener('click', function () {
+                const abierto = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+                toggle.innerHTML = abierto ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Cerrar el menú al pulsar un enlace
+            links.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    links.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
+
         // Inicializar todo cuando la página cargue
         document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
+            initNavToggle();
             animateOnScroll();
             animateCounters();
             initSmoothScroll();
@@ -2880,7 +1797,10 @@
             const stickyCta = document.getElementById('stickyCta');
             const heroHeight = hero ? hero.offsetHeight : 600;
 
-            if (scrolled > heroHeight) {
+            const contacto = document.getElementById('contacto');
+            const contactoVisible = contacto && contacto.getBoundingClientRect().top < window.innerHeight;
+
+            if (scrolled > heroHeight && !contactoVisible) {
                 stickyCta.classList.add('visible');
             } else {
                 stickyCta.classList.remove('visible');

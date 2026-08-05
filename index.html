@@ -53,10 +53,6 @@
     <link rel="alternate" hreflang="es" href="https://hachi.live/es/">
     <link rel="alternate" hreflang="x-default" href="https://hachi.live/">
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -222,1102 +218,12 @@
     }
     </script>
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #0a0a0f;
-            color: #E5E7EB;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Enhanced background particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.15;
-        }
-
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            animation: float 8s infinite linear;
-        }
-
-        .particle.neural {
-            width: 3px;
-            height: 3px;
-            background: #8B5CF6;
-            box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-        }
-
-        .particle.data {
-            width: 2px;
-            height: 2px;
-            background: #06B6D4;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) translateX(0px) rotate(0deg); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
-        }
-
-        /* Enhanced header */
-        .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
-        }
-
-        .nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo-nav {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-nav svg {
-            width: 45px;
-            height: 45px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #E5E7EB;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #8B5CF6;
-            text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
-        }
-
-        .lang-selector {
-            display: flex;
-            gap: 0.5rem;
-            margin-left: 1rem;
-            padding-left: 1rem;
-            border-left: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .lang-selector a {
-            padding: 0.3rem 0.6rem;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            transition: all 0.3s;
-        }
-
-        .lang-selector a.active {
-            background: rgba(139, 92, 246, 0.3);
-            color: #8B5CF6;
-        }
-
-        .lang-selector a:hover {
-            background: rgba(139, 92, 246, 0.2);
-        }
-
-        .nav-auth-buttons {
-            display: flex;
-            gap: 0.8rem;
-            margin-left: 1.5rem;
-            align-items: center;
-        }
-
-        .nav-login-btn {
-            color: #E5E7EB;
-            text-decoration: none;
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .nav-login-btn:hover {
-            background: rgba(139, 92, 246, 0.1);
-            border-color: #8B5CF6;
-            color: #8B5CF6;
-        }
-
-        .nav-signup-btn {
-            padding: 0.5rem 1.2rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .nav-signup-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
-        }
-
-        /* Enhanced Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, #0a0a0f 70%);
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            z-index: 10;
-        }
-
-        .hero-logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 2rem;
-            filter: drop-shadow(0 0 40px rgba(139, 92, 246, 0.4));
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4, #7C3AED);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero .subtitle {
-            font-size: 1.4rem;
-            opacity: 0.9;
-            margin-bottom: 1rem;
-            color: #8B5CF6;
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.85;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 2.8rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
-        }
-
-        .cta-secondary {
-            background: transparent;
-            border: 2px solid #8B5CF6;
-            color: #8B5CF6;
-        }
-
-        .cta-secondary:hover {
-            background: #8B5CF6;
-            color: #0a0a0f;
-        }
-
-        /* Enhanced Sections */
-        .section {
-            padding: 6rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section h2 {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Multi-Agent System - Main Section */
-        .multi-agent-hero {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
-            border-radius: 30px;
-            padding: 4rem;
-            text-align: center;
-            margin: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .multi-agent-hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-
-        /* Specialized Agents */
-        .agents-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-
-        .agent-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 2.5rem;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .agent-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #8B5CF6, #06B6D4, #7C3AED, #0EA5E9);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .agent-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .agent-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
-            border-color: rgba(139, 92, 246, 0.5);
-        }
-
-        .agent-card.emergency {
-            border-left: 4px solid #E74C3C;
-        }
-
-        .agent-card.sales {
-            border-left: 4px solid #F39C12;
-        }
-
-        .agent-card.schedule {
-            border-left: 4px solid #3498DB;
-        }
-
-        .agent-card.availability {
-            border-left: 4px solid #9B59B6;
-        }
-
-        .agent-card.support {
-            border-left: 4px solid #2ECC71;
-        }
-
-        .agent-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .agent-icon {
-            font-size: 2.5rem;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 15px;
-            background: rgba(139, 92, 246, 0.1);
-        }
-
-        .agent-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .agent-tag {
-            background: rgba(139, 92, 246, 0.2);
-            color: #8B5CF6;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .agent-features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .agent-features li {
-            padding: 0.7rem 0;
-            padding-left: 2rem;
-            position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .agent-features li:last-child {
-            border-bottom: none;
-        }
-
-        .agent-features li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            color: #8B5CF6;
-            font-size: 1.2rem;
-        }
-
-        /* Technical Features */
-        .tech-features {
-            background: rgba(10, 10, 15, 0.8);
-            border-radius: 25px;
-            padding: 4rem;
-            margin: 4rem 0;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .tech-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            background: rgba(139, 92, 246, 0.05);
-            border-radius: 20px;
-            border-left: 4px solid #8B5CF6;
-        }
-
-        .tech-item i {
-            color: #8B5CF6;
-            font-size: 2rem;
-            margin-top: 0.5rem;
-        }
-
-        .tech-item h4 {
-            color: #8B5CF6;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        /* Benefits for Landing Page */
-        .benefits-section {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(14, 165, 233, 0.1));
-            border-radius: 30px;
-            padding: 4rem;
-            margin: 4rem 0;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .benefit-card i {
-            font-size: 3rem;
-            color: #06B6D4;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-card h4 {
-            color: #8B5CF6;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        /* Enhanced CRM Integration */
-        .crm-integration {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 30px;
-            padding: 4rem;
-            margin: 4rem 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .integration-flow {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .flow-step {
-            flex: 1;
-            min-width: 200px;
-            text-align: center;
-        }
-
-        .flow-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .flow-arrow {
-            font-size: 2rem;
-            color: #8B5CF6;
-            align-self: center;
-        }
-
-        /* Enhanced Testimonials */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 2.5rem;
-            border-left: 4px solid #06B6D4;
-            position: relative;
-        }
-
-        .testimonial::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: #8B5CF6;
-            opacity: 0.3;
-        }
-
-        .testimonial-author {
-            margin-top: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        /* Enhanced Pricing */
-        .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-
-        .pricing-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            padding: 2.5rem;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .pricing-card.featured {
-            border-color: #8B5CF6;
-            transform: scale(1.05);
-            background: rgba(139, 92, 246, 0.1);
-        }
-
-        .pricing-card.featured::before {
-            content: 'RECOMMENDED';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(45deg, #8B5CF6, #06B6D4);
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: #8B5CF6;
-            box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-        }
-
-        .price {
-            font-size: 3rem;
-            color: #8B5CF6;
-            font-weight: bold;
-            margin: 1.5rem 0;
-        }
-
-        .price-features {
-            list-style: none;
-            text-align: left;
-            margin: 2rem 0;
-        }
-
-        .price-features li {
-            padding: 0.5rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .price-features li::before {
-            content: "";
-            color: #2ECC71;
-            font-weight: bold;
-        }
-
-        /* Pricing Comparison Table */
-        .pricing-comparison {
-            margin: 3rem 0 1rem;
-        }
-
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-        }
-
-        .pricing-table th,
-        .pricing-table td {
-            padding: 0.9rem 1.2rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-            vertical-align: middle;
-        }
-
-        .pricing-table th {
-            background: rgba(139, 92, 246, 0.2);
-            color: white;
-            font-weight: 700;
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        .pricing-table th:first-child {
-            text-align: left;
-        }
-
-        .pricing-table td:not(:first-child) {
-            text-align: center;
-        }
-
-        .pricing-table th span {
-            font-size: 0.75rem;
-            opacity: 0.7;
-            font-weight: 400;
-            display: block;
-            margin-top: 0.2rem;
-        }
-
-        .pricing-table .feature-col {
-            font-weight: 500;
-            opacity: 0.9;
-            width: 30%;
-        }
-
-        .pricing-table td.featured-col,
-        .pricing-table th.featured-col {
-            background: rgba(139, 92, 246, 0.1);
-            border-left: 2px solid rgba(139, 92, 246, 0.4);
-            border-right: 2px solid rgba(139, 92, 246, 0.4);
-        }
-
-        .pricing-table th.featured-col {
-            background: rgba(139, 92, 246, 0.35);
-            color: #e0d7ff;
-        }
-
-        .pricing-table tr:hover td {
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .pricing-table tr:hover td.featured-col {
-            background: rgba(139, 92, 246, 0.15);
-        }
-
-        .pricing-table .section-row td {
-            background: rgba(255, 255, 255, 0.04);
-            font-weight: 700;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #8B5CF6;
-            padding: 0.6rem 1.2rem;
-        }
-
-        .feature-yes {
-            color: #2ECC71;
-            font-weight: 600;
-        }
-
-        .feature-no {
-            opacity: 0.4;
-        }
-
-        .feature-addon {
-            color: #06B6D4;
-            font-weight: 600;
-        }
-
-        @media (max-width: 900px) {
-            .pricing-table th,
-            .pricing-table td {
-                padding: 0.7rem 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* Enhanced Footer CTA */
-        .footer-cta {
-            background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
-            text-align: center;
-            padding: 6rem 2rem;
-            position: relative;
-        }
-
-        .footer-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #8B5CF6, #06B6D4, #7C3AED);
-        }
-
-        /* Stats counter animation */
-        .stats-section {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 25px;
-            padding: 3rem;
-            margin: 4rem 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(139, 92, 246, 0.05);
-            border-radius: 15px;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #8B5CF6;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        /* Enhanced Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .nav-auth-buttons {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section {
-                padding: 4rem 1rem;
-            }
-
-            .agents-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .pricing-card.featured {
-                transform: none;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .flow-arrow {
-                display: none;
-            }
-        }
-
-        /* Enhanced animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
-        }
-
-        .orbit {
-            animation: rotate 12s linear infinite;
-            transform-origin: center;
-        }
-
-        .neural-network {
-            animation: pulse 3s infinite;
-        }
-
-        /* Mesh Gradient Background */
-        .mesh-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background:
-                radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 80% 0%, rgba(6, 182, 212, 0.1) 0px, transparent 50%),
-                radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
-                radial-gradient(at 80% 50%, rgba(6, 182, 212, 0.08) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
-                radial-gradient(at 80% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
-        }
-
-        /* Sticky CTA */
-        .sticky-cta {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            pointer-events: none;
-        }
-
-        .sticky-cta.visible {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: all;
-        }
-
-        .sticky-cta-button {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 1.5rem;
-            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .sticky-cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
-        }
-
-        .sticky-cta-button i {
-            font-size: 1.2rem;
-        }
-
-        /* Contact Form Styles */
-        .contact-form {
-            max-width: 600px;
-            margin: 2rem auto 0;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 20px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #E5E7EB;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(139, 92, 246, 0.3);
-            border-radius: 10px;
-            color: #E5E7EB;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #8B5CF6;
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(229, 231, 235, 0.4);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .form-submit {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
-        }
-
-        .form-submit:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-note {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 0.85rem;
-            opacity: 0.6;
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .sticky-cta {
-                bottom: 1rem;
-                right: 1rem;
-            }
-
-            .sticky-cta-button {
-                padding: 0.875rem 1.25rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <link href="/assets/vendor/fontawesome/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/landing.css">
 </head>
 <body>
     <!-- Background mesh gradient -->
     <div class="mesh-gradient"></div>
-
-    <!-- Background particles -->
-    <div class="particles" id="particles"></div>
 
     <!-- Sticky CTA -->
     <div class="sticky-cta" id="stickyCta">
@@ -1368,9 +274,12 @@
                         </radialGradient>
                     </defs>
                 </svg>
-                <span style="font-size: 1.6rem; font-weight: bold; background: linear-gradient(45deg, #8B5CF6, #06B6D4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Hachi</span>
+                <span class="logo-word">Hachi</span>
             </div>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#agents">What it does</a></li>
                 <li><a href="#tiers">Comparison</a></li>
@@ -1381,6 +290,10 @@
                 <li><a href="/faq.html">FAQ</a></li>
                 <li><a href="#technology">Technology</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="mobile-auth">
+                    <a href="https://crm.hachi.live/app/login" class="nav-login-btn">Login</a>
+                    <a href="https://crm.hachi.live/app/auth/signup" class="nav-signup-btn">Sign Up</a>
+                </li>
                 <li class="lang-selector">
                     <a href="/" class="active">EN</a>
                     <a href="/es/">ES</a>
@@ -1442,14 +355,14 @@
                     </defs>
                 </svg>
             </div>
-            <h1>Hachi</h1>
-            <div class="subtitle">The employee who answers your WhatsApp at 3 in the morning</div>
-            <p>Hachi answers <strong>WhatsApp, Instagram and Messenger</strong> around the clock, <strong>checks your real calendar</strong> and books the appointment. Then it reminds people, so they turn up. Not a button menu: it understands what people write, in text or voice notes, and escalates to a human when something falls outside the script.</p>
-            <p style="font-size: 1rem; opacity: 0.75; margin-top: 1rem;">From <strong>€149/month</strong> · 7-day free trial, no card · GDPR compliant</p>
+            <div class="hero-eyebrow">Hachi · AI assistant</div>
+            <h1>The employee who answers your WhatsApp at 3 in the morning</h1>
+            <p class="subtitle">Hachi answers <strong>WhatsApp, Instagram and Messenger</strong> around the clock, <strong>checks your real calendar</strong> and books the appointment. Then it reminds people, so they turn up. Not a button menu: it understands what people write, in text or voice notes, and escalates to a human when something falls outside the script.</p>
+            <p class="hero-meta">From <strong>€149/month</strong> · 7-day free trial, no card · GDPR compliant</p>
             <div class="cta-buttons">
                 <a href="#contact" class="cta-button">Book a Free Demo</a>
                 <a href="#pricing" class="cta-button cta-secondary">See Plans and Pricing</a>
-                <a href="/calculator.html" class="cta-button cta-secondary">📊 Calculate my return</a>
+                <a href="/calculator.html" class="cta-button cta-secondary"><i class="fas fa-chart-line"></i> Calculate my return</a>
             </div>
         </div>
     </section>
@@ -2195,21 +1108,21 @@
                     </tr>
                     <tr>
                         <td class="feature-col">Does it understand free text?</td>
-                        <td><span class="feature-no">❌</span> Only if you press the right button</td>
-                        <td><span class="feature-yes">✅</span> Yes, it converses well</td>
-                        <td class="featured-col"><span class="feature-yes">✅</span> Yes, including voice notes and mixed intents</td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i></span> Only if you press the right button</td>
+                        <td><span class="feature-yes"><i class="fas fa-check"></i></span> Yes, it converses well</td>
+                        <td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i></span> Yes, including voice notes and mixed intents</td>
                     </tr>
                     <tr>
                         <td class="feature-col"><strong>Does it check your real calendar before offering a slot?</strong></td>
-                        <td><span class="feature-no">❌ No</span></td>
-                        <td><span class="feature-no">❌ No</span></td>
-                        <td class="featured-col"><span class="feature-yes">✅ Yes</span></td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i> No</span></td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i> No</span></td>
+                        <td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i> Yes</span></td>
                     </tr>
                     <tr>
                         <td class="feature-col"><strong>Does it write the booking into your calendar?</strong></td>
-                        <td><span class="feature-no">❌</span> It sends a link</td>
-                        <td><span class="feature-no">❌</span> It pings you to do it</td>
-                        <td class="featured-col"><span class="feature-yes">✅</span> Books, cancels and reschedules</td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i></span> It sends a link</td>
+                        <td><span class="feature-no"><i class="fas fa-xmark"></i></span> It pings you to do it</td>
+                        <td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i></span> Books, cancels and reschedules</td>
                     </tr>
                     <tr>
                         <td class="feature-col">Can it confirm a slot that is already taken?</td>
@@ -2246,15 +1159,15 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €290 implementation (one-off)</p>
                 <p style="font-size: 0.95rem;"><strong>One calendar, one number</strong><br>No team behind you</p>
                 <ul class="price-features">
-                    <li>✅ WhatsApp assistant, 24/7</li>
-                    <li>✅ Answers prices, services, questions and location</li>
-                    <li>✅ <strong>Books into your real calendar</strong>, checking availability first</li>
-                    <li>✅ Cancellations and rescheduling</li>
-                    <li>✅ Automatic appointment reminders</li>
-                    <li>✅ Up to 250 conversations/month</li>
-                    <li>✅ Control panel</li>
-                    <li>❌ Voice calls</li>
-                    <li>❌ Campaigns and proactive follow-up</li>
+                    <li>WhatsApp assistant, 24/7</li>
+                    <li>Answers prices, services, questions and location</li>
+                    <li><strong>Books into your real calendar</strong>, checking availability first</li>
+                    <li>Cancellations and rescheduling</li>
+                    <li>Automatic appointment reminders</li>
+                    <li>Up to 250 conversations/month</li>
+                    <li>Control panel</li>
+                    <li class="no-feature">Voice calls</li>
+                    <li class="no-feature">Campaigns and proactive follow-up</li>
                 </ul>
                 <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
             </div>
@@ -2266,13 +1179,13 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €690 implementation (one-off)</p>
                 <p style="font-size: 0.95rem;"><strong>Everything in Solo, plus:</strong></p>
                 <ul class="price-features">
-                    <li>✅ Up to 750 conversations/month</li>
-                    <li>✅ <strong>Multiple calendars or practitioners</strong>, each with their own hours</li>
-                    <li>✅ Full panel with metrics</li>
-                    <li>✅ Edit answers and behaviour from the panel</li>
-                    <li>✅ Your own knowledge base: upload your PDFs and it learns</li>
-                    <li>❌ Voice calls</li>
-                    <li>❌ Campaigns and proactive follow-up</li>
+                    <li>Up to 750 conversations/month</li>
+                    <li><strong>Multiple calendars or practitioners</strong>, each with their own hours</li>
+                    <li>Full panel with metrics</li>
+                    <li>Edit answers and behaviour from the panel</li>
+                    <li>Your own knowledge base: upload your PDFs and it learns</li>
+                    <li class="no-feature">Voice calls</li>
+                    <li class="no-feature">Campaigns and proactive follow-up</li>
                 </ul>
                 <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
             </div>
@@ -2284,11 +1197,11 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €1,190 implementation (one-off)</p>
                 <p style="font-size: 0.95rem;"><strong>Everything in Essential, plus:</strong></p>
                 <ul class="price-features">
-                    <li>✅ <strong>AI voice reception</strong> that books during the call itself</li>
-                    <li>✅ Up to 1,500 conversations/month</li>
-                    <li>✅ 400 call minutes included</li>
-                    <li>✅ Proactive follow-up on cold quotes</li>
-                    <li>❌ Campaigns and outbound calls</li>
+                    <li><strong>AI voice reception</strong> that books during the call itself</li>
+                    <li>Up to 1,500 conversations/month</li>
+                    <li>400 call minutes included</li>
+                    <li>Proactive follow-up on cold quotes</li>
+                    <li class="no-feature">Campaigns and outbound calls</li>
                 </ul>
                 <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
             </div>
@@ -2300,12 +1213,12 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">+ €1,690 implementation (one-off)</p>
                 <p style="font-size: 0.95rem;"><strong>Everything in Professional, plus:</strong></p>
                 <ul class="price-features">
-                    <li>✅ <strong>Proactive follow-up</strong>: re-engages people who asked and never came back</li>
-                    <li>✅ <strong>WhatsApp campaigns</strong> to your client base</li>
-                    <li>✅ Outbound AI voice calls</li>
-                    <li>✅ Up to 3,000 conversations/month</li>
-                    <li>✅ 800 call minutes included</li>
-                    <li>✅ Meta Lead Ads capture</li>
+                    <li><strong>Proactive follow-up</strong>: re-engages people who asked and never came back</li>
+                    <li><strong>WhatsApp campaigns</strong> to your client base</li>
+                    <li>Outbound AI voice calls</li>
+                    <li>Up to 3,000 conversations/month</li>
+                    <li>800 call minutes included</li>
+                    <li>Meta Lead Ads capture</li>
                 </ul>
                 <a href="#contact" class="cta-button" style="margin-top: 2rem; display: block; text-align: center;">Start 7-day free trial</a>
             </div>
@@ -2317,12 +1230,12 @@
                 <p style="font-size: 0.82rem; opacity: 0.55; margin: -0.5rem 0 1.5rem;">Implementation quoted per case</p>
                 <p style="font-size: 0.95rem;"><strong>Sell it under your own brand</strong></p>
                 <ul class="price-features">
-                    <li>✅ Multiple sites or companies in one account</li>
-                    <li>✅ Your own branding in the panel</li>
-                    <li>✅ You onboard your clients and set your own prices</li>
-                    <li>✅ Your margin is yours</li>
-                    <li>✅ Priority support and training</li>
-                    <li>✅ Volume and minutes tailored to you</li>
+                    <li>Multiple sites or companies in one account</li>
+                    <li>Your own branding in the panel</li>
+                    <li>You onboard your clients and set your own prices</li>
+                    <li>Your margin is yours</li>
+                    <li>Priority support and training</li>
+                    <li>Volume and minutes tailored to you</li>
                 </ul>
                 <a href="#contact" class="cta-button cta-secondary" style="margin-top: 2rem; display: block; text-align: center;">Talk about reselling</a>
             </div>
@@ -2352,15 +1265,15 @@
 
         <div class="pricing-trust-strip fade-in" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin: 3rem 0 0; padding: 1.5rem 2rem; background: rgba(255,255,255,0.03); border-radius: 16px; border: 1px solid rgba(255,255,255,0.07);">
             <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
-                <span style="font-size: 1.2rem;">🔒</span>
+                <span style="font-size: 1.2rem; color: #8B5CF6;"><i class="fas fa-lock"></i></span>
                 <span><strong>GDPR compliant</strong> — Data processing agreement signed, data hosted in the EU.</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
-                <span style="font-size: 1.2rem;">⚡</span>
+                <span style="font-size: 1.2rem; color: #8B5CF6;"><i class="fas fa-bolt"></i></span>
                 <span><strong>Live in 3-5 working days</strong> — And no visual flows to redraw every month.</span>
             </div>
             <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; opacity: 0.85; flex: 1 1 280px;">
-                <span style="font-size: 1.2rem;">🚪</span>
+                <span style="font-size: 1.2rem; color: #8B5CF6;"><i class="fas fa-door-open"></i></span>
                 <span><strong>No lock-in</strong> — You stay because it works, not because you signed.</span>
             </div>
         </div>
@@ -2392,19 +1305,19 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 3rem auto 0;">
             <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">📅 No-shows</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-calendar-xmark"></i> No-shows</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Automatic reminders cut no-shows by <strong>40-60%</strong>. Every slot that does not sit empty is revenue you had already lost.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">⏱️ The 11pm enquiry</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-moon"></i> The 11pm enquiry</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Someone who writes at 23:40 and hears nothing until 10:00 has already messaged three competitors. Replying in seconds <strong>is not convenience — it is the sale</strong>.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👻 The ones who vanish</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-ghost"></i> The ones who vanish</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">They asked the price and never wrote again. Proactive follow-up picks them back up on its own, without anyone having to remember.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 The honest comparison</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-scale-balanced"></i> The honest comparison</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">A receptionist in Spain costs <strong>€25,000-€35,000 a year</strong> fully loaded, and takes days off. Hachi does not replace your team: it takes off their plate what they should not be doing.</p>
             </div>
         </div>
@@ -2412,7 +1325,7 @@
         <div style="max-width: 780px; margin: 3rem auto 0; padding: 2.2rem; text-align: center; background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(6,182,212,0.10)); border: 1px solid rgba(139,92,246,0.28); border-radius: 20px;">
             <h3 style="font-size: 1.5rem; margin-bottom: 0.6rem;">Run it on your numbers, not ours</h3>
             <p style="font-size: 1rem; opacity: 0.82; line-height: 1.65; max-width: 580px; margin: 0 auto 1.6rem;">Put in your own ticket, appointments and no-show rate, and see the whole account: what walks out of the door with every no-show, and the reception hours that go into answering the same questions again. <strong>No sign-up</strong>, and every formula on screen.</p>
-            <a href="/calculator.html" class="cta-button" style="display:inline-block;">📊 Calculate my return</a>
+            <a href="/calculator.html" class="cta-button" style="display:inline-block;"><i class="fas fa-chart-line"></i> Calculate my return</a>
             <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 1rem;">It may tell you it does not pay for itself yet. If that is the answer, it says so.</p>
         </div>
     </section>
@@ -2424,19 +1337,19 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">👩‍⚕️ You work alone</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-user-doctor"></i> You work alone</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Psychology, physiotherapy, nutrition, podiatry, therapies. One calendar, one number, and a phone buzzing while you are with someone.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🏥 Practice or clinic</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-hospital"></i> Practice or clinic</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Aesthetics, dental, spa, beauty, veterinary. Several calendars, several rooms, one overwhelmed front desk.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">✂️ Outside healthcare</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-scissors"></i> Outside healthcare</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Hair, barbers, tattoo studios, photography, consultancies, academies, personal trainers. If people book a time, it fits.</p>
             </div>
             <div style="padding: 1.8rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;">🧾 You do not need a company</h4>
+                <h4 style="font-size: 1.05rem; margin-bottom: 0.7rem;"><i class="fas fa-scale-balanced"></i> You do not need a company</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Sole trader, your own tax ID, no legal entity. The Solo plan exists exactly for that; there is no minimum below which we turn you away.</p>
             </div>
         </div>
@@ -2449,19 +1362,19 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 3rem auto 0;">
             <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🤐 Hachi never messages first</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-comment-slash"></i> Hachi never messages first</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">The assistant <strong>does not start conversations on its own</strong>. Proactive follow-up only acts on conversations that person opened themselves. Nobody gets a message without having written first.</p>
             </div>
             <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📣 The one exception, said out loud</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-bullhorn"></i> The one exception, said out loud</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Campaigns. <strong>You supply the list</strong>, and with it the responsibility for holding consent. We neither buy nor provide contact databases.</p>
             </div>
             <div style="padding: 2rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">📄 Paperwork in order</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-file-contract"></i> Paperwork in order</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">You are the <strong>data controller</strong>; we are the <strong>processor</strong>. We sign the <strong>Article 28 GDPR</strong> agreement before touching a single record.</p>
             </div>
             <div style="padding: 2rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.15);">
-                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;">🏥 Health data</h4>
+                <h4 style="font-size: 1.1rem; margin-bottom: 0.8rem;"><i class="fas fa-hospital"></i> Health data</h4>
                 <p style="font-size: 0.93rem; opacity: 0.82; line-height: 1.65;">Treated as <strong>special category (Art. 9)</strong>, with the safeguards that requires. And you can exercise erasure for a specific person when they ask.</p>
             </div>
         </div>
@@ -2509,7 +1422,7 @@
                 <tbody>
                     <tr><td class="feature-col">Where you use it</td><td>On the phone</td><td class="featured-col"><strong>From a computer</strong>, in the browser</td></tr>
                     <tr><td class="feature-col">Who answers</td><td>One person</td><td class="featured-col">Several people at once</td></tr>
-                    <tr><td class="feature-col">Can it be automated?</td><td><span class="feature-no">❌</span> Quick replies only</td><td class="featured-col"><span class="feature-yes">✅</span> It is the only way</td></tr>
+                    <tr><td class="feature-col">Can it be automated?</td><td><span class="feature-no"><i class="fas fa-xmark"></i></span> Quick replies only</td><td class="featured-col"><span class="feature-yes"><i class="fas fa-check"></i></span> It is the only way</td></tr>
                     <tr><td class="feature-col">Anything to install?</td><td>Yes, the app</td><td class="featured-col">No</td></tr>
                 </tbody>
             </table>
@@ -2585,15 +1498,15 @@
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 1050px; margin: 3rem auto 0;">
             <a href="/how-much-does-an-ai-assistant-cost.html" style="display:block; padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.18); text-decoration:none; color:inherit;">
-                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;">💶 What an AI assistant costs</h4>
+                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;"><i class="fas fa-euro-sign"></i> What an AI assistant costs</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Why quotes run from €29 to over €900 a month and what exactly you are paying for at each tier. Includes what to check in anyone's small print.</p>
             </a>
             <a href="/why-flow-based-bots-fail.html" style="display:block; padding: 1.8rem; background: rgba(139, 92, 246, 0.07); border-radius: 16px; border: 1px solid rgba(139,92,246,0.18); text-decoration:none; color:inherit;">
-                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;">🔁 Why your bot cannot check the calendar</h4>
+                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;"><i class="fas fa-rotate"></i> Why your bot cannot check the calendar</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">The exact mechanism behind a duplicated booking, what goes wrong when data arrives in pieces, and the silent failure that shows up in no error report.</p>
             </a>
             <a href="/whatsapp-api-vs-business.html" style="display:block; padding: 1.8rem; background: rgba(6, 182, 212, 0.07); border-radius: 16px; border: 1px solid rgba(6,182,212,0.18); text-decoration:none; color:inherit;">
-                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;">📱 WhatsApp Business vs API</h4>
+                <h4 style="font-size: 1.08rem; margin-bottom: 0.7rem;"><i class="fas fa-mobile-screen"></i> WhatsApp Business vs API</h4>
                 <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.6;">Why numbers get blocked, what the 24-hour window is, and exactly what you lose if you migrate your long-standing number. Worth knowing beforehand.</p>
             </a>
         </div>
@@ -2607,27 +1520,27 @@
         <div style="max-width: 900px; margin: 3rem auto 0;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🧩 Neuro-symbolic architecture</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-puzzle-piece"></i> Neuro-symbolic architecture</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Graph nodes emit typed signals that a router <em>with no LLM in the loop</em> turns into flow decisions. The model proposes; the state machine disposes. <strong>Check-Signal-Act</strong> in every node.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🛡️ Guarded invariants</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-shield-halved"></i> Guarded invariants</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">63 properties the system guarantees in code, with an explicit cut-off rule: <em>if Python guarantees the outcome it is an invariant; if only the prompt asks for it, it is a suggestion</em>.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🏢 Real multi-tenancy</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-building"></i> Real multi-tenancy</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Per-tenant isolation down to the conversation checkpointer key. Every query is parameterised and scoped by tenant: one client's state cannot leak into another's.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔀 Agents that build themselves</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-shuffle"></i> Agents that build themselves</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">The graph can be compiled from the database: a new agent is defined with typed extraction fields and its own tools, with no code deploy.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(255,255,255,0.04); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">♻️ Idempotency and compensation</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-recycle"></i> Idempotency and compensation</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">Safe retry across the whole external surface. A duplicated webhook does not create two appointments; a retried campaign does not send twice.</p>
                 </div>
                 <div style="padding: 2rem; background: rgba(6, 182, 212, 0.06); border-radius: 16px;">
-                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;">🔌 Multi-provider inference</h4>
+                    <h4 style="font-size: 1.05rem; margin-bottom: 0.8rem;"><i class="fas fa-plug"></i> Multi-provider inference</h4>
                     <p style="font-size: 0.92rem; opacity: 0.8; line-height: 1.65;">The inference layer is decoupled: provider and model are selected per tenant. No dependency on a single vendor or a single model family.</p>
                 </div>
             </div>
@@ -2726,24 +1639,6 @@
     </section>
 
     <script>
-        // Create background particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = Math.random() > 0.5 ? 'particle neural' : 'particle data';
-
-                // Random initial position
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 8 + 's';
-                particle.style.animationDuration = (8 + Math.random() * 4) + 's';
-
-                container.appendChild(particle);
-            }
-        }
-
         // Scroll animations
         function animateOnScroll() {
             const elements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
@@ -2824,9 +1719,31 @@
             });
         }
 
+        // Menú móvil (hamburguesa)
+        function initNavToggle() {
+            const toggle = document.getElementById('navToggle');
+            const links = document.getElementById('navLinks');
+            if (!toggle || !links) return;
+
+            toggle.addEventListener('click', function () {
+                const abierto = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+                toggle.innerHTML = abierto ? '<i class="fas fa-xmark"></i>' : '<i class="fas fa-bars"></i>';
+            });
+
+            // Cerrar el menú al pulsar un enlace
+            links.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    links.classList.remove('open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+        }
+
         // Initialize everything when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            createParticles();
+            initNavToggle();
             animateOnScroll();
             animateCounters();
             initSmoothScroll();
@@ -2846,7 +1763,10 @@
             const stickyCta = document.getElementById('stickyCta');
             const heroHeight = hero ? hero.offsetHeight : 600;
 
-            if (scrolled > heroHeight) {
+            const contacto = document.getElementById('contact');
+            const contactoVisible = contacto && contacto.getBoundingClientRect().top < window.innerHeight;
+
+            if (scrolled > heroHeight && !contactoVisible) {
                 stickyCta.classList.add('visible');
             } else {
                 stickyCta.classList.remove('visible');

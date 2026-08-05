@@ -203,7 +203,7 @@ Hay una versión `http://hachi.live/` indexada. Debe responder **301** a la
 - [ ] Reenviar el sitemap en Search Console
 - [ ] Solicitar indexación de las 4 páginas principales
 - [ ] Dar de alta Bing Webmaster Tools y enviar el sitemap
-- [ ] Ejecutar `bash tools/sitio/indexnow.sh`
-- [ ] Pasarme los perfiles oficiales para el `sameAs`
+- [x] Ejecutar `bash tools/sitio/indexnow.sh` ✅ 17 URLs enviadas, aceptado (202) por api.indexnow.org y Bing
+- [x] Pasarme los perfiles oficiales para el `sameAs` ✅ hecho en el commit `bd8f354` (LinkedIn empresa, GitHub y LinkedIn del fundador en ambas portadas)
 - [ ] `noindex` en `crm.` y `api.hachi.live`
 - [ ] Comprobar el 301 de `http` a `https`
