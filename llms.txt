@@ -137,9 +137,12 @@ implementation fee.
 - **Neuro-symbolic design.** Graph nodes emit typed signals; a router with no LLM
   in the loop turns those into flow decisions. The model proposes, the state
   machine disposes. Every node follows a Check-Signal-Act contract.
-- **63 guarded invariants.** Properties the system guarantees in code, with an
-  explicit cut-off: if code guarantees the outcome it is an invariant; if only the
-  prompt asks for it, it is a suggestion.
+- **57 guarded invariants and 9 prompt rules.** Properties the system guarantees
+  in code, with an explicit cut-off: if code guarantees the outcome it is an
+  invariant; if only the prompt asks for it, it is a rule and is counted
+  separately. The 57 break down as 19 rescheduling, 10 sales, 16 booking and 12
+  availability. Each one names where it is enforced and how it is tested — an
+  invariant is not counted until it has a test.
 - **Real multi-tenancy.** Per-tenant isolation down to the conversation
   checkpointer key; every query is parameterised and scoped by tenant.
 - **Agents compiled from the database.** New agents, with typed extraction fields
