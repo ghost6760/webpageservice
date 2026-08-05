@@ -11,7 +11,9 @@ Allow: /es/
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
-Disallow: /.well-known/
+
+# /.well-known/ NO se bloquea: security.txt (RFC 9116) existe precisamente para
+# que cualquiera pueda leerlo, y ahí viven también las verificaciones de dominio.
 
 User-agent: Googlebot
 Allow: /
@@ -50,7 +52,31 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: YouBot
 Allow: /
 
 User-agent: Google-Extended
@@ -77,5 +103,17 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
+# ---------------------------------------------------------------------------
+# Índices
+#
+# llms.txt no es un estándar que ningún rastreador lea automáticamente: es un
+# resumen en markdown, escrito para que un modelo que YA está leyendo la web
+# encuentre los datos autoritativos (precios, planes, límites) sin tener que
+# deducirlos del HTML. Se referencia aquí porque es el sitio donde alguien
+# —persona o agente— va a mirar primero.
+# ---------------------------------------------------------------------------
 Sitemap: https://hachi.live/sitemap.xml
+
+# LLM-Content: https://hachi.live/llms.txt
+
 Host: https://hachi.live
