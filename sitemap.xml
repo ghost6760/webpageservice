@@ -5,55 +5,93 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Homepage - English (Default) -->
+  <!-- ============ Homepages ============ -->
+
   <url>
     <loc>https://hachi.live/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <!-- Alternate language versions -->
     <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/"/>
   </url>
 
-  <!-- Homepage - Spanish -->
   <url>
     <loc>https://hachi.live/es/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <!-- Alternate language versions -->
     <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/"/>
   </url>
 
-  <!-- Privacy Policy -->
+  <!-- ============ Guides ============ -->
+
+  <!-- What an AI assistant costs -->
   <url>
-    <loc>https://hachi.live/privacy-policy.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://hachi.live/how-much-does-an-ai-assistant-cost.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/how-much-does-an-ai-assistant-cost.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/cuanto-cuesta-un-asistente-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/how-much-does-an-ai-assistant-cost.html"/>
+  </url>
+  <url>
+    <loc>https://hachi.live/es/cuanto-cuesta-un-asistente-ia.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/how-much-does-an-ai-assistant-cost.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/cuanto-cuesta-un-asistente-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/how-much-does-an-ai-assistant-cost.html"/>
   </url>
 
-  <!-- Data Deletion Instructions -->
+  <!-- Why flow-based bots fail -->
   <url>
-    <loc>https://hachi.live/data-deletion.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://hachi.live/why-flow-based-bots-fail.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/why-flow-based-bots-fail.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/why-flow-based-bots-fail.html"/>
+  </url>
+  <url>
+    <loc>https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/why-flow-based-bots-fail.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/why-flow-based-bots-fail.html"/>
   </url>
 
-  <!-- Terms of Service -->
+  <!-- WhatsApp Business vs API -->
   <url>
-    <loc>https://hachi.live/terms-of-service.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://hachi.live/whatsapp-api-vs-business.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/whatsapp-api-vs-business.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/whatsapp-api-vs-business.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/whatsapp-api-vs-business.html"/>
+  </url>
+  <url>
+    <loc>https://hachi.live/es/whatsapp-api-vs-business.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/whatsapp-api-vs-business.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/whatsapp-api-vs-business.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/whatsapp-api-vs-business.html"/>
   </url>
 
-  <!-- ROI calculator - English -->
+  <!-- ============ Tools and reference ============ -->
+
+  <!-- ROI calculator -->
   <url>
     <loc>https://hachi.live/calculator.html</loc>
     <lastmod>2026-08-05</lastmod>
@@ -63,8 +101,6 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/calculadora.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/calculator.html"/>
   </url>
-
-  <!-- ROI calculator - Spanish -->
   <url>
     <loc>https://hachi.live/es/calculadora.html</loc>
     <lastmod>2026-08-05</lastmod>
@@ -75,7 +111,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/calculator.html"/>
   </url>
 
-  <!-- FAQ (75 questions) - Spanish -->
+  <!-- FAQ, 75 questions -->
   <url>
     <loc>https://hachi.live/es/preguntas.html</loc>
     <lastmod>2026-08-05</lastmod>
@@ -84,7 +120,14 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/preguntas.html"/>
   </url>
 
-  <!-- Privacy Policy - Spanish -->
+  <!-- ============ Legal ============ -->
+
+  <url>
+    <loc>https://hachi.live/privacy-policy.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
   <url>
     <loc>https://hachi.live/es/privacy-policy.html</loc>
     <lastmod>2026-07-30</lastmod>
@@ -92,7 +135,12 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Terms of Service - Spanish -->
+  <url>
+    <loc>https://hachi.live/terms-of-service.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
   <url>
     <loc>https://hachi.live/es/terms-of-service.html</loc>
     <lastmod>2026-07-30</lastmod>
@@ -100,6 +148,11 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Section anchors for better indexing -->
+  <url>
+    <loc>https://hachi.live/data-deletion.html</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
 </urlset>

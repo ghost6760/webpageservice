@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Business vs WhatsApp Business API: diferencias reales | Hachi</title>
+<meta name="description" content="Qué diferencia hay entre la app de WhatsApp Business y la API oficial, por qué bloquean números, qué es la ventana de 24 horas y qué pierdes al migrar tu número de siempre.">
+<link rel="canonical" href="https://hachi.live/es/whatsapp-api-vs-business.html">
+<link rel="alternate" hreflang="es" href="https://hachi.live/es/whatsapp-api-vs-business.html">
+<link rel="alternate" hreflang="en" href="https://hachi.live/whatsapp-api-vs-business.html">
+<link rel="alternate" hreflang="x-default" href="https://hachi.live/whatsapp-api-vs-business.html">
+<link rel="icon" href="/favicon.ico">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hachi.live/es/whatsapp-api-vs-business.html">
+<meta property="og:title" content="WhatsApp Business vs API: qué cambia de verdad">
+<meta property="og:description" content="Qué diferencia hay entre la app de WhatsApp Business y la API oficial, por qué bloquean números, qué es la ventana de 24 horas y qué pierdes al migrar tu número de siempre.">
+<meta property="og:image" content="https://hachi.live/images/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "WhatsApp Business y WhatsApp Business API no son lo mismo",
+  "description": "Qué diferencia hay entre la app de WhatsApp Business y la API oficial, por qué bloquean números, qué es la ventana de 24 horas y qué pierdes al migrar tu número de siempre.",
+  "inLanguage": "es-ES",
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-08-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hachi.live/es/whatsapp-api-vs-business.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Hachi",
+    "url": "https://hachi.live"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hachi",
+    "url": "https://hachi.live"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://hachi.live/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "WhatsApp Business vs API",
+      "item": "https://hachi.live/es/whatsapp-api-vs-business.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Es gratis WhatsApp Business API?",
+      "url": "https://hachi.live/es/whatsapp-api-vs-business.html#es-gratis-whatsapp-business-api",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>La app es gratuita; la API no. Meta cobra por conversación iniciada por la empresa —recordatorios y campañas—, mientras que <strong>responder dentro de las 24 horas siguientes al mensaje del cliente no tiene coste</strong>. A eso se le suma lo que cobre el proveedor que te la gestione.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo seguir usando el móvil para contestar?",
+      "url": "https://hachi.live/es/whatsapp-api-vs-business.html#puedo-seguir-usando-el-movil-para-contestar",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Con la API se atiende desde un panel web en el ordenador, no desde la app de WhatsApp del móvil. La ventaja es que pueden atender varias personas a la vez con las conversaciones asignadas, y que el historial queda centralizado y con buscador en vez de vivir en un único teléfono.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda Meta en aprobar una plantilla?",
+      "url": "https://hachi.live/es/whatsapp-api-vs-business.html#cuanto-tarda-meta-en-aprobar-una-plantilla",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Habitualmente entre 24 y 48 horas. Si la rechaza, no sale: es una barrera que no depende ni de ti ni de tu proveedor, y es parte de por qué la API no se usa para spam.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo volver atrás después de migrar a la API?",
+      "url": "https://hachi.live/es/whatsapp-api-vs-business.html#puedo-volver-atras-despues-de-migrar-a-la-api",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Se puede devolver un número a la app, pero es un trámite y tampoco recupera lo que quedó atrás. Por eso la decisión importante es la de antes de migrar, no la de después.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito la API si sólo quiero responder mensajes?",
+      "url": "https://hachi.live/es/whatsapp-api-vs-business.html#necesito-la-api-si-solo-quiero-responder-mensajes",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Si de verdad sólo respondes, y nunca escribes primero ni mandas recordatorios, la app puede bastarte. La API se vuelve necesaria en cuanto quieres iniciar conversaciones, que varias personas atiendan a la vez o que un asistente responda automáticamente.</p>"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
+  --verde:#10B981; --ambar:#F59E0B; --rojo:#EF4444;
+  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
+  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:var(--fondo);color:var(--texto);line-height:1.7;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--cian);text-decoration:none}
+a:hover{text-decoration:underline}
+.envoltorio{max-width:800px;margin:0 auto;padding:0 20px}
+
+.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
+  background:rgba(10,10,15,.93);backdrop-filter:blur(8px);z-index:20}
+.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1000px}
+.marca{font-weight:700;font-size:1.2rem;color:#fff}
+.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.migas{font-size:.82rem;color:var(--tenue);padding:18px 0 0}
+.migas a{color:var(--tenue)}
+
+header.cabecera{padding:22px 0 8px}
+h1{font-size:2.15rem;line-height:1.22;margin-bottom:16px;color:#fff}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.entradilla{color:var(--tenue);font-size:1.08rem;line-height:1.65}
+.meta{font-size:.8rem;color:var(--tenue);margin-top:16px;opacity:.8}
+
+.sumario{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
+  padding:18px 22px;margin:30px 0 8px}
+.sumario h2{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--tenue);margin-bottom:10px;font-weight:600}
+.sumario ol{margin-left:20px}
+.sumario li{margin-bottom:4px;font-size:.93rem}
+
+section.bloque{margin-top:44px;scroll-margin-top:80px}
+h2{font-size:1.55rem;color:#fff;line-height:1.3}
+section.bloque>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
+h3{font-size:1.13rem;color:#fff;margin:26px 0 10px}
+p{margin-bottom:14px}
+ul,ol{margin:0 0 14px 24px}
+li{margin-bottom:8px}
+strong{color:#fff;font-weight:600}
+blockquote{border-left:3px solid var(--violeta);padding:4px 0 4px 18px;margin:20px 0;
+  color:var(--texto);font-size:1.05rem}
+
+.destacado{background:var(--panel);border:1px solid var(--borde);
+  border-left:3px solid var(--cian);border-radius:10px;padding:18px 20px;margin:22px 0}
+.destacado.aviso{border-left-color:var(--ambar)}
+.destacado.bien{border-left-color:var(--verde)}
+.destacado p:last-child,.destacado ul:last-child,.destacado ol:last-child{margin-bottom:0}
+
+.tabla{overflow-x:auto;margin:22px 0;border:1px solid var(--borde);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--borde);
+  vertical-align:top}
+thead th{background:var(--panel2);color:var(--tenue);font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.si{color:var(--verde)} td.no{color:var(--rojo)}
+tr.destacada td{background:rgba(139,92,246,.09)}
+tr.destacada td:first-child{color:#fff;font-weight:600}
+
+.faq{margin-top:44px}
+.faq>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
+.faq article{margin-bottom:22px;scroll-margin-top:80px}
+.faq h3{font-size:1.06rem;margin:0 0 6px}
+.faq .r{color:var(--tenue);font-size:.96rem}
+.faq .r p{margin-bottom:10px}
+
+.relacionadas{margin:46px 0 0}
+.relacionadas h2{font-size:1.2rem;margin-bottom:14px}
+.relacionadas div{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.relacionadas a{display:block;padding:15px 17px;background:var(--panel);
+  border:1px solid var(--borde);border-radius:12px;color:var(--texto);font-size:.93rem}
+.relacionadas a:hover{border-color:var(--violeta);text-decoration:none}
+.relacionadas a b{display:block;color:#fff;margin-bottom:3px;font-size:.97rem}
+.relacionadas a span{color:var(--tenue);font-size:.86rem}
+
+.cta{text-align:center;padding:36px 22px 40px;margin:46px 0 50px;
+  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(6,182,212,.10));
+  border:1px solid rgba(139,92,246,.28);border-radius:20px}
+.cta h2{font-size:1.4rem;margin-bottom:8px;border:none;padding:0}
+.cta p{color:var(--tenue);max-width:520px;margin:0 auto 20px;font-size:.97rem}
+.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
+  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
+.boton:hover{text-decoration:none;opacity:.92}
+.boton.sec{background:transparent;border:1px solid var(--borde);color:var(--texto);
+  margin-left:10px}
+
+footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
+  font-size:.87rem;text-align:center}
+
+@media(max-width:640px){
+  h1{font-size:1.62rem}
+  h2{font-size:1.3rem}
+  .boton.sec{margin-left:0;margin-top:10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="envoltorio">
+    <a href="/es/" class="marca">Hachi<span>.</span></a>
+    <div>
+      <a href="/whatsapp-api-vs-business.html" style="margin-right:16px">EN</a>
+      <a href="/es/#precios">Ver planes →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="envoltorio">
+
+<nav class="migas" aria-label="Inicio">
+  <a href="/es/">Inicio</a> › WhatsApp Business vs API
+</nav>
+
+<header class="cabecera">
+  <h1>WhatsApp Business y WhatsApp Business API <em>no son lo mismo</em></h1>
+  <p class="entradilla">Confundirlos es lo que hace que a muchos negocios les bloqueen el número —
+    normalmente el de toda la vida, el que está en Google y en las tarjetas. Aquí está la
+    diferencia entera, incluida la parte que casi nadie cuenta hasta que ya es tarde.</p>
+  <p class="meta">Actualizado el 2026-08-05</p>
+</header>
+
+<nav class="sumario" aria-label="En esta página">
+  <h2>En esta página</h2>
+  <ol>
+      <li><a href="#b1">Son dos productos distintos, no dos versiones del mismo</a></li>
+      <li><a href="#b2">Por qué bloquean números que usan la app normal</a></li>
+      <li><a href="#b3">La ventana de 24 horas, explicada sin tecnicismos</a></li>
+      <li><a href="#b4">La regla que decide si conservas tu número</a></li>
+      <li><a href="#b5">Cómo decidir, en dos preguntas</a></li>
+  </ol>
+</nav>
+
+<section class="bloque" id="b1">
+  <h2>Son dos productos distintos, no dos versiones del mismo</h2>
+  <p>WhatsApp Business y WhatsApp Business API comparten nombre y poco más. La
+  <strong>app</strong> —la gratuita que te descargas en el móvil— está pensada para un
+  negocio pequeño que <em>responde</em>. La <strong>API</strong> es el canal que Meta
+  habilita para empresas que además <em>inician</em> conversaciones y manejan volumen.</p>
+  <div class="tabla">
+  <table>
+  <thead><tr><th></th><th>App de WhatsApp Business</th><th>WhatsApp Business API</th></tr></thead>
+  <tbody>
+  <tr><td>Dónde se usa</td><td>En el móvil</td><td><strong>Desde el ordenador</strong>, en un panel web</td></tr>
+  <tr><td>Quién responde</td><td>Una persona, a mano</td><td>Tu equipo <strong>y</strong> un asistente, a la vez</td></tr>
+  <tr><td>Escribir primero</td><td class="no">Riesgo de bloqueo</td><td class="si">Permitido, con plantilla aprobada</td></tr>
+  <tr><td>Varias personas atendiendo</td><td class="no">No</td><td class="si">Sí, con la conversación asignada</td></tr>
+  <tr><td>Historial y etiquetas</td><td>Sólo en ese móvil</td><td>Centralizado, con buscador</td></tr>
+  <tr><td>Coste</td><td>Gratis</td><td>Se paga por conversación iniciada</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <div class="destacado">
+  <p><strong>Lo que más sorprende:</strong> la API <em>no es una aplicación</em>. No se
+  descarga, no se instala y no vive en el móvil. Es una vía de conexión, y lo que tú ves
+  es el panel web que se conecta a ella. No pierdes nada de lo que hacías —tus
+  conversaciones siguen ahí y tu equipo puede contestar a mano cuando quiera—; lo que
+  cambia es <strong>dónde</strong> se atiende.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b2">
+  <h2>Por qué bloquean números que usan la app normal</h2>
+  <p>La app está diseñada para conversaciones que empieza el cliente. En cuanto empiezas a
+  mandar mensajes a gente que no te ha escrito ese día, o muchos mensajes seguidos, el
+  sistema antispam de WhatsApp lo interpreta como lo que parece:</p>
+  <ul>
+  <li>Primero <strong>te limita el envío</strong> sin avisarte.</li>
+  <li>Después <strong>te suspende el número</strong> temporalmente.</li>
+  <li>Si se repite, <strong>te lo bloquea de forma permanente</strong>.</li>
+  </ul>
+  <p>Y no hay un botón de recuperación ni un teléfono al que llamar. El problema no es el
+  castigo en sí: es <em>qué número</em> pierdes. Suele ser el que llevas años publicando
+  en tu ficha de Google, en la web, en los rótulos y en las tarjetas. Perderlo es perder
+  el canal por el que te llega el trabajo.</p>
+  <div class="destacado aviso">
+  <p>Si estás mandando recordatorios de cita a mano desde la app del móvil, estás
+  exactamente en el patrón que dispara el bloqueo. Funciona hasta que deja de funcionar,
+  y no avisa.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b3">
+  <h2>La ventana de 24 horas, explicada sin tecnicismos</h2>
+  <p>Es la regla que ordena todo lo demás. Meta permite escribir libremente a una persona
+  durante las <strong>24 horas siguientes a su último mensaje</strong>. Pasado ese plazo
+  ya no se puede mandar texto libre: sólo una
+  <strong>plantilla aprobada previamente por Meta</strong>.</p>
+  <p>En la práctica:</p>
+  <ul>
+  <li>Alguien escribe a las 22:00 preguntando por un servicio → puedes responderle con
+  total libertad durante las 24 horas siguientes.</li>
+  <li>Esa persona no vuelve a escribir en tres días y quieres recuperarla → ya está fuera
+  de la ventana, así que se le escribe con una plantilla aprobada
+  («Hola {{nombre}}, ¿seguimos adelante con tu consulta de {{servicio}}?»).</li>
+  <li>En cuanto contesta, <strong>se abre otra ventana de 24 horas</strong> y la
+  conversación vuelve a ser libre.</li>
+  </ul>
+  <p>Esa ventana es, de paso, el mecanismo que impide el spam en WhatsApp: no puedes
+  escribir a alguien cuando quieras con lo que quieras.</p>
+  <div class="destacado bien">
+  <p>Un asistente decente gestiona esto solo: sabe si la persona está dentro o fuera de la
+  ventana y elige entre mensaje libre o plantilla sin que tú tengas que pensarlo. Es la
+  razón por la que un bot casero o una automatización montada por tu cuenta acaba
+  fallando — no porque esté mal hecha, sino porque <strong>sin API oficial y sin gestión
+  de plantillas el mensaje sencillamente no sale</strong>.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b4">
+  <h2>La regla que decide si conservas tu número</h2>
+  <p>Aquí está la parte que conviene saber antes y no después:</p>
+  <blockquote>Un número de teléfono puede estar en la app de WhatsApp Business
+  <strong>O</strong> en la API, pero <strong>nunca en las dos a la vez</strong>.</blockquote>
+  <p>Es una norma de Meta, no una limitación de ningún proveedor. Y de ella salen dos
+  caminos.</p>
+  <h3>Camino A · Un número nuevo</h3>
+  <p>Das de alta una SIM nueva y esa es la que va a la API. El WhatsApp Business que ya
+  tienes <strong>no se toca</strong>: sigue en el teléfono con todo dentro. Riesgo cero y
+  sin esperas adicionales.</p>
+  <p>La pega es evidente: es un número distinto del que está publicado, así que hay que
+  empezar a difundirlo o poner una redirección. Aun así es lo que recomendamos a casi
+  todo el mundo, sobre todo si tu WhatsApp actual tiene años de historial.</p>
+  <h3>Camino B · Migrar el número de siempre</h3>
+  <p>Se puede, y sigues siendo localizable donde ya te conocen. Pero:</p>
+  <div class="destacado aviso">
+  <p><strong>Al migrar el número a la API, el historial de chats y los contactos que viven
+  en la app del móvil dejan de estar accesibles.</strong> La API arranca limpia. No es
+  que se borren por arte de magia: es que ese número deja de funcionar en la app, y con
+  él se va el acceso a esas conversaciones desde el panel nuevo.</p>
+  </div>
+  <p>Si un proveedor te resuelve este punto con un «nosotros te lo conectamos y listo»,
+  pregúntale expresamente qué pasa con el histórico. La factura de no preguntarlo llega
+  meses después, buscando una conversación antigua que ya no está en ninguna parte.</p>
+</section>
+
+<section class="bloque" id="b5">
+  <h2>Cómo decidir, en dos preguntas</h2>
+  <ol>
+  <li><strong>¿El número que usas ahora está publicado en tu web, en Google y en tus
+  anuncios?</strong><br>Si no lo está, ve a número nuevo sin pensarlo más.</li>
+  <li><strong>¿Con qué frecuencia abres un chat de hace meses?</strong><br>Si la respuesta
+  es «nunca», migra y olvídate del histórico. Si lo consultas de vez en cuando —o forma
+  parte del seguimiento de tus clientes—, entonces sí compensa rescatarlo antes.</li>
+  </ol>
+  <p>El rescate consiste en sacar la agenda de contactos y el histórico de la app,
+  ordenarlos y cargarlos en el sistema nuevo, y hay que hacerlo <strong>antes</strong> de
+  migrar. Eso no es automatización, es trabajo de datos: se hace caso por caso según
+  cuánto tengas, y por eso se presupuesta aparte.</p>
+  <p>Es una decisión que se toma una vez y conviene tomarla bien. Si dudas, plantéalo con tu
+  caso concreto antes de firmar nada con nadie.</p>
+</section>
+
+<section class="faq" id="faq">
+  <h2>Preguntas frecuentes</h2>
+  <article id="es-gratis-whatsapp-business-api">
+    <h3>¿Es gratis WhatsApp Business API?</h3>
+    <div class="r">
+      <p>La app es gratuita; la API no. Meta cobra por conversación iniciada por la
+      empresa —recordatorios y campañas—, mientras que <strong>responder dentro de las
+      24 horas siguientes al mensaje del cliente no tiene coste</strong>. A eso se le
+      suma lo que cobre el proveedor que te la gestione.</p>
+    </div>
+  </article>
+  <article id="puedo-seguir-usando-el-movil-para-contestar">
+    <h3>¿Puedo seguir usando el móvil para contestar?</h3>
+    <div class="r">
+      <p>Con la API se atiende desde un panel web en el ordenador, no desde la app de
+      WhatsApp del móvil. La ventaja es que pueden atender varias personas a la vez con
+      las conversaciones asignadas, y que el historial queda centralizado y con
+      buscador en vez de vivir en un único teléfono.</p>
+    </div>
+  </article>
+  <article id="cuanto-tarda-meta-en-aprobar-una-plantilla">
+    <h3>¿Cuánto tarda Meta en aprobar una plantilla?</h3>
+    <div class="r">
+      <p>Habitualmente entre 24 y 48 horas. Si la rechaza, no sale: es una barrera que
+      no depende ni de ti ni de tu proveedor, y es parte de por qué la API no se usa
+      para spam.</p>
+    </div>
+  </article>
+  <article id="puedo-volver-atras-despues-de-migrar-a-la-api">
+    <h3>¿Puedo volver atrás después de migrar a la API?</h3>
+    <div class="r">
+      <p>Se puede devolver un número a la app, pero es un trámite y tampoco recupera lo
+      que quedó atrás. Por eso la decisión importante es la de antes de migrar, no la
+      de después.</p>
+    </div>
+  </article>
+  <article id="necesito-la-api-si-solo-quiero-responder-mensajes">
+    <h3>¿Necesito la API si sólo quiero responder mensajes?</h3>
+    <div class="r">
+      <p>Si de verdad sólo respondes, y nunca escribes primero ni mandas recordatorios,
+      la app puede bastarte. La API se vuelve necesaria en cuanto quieres iniciar
+      conversaciones, que varias personas atiendan a la vez o que un asistente responda
+      automáticamente.</p>
+    </div>
+  </article>
+</section>
+
+<nav class="relacionadas" aria-label="Seguir leyendo">
+  <h2>Seguir leyendo</h2>
+  <div>
+    <a href="/es/por-que-los-bots-de-flujo-fallan.html"><b>Por qué los bots de flujo fallan</b><span>El mecanismo exacto de la cita duplicada</span></a>
+    <a href="/es/cuanto-cuesta-un-asistente-ia.html"><b>Cuánto cuesta un asistente de IA</b><span>Qué explica la horquilla de 29 € a 900 €</span></a>
+    <a href="/es/preguntas.html#puedo-usar-mi-numero-de-siempre"><b>Preguntas frecuentes</b><span>75 respuestas, incluidas las incómodas</span></a>
+  </div>
+</nav>
+
+<div class="cta">
+  <h2>¿Lo montamos nosotros?</h2>
+  <p>Tramitamos la API oficial, conectamos tu número y preparamos las plantillas. En la
+        demostración vemos tu caso concreto: si te conviene número nuevo o migrar, y qué
+        supone cada uno con tus datos.</p>
+  <a href="/es/#contacto" class="boton">Solicitar una demostración</a>
+  <a href="/es/calculadora.html" class="boton sec">📊 Calcular mi retorno</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="envoltorio">
+    Hachi ·
+    <a href="/es/">Inicio</a> ·
+    <a href="/es/#precios">Planes</a> ·
+    <a href="/es/calculadora.html">Calculadora</a> ·
+    <a href="/es/preguntas.html">Preguntas</a> ·
+    <a href="/whatsapp-api-vs-business.html">English version</a>
+  </div>
+</footer>
+</body>
+</html>

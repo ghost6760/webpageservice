@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por qué tu bot no puede consultar la agenda de verdad | Hachi</title>
+<meta name="description" content="El motivo técnico por el que un bot de flujos no consulta tu calendario, cómo se produce la cita duplicada y qué hay que exigirle a cualquier asistente que agende.">
+<link rel="canonical" href="https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html">
+<link rel="alternate" hreflang="es" href="https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html">
+<link rel="alternate" hreflang="en" href="https://hachi.live/why-flow-based-bots-fail.html">
+<link rel="alternate" hreflang="x-default" href="https://hachi.live/why-flow-based-bots-fail.html">
+<link rel="icon" href="/favicon.ico">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html">
+<meta property="og:title" content="Por qué los bots de flujo no pueden agendar">
+<meta property="og:description" content="El motivo técnico por el que un bot de flujos no consulta tu calendario, cómo se produce la cita duplicada y qué hay que exigirle a cualquier asistente que agende.">
+<meta property="og:image" content="https://hachi.live/images/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Por qué tu bot no puede consultar la agenda",
+  "description": "El motivo técnico por el que un bot de flujos no consulta tu calendario, cómo se produce la cita duplicada y qué hay que exigirle a cualquier asistente que agende.",
+  "inLanguage": "es-ES",
+  "datePublished": "2026-08-05",
+  "dateModified": "2026-08-05",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Hachi",
+    "url": "https://hachi.live"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hachi",
+    "url": "https://hachi.live"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://hachi.live/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Por qué los bots de flujo fallan",
+      "item": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Por qué mi bot confirma citas que no existen?",
+      "url": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html#por-que-mi-bot-confirma-citas-que-no-existen",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Porque no tiene acceso a tu calendario. Un flujo dibujado responde según lo que alguien programó, no según lo que hay libre. Confirma porque es la salida más natural del diagrama, no porque haya comprobado nada.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede arreglar un bot de flujos para que consulte la agenda?",
+      "url": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html#se-puede-arreglar-un-bot-de-flujos-para-que-consulte-la-agenda",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>No configurándolo mejor. Requiere una integración real con el calendario y la capacidad de interpretar la respuesta, que es lo que distingue una categoría de producto de otra. Se puede añadir con desarrollo a medida, pero entonces ya no estás pagando por un flujo.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué mi bot vuelve a pedirme el nombre cada dos mensajes?",
+      "url": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html#por-que-mi-bot-vuelve-a-pedirme-el-nombre-cada-dos-mensajes",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Porque no tiene memoria de la conversación más allá del mensaje actual, o la tiene sólo dentro de una sesión muy corta. Un asistente que agenda de verdad tiene que recordar entre días, no sólo entre mensajes.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Sirve conectar ChatGPT directamente a mi WhatsApp?",
+      "url": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html#sirve-conectar-chatgpt-directamente-a-mi-whatsapp",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Conversa muy bien y ese no es el problema. El problema es que no puede reservar en tu agenda y que, sin restricciones, completa los datos que no tiene: precios, servicios y horarios que suenan bien y no son los tuyos. Además, hacerlo desde un número normal sin la API oficial acaba en bloqueo — está explicado en <a href=\"https://hachi.live/es/whatsapp-api-vs-business.html\">WhatsApp Business vs API</a>.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo compruebo si el bot que me ofrecen agenda de verdad?",
+      "url": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html#como-compruebo-si-el-bot-que-me-ofrecen-agenda-de-verdad",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>En la demostración, pídele una hora que sepas que está ocupada. Si te la confirma, no está consultando nada. Y pide confirmación dos veces seguidas a ver si aparecen dos citas.</p>"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Entonces los bots de flujo no sirven para nada?",
+      "url": "https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html#entonces-los-bots-de-flujo-no-sirven-para-nada",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "<p>Sí sirven, para lo suyo: responder preguntas frecuentes, dar una dirección, un horario o una lista de servicios. Si no necesitas agendar, son la opción barata y correcta. El problema no es la herramienta, es venderla como algo que no es.</p>"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
+  --verde:#10B981; --ambar:#F59E0B; --rojo:#EF4444;
+  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
+  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:var(--fondo);color:var(--texto);line-height:1.7;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--cian);text-decoration:none}
+a:hover{text-decoration:underline}
+.envoltorio{max-width:800px;margin:0 auto;padding:0 20px}
+
+.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
+  background:rgba(10,10,15,.93);backdrop-filter:blur(8px);z-index:20}
+.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  max-width:1000px}
+.marca{font-weight:700;font-size:1.2rem;color:#fff}
+.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.migas{font-size:.82rem;color:var(--tenue);padding:18px 0 0}
+.migas a{color:var(--tenue)}
+
+header.cabecera{padding:22px 0 8px}
+h1{font-size:2.15rem;line-height:1.22;margin-bottom:16px;color:#fff}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.entradilla{color:var(--tenue);font-size:1.08rem;line-height:1.65}
+.meta{font-size:.8rem;color:var(--tenue);margin-top:16px;opacity:.8}
+
+.sumario{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
+  padding:18px 22px;margin:30px 0 8px}
+.sumario h2{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--tenue);margin-bottom:10px;font-weight:600}
+.sumario ol{margin-left:20px}
+.sumario li{margin-bottom:4px;font-size:.93rem}
+
+section.bloque{margin-top:44px;scroll-margin-top:80px}
+h2{font-size:1.55rem;color:#fff;line-height:1.3}
+section.bloque>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
+h3{font-size:1.13rem;color:#fff;margin:26px 0 10px}
+p{margin-bottom:14px}
+ul,ol{margin:0 0 14px 24px}
+li{margin-bottom:8px}
+strong{color:#fff;font-weight:600}
+blockquote{border-left:3px solid var(--violeta);padding:4px 0 4px 18px;margin:20px 0;
+  color:var(--texto);font-size:1.05rem}
+
+.destacado{background:var(--panel);border:1px solid var(--borde);
+  border-left:3px solid var(--cian);border-radius:10px;padding:18px 20px;margin:22px 0}
+.destacado.aviso{border-left-color:var(--ambar)}
+.destacado.bien{border-left-color:var(--verde)}
+.destacado p:last-child,.destacado ul:last-child,.destacado ol:last-child{margin-bottom:0}
+
+.tabla{overflow-x:auto;margin:22px 0;border:1px solid var(--borde);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--borde);
+  vertical-align:top}
+thead th{background:var(--panel2);color:var(--tenue);font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.si{color:var(--verde)} td.no{color:var(--rojo)}
+tr.destacada td{background:rgba(139,92,246,.09)}
+tr.destacada td:first-child{color:#fff;font-weight:600}
+
+.faq{margin-top:44px}
+.faq>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
+.faq article{margin-bottom:22px;scroll-margin-top:80px}
+.faq h3{font-size:1.06rem;margin:0 0 6px}
+.faq .r{color:var(--tenue);font-size:.96rem}
+.faq .r p{margin-bottom:10px}
+
+.relacionadas{margin:46px 0 0}
+.relacionadas h2{font-size:1.2rem;margin-bottom:14px}
+.relacionadas div{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.relacionadas a{display:block;padding:15px 17px;background:var(--panel);
+  border:1px solid var(--borde);border-radius:12px;color:var(--texto);font-size:.93rem}
+.relacionadas a:hover{border-color:var(--violeta);text-decoration:none}
+.relacionadas a b{display:block;color:#fff;margin-bottom:3px;font-size:.97rem}
+.relacionadas a span{color:var(--tenue);font-size:.86rem}
+
+.cta{text-align:center;padding:36px 22px 40px;margin:46px 0 50px;
+  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(6,182,212,.10));
+  border:1px solid rgba(139,92,246,.28);border-radius:20px}
+.cta h2{font-size:1.4rem;margin-bottom:8px;border:none;padding:0}
+.cta p{color:var(--tenue);max-width:520px;margin:0 auto 20px;font-size:.97rem}
+.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
+  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
+.boton:hover{text-decoration:none;opacity:.92}
+.boton.sec{background:transparent;border:1px solid var(--borde);color:var(--texto);
+  margin-left:10px}
+
+footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
+  font-size:.87rem;text-align:center}
+
+@media(max-width:640px){
+  h1{font-size:1.62rem}
+  h2{font-size:1.3rem}
+  .boton.sec{margin-left:0;margin-top:10px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="envoltorio">
+    <a href="/es/" class="marca">Hachi<span>.</span></a>
+    <div>
+      <a href="/why-flow-based-bots-fail.html" style="margin-right:16px">EN</a>
+      <a href="/es/#precios">Ver planes →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="envoltorio">
+
+<nav class="migas" aria-label="Inicio">
+  <a href="/es/">Inicio</a> › Por qué los bots de flujo fallan
+</nav>
+
+<header class="cabecera">
+  <h1>Por qué tu bot <em>no puede</em> consultar la agenda</h1>
+  <p class="entradilla">Si tu chatbot confirma horas que no existen, vuelve a preguntar el nombre
+    cada dos mensajes o crea la misma cita dos veces, no está mal configurado. Está
+    haciendo exactamente lo único que sabe hacer. Aquí está el mecanismo.</p>
+  <p class="meta">Actualizado el 2026-08-05</p>
+</header>
+
+<nav class="sumario" aria-label="En esta página">
+  <h2>En esta página</h2>
+  <ol>
+      <li><a href="#b1">Un flujo no es un asistente: es un diagrama</a></li>
+      <li><a href="#b2">Por qué no puede saber si el jueves a las 10 está libre</a></li>
+      <li><a href="#b3">Cómo se produce exactamente una cita duplicada</a></li>
+      <li><a href="#b4">El fallo silencioso: la reserva que se queda a medias</a></li>
+      <li><a href="#b5">El otro extremo: cuando el modelo se lo inventa</a></li>
+      <li><a href="#b6">Qué exigir, en una lista</a></li>
+  </ol>
+</nav>
+
+<section class="bloque" id="b1">
+  <h2>Un flujo no es un asistente: es un diagrama</h2>
+  <p>La mayoría de lo que se vende como «bot para clínicas» es un diagrama dibujado a mano:
+  si el cliente pulsa este botón, responde esto; si escribe esta palabra, salta a este
+  otro paso. Funciona por reconocimiento de patrones, no por comprensión.</p>
+  <p>Eso tiene una consecuencia que no es de calidad, sino de <strong>capacidad</strong>:
+  un diagrama sólo puede recorrer los caminos que alguien dibujó antes. Cuando alguien
+  escribe algo que no estaba previsto, no hay rama a la que ir. Por eso los flujos se
+  «rompen» con frases perfectamente normales.</p>
+  <div class="destacado">
+  <p>No es que lo haga mal. Es que <strong>no tiene forma de hacerlo</strong>. Es la
+  diferencia entre un empleado nuevo que aún no sabe algo y una calculadora a la que le
+  pides que redacte una carta.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b2">
+  <h2>Por qué no puede saber si el jueves a las 10 está libre</h2>
+  <p>Para responder «¿tenéis hueco el jueves a las 10?» con verdad hacen falta tres cosas, y
+  un flujo no tiene ninguna:</p>
+  <ol>
+  <li><strong>Entender la pregunta</strong>, incluyendo «el jueves», «pasado mañana», «a
+  primera hora» o «cuando podáis por la tarde».</li>
+  <li><strong>Consultar el calendario real</strong> en ese momento, no una copia de ayer ni
+  una tabla de horarios teóricos.</li>
+  <li><strong>Interpretar la respuesta</strong> y, si no hay hueco, proponer alternativas
+  que sí existan.</li>
+  </ol>
+  <p>Un flujo puede parecer que lo hace, y ahí está el problema. Tiene dos salidas y ninguna
+  buena:</p>
+  <ul>
+  <li><strong>Confirmar a ciegas</strong> — «perfecto, te esperamos el jueves a las 10» —
+  y el jueves se presentan dos personas a la misma hora.</li>
+  <li><strong>Escurrir el bulto</strong> — «te confirmamos en breve» — que es exactamente
+  el trabajo que querías quitarte de encima, sólo que ahora con un paso más.</li>
+  </ul>
+  <div class="destacado aviso">
+  <p>Si tu bot nunca te ha dado un problema de agenda, comprueba cuál de las dos está
+  haciendo. La segunda no falla, pero tampoco resuelve.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b3">
+  <h2>Cómo se produce exactamente una cita duplicada</h2>
+  <p>Es el fallo más caro y el más fácil de reproducir. Una conversación real no llega
+  ordenada, llega a trozos:</p>
+  <div class="destacado">
+  <p>— «hola, quería pedir cita»<br>
+  — «el jueves si puede ser»<br>
+  — «a las 11 mejor»<br>
+  — «ah, me llamo Marta»<br>
+  — «¿te paso el teléfono?»<br>
+  — «confírmame porfa»<br>
+  — «¿me lo confirmas?»</p>
+  </div>
+  <p>Cada uno de esos mensajes llega por separado. Un flujo, o una automatización del tipo
+  «cuando llegue un mensaje, haz esto», tiene que decidir en cada uno si es una petición
+  nueva o la continuación de la anterior. Y no tiene contexto para saberlo.</p>
+  <p>Así que hace una de dos cosas, y las dos son malas:</p>
+  <ul>
+  <li><strong>Vuelve a empezar</strong> en cada mensaje, y el cliente tiene que repetir el
+  nombre y el día tres veces hasta que se cansa y se va.</li>
+  <li><strong>Trata cada confirmación como una reserva</strong>, y los dos «confírmame» del
+  final se convierten en dos citas.</li>
+  </ul>
+  <p>Un sistema que sostiene la conversación entiende que todo eso es
+  <strong>la misma reserva</strong>, que se va completando por partes, y que dos
+  confirmaciones seguidas no son dos citas.</p>
+</section>
+
+<section class="bloque" id="b4">
+  <h2>El fallo silencioso: la reserva que se queda a medias</h2>
+  <p>Este casi nunca se menciona en una demostración porque no se ve. Reagendar una cita son
+  dos operaciones: cancelar la vieja y crear la nueva. Si la primera funciona y la segunda
+  falla —el calendario no responde, se cae la conexión, el hueco se ocupó entre medias—,
+  el resultado es que tu cliente <strong>se ha quedado sin cita</strong> y nadie se ha
+  enterado.</p>
+  <p>No aparece en ningún informe de errores porque, desde fuera, la conversación terminó
+  bien. Aparece el día que esa persona se presenta y no está en la agenda.</p>
+  <div class="destacado bien">
+  <p>Lo que hay que exigir es que <strong>si una operación falla a mitad, se deshaga sola</strong>
+  y vuelva al estado anterior. Es un requisito, no un extra: o el cambio se completa
+  entero, o no se hace. Pregúntalo expresamente, porque es de las pocas cosas que separan
+  un sistema serio de uno que impresiona en la demostración.</p>
+  </div>
+</section>
+
+<section class="bloque" id="b5">
+  <h2>El otro extremo: cuando el modelo se lo inventa</h2>
+  <p>Frente al flujo rígido hay un péndulo que se va al otro lado: conectar directamente un
+  modelo de lenguaje a WhatsApp y dejarlo contestar. Conversa maravillosamente. Y tiene un
+  problema distinto pero igual de caro.</p>
+  <p>Un modelo sin restricciones <strong>completa lo que no sabe</strong>, porque para eso
+  está entrenado. Le preguntan por un precio que no tiene y da uno plausible. Le preguntan
+  por un servicio que no ofreces y lo describe con seguridad. Suena convincente y es
+  falso.</p>
+  <p>Y no es un riesgo de manual: ya hay sentencias que obligan a una empresa a cumplir lo
+  que su chatbot prometió a un cliente. Ante el que reclama, lo que dijo tu asistente lo
+  dijiste tú.</p>
+  <p>La respuesta a esto no es pedirle al modelo que se porte bien en las instrucciones. Es
+  que lo que va a decir sobre precios, servicios y disponibilidad
+  <strong>se compruebe contra tu información real antes de enviarse</strong>, y que
+  cuando el dato no está, lo diga y avise a una persona.</p>
+</section>
+
+<section class="bloque" id="b6">
+  <h2>Qué exigir, en una lista</h2>
+  <p>Al margen de con quién lo contrates, esto es lo que hay que poder responder que sí:</p>
+  <div class="tabla">
+  <table>
+  <thead><tr><th>Requisito</th><th>Por qué importa</th></tr></thead>
+  <tbody>
+  <tr><td>Consulta la disponibilidad real antes de proponer una hora</td><td>Evita la cita que no existe</td></tr>
+  <tr><td>Entiende que varios mensajes son una sola reserva</td><td>Evita la cita duplicada</td></tr>
+  <tr><td>Deshace lo hecho si una operación falla a mitad</td><td>Evita el cliente sin cita y sin aviso</td></tr>
+  <tr><td>Comprueba lo que va a decir contra tus datos</td><td>Evita precios y servicios inventados</td></tr>
+  <tr><td>Recuerda la conversación entre días</td><td>Evita que el cliente abandone repitiéndose</td></tr>
+  <tr><td>Sabe cuándo pasar a una persona</td><td>Urgencias, quejas y casos delicados</td></tr>
+  </tbody>
+  </table>
+  </div>
+  <div class="destacado">
+  <p>Y una advertencia sobre las respuestas: <em>«sí, eso lo tenemos puesto en el prompt»</em>
+  no es un sí. Significa que se lo han pedido al modelo. Lo que hay que preguntar es si
+  está <strong>garantizado</strong> — es decir, si el sistema lo comprueba siempre, pase
+  lo que pase en la conversación.</p>
+  </div>
+  <p>Si quieres ver cómo se traduce todo esto en precio, está en
+  <a href="/es/cuanto-cuesta-un-asistente-ia.html">cuánto cuesta un asistente de IA</a>.</p>
+</section>
+
+<section class="faq" id="faq">
+  <h2>Preguntas frecuentes</h2>
+  <article id="por-que-mi-bot-confirma-citas-que-no-existen">
+    <h3>¿Por qué mi bot confirma citas que no existen?</h3>
+    <div class="r">
+      <p>Porque no tiene acceso a tu calendario. Un flujo dibujado responde según lo que
+      alguien programó, no según lo que hay libre. Confirma porque es la salida más
+      natural del diagrama, no porque haya comprobado nada.</p>
+    </div>
+  </article>
+  <article id="se-puede-arreglar-un-bot-de-flujos-para-que-consulte-la-agenda">
+    <h3>¿Se puede arreglar un bot de flujos para que consulte la agenda?</h3>
+    <div class="r">
+      <p>No configurándolo mejor. Requiere una integración real con el calendario y la
+      capacidad de interpretar la respuesta, que es lo que distingue una categoría de
+      producto de otra. Se puede añadir con desarrollo a medida, pero entonces ya no
+      estás pagando por un flujo.</p>
+    </div>
+  </article>
+  <article id="por-que-mi-bot-vuelve-a-pedirme-el-nombre-cada-dos-mensajes">
+    <h3>¿Por qué mi bot vuelve a pedirme el nombre cada dos mensajes?</h3>
+    <div class="r">
+      <p>Porque no tiene memoria de la conversación más allá del mensaje actual, o la
+      tiene sólo dentro de una sesión muy corta. Un asistente que agenda de verdad tiene
+      que recordar entre días, no sólo entre mensajes.</p>
+    </div>
+  </article>
+  <article id="sirve-conectar-chatgpt-directamente-a-mi-whatsapp">
+    <h3>¿Sirve conectar ChatGPT directamente a mi WhatsApp?</h3>
+    <div class="r">
+      <p>Conversa muy bien y ese no es el problema. El problema es que no puede reservar
+      en tu agenda y que, sin restricciones, completa los datos que no tiene: precios,
+      servicios y horarios que suenan bien y no son los tuyos. Además, hacerlo desde un
+      número normal sin la API oficial acaba en bloqueo — está explicado en
+      <a href="/es/whatsapp-api-vs-business.html">WhatsApp Business vs API</a>.</p>
+    </div>
+  </article>
+  <article id="como-compruebo-si-el-bot-que-me-ofrecen-agenda-de-verdad">
+    <h3>¿Cómo compruebo si el bot que me ofrecen agenda de verdad?</h3>
+    <div class="r">
+      <p>En la demostración, pídele una hora que sepas que está ocupada. Si te la
+      confirma, no está consultando nada. Y pide confirmación dos veces seguidas a ver
+      si aparecen dos citas.</p>
+    </div>
+  </article>
+  <article id="entonces-los-bots-de-flujo-no-sirven-para-nada">
+    <h3>¿Entonces los bots de flujo no sirven para nada?</h3>
+    <div class="r">
+      <p>Sí sirven, para lo suyo: responder preguntas frecuentes, dar una dirección, un
+      horario o una lista de servicios. Si no necesitas agendar, son la opción barata y
+      correcta. El problema no es la herramienta, es venderla como algo que no es.</p>
+    </div>
+  </article>
+</section>
+
+<nav class="relacionadas" aria-label="Seguir leyendo">
+  <h2>Seguir leyendo</h2>
+  <div>
+    <a href="/es/cuanto-cuesta-un-asistente-ia.html"><b>Cuánto cuesta un asistente de IA</b><span>Qué se paga en cada uno de los tres niveles</span></a>
+    <a href="/es/whatsapp-api-vs-business.html"><b>WhatsApp Business vs API</b><span>Por qué bloquean números y qué es la ventana de 24 h</span></a>
+    <a href="/es/preguntas.html#puede-confirmar-una-cita-que-en-realidad-no-existe"><b>Preguntas frecuentes</b><span>75 respuestas sobre agenda, precios y RGPD</span></a>
+  </div>
+</nav>
+
+<div class="cta">
+  <h2>Pruébalo con la hora ocupada</h2>
+  <p>En la demostración puedes pedir una hora que sepas que no está libre y ver qué
+        contesta. Son 20 minutos, no cuesta nada y no se piden datos de pago.</p>
+  <a href="/es/#contacto" class="boton">Solicitar una demostración</a>
+  <a href="/es/calculadora.html" class="boton sec">📊 Calcular mi retorno</a>
+</div>
+
+</div>
+
+<footer>
+  <div class="envoltorio">
+    Hachi ·
+    <a href="/es/">Inicio</a> ·
+    <a href="/es/#precios">Planes</a> ·
+    <a href="/es/calculadora.html">Calculadora</a> ·
+    <a href="/es/preguntas.html">Preguntas</a> ·
+    <a href="/why-flow-based-bots-fail.html">English version</a>
+  </div>
+</footer>
+</body>
+</html>
