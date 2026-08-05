@@ -7,6 +7,8 @@
 <meta name="description" content="75 preguntas respondidas sobre Hachi: precios y planes, WhatsApp Business API y la ventana de 24 h, migrar tu número, cómo agenda las citas, ausencias y RGPD.">
 <link rel="canonical" href="https://hachi.live/es/preguntas.html">
 <link rel="alternate" hreflang="es" href="https://hachi.live/es/preguntas.html">
+<link rel="alternate" hreflang="en" href="https://hachi.live/faq.html">
+<link rel="alternate" hreflang="x-default" href="https://hachi.live/faq.html">
 <link rel="icon" href="/favicon.ico">
 
 <meta property="og:type" content="website">
@@ -820,6 +822,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
   <div class="envoltorio">
     <a href="/es/" class="marca">Hachi<span>.</span></a>
     <div>
+      <a href="/faq.html" style="margin-right:16px">EN</a>
       <a href="/es/calculadora.html" style="margin-right:16px">Calculadora</a>
       <a href="/es/#precios">Ver planes →</a>
     </div>
@@ -828,7 +831,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 
 <div class="envoltorio">
 
-<nav class="migas" aria-label="Ruta">
+<nav class="migas" aria-label="Inicio">
   <a href="/es/">Inicio</a> › Preguntas frecuentes
 </nav>
 
@@ -1827,8 +1830,8 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
     indice.style.display = 'none';
     vacio.classList.toggle('visible', n === 0);
     contador.textContent = n === 0
-      ? 'Sin resultados para «' + caja.value.trim() + '»'
-      : n + (n === 1 ? ' pregunta' : ' preguntas') + ' de ' + total;
+      ? "Sin resultados para «" + caja.value.trim() + "»"
+      : n + (n === 1 ? " pregunta" : " preguntas") + " de " + total;
   }
 
   caja.addEventListener('input', filtrar);

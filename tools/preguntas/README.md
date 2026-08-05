@@ -1,11 +1,17 @@
-# Página de preguntas frecuentes (`/es/preguntas.html`)
+# Páginas de preguntas frecuentes (`/es/preguntas.html` y `/faq.html`)
 
-Esta página **se genera**. No la edites a mano.
+Estas dos páginas **se generan**. No las edites a mano.
 
 ```bash
-node tools/preguntas/generar.js    # regenera es/preguntas.html
-node tools/preguntas/verificar.js  # 69 comprobaciones sobre el resultado
+LANG_PAGINA=es node tools/preguntas/generar.js    # → es/preguntas.html
+LANG_PAGINA=en node tools/preguntas/generar.js    # → faq.html
+LANG_PAGINA=es node tools/preguntas/verificar.js  # 72 comprobaciones
+LANG_PAGINA=en node tools/preguntas/verificar.js  # 72 comprobaciones
 ```
+
+Las dos llevan **las mismas nueve secciones y las mismas 75 preguntas**, para que
+sigan siendo comparables; sólo cambia la redacción. Si añades una pregunta a un
+idioma, añádela al otro.
 
 ## Por qué se genera
 
@@ -19,7 +25,9 @@ Aquí las dos salen del mismo array (`datos.js`), así que no pueden divergir.
 
 ## Editar el contenido
 
-Todo vive en `datos.js`, agrupado por secciones:
+El contenido vive en `datos.es.js` y `datos.en.js`; todo lo que difiere entre
+idiomas —textos del nav, del pie, del buscador y de los metadatos— está en el
+objeto `IDIOMAS` de `generar.js` y en ningún otro sitio. Cada sección es así:
 
 ```js
 {
@@ -40,7 +48,8 @@ preguntas producen la misma ancla.
 Las anclas salen del enunciado (`¿Qué pasa si la reserva falla a mitad?` →
 `#que-pasa-si-la-reserva-falla-a-mitad`), así que **cambiar el texto de una
 pregunta cambia su URL**. Si esa pregunta ya está posicionada o citada desde
-`llms.txt`, conviene pensárselo.
+`llms.txt`, conviene pensárselo. Ojo: las anclas **no coinciden entre idiomas**,
+porque derivan del texto; el `hreflang` empareja las páginas, no las preguntas.
 
 ## Qué NO puede entrar aquí
 
