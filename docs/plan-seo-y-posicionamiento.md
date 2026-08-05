@@ -43,8 +43,76 @@ bien hecho.
 
 ## 2 · Por qué casi nadie la encuentra
 
-El diagnóstico no es «falta SEO técnico». El SEO técnico está bien. El problema
-es de **superficie**.
+**Datos reales de Search Console · últimos 3 meses (descarga del 5 ago 2026):**
+
+| | |
+|---|---|
+| Impresiones | **1.382** |
+| Clics | **12** |
+| CTR | **0,87 %** |
+| Días con al menos un clic | **11 de 92** |
+| Páginas indexadas | 7 · sin indexar 6 |
+
+Y el reparto por país, que es el dato que lo explica casi todo:
+
+| País | Impresiones | Clics |
+|---|---|---|
+| Estados Unidos | 396 | 1 |
+| India | 86 | 3 |
+| Japón | 27 | 1 |
+| Suiza | 27 | 2 |
+| **España** | **fuera del top 8** | — |
+
+**Vendes en España y España no aparece.** Ese es el titular.
+
+### 2.0 · El nombre está saturado y trae tráfico ajeno
+
+De las 40 consultas que generan impresiones, **39 son de marca — y de marca que
+no es la tuya**:
+
+```
+hachi ai (86)   hachi tech (31)   hachi (25)   ha chi   haci   hatchi
+hachi with love   hachi salon   hachi express   hachi market   hachi team
+hachinet   hachi-labs   hachi arg   vsinger   海野水玉 曲   aheeva …
+```
+
+Hay muchas cosas llamadas Hachi: el perro Hachikō (de ahí Japón), empresas de
+tecnología en India, salones, marcas de logística. Google te muestra para todas y
+**ninguna de esas personas te va a comprar**. De ahí el CTR del 0,87 % y la
+posición media de 10–11 para tu propia marca: hay nueve «hachi» más relevantes.
+
+**Una sola consulta no es de marca:** *«agentes de ia que resuelven 65 % de
+conversaciones»* — 23 impresiones, posición 9,96, cero clics. Y es una frase
+literal de tu propia landing, o sea que alguien la copió de algún sitio.
+
+**Cero consultas comerciales.** Ni «chatbot clínica», ni «whatsapp api», ni
+«asistente ia citas», ni «agendar citas whatsapp».
+
+**Conclusión estratégica:** pelear por «hachi» es una batalla perdida y además
+inútil. La salida no es posicionar la marca sino **el problema**: que te
+encuentren por *«cómo evito que mi bot duplique citas»*, no por *«hachi»*. Eso es
+exactamente lo que hace la Fase 1, y estos datos lo confirman.
+
+### 2.0 bis · Dos subdominios internos están indexados
+
+`crm.hachi.live` (24 impresiones) y `api.hachi.live` (3) aparecen en Google.
+Son el Chatwoot y el panel de administración: **no deberían estar en el índice**.
+Además hay una versión `http://hachi.live/` indexada, que debe redirigir con 301
+a `https`.
+
+Acción: `noindex` o `robots.txt` propio en ambos subdominios, y comprobar el 301
+de http a https.
+
+### 2.0 ter · El sitemap lleva ocho meses sin releerse
+
+Search Console lo registra enviado el **19 nov 2025** y leído por última vez el
+**7 dic 2025**. Con páginas nuevas conviene reenviarlo y usar IndexNow para no
+esperar al siguiente rastreo.
+
+---
+
+El resto del diagnóstico no es «falta SEO técnico». El SEO técnico está bien. El
+problema es de **superficie**.
 
 ### 2.1 · Siete URLs no compiten
 
@@ -73,10 +141,14 @@ pero es un archivo de resumen: no es una página que se pueda enlazar ni citar.
 
 ### 2.3 · Señales de marca fragmentadas
 
-Gemini asocia Hachi con `vickiandhachi.com`. **Por comprobar** si ese dominio es
-propio (entonces: redirección 301) o de un tercero (entonces: reforzar
-`Organization` con `sameAs` hacia los perfiles oficiales para consolidar la
-señal). Sin esto, la autoridad se reparte entre dos dominios.
+Gemini asocia Hachi con `vickiandhachi.com`. **Confirmado: ese dominio no tiene
+nada que ver con hachi.live.** No hay nada que redirigir; es otro de los muchos
+«hachi» que compiten por el nombre, igual que los de la sección 2.0.
+
+La vía es reforzar la identidad propia: `sameAs` en `Organization` apuntando a
+los perfiles oficiales (LinkedIn, GitHub, X), para que los modelos tengan con qué
+desambiguar. Pero conviene ser realista: **con un nombre tan repetido, la marca
+nunca va a ser el canal de captación.** El canal es el problema que resuelves.
 
 ### 2.4 · Fallos técnicos menores
 
@@ -166,7 +238,7 @@ el contenido **ya está escrito** en `docs/` de `multibackendopenIA`.
 
 | # | URL | Origen | Intención que captura |
 |---|---|---|---|
-| 1 | `/es/calculadora.html` | ✅ **Hecha** | «cuánto pierdo por ausencias» |
+| 1 | `/es/calculadora.html` | ✅ **Hecha y enlazada** (nav, hero y sección ROI) | «cuánto pierdo por ausencias» |
 | 2 | `/es/preguntas.html` | RAG, 143 preguntas | Decenas de consultas de cola larga |
 | 3 | `/es/whatsapp-api-vs-business.html` | RAG § WhatsApp API | «diferencia whatsapp business api» |
 | 4 | `/es/cuanto-cuesta-un-asistente-ia.html` | Los tres niveles | «precio chatbot clínica» |
@@ -222,13 +294,14 @@ ambos. Sin eso no hay forma de saber qué está indexado ni por qué no.
 
 | Prioridad | Acción | Esfuerzo | Impacto |
 |---|---|---|---|
-| 1 | Corregir «63 invariantes» → 57 en `llms.txt` | 5 min | Credibilidad |
+| 0 | ~~Corregir «63 invariantes» → 57~~ · ~~enlazar la calculadora~~ | — | ✅ Hecho |
+| 1 | **Desindexar `crm.` y `api.hachi.live`** + 301 de http a https | 30 min | Quita ruido y superficie innecesaria |
 | 2 | `/es/preguntas.html` con las 143 preguntas del RAG | Medio | **El mayor retorno de SEO** |
-| 3 | Verificar Search Console + Bing Webmaster | 30 min | Sin esto se navega a ciegas |
+| 3 | Reenviar sitemap (lleva 8 meses sin releerse) + alta en Bing Webmaster | 30 min | Search Console ya está; Bing no |
 | 4 | Las 3 páginas de contenido de alta intención (3, 4, 5) | Medio | Superficie de posicionamiento |
 | 5 | IndexNow | 30 min | Indexación en horas, gratis |
 | 6 | Test de nivel del asistente | Medio | La pieza más compartible |
-| 7 | Resolver `vickiandhachi.com` | Por comprobar | Consolida la marca |
+| 7 | `sameAs` en `Organization` hacia los perfiles oficiales | 20 min | Desambigua entre los muchos «hachi» |
 | 8 | CSS y Font Awesome a local | Medio | LCP, y se paga en cada página nueva |
 | 9 | Calculadoras 2 y 3 (fuera de horario, doble reserva) | Medio | Refuerzan la primera |
 
@@ -245,7 +318,13 @@ Sin medición esto es fe. Lo mínimo:
 | Impresiones y consultas | Search Console | Para qué te empieza a ver Google |
 | URLs indexadas | Search Console | Si las páginas nuevas entran |
 | Visitas desde `chat.openai.com`, `perplexity.ai` | Analítica | **La señal de LLMO**: te están citando |
+| Impresiones desde **España** | Search Console | Hoy es ~0. Es la métrica que dice si el plan funciona |
+| Consultas **sin la palabra «hachi»** | Search Console | Hoy es 1 de 40. Objetivo: que sean mayoría |
 | Formularios enviados | `api.hachi.live` | Lo único que importa de verdad |
+
+**Punto de partida medido (5 ago 2026):** 1.382 impresiones, 12 clics, CTR
+0,87 %, España fuera del top 8, 1 consulta no-marca de 40. Cualquier plan se
+juzga contra esas cifras.
 
 Revisión mensual. Y la prueba cualitativa que vale más que cualquier panel:
 preguntar cada mes a Perplexity y ChatGPT *«cómo evito que mi asistente duplique
