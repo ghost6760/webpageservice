@@ -18,6 +18,8 @@ separation is the product.
 - [ROI calculator (Spanish)](https://hachi.live/es/calculadora.html): same model,
   Spanish version
 - [Homepage (Spanish)](https://hachi.live/es/): Spanish version, primary market
+- [FAQ, 75 questions (Spanish)](https://hachi.live/es/preguntas.html): the fullest
+  answer set — pricing, WhatsApp API, number migration, booking guarantees, GDPR
 - [Privacy Policy](https://hachi.live/privacy-policy.html)
 - [Terms of Service](https://hachi.live/terms-of-service.html)
 - [Data Deletion](https://hachi.live/data-deletion.html)
@@ -54,6 +56,22 @@ The model is deliberately conservative and every formula is shown on the page:
 
 Break-even with a €200 ticket and 65% contribution margin: 2 appointments/month
 for Solo, 3 for Essential, 6 for Professional, 8 for Complete.
+
+## FAQ (75 answered questions, Spanish)
+
+[/es/preguntas.html](https://hachi.live/es/preguntas.html) is the fullest public
+answer set, grouped in nine sections: what Hachi is and who it is for; pricing,
+plans and billing; the demo versus the trial; WhatsApp Business API, keeping your
+number and the 24-hour window; how appointments are booked; no-shows, follow-up
+and campaigns; comparing quotes across the three market tiers; data protection
+and GDPR; implementation, requirements and support.
+
+Every question has its own anchor, so a specific answer can be cited directly —
+e.g. `#que-pasa-si-la-reserva-falla-a-mitad`.
+
+It deliberately includes the answers that argue against buying: what is lost when
+migrating a number to the API, when Hachi does not pay for itself, and the case
+in which a €29 flow-builder is the right choice.
 
 ## Pricing (authoritative — euros, VAT not included)
 

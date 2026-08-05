@@ -75,6 +75,15 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/calculator.html"/>
   </url>
 
+  <!-- FAQ (75 questions) - Spanish -->
+  <url>
+    <loc>https://hachi.live/es/preguntas.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/preguntas.html"/>
+  </url>
+
   <!-- Privacy Policy - Spanish -->
   <url>
     <loc>https://hachi.live/es/privacy-policy.html</loc>
