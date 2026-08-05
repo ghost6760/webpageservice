@@ -53,12 +53,29 @@
     <priority>0.3</priority>
   </url>
 
-  <!-- Privacy Policy - Spanish -->
+  <!-- ROI calculator - English -->
   <url>
-    <loc>https://hachi.live/es/calculadora.html</loc>
+    <loc>https://hachi.live/calculator.html</loc>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/calculadora.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/calculator.html"/>
   </url>
+
+  <!-- ROI calculator - Spanish -->
+  <url>
+    <loc>https://hachi.live/es/calculadora.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://hachi.live/calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://hachi.live/es/calculadora.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://hachi.live/calculator.html"/>
+  </url>
+
+  <!-- Privacy Policy - Spanish -->
   <url>
     <loc>https://hachi.live/es/privacy-policy.html</loc>
     <lastmod>2026-07-30</lastmod>

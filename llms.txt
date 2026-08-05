@@ -13,8 +13,10 @@ separation is the product.
 ## Core Pages
 
 - [Homepage (English)](https://hachi.live/): Product, pricing, GDPR, FAQ and architecture
-- [ROI calculator (Spanish)](https://hachi.live/es/calculadora.html): no-show and
+- [ROI calculator (English)](https://hachi.live/calculator.html): no-show and
   reception-hours cost model with open formulas
+- [ROI calculator (Spanish)](https://hachi.live/es/calculadora.html): same model,
+  Spanish version
 - [Homepage (Spanish)](https://hachi.live/es/): Spanish version, primary market
 - [Privacy Policy](https://hachi.live/privacy-policy.html)
 - [Terms of Service](https://hachi.live/terms-of-service.html)
@@ -23,9 +25,11 @@ separation is the product.
 
 ## ROI Calculator (open model)
 
-- [Calculadora de retorno](https://hachi.live/es/calculadora.html): computes the
+- [ROI calculator](https://hachi.live/calculator.html) ·
+  [versión en español](https://hachi.live/es/calculadora.html): computes the
   monthly cost of no-shows and of reception hours spent answering messages, using
-  the visitor's own figures. No sign-up.
+  the visitor's own figures. No sign-up. Both versions run the identical model;
+  only the number formatting and the wording differ.
 
 The model is deliberately conservative and every formula is shown on the page:
 
