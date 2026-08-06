@@ -125,110 +125,7 @@
 }
 </script>
 
-<style>
-:root{
-  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
-  --verde:#10B981; --ambar:#F59E0B; --rojo:#EF4444;
-  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
-  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:var(--fondo);color:var(--texto);line-height:1.7;
-  -webkit-font-smoothing:antialiased}
-a{color:var(--cian);text-decoration:none}
-a:hover{text-decoration:underline}
-.envoltorio{max-width:800px;margin:0 auto;padding:0 20px}
-
-.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
-  background:rgba(10,10,15,.93);backdrop-filter:blur(8px);z-index:20}
-.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px;
-  max-width:1000px}
-.marca{font-weight:700;font-size:1.2rem;color:#fff}
-.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-
-.migas{font-size:.82rem;color:var(--tenue);padding:18px 0 0}
-.migas a{color:var(--tenue)}
-
-header.cabecera{padding:22px 0 8px}
-h1{font-size:2.15rem;line-height:1.22;margin-bottom:16px;color:#fff}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.entradilla{color:var(--tenue);font-size:1.08rem;line-height:1.65}
-.meta{font-size:.8rem;color:var(--tenue);margin-top:16px;opacity:.8}
-
-.sumario{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
-  padding:18px 22px;margin:30px 0 8px}
-.sumario h2{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--tenue);margin-bottom:10px;font-weight:600}
-.sumario ol{margin-left:20px}
-.sumario li{margin-bottom:4px;font-size:.93rem}
-
-section.bloque{margin-top:44px;scroll-margin-top:80px}
-h2{font-size:1.55rem;color:#fff;line-height:1.3}
-section.bloque>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
-h3{font-size:1.13rem;color:#fff;margin:26px 0 10px}
-p{margin-bottom:14px}
-ul,ol{margin:0 0 14px 24px}
-li{margin-bottom:8px}
-strong{color:#fff;font-weight:600}
-blockquote{border-left:3px solid var(--violeta);padding:4px 0 4px 18px;margin:20px 0;
-  color:var(--texto);font-size:1.05rem}
-
-.destacado{background:var(--panel);border:1px solid var(--borde);
-  border-left:3px solid var(--cian);border-radius:10px;padding:18px 20px;margin:22px 0}
-.destacado.aviso{border-left-color:var(--ambar)}
-.destacado.bien{border-left-color:var(--verde)}
-.destacado p:last-child,.destacado ul:last-child,.destacado ol:last-child{margin-bottom:0}
-
-.tabla{overflow-x:auto;margin:22px 0;border:1px solid var(--borde);border-radius:12px}
-table{width:100%;border-collapse:collapse;font-size:.92rem}
-th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--borde);
-  vertical-align:top}
-thead th{background:var(--panel2);color:var(--tenue);font-size:.78rem;
-  text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
-tbody tr:last-child td{border-bottom:none}
-td.si{color:var(--verde)} td.no{color:var(--rojo)}
-tr.destacada td{background:rgba(139,92,246,.09)}
-tr.destacada td:first-child{color:#fff;font-weight:600}
-
-.faq{margin-top:44px}
-.faq>h2{margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--borde)}
-.faq article{margin-bottom:22px;scroll-margin-top:80px}
-.faq h3{font-size:1.06rem;margin:0 0 6px}
-.faq .r{color:var(--tenue);font-size:.96rem}
-.faq .r p{margin-bottom:10px}
-
-.relacionadas{margin:46px 0 0}
-.relacionadas h2{font-size:1.2rem;margin-bottom:14px}
-.relacionadas div{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
-.relacionadas a{display:block;padding:15px 17px;background:var(--panel);
-  border:1px solid var(--borde);border-radius:12px;color:var(--texto);font-size:.93rem}
-.relacionadas a:hover{border-color:var(--violeta);text-decoration:none}
-.relacionadas a b{display:block;color:#fff;margin-bottom:3px;font-size:.97rem}
-.relacionadas a span{color:var(--tenue);font-size:.86rem}
-
-.cta{text-align:center;padding:36px 22px 40px;margin:46px 0 50px;
-  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(6,182,212,.10));
-  border:1px solid rgba(139,92,246,.28);border-radius:20px}
-.cta h2{font-size:1.4rem;margin-bottom:8px;border:none;padding:0}
-.cta p{color:var(--tenue);max-width:520px;margin:0 auto 20px;font-size:.97rem}
-.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
-  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
-.boton:hover{text-decoration:none;opacity:.92}
-.boton.sec{background:transparent;border:1px solid var(--borde);color:var(--texto);
-  margin-left:10px}
-
-footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
-  font-size:.87rem;text-align:center}
-
-@media(max-width:640px){
-  h1{font-size:1.62rem}
-  h2{font-size:1.3rem}
-  .boton.sec{margin-left:0;margin-top:10px}
-}
-</style>
+    <link rel="stylesheet" href="/assets/pages.css">
 </head>
 <body>
 
@@ -488,7 +385,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
         verlo funcionando con tus servicios y tus precios, la demostración son 20 minutos y
         no cuesta nada.</p>
   <a href="/es/#contacto" class="boton">Solicitar una demostración</a>
-  <a href="/es/calculadora.html" class="boton sec">📊 Calcular mi retorno</a>
+  <a href="/es/calculadora.html" class="boton sec">Calcular mi retorno</a>
 </div>
 
 </div>

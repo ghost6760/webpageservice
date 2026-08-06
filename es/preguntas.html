@@ -724,99 +724,9 @@
 }
 </script>
 
-<style>
-:root{
-  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
-  --verde:#10B981; --ambar:#F59E0B;
-  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
-  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:var(--fondo);color:var(--texto);line-height:1.65;
-  -webkit-font-smoothing:antialiased}
-a{color:var(--cian);text-decoration:none}
-a:hover{text-decoration:underline}
-.envoltorio{max-width:920px;margin:0 auto;padding:0 20px}
-
-.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
-  background:rgba(10,10,15,.93);backdrop-filter:blur(8px);z-index:20}
-.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.marca{font-weight:700;font-size:1.2rem;color:#fff}
-.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-
-.migas{font-size:.82rem;color:var(--tenue);padding:18px 0 0}
-.migas a{color:var(--tenue)}
-
-header.hero{padding:26px 0 26px}
-h1{font-size:2.15rem;line-height:1.2;margin-bottom:14px;color:#fff}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.entradilla{color:var(--tenue);font-size:1.05rem;max-width:680px}
-
-.buscador{position:relative;margin:22px 0 6px}
-.buscador input{width:100%;padding:13px 16px 13px 44px;background:var(--panel);
-  border:1px solid var(--borde);border-radius:12px;color:var(--texto);
-  font-size:1rem;font-family:inherit}
-.buscador input:focus{outline:2px solid var(--violeta);outline-offset:1px}
-.buscador::before{content:"🔍";position:absolute;left:15px;top:50%;
-  transform:translateY(-50%);opacity:.6;font-size:.95rem}
-.contador{font-size:.83rem;color:var(--tenue);min-height:20px;margin-bottom:20px}
-
-.indice{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
-  padding:18px 20px;margin-bottom:34px}
-.indice h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--tenue);margin-bottom:12px;font-weight:600}
-.indice div{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:4px}
-.indice a{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:8px;
-  color:var(--texto);font-size:.92rem}
-.indice a:hover{background:var(--panel2);text-decoration:none}
-.indice a em{margin-left:auto;font-style:normal;font-size:.76rem;color:var(--tenue);
-  background:var(--panel2);border-radius:20px;padding:1px 8px}
-
-.bloque{margin-bottom:46px;scroll-margin-top:80px}
-.bloque h2{font-size:1.5rem;color:#fff;margin-bottom:6px;
-  padding-bottom:12px;border-bottom:1px solid var(--borde)}
-.bloque .intro{color:var(--tenue);font-size:.95rem;margin:12px 0 24px}
-
-.pregunta{margin-bottom:26px;scroll-margin-top:80px}
-.pregunta h3{font-size:1.1rem;color:#fff;margin-bottom:8px;line-height:1.4}
-.pregunta h3 .ancla{opacity:0;margin-left:8px;color:var(--violeta);
-  font-weight:400;transition:opacity .15s}
-.pregunta:hover h3 .ancla,.pregunta h3 .ancla:focus{opacity:1}
-.pregunta:target h3{color:var(--cian)}
-.respuesta{color:var(--tenue);font-size:.97rem}
-.respuesta p+p,.respuesta ul,.respuesta ol{margin-top:11px}
-.respuesta ul,.respuesta ol{margin-left:22px}
-.respuesta li{margin-bottom:6px}
-.respuesta strong{color:var(--texto)}
-
-.sinresultados{display:none;padding:34px 0;text-align:center;color:var(--tenue)}
-.sinresultados.visible{display:block}
-
-.cta{text-align:center;padding:38px 22px 42px;margin:10px 0 50px;
-  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(6,182,212,.10));
-  border:1px solid rgba(139,92,246,.28);border-radius:20px}
-.cta h2{font-size:1.45rem;color:#fff;margin-bottom:8px}
-.cta p{color:var(--tenue);max-width:520px;margin:0 auto 20px;font-size:.97rem}
-.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
-  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
-.boton:hover{text-decoration:none;opacity:.92}
-.boton.sec{background:transparent;border:1px solid var(--borde);color:var(--texto);
-  margin-left:10px}
-
-footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
-  font-size:.87rem;text-align:center}
-
-@media(max-width:640px){
-  h1{font-size:1.6rem}
-  .indice div{grid-template-columns:1fr}
-  .boton.sec{margin-left:0;margin-top:10px}
-}
-</style>
+    <link rel="stylesheet" href="/assets/pages.css">
 </head>
-<body>
+<body class="pagina-faq">
 
 <nav class="nav">
   <div class="envoltorio">
@@ -853,23 +763,23 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 <nav class="indice" id="indice" aria-label="Índice de secciones">
   <h2>Por temas</h2>
   <div>
-      <a href="#s1"><span>🐕</span>Qué es Hachi y para quién
+      <a href="#s1">Qué es Hachi y para quién
         <em>8</em></a>
-      <a href="#s2"><span>💶</span>Precios, planes y facturación
+      <a href="#s2">Precios, planes y facturación
         <em>12</em></a>
-      <a href="#s3"><span>🎬</span>La demostración y la prueba
+      <a href="#s3">La demostración y la prueba
         <em>7</em></a>
-      <a href="#s4"><span>📱</span>WhatsApp: la API, tu número y la ventana de 24 horas
+      <a href="#s4">WhatsApp: la API, tu número y la ventana de 24 horas
         <em>9</em></a>
-      <a href="#s5"><span>📅</span>Cómo agenda las citas
+      <a href="#s5">Cómo agenda las citas
         <em>8</em></a>
-      <a href="#s6"><span>🔔</span>Ausencias, seguimiento y campañas
+      <a href="#s6">Ausencias, seguimiento y campañas
         <em>6</em></a>
-      <a href="#s7"><span>⚖️</span>Comparar presupuestos: por qué hay ofertas de 99 € y de 900 €
+      <a href="#s7">Comparar presupuestos: por qué hay ofertas de 99 € y de 900 €
         <em>8</em></a>
-      <a href="#s8"><span>🔒</span>Protección de datos y RGPD
+      <a href="#s8">Protección de datos y RGPD
         <em>8</em></a>
-      <a href="#s9"><span>🛠️</span>Implementación, requisitos y soporte
+      <a href="#s9">Implementación, requisitos y soporte
         <em>9</em></a>
   </div>
 </nav>
@@ -880,7 +790,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </p>
 
 <section class="bloque" id="s1">
-  <h2><span aria-hidden="true">🐕</span> Qué es Hachi y para quién</h2>
+  <h2>Qué es Hachi y para quién</h2>
   <p class="intro">Lo básico: qué hace, qué no hace y si encaja con tu negocio.</p>
 
   <article class="pregunta" id="que-es-hachi-exactamente">
@@ -968,7 +878,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s2">
-  <h2><span aria-hidden="true">💶</span> Precios, planes y facturación</h2>
+  <h2>Precios, planes y facturación</h2>
   <p class="intro">Todos los importes en euros, IVA no incluido y sin permanencia.</p>
 
   <article class="pregunta" id="cuanto-cuesta-hachi-al-mes">
@@ -1119,7 +1029,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s3">
-  <h2><span aria-hidden="true">🎬</span> La demostración y la prueba</h2>
+  <h2>La demostración y la prueba</h2>
   <p class="intro">Son dos cosas distintas y las dos son gratuitas. Es la confusión más habitual.</p>
 
   <article class="pregunta" id="que-diferencia-hay-entre-la-demo-y-la-prueba">
@@ -1189,7 +1099,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s4">
-  <h2><span aria-hidden="true">📱</span> WhatsApp: la API, tu número y la ventana de 24 horas</h2>
+  <h2>WhatsApp: la API, tu número y la ventana de 24 horas</h2>
   <p class="intro">La parte que peor se explica en el sector, y la que más disgustos da cuando se descubre tarde.</p>
 
   <article class="pregunta" id="que-diferencia-hay-entre-whatsapp-business-y-whatsapp-business-api">
@@ -1317,7 +1227,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s5">
-  <h2><span aria-hidden="true">📅</span> Cómo agenda las citas</h2>
+  <h2>Cómo agenda las citas</h2>
   <p class="intro">La parte que separa a un asistente que conversa de uno que además ejecuta.</p>
 
   <article class="pregunta" id="consulta-mi-agenda-de-verdad-antes-de-proponer-una-hora">
@@ -1400,7 +1310,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s6">
-  <h2><span aria-hidden="true">🔔</span> Ausencias, seguimiento y campañas</h2>
+  <h2>Ausencias, seguimiento y campañas</h2>
   <p class="intro">Lo que pasa antes y después de la cita, que es donde se pierde el dinero.</p>
 
   <article class="pregunta" id="como-reduce-las-ausencias">
@@ -1475,7 +1385,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s7">
-  <h2><span aria-hidden="true">⚖️</span> Comparar presupuestos: por qué hay ofertas de 99 € y de 900 €</h2>
+  <h2>Comparar presupuestos: por qué hay ofertas de 99 € y de 900 €</h2>
   <p class="intro">Te lo contamos entero aunque parte juegue en nuestra contra, porque es la única forma de que compares con criterio.</p>
 
   <article class="pregunta" id="por-que-hay-tanta-diferencia-de-precio-entre-unas-ofertas-y-otras">
@@ -1577,7 +1487,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s8">
-  <h2><span aria-hidden="true">🔒</span> Protección de datos y RGPD</h2>
+  <h2>Protección de datos y RGPD</h2>
   <p class="intro">Tratas datos personales y, en sanidad, de categoría especial. Esto no es una casilla que marcar.</p>
 
   <article class="pregunta" id="quien-es-responsable-y-quien-encargado-del-tratamiento">
@@ -1666,7 +1576,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s9">
-  <h2><span aria-hidden="true">🛠️</span> Implementación, requisitos y soporte</h2>
+  <h2>Implementación, requisitos y soporte</h2>
   <p class="intro">Qué necesitas tener, cuánto tarda y qué pasa después.</p>
 
   <article class="pregunta" id="cuanto-se-tarda-en-tenerlo-funcionando">
@@ -1771,7 +1681,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
     en vez de respuestas, la calculadora hace la cuenta con los tuyos.
   </p>
   <a href="/es/#contacto" class="boton">Solicitar una demostración</a>
-  <a href="/es/calculadora.html" class="boton sec">📊 Calcular mi retorno</a>
+  <a href="/es/calculadora.html" class="boton sec">Calcular mi retorno</a>
 </div>
 
 </div>

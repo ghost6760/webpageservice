@@ -33,114 +33,9 @@
 }
 </script>
 
-<style>
-:root{
-  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
-  --verde:#10B981; --ambar:#F59E0B; --rojo:#EF4444;
-  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
-  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:var(--fondo);color:var(--texto);line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:var(--cian);text-decoration:none}
-a:hover{text-decoration:underline}
-.envoltorio{max-width:1080px;margin:0 auto;padding:0 20px}
-
-.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
-  background:rgba(10,10,15,.92);backdrop-filter:blur(8px);z-index:10}
-.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.marca{font-weight:700;font-size:1.2rem;color:#fff}
-.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-
-header.hero{padding:56px 0 32px;text-align:center}
-h1{font-size:2.3rem;line-height:1.2;margin-bottom:14px;color:#fff}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.entradilla{color:var(--tenue);max-width:720px;margin:0 auto;font-size:1.05rem}
-
-.aviso{background:var(--panel);border:1px solid var(--borde);border-left:3px solid var(--cian);
-  border-radius:10px;padding:16px 18px;margin:26px 0;font-size:.95rem;color:var(--tenue)}
-.aviso strong{color:var(--texto)}
-
-.tarjeta{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
-  padding:26px;margin-bottom:26px}
-.tarjeta h2{font-size:1.45rem;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:10px}
-.tarjeta .sub{color:var(--tenue);font-size:.95rem;margin-bottom:22px}
-
-.campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.campo label{display:block;font-size:.87rem;color:var(--tenue);margin-bottom:6px}
-.campo label b{color:var(--texto);font-weight:600}
-.campo input[type=number]{width:100%;padding:10px 12px;background:var(--panel2);
-  border:1px solid var(--borde);border-radius:8px;color:var(--texto);font-size:1rem;
-  font-family:inherit}
-.campo input[type=number]:focus{outline:2px solid var(--violeta);outline-offset:1px}
-.campo input[type=range]{width:100%;accent-color:var(--violeta);margin-top:4px}
-.rango{display:flex;justify-content:space-between;font-size:.75rem;color:var(--tenue);margin-top:2px}
-.supuesto label b::after{content:" · assumption";color:var(--ambar);font-weight:400;font-size:.8rem}
-
-.operacion{margin-top:24px;background:var(--panel2);border:1px solid var(--borde);
-  border-radius:10px;overflow:hidden}
-.operacion table{width:100%;border-collapse:collapse;font-size:.92rem}
-.operacion td{padding:9px 14px;border-bottom:1px solid var(--borde)}
-.operacion tr:last-child td{border-bottom:none}
-.operacion td:nth-child(2){color:var(--tenue);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem}
-.operacion td:nth-child(3){text-align:right;font-weight:600;white-space:nowrap}
-.operacion tr.total td{background:rgba(139,92,246,.1);font-size:1rem}
-.operacion tr.total td:nth-child(3){color:var(--verde);font-size:1.15rem}
-
-.titular{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
-.dato{flex:1;min-width:150px;background:var(--panel2);border:1px solid var(--borde);
-  border-radius:10px;padding:16px}
-.dato .k{font-size:.78rem;color:var(--tenue);text-transform:uppercase;letter-spacing:.04em}
-.dato .v{font-size:1.7rem;font-weight:700;color:#fff;margin-top:4px}
-.dato .v.verde{color:var(--verde)} .dato .v.rojo{color:var(--rojo)}
-.dato .n{font-size:.8rem;color:var(--tenue);margin-top:2px}
-
-.veredicto{margin-top:20px;padding:16px 18px;border-radius:10px;font-size:.95rem}
-.veredicto.ok{background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.35)}
-.veredicto.no{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.4)}
-.veredicto b{color:#fff}
-
-select{padding:10px 12px;background:var(--panel2);border:1px solid var(--borde);
-  border-radius:8px;color:var(--texto);font-size:1rem;font-family:inherit}
-
-table.simple{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:14px}
-table.simple th,table.simple td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--borde)}
-table.simple th{color:var(--tenue);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
-table.simple td:not(:first-child){text-align:right}
-table.simple tr.destacada td{background:rgba(139,92,246,.09);font-weight:600}
-
-details{background:var(--panel);border:1px solid var(--borde);border-radius:12px;
-  padding:18px 22px;margin-bottom:26px}
-details summary{cursor:pointer;font-weight:600;color:#fff;font-size:1.05rem}
-details[open] summary{margin-bottom:14px}
-details h3{font-size:1rem;color:#fff;margin:18px 0 8px}
-details p,details li{color:var(--tenue);font-size:.93rem}
-details ul{margin-left:20px;margin-top:6px}
-details code{background:var(--panel2);padding:2px 6px;border-radius:4px;
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.85rem;color:var(--cian)}
-
-.cta{text-align:center;padding:40px 0 60px}
-.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
-  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
-.boton:hover{text-decoration:none;opacity:.92}
-.cta p{color:var(--tenue);margin-top:12px;font-size:.9rem}
-
-footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);font-size:.87rem;text-align:center}
-
-@media(max-width:640px){
-  h1{font-size:1.7rem}
-  .tarjeta{padding:20px 16px}
-  .operacion td:nth-child(2){display:none}
-}
-</style>
+    <link rel="stylesheet" href="/assets/pages.css">
 </head>
-<body>
+<body class="pagina-calc">
 
 <nav class="nav">
   <div class="envoltorio">
@@ -173,7 +68,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);font-
 
 <!-- ===================== CALCULATOR A ===================== -->
 <section class="tarjeta">
-  <h2>📉 1 · What no-shows cost you</h2>
+  <h2>1 · What no-shows cost you</h2>
   <p class="sub">
     A patient who doesn't turn up leaves a slot that is already paid for: the room,
     the equipment and the practitioner are still there. What you lose is that
@@ -280,7 +175,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);font-
 
 <!-- ===================== RESULT ===================== -->
 <section class="tarjeta">
-  <h2>🧮 3 · Result on your plan</h2>
+  <h2>3 · Result on your plan</h2>
   <p class="sub">
     Adding the two is legitimate because they measure different things: one is
     revenue you were losing, the other is cost you were spending. No double counting.
@@ -324,15 +219,17 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);font-
 
 <!-- ===================== SENSITIVITY ===================== -->
 <section class="tarjeta">
-  <h2>📊 4 · If the assumption falls short</h2>
+  <h2>4 · If the assumption falls short</h2>
   <p class="sub">
     The only arguable figure is how many no-shows a reminder prevents. Here is what
     happens if it turns out worse than expected.
   </p>
+  <div class="tabla">
   <table class="simple">
     <thead><tr><th>No-shows avoided</th><th>New appointments</th><th>Margin</th><th>Net after fee</th></tr></thead>
     <tbody id="tablaSensibilidad"></tbody>
   </table>
+  </div>
 </section>
 
 <!-- ===================== METHODOLOGY ===================== -->

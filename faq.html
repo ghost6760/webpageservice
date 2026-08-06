@@ -724,99 +724,9 @@
 }
 </script>
 
-<style>
-:root{
-  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
-  --verde:#10B981; --ambar:#F59E0B;
-  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
-  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:var(--fondo);color:var(--texto);line-height:1.65;
-  -webkit-font-smoothing:antialiased}
-a{color:var(--cian);text-decoration:none}
-a:hover{text-decoration:underline}
-.envoltorio{max-width:920px;margin:0 auto;padding:0 20px}
-
-.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
-  background:rgba(10,10,15,.93);backdrop-filter:blur(8px);z-index:20}
-.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.marca{font-weight:700;font-size:1.2rem;color:#fff}
-.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-
-.migas{font-size:.82rem;color:var(--tenue);padding:18px 0 0}
-.migas a{color:var(--tenue)}
-
-header.hero{padding:26px 0 26px}
-h1{font-size:2.15rem;line-height:1.2;margin-bottom:14px;color:#fff}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.entradilla{color:var(--tenue);font-size:1.05rem;max-width:680px}
-
-.buscador{position:relative;margin:22px 0 6px}
-.buscador input{width:100%;padding:13px 16px 13px 44px;background:var(--panel);
-  border:1px solid var(--borde);border-radius:12px;color:var(--texto);
-  font-size:1rem;font-family:inherit}
-.buscador input:focus{outline:2px solid var(--violeta);outline-offset:1px}
-.buscador::before{content:"🔍";position:absolute;left:15px;top:50%;
-  transform:translateY(-50%);opacity:.6;font-size:.95rem}
-.contador{font-size:.83rem;color:var(--tenue);min-height:20px;margin-bottom:20px}
-
-.indice{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
-  padding:18px 20px;margin-bottom:34px}
-.indice h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--tenue);margin-bottom:12px;font-weight:600}
-.indice div{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:4px}
-.indice a{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:8px;
-  color:var(--texto);font-size:.92rem}
-.indice a:hover{background:var(--panel2);text-decoration:none}
-.indice a em{margin-left:auto;font-style:normal;font-size:.76rem;color:var(--tenue);
-  background:var(--panel2);border-radius:20px;padding:1px 8px}
-
-.bloque{margin-bottom:46px;scroll-margin-top:80px}
-.bloque h2{font-size:1.5rem;color:#fff;margin-bottom:6px;
-  padding-bottom:12px;border-bottom:1px solid var(--borde)}
-.bloque .intro{color:var(--tenue);font-size:.95rem;margin:12px 0 24px}
-
-.pregunta{margin-bottom:26px;scroll-margin-top:80px}
-.pregunta h3{font-size:1.1rem;color:#fff;margin-bottom:8px;line-height:1.4}
-.pregunta h3 .ancla{opacity:0;margin-left:8px;color:var(--violeta);
-  font-weight:400;transition:opacity .15s}
-.pregunta:hover h3 .ancla,.pregunta h3 .ancla:focus{opacity:1}
-.pregunta:target h3{color:var(--cian)}
-.respuesta{color:var(--tenue);font-size:.97rem}
-.respuesta p+p,.respuesta ul,.respuesta ol{margin-top:11px}
-.respuesta ul,.respuesta ol{margin-left:22px}
-.respuesta li{margin-bottom:6px}
-.respuesta strong{color:var(--texto)}
-
-.sinresultados{display:none;padding:34px 0;text-align:center;color:var(--tenue)}
-.sinresultados.visible{display:block}
-
-.cta{text-align:center;padding:38px 22px 42px;margin:10px 0 50px;
-  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(6,182,212,.10));
-  border:1px solid rgba(139,92,246,.28);border-radius:20px}
-.cta h2{font-size:1.45rem;color:#fff;margin-bottom:8px}
-.cta p{color:var(--tenue);max-width:520px;margin:0 auto 20px;font-size:.97rem}
-.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
-  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
-.boton:hover{text-decoration:none;opacity:.92}
-.boton.sec{background:transparent;border:1px solid var(--borde);color:var(--texto);
-  margin-left:10px}
-
-footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
-  font-size:.87rem;text-align:center}
-
-@media(max-width:640px){
-  h1{font-size:1.6rem}
-  .indice div{grid-template-columns:1fr}
-  .boton.sec{margin-left:0;margin-top:10px}
-}
-</style>
+    <link rel="stylesheet" href="/assets/pages.css">
 </head>
-<body>
+<body class="pagina-faq">
 
 <nav class="nav">
   <div class="envoltorio">
@@ -853,23 +763,23 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 <nav class="indice" id="indice" aria-label="Section index">
   <h2>By topic</h2>
   <div>
-      <a href="#s1"><span>🐕</span>What Hachi is, and who it is for
+      <a href="#s1">What Hachi is, and who it is for
         <em>8</em></a>
-      <a href="#s2"><span>💶</span>Pricing, plans and billing
+      <a href="#s2">Pricing, plans and billing
         <em>12</em></a>
-      <a href="#s3"><span>🎬</span>The demo and the trial
+      <a href="#s3">The demo and the trial
         <em>7</em></a>
-      <a href="#s4"><span>📱</span>WhatsApp: the API, your number and the 24-hour window
+      <a href="#s4">WhatsApp: the API, your number and the 24-hour window
         <em>9</em></a>
-      <a href="#s5"><span>📅</span>How appointments get booked
+      <a href="#s5">How appointments get booked
         <em>8</em></a>
-      <a href="#s6"><span>🔔</span>No-shows, follow-up and campaigns
+      <a href="#s6">No-shows, follow-up and campaigns
         <em>6</em></a>
-      <a href="#s7"><span>⚖️</span>Comparing quotes: why some cost €99 and others €900
+      <a href="#s7">Comparing quotes: why some cost €99 and others €900
         <em>8</em></a>
-      <a href="#s8"><span>🔒</span>Data protection and GDPR
+      <a href="#s8">Data protection and GDPR
         <em>8</em></a>
-      <a href="#s9"><span>🛠️</span>Implementation, requirements and support
+      <a href="#s9">Implementation, requirements and support
         <em>9</em></a>
   </div>
 </nav>
@@ -880,7 +790,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </p>
 
 <section class="bloque" id="s1">
-  <h2><span aria-hidden="true">🐕</span> What Hachi is, and who it is for</h2>
+  <h2>What Hachi is, and who it is for</h2>
   <p class="intro">The basics: what it does, what it does not do, and whether it fits your business.</p>
 
   <article class="pregunta" id="what-exactly-is-hachi">
@@ -966,7 +876,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s2">
-  <h2><span aria-hidden="true">💶</span> Pricing, plans and billing</h2>
+  <h2>Pricing, plans and billing</h2>
   <p class="intro">All figures in euros, VAT not included, and no lock-in.</p>
 
   <article class="pregunta" id="how-much-does-hachi-cost-per-month">
@@ -1111,7 +1021,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s3">
-  <h2><span aria-hidden="true">🎬</span> The demo and the trial</h2>
+  <h2>The demo and the trial</h2>
   <p class="intro">Two different things, and both are free. It is the most common confusion.</p>
 
   <article class="pregunta" id="what-is-the-difference-between-the-demo-and-the-trial">
@@ -1180,7 +1090,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s4">
-  <h2><span aria-hidden="true">📱</span> WhatsApp: the API, your number and the 24-hour window</h2>
+  <h2>WhatsApp: the API, your number and the 24-hour window</h2>
   <p class="intro">The part the industry explains worst, and the one that causes the most grief when it surfaces late.</p>
 
   <article class="pregunta" id="what-is-the-difference-between-whatsapp-business-and-whatsapp-business">
@@ -1309,7 +1219,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s5">
-  <h2><span aria-hidden="true">📅</span> How appointments get booked</h2>
+  <h2>How appointments get booked</h2>
   <p class="intro">The part that separates an assistant that converses from one that also executes.</p>
 
   <article class="pregunta" id="does-it-really-check-my-calendar-before-proposing-a-time">
@@ -1390,7 +1300,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s6">
-  <h2><span aria-hidden="true">🔔</span> No-shows, follow-up and campaigns</h2>
+  <h2>No-shows, follow-up and campaigns</h2>
   <p class="intro">What happens before and after the appointment, which is where the money leaks.</p>
 
   <article class="pregunta" id="how-does-it-reduce-no-shows">
@@ -1460,7 +1370,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s7">
-  <h2><span aria-hidden="true">⚖️</span> Comparing quotes: why some cost €99 and others €900</h2>
+  <h2>Comparing quotes: why some cost €99 and others €900</h2>
   <p class="intro">We lay it out in full even where it argues against us, because it is the only way for you to compare properly.</p>
 
   <article class="pregunta" id="why-is-there-such-a-price-gap-between-one-offer-and-another">
@@ -1562,7 +1472,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s8">
-  <h2><span aria-hidden="true">🔒</span> Data protection and GDPR</h2>
+  <h2>Data protection and GDPR</h2>
   <p class="intro">You handle personal data and, in healthcare, special-category data. This is not a checkbox.</p>
 
   <article class="pregunta" id="who-is-the-controller-and-who-is-the-processor">
@@ -1646,7 +1556,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
 </section>
 
 <section class="bloque" id="s9">
-  <h2><span aria-hidden="true">🛠️</span> Implementation, requirements and support</h2>
+  <h2>Implementation, requirements and support</h2>
   <p class="intro">What you need to have, how long it takes and what happens afterwards.</p>
 
   <article class="pregunta" id="how-long-until-it-is-up-and-running">
@@ -1745,7 +1655,7 @@ footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
     numbers rather than answers, the calculator runs the maths on yours.
   </p>
   <a href="/#contact" class="boton">Book a demo</a>
-  <a href="/calculator.html" class="boton sec">📊 Calculate my return</a>
+  <a href="/calculator.html" class="boton sec">Calculate my return</a>
 </div>
 
 </div>
