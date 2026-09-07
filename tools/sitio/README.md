@@ -102,6 +102,17 @@ bash tools/sitio/indexnow.sh --ver   # qué enviaría
 bash tools/sitio/indexnow.sh         # enviarlo
 ```
 
+En Windows, sin WSL, usa la versión de PowerShell — hace exactamente lo mismo:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools\sitio\indexnow.ps1 -Ver
+powershell -ExecutionPolicy Bypass -File tools\sitio\indexnow.ps1
+```
+
+Existe porque el `.sh` necesita `mapfile`, `grep -oP` y `python3`, y Git Bash en
+Windows no trae `python3`. Las dos leen las URLs del mismo `sitemap.xml`, así que
+no hay dos listas que mantener ni pueden discrepar.
+
 Avisa a **Bing y Yandex** de que las URLs han cambiado; baja la indexación de
 semanas a horas. **Google no participa en IndexNow** — para Google hay que
 reenviar el sitemap desde Search Console, explicado en
