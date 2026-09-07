@@ -1332,3 +1332,401 @@ body {
 .section {
     overflow-x: clip;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   La escena del hero: una conversación y el calendario, en la misma
+   ventana.
+
+   POR QUÉ EXISTE
+   Hasta ahora la landing no tenía ni una sola imagen de producto en
+   veintidós secciones: todo era texto dentro de cajas. Eso, y no la
+   falta de efectos, es lo que la hacía parecer pobre. Lo que convierte
+   en 2026 no son formas 3D abstractas —que están de salida— sino ver
+   el producto haciendo lo que promete.
+
+   Y para una recepcionista de IA, la conversación ES el producto: el
+   mensaje entra por la izquierda y la cita aparece a la derecha, en una
+   sola pantalla. Es lo único que un competidor de nivel 1 o 2 no puede
+   enseñar, porque su bot no llega a reservar.
+
+   Los datos son inventados a propósito. Ningún paciente real de ninguna
+   empresa cliente puede salir aquí — es RGPD, sin matices.
+   ═══════════════════════════════════════════════════════════════ */
+.escena {
+    width: min(1100px, 100%);
+    margin: 3rem auto 0;
+    background: #fff;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -6px 70px rgba(139, 92, 246, 0.16), 0 24px 60px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    text-align: left;
+    color: #1F2937;
+}
+
+.escena-barra {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    background: #F1F3F5;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.escena-punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+}
+
+.escena-url {
+    margin: 0 auto;
+    padding: 3px 14px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    font-size: 0.7rem;
+    color: #6B7280;
+}
+
+.escena-cuerpo {
+    display: grid;
+    grid-template-columns: 400px minmax(0, 1fr);
+}
+
+/* ── Mitad izquierda: la conversación ── */
+.escena-chat {
+    border-right: 1px solid #EDEFF2;
+    background: #FBFBFC;
+}
+
+.escena-cabecera {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    border-bottom: 1px solid #EDEFF2;
+    background: #F8F9FB;
+}
+
+.escena-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #E9D5FF;
+    color: #6D28D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    flex: 0 0 auto;
+}
+
+.escena-quien {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.escena-canal {
+    font-size: 0.63rem;
+    color: #6B7280;
+}
+
+.escena-titulo {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+.escena-marca {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #F3E8FF;
+    color: #6D28D9;
+    font-size: 0.6rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.escena-mensajes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 13px;
+}
+
+.escena-msg {
+    max-width: 88%;
+    padding: 8px 10px;
+    font-size: 0.76rem;
+    line-height: 1.45;
+    color: #1F2937;
+}
+
+.escena-msg--entra {
+    align-self: flex-start;
+    background: #F1F3F5;
+    border-radius: 11px 11px 11px 3px;
+}
+
+.escena-msg--sale {
+    align-self: flex-end;
+    background: #EDE9FE;
+    border-radius: 11px 11px 3px 11px;
+}
+
+/* El mensaje que crea la cita: el único con borde, porque es el que la
+   mitad derecha está enseñando. */
+.escena-msg--clave {
+    border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+.escena-firma {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.6rem;
+    color: #7C3AED;
+    margin-top: 4px;
+}
+
+.escena-nadie {
+    align-self: center;
+    font-size: 0.66rem;
+    color: #9CA3AF;
+    padding-top: 2px;
+}
+
+/* ── Mitad derecha: el calendario ── */
+.escena-agenda { background: #fff; }
+
+.escena-sync {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #ECFDF5;
+    color: #047857;
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.escena-acciones {
+    margin-left: auto;
+    display: flex;
+    gap: 7px;
+}
+
+.escena-btn {
+    padding: 5px 11px;
+    border-radius: 5px;
+    background: #10b981;
+    color: #fff;
+    font-size: 0.66rem;
+    font-weight: 600;
+}
+
+.escena-btn--sec {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #fff;
+    border: 1px solid #d1d5db;
+    color: #374151;
+}
+
+.escena-dias,
+.escena-rejilla {
+    display: grid;
+    grid-template-columns: 40px repeat(4, minmax(0, 1fr));
+}
+
+.escena-dias {
+    border-bottom: 1px solid #EDEFF2;
+}
+
+.escena-dia {
+    padding: 7px 0;
+    text-align: center;
+    font-size: 0.66rem;
+    font-weight: 600;
+    color: #2563EB;
+}
+
+.escena-rejilla {
+    grid-template-rows: repeat(4, 55px);
+}
+
+.escena-hora {
+    grid-column: 1;
+    font-size: 0.6rem;
+    color: #9CA3AF;
+    text-align: right;
+    padding: 3px 5px 0 0;
+}
+
+.escena-col {
+    grid-row: 1 / span 4;
+    border-left: 1px solid #F1F3F5;
+    background: repeating-linear-gradient(#fff 0 54px, #F1F3F5 54px 55px);
+}
+
+.escena-cita {
+    margin: 2px 3px;
+    border-radius: 4px;
+    padding: 4px 6px;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* La recién creada: es el final de la historia que cuenta la izquierda. */
+.escena-cita--nueva { box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.85); }
+
+/* Cancelada: gris y atenuada, igual que en el panel real. El rojo está
+   reservado a los bloqueos. */
+.escena-cita--baja { background: #9ca3af; opacity: 0.42; }
+.escena-cita--baja .escena-nombre { text-decoration: line-through; }
+
+.escena-cita-alto {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.escena-punto-cita {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    flex: 0 0 auto;
+}
+
+.escena-hora-cita { font-size: 0.6rem; font-weight: 700; }
+.escena-nombre { font-size: 0.64rem; font-weight: 600; }
+.escena-trat { font-size: 0.58rem; opacity: 0.9; }
+
+.escena-leyenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 8px 14px;
+    border-top: 1px solid #F1F3F5;
+    font-size: 0.6rem;
+    color: #4B5563;
+}
+
+.escena-leyenda span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.escena-leyenda i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+}
+
+/* ── Móvil ──
+   Dos paneles en paralelo no caben en 390 px: la historia pasa a
+   vertical y el calendario se queda en un día. Es exactamente lo que
+   hace el panel real, que a este ancho arranca en vista de lista. */
+@media (max-width: 900px) {
+    .escena {
+        margin-top: 2.25rem;
+        border-radius: 12px;
+    }
+
+    .escena-barra { display: none; }
+
+    .escena-cuerpo { grid-template-columns: 1fr; }
+
+    .escena-chat {
+        border-right: none;
+        border-bottom: 1px solid #EDEFF2;
+    }
+
+    /* La semana entera daría columnas de ~50 px donde no cabe ni la hora,
+       así que se recorta a dos días. Lo que sobra lleva `.escena-fuera`
+       marcado en el HTML: ocultar por posición (nth-child) sobre una
+       rejilla se rompe en cuanto se añade o quita una cita. */
+    .escena-dias,
+    .escena-rejilla { grid-template-columns: 34px repeat(2, minmax(0, 1fr)); }
+
+    /* `.escena-leyenda span` (0,1,1) le ganaba en especificidad a
+       `.escena-fuera` (0,1,0), así que la leyenda seguía nombrando estados
+       que en móvil ya no se ven. */
+    .escena-fuera,
+    .escena-leyenda .escena-fuera,
+    .escena-marca { display: none; }
+}
+
+/* ── El hero con escena ──
+   La ventana es más ancha que la columna de texto (860 px), que es la medida
+   correcta para leer pero estrecha para enseñar dos paneles. El contenedor se
+   ensancha SÓLO cuando hay escena, y el texto sigue midiéndose solo: si se
+   ensancharan los dos, el titular se estiraría a 1140 px y dejaría de leerse.
+
+   Se recorta además el espacio de arriba. Antes la ventana empezaba a 632 px:
+   en un portátil de 800 px de alto asomaban 168 px, demasiado poco para
+   reconocer lo que se está enseñando. */
+.hero-content:has(.escena) {
+    /* `width: 100%` es imprescindible: .hero es flex, y un ítem flex se
+       encoge a su contenido. Sin esto el max-width sólo pone un techo que
+       nadie alcanza, y la ventana se quedaba en 880 px. */
+    width: 100%;
+    max-width: 1140px;
+}
+
+.hero-content:has(.escena) h1 {
+    max-width: 880px;
+    margin-inline: auto;
+    font-size: 3rem;
+}
+
+.hero:has(.escena) {
+    padding-top: 5.5rem;
+}
+
+.hero-content:has(.escena) .escena {
+    margin-top: 2rem;
+}
+
+/* Respaldo para navegadores sin :has() — sin él la escena se saldría del
+   contenedor por la derecha en vez de quedarse dentro. */
+@supports not selector(:has(*)) {
+    .escena { width: 100%; }
+}
+
+/* En móvil el titular de la Opción B ocupa cuatro líneas y empujaba la ventana
+   entera fuera de la primera pantalla: quien entra desde el móvil —la mayoría—
+   no llegaba a ver que hay producto. Se aprieta lo justo para que asome. */
+@media (max-width: 600px) {
+    .hero-content:has(.escena) h1 {
+        font-size: 2rem;
+        line-height: 1.14;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content:has(.escena) .subtitle {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .hero-content:has(.escena) .cta-buttons {
+        gap: 0.6rem;
+    }
+
+    .hero-content:has(.escena) .escena {
+        margin-top: 1.5rem;
+    }
+}

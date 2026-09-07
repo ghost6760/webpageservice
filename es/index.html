@@ -316,60 +316,117 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="hero-content fade-in">
-            <div class="hero-logo">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="60" cy="60" r="58" fill="none" stroke="rgba(139, 92, 246, 0.2)" stroke-width="2"/>
-                    <g class="orbit">
-                        <circle cx="60" cy="60" r="45" fill="none" stroke="url(#gradientHero1)" stroke-width="2" stroke-dasharray="8,4" opacity="0.8"/>
-                        <circle cx="105" cy="60" r="4" fill="#8B5CF6"/>
-                        <circle cx="15" cy="60" r="3" fill="#06B6D4"/>
-                        <circle cx="60" cy="15" r="3" fill="#7C3AED"/>
-                        <circle cx="60" cy="105" r="3" fill="#0EA5E9"/>
-                    </g>
-                    <g class="neural-network">
-                        <circle cx="60" cy="60" r="10" fill="url(#coreGradientHero)"/>
-                        <circle cx="40" cy="45" r="5" fill="#06B6D4"/>
-                        <circle cx="80" cy="45" r="5" fill="#8B5CF6"/>
-                        <circle cx="35" cy="75" r="5" fill="#7C3AED"/>
-                        <circle cx="85" cy="75" r="5" fill="#0EA5E9"/>
-                        <circle cx="25" cy="35" r="3" fill="#F59E0B"/>
-                        <circle cx="95" cy="35" r="3" fill="#059669"/>
-                        <circle cx="25" cy="85" r="3" fill="#10B981"/>
-                        <circle cx="95" cy="85" r="3" fill="#06B6D4"/>
-                        <line x1="60" y1="60" x2="40" y2="45" stroke="url(#gradientHero2)" stroke-width="3" opacity="0.8"/>
-                        <line x1="60" y1="60" x2="80" y2="45" stroke="url(#gradientHero2)" stroke-width="3" opacity="0.8"/>
-                        <line x1="60" y1="60" x2="35" y2="75" stroke="url(#gradientHero2)" stroke-width="3" opacity="0.8"/>
-                        <line x1="60" y1="60" x2="85" y2="75" stroke="url(#gradientHero2)" stroke-width="3" opacity="0.8"/>
-                        <line x1="40" y1="45" x2="25" y2="35" stroke="url(#gradientHero2)" stroke-width="2" opacity="0.6"/>
-                        <line x1="80" y1="45" x2="95" y2="35" stroke="url(#gradientHero2)" stroke-width="2" opacity="0.6"/>
-                        <line x1="35" y1="75" x2="25" y2="85" stroke="url(#gradientHero2)" stroke-width="2" opacity="0.6"/>
-                        <line x1="85" y1="75" x2="95" y2="85" stroke="url(#gradientHero2)" stroke-width="2" opacity="0.6"/>
-                    </g>
-                    <defs>
-                        <linearGradient id="gradientHero1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
-                        </linearGradient>
-                        <linearGradient id="gradientHero2" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:0.8" />
-                        </linearGradient>
-                        <radialGradient id="coreGradientHero" cx="50%" cy="50%" r="50%">
-                            <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#06B6D4;stop-opacity:1" />
-                        </radialGradient>
-                    </defs>
-                </svg>
-            </div>
             <div class="hero-eyebrow">Hachi · Recepcionista con IA</div>
-            <h1>La recepcionista que contesta a las 3 de la mañana</h1>
-            <p class="subtitle">Hachi atiende <strong>WhatsApp, Instagram y Messenger</strong>, <strong>coge el teléfono y también llama</strong>, las 24 horas. <strong>Consulta tu agenda de verdad</strong> y reserva, cancela o reagenda la cita. Luego la recuerda, para que no te dejen plantado. No es un menú de botones: entiende lo que le escriben, en audio o por escrito, y cuando algo se sale de lo previsto avisa a una persona.</p>
+            <h1>Contesta a las 3 de la mañana. Y deja la cita puesta.</h1>
+            <p class="subtitle"><strong>WhatsApp, Instagram, Messenger y llamadas.</strong> Consulta tu agenda de verdad y reserva, cancela o reagenda sin que intervenga tu equipo. Luego recuerda la cita, para que no te dejen plantado.</p>
             <p class="hero-meta">Desde <strong>149 €/mes</strong> · 7 días de prueba gratis, sin tarjeta · Cumple el RGPD</p>
             <div class="cta-buttons">
                 <a href="#contacto" class="cta-button">Solicitar Demo Gratuita</a>
                 <a href="#precios" class="cta-button cta-secondary">Ver Planes y Precios</a>
                 <a href="/es/calculadora.html" class="cta-button cta-secondary"><i class="fas fa-chart-line"></i> Calcular mi retorno</a>
+            </div>
+
+            <!-- La escena: una conversación y el calendario en la misma
+                 ventana. Datos inventados a propósito — ningún paciente real
+                 de ninguna empresa cliente puede salir aquí (RGPD). -->
+            <div class="escena" role="img" aria-label="El panel de Hachi: a la izquierda una conversación de WhatsApp en la que el asistente propone hora y reserva; a la derecha, la cita ya puesta en el calendario.">
+                <div class="escena-barra" aria-hidden="true">
+                    <span class="escena-punto" style="background:#E5484D"></span>
+                    <span class="escena-punto" style="background:#F5B22D"></span>
+                    <span class="escena-punto" style="background:#46B754"></span>
+                    <span class="escena-url">app.hachi.live</span>
+                </div>
+
+                <div class="escena-cuerpo">
+                    <div class="escena-chat">
+                        <div class="escena-cabecera">
+                            <span class="escena-avatar">SR</span>
+                            <span>
+                                <span class="escena-quien">Sofía R.</span>
+                                <span class="escena-canal" style="display:block">WhatsApp · hoy, 03:14</span>
+                            </span>
+                            <span class="escena-marca"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9 12 3.5Z" fill="#8B5CF6"/></svg>Hachi atiende</span>
+                        </div>
+                        <div class="escena-mensajes">
+                            <div class="escena-msg escena-msg--entra">Hola, quería pedir cita para limpieza facial. ¿Tenéis algo esta semana?</div>
+                            <div class="escena-msg escena-msg--sale">Buenas noches, Sofía. Me queda el <strong>lunes 8 a las 10:00</strong> y el miércoles 10 a las 16:30. ¿Cuál te viene mejor?</div>
+                            <div class="escena-msg escena-msg--entra">El lunes a las 10 me va bien</div>
+                            <div class="escena-msg escena-msg--sale escena-msg--clave">
+                                Reservado: <strong>lunes 8 de septiembre, 10:00</strong>, limpieza facial con Marta. Te aviso el domingo para confirmar.
+                                <span class="escena-firma"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9 12 3.5Z" fill="#7C3AED"/></svg>Hachi · 03:16</span>
+                            </div>
+                            <div class="escena-nadie">Nadie del equipo intervino</div>
+                        </div>
+                    </div>
+
+                    <div class="escena-agenda">
+                        <div class="escena-cabecera">
+                            <span class="escena-titulo">Calendario de citas</span>
+                            <span class="escena-sync"><i class="escena-punto-cita" style="background:#10b981"></i>Sincronizado</span>
+                            <span class="escena-acciones">
+                                <span class="escena-btn">+ Nueva cita</span>
+                                <span class="escena-btn escena-btn--sec escena-fuera"><i class="escena-punto-cita" style="background:#ef4444"></i>Bloquear</span>
+                            </span>
+                        </div>
+
+                        <div class="escena-dias">
+                            <span></span>
+                            <span class="escena-dia">lun 8/9</span>
+                            <span class="escena-dia">mar 9/9</span>
+                            <span class="escena-dia escena-fuera">mié 10/9</span>
+                            <span class="escena-dia escena-fuera">jue 11/9</span>
+                        </div>
+
+                        <div class="escena-rejilla">
+                            <span class="escena-hora" style="grid-row:1">9</span>
+                            <span class="escena-hora" style="grid-row:2">10</span>
+                            <span class="escena-hora" style="grid-row:3">11</span>
+                            <span class="escena-hora" style="grid-row:4">12</span>
+                            <span class="escena-col" style="grid-column:2"></span>
+                            <span class="escena-col" style="grid-column:3"></span>
+                            <span class="escena-col escena-fuera" style="grid-column:4"></span>
+                            <span class="escena-col escena-fuera" style="grid-column:5"></span>
+
+                            <span class="escena-cita escena-cita--nueva" style="grid-column:2; grid-row:2; background:#10b981">
+                                <span class="escena-cita-alto">
+                                    <i class="escena-punto-cita"></i>
+                                    <span class="escena-hora-cita">10:00</span>
+                                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9 12 3.5Z" fill="#fff"/></svg>
+                                </span>
+                                <span class="escena-nombre" style="display:block">Sofía R.</span>
+                                <span class="escena-trat" style="display:block">Limpieza facial</span>
+                            </span>
+
+                            <span class="escena-cita" style="grid-column:2; grid-row:4; background:#10b981">
+                                <span class="escena-cita-alto"><i class="escena-punto-cita"></i><span class="escena-hora-cita">12:00</span></span>
+                                <span class="escena-nombre" style="display:block">Carlos M.</span>
+                            </span>
+
+                            <span class="escena-cita" style="grid-column:3; grid-row:1; background:#f59e0b">
+                                <span class="escena-cita-alto"><i class="escena-punto-cita"></i><span class="escena-hora-cita">09:30</span><svg width="9" height="9" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9 12 3.5Z" fill="#fff"/></svg></span>
+                                <span class="escena-nombre" style="display:block">Nuria B.</span>
+                            </span>
+
+                            <span class="escena-cita escena-cita--baja escena-fuera" style="grid-column:4; grid-row:3">
+                                <span class="escena-cita-alto"><i class="escena-punto-cita"></i><span class="escena-hora-cita">11:00</span></span>
+                                <span class="escena-nombre" style="display:block">Elena P.</span>
+                            </span>
+
+                            <span class="escena-cita escena-fuera" style="grid-column:5; grid-row:2; background:#3b82f6">
+                                <span class="escena-cita-alto"><i class="escena-punto-cita"></i><span class="escena-hora-cita">10:30</span></span>
+                                <span class="escena-nombre" style="display:block">Marta L.</span>
+                            </span>
+                        </div>
+
+                        <div class="escena-leyenda">
+                            <span><i style="background:#10b981"></i>Confirmada</span>
+                            <span><i style="background:#f59e0b"></i>Pendiente</span>
+                            <span class="escena-fuera"><i style="background:#3b82f6"></i>Completada</span>
+                            <span class="escena-fuera"><i style="background:#9ca3af"></i>Cancelada</span>
+                            <span class="escena-fuera"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5 13.7 9l5.5 1.7-5.5 1.7L12 18l-1.7-5.6L4.8 10.7 10.3 9 12 3.5Z" fill="#7C3AED"/></svg>Agendada por Hachi</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
