@@ -54,6 +54,47 @@ contradigan entre sí**, que es donde fallan de verdad:
 - que `Expires` de `security.txt` no haya caducado (avisa a 60 días);
 - que el `sameAs` del `Organization` apunte a perfiles externos reales.
 
+---
+
+# Generación y comprobación del sitemap
+
+```bash
+node tools/sitio/sitemap.js              # comprobar (falla si hay desfase)
+node tools/sitio/sitemap.js --escribir   # regenerarlo
+```
+
+**El `sitemap.xml` ya no se edita a mano.** Se genera del árbol de páginas, y
+ningún dato se teclea: las URLs salen de los ficheros `.html` que existen, el
+`lastmod` sale de la fecha del último commit que tocó cada fichero, y los
+`xhtml:link` salen de las etiquetas `hreflang` de la propia página — una sola
+fuente, así que HTML y sitemap no pueden contradecirse.
+
+## Por qué existe
+
+Por un fallo concreto. El 05-08 se escribió el sitemap a mano; el 06-08 el commit
+`daac3cd` —«unifica las 15 paginas internas con el sistema de diseno»— tocó 15 de
+las 17 páginas, y nadie volvió al sitemap. Durante un mes, **15 de 17 `lastmod`
+declararon una fecha anterior al cambio real**.
+
+Un `lastmod` que miente es peor que no ponerlo: Google evalúa si la fecha es
+fiable y, cuando no lo es, descarta el `lastmod` de **todo** el fichero. El
+sitemap deja de decir «esto ha cambiado, vuelve a rastrearlo» y queda como una
+lista de URLs sin señal — justo cuando más falta hacía, con cuatro guías
+atascadas en «Descubierta: actualmente sin indexar».
+
+Comprueba además lo que se había roto a la vez:
+
+- que **cada página tenga `canonical`** y apunte a su propia URL. Sin él, la
+  variante `www.` compite; cinco páginas legales llevaban meses sin ninguno;
+- que las **alternas sean recíprocas**: si A dice que su versión española es B, B
+  tiene que devolver el enlace. Un grupo hreflang no recíproco lo descarta Google
+  entero;
+- que no falte ni sobre ninguna URL respecto a las páginas publicadas.
+
+No se emiten `changefreq` ni `priority`: Google dejó de usarlos hace años, y
+mantenerlos sólo refuerza la impresión de fichero autogenerado sin cuidado, que
+es exactamente lo que lleva a desconfiar también del `lastmod`.
+
 ## IndexNow
 
 ```bash
