@@ -1076,17 +1076,37 @@ body {
 }
 
 /* ═══════════════ Responsive ═══════════════ */
-@media (max-width: 1100px) {
+/* El nav pide 1304 px con diez enlaces, el conmutador de idioma y dos botones,
+   y sólo los tiene a partir de 1440: entre 1101 y 1439 el botón «Registrarse»
+   salía cortado por la derecha. La compactación existía pero sólo actuaba por
+   debajo de 1100, un tramo donde el menú de hamburguesa (≤1024) ya casi la
+   tapaba. Se extiende a toda la franja en la que hace falta. */
+@media (max-width: 1439px) {
     .nav-links {
-        gap: 1rem;
+        gap: 0.85rem;
     }
 
     .nav-links a {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
+    }
+
+    .nav-auth-buttons {
+        gap: 0.4rem;
+    }
+
+    .nav-login-btn,
+    .nav-signup-btn {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+        font-size: 0.82rem;
     }
 }
 
-@media (max-width: 1024px) {
+/* Umbral del menú de hamburguesa. Sube de 1024 a 1120: aun compactado, el nav
+   necesita 1121 px y entre 1025 y 1120 el botón «Registrarse» quedaba cortado.
+   Va emparejado con el min-width de más abajo; si se cambia uno hay que
+   cambiar el otro o el bloque de acceso sale duplicado. */
+@media (max-width: 1120px) {
     .nav-toggle {
         display: block;
     }
@@ -1166,7 +1186,7 @@ body {
     }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1121px) {
     .nav-links .mobile-auth {
         display: none;
     }
@@ -1254,4 +1274,61 @@ body {
         padding: 0.8rem 1.2rem;
         font-size: 0.9rem;
     }
+}
+
+/* ═══════════════ Tiras de marcas (Impulsado por · Integraciones) ═══════════════
+   Marcas denominativas uniformes. Antes, de catorce marcas seis tenían su
+   logotipo real y ocho llevaban un pictograma genérico de suplente —un cerebro
+   por Claude, un robot por OpenAI, unas olas por DeepSeek—, y `fab fa-meta` ni
+   existe en el paquete, así que Meta Business salía sin nada. Mezclar
+   logotipos reales con suplentes es peor que no poner ninguno: parece un bloque
+   sin terminar, y es el detalle que más credibilidad cuesta en una página que
+   pide 149-990 €/mes.
+   Si algún día se consiguen los catorce SVG oficiales, se cambian aquí de una
+   vez: ahora hay una clase, no catorce bloques con estilos en línea. */
+.marcas {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.marcas li {
+    padding: 0.7rem 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.72);
+    white-space: nowrap;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.marcas li:hover {
+    color: #fff;
+    border-color: rgba(139, 92, 246, 0.45);
+}
+
+@media (max-width: 480px) {
+    .marcas { gap: 0.5rem; }
+    .marcas li { padding: 0.55rem 0.85rem; font-size: 0.82rem; }
+}
+
+/* ═══════════════ Desbordamiento horizontal ═══════════════
+   `.slide-in-right` arranca en translateX(40px), es decir 40 px fuera del borde
+   derecho, hasta que el observador le pone .visible. Eso generaba scroll
+   horizontal en TODA la página —8 px exactos a cualquier ancho hasta 1366— con
+   las tarjetas de agentes como culpables. En móvil ya se había parcheado
+   cambiando el eje a translateY; en escritorio seguía ahí.
+   Se recorta en la sección en vez de quitar la animación. `clip` y no `hidden`
+   a propósito: `hidden` crearía un contenedor de scroll y rompería el
+   position: sticky de la cabecera y el desplazamiento a las anclas. */
+.section {
+    overflow-x: clip;
 }
