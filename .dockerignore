@@ -1,0 +1,8 @@
+# Lo que NO entra en la imagen de hachi.live (ver Dockerfile).
+.git
+.gitignore
+docs/
+tools/
+**/*.md
+Dockerfile
+.dockerignore

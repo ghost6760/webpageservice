@@ -3,8 +3,8 @@
 > **Qué es este documento.** La guía de la estrategia de páginas por sector: por
 > qué se hizo así, qué hay publicado, qué falta, qué indexar y en qué orden, y
 > cómo seguir creciendo sin que Google penalice el bloque. Es un documento de
-> trabajo: **no es una página del sitio** (ver §10, que explica que hoy `docs/`
-> probablemente sí se sirve y cómo evitarlo).
+> trabajo: **no es una página del sitio** (ver §10: cómo se evita que `docs/`
+> se sirva).
 >
 > Empezado el 25-09-2026. Actualízalo cada vez que se publique una tanda o se
 > tome una decisión; el historial está en §12.
@@ -360,7 +360,7 @@ Por orden de impacto:
 | 1 | **Indexar** las 24 URLs (§5) | Search Console | Sin esto no existe nada de lo anterior |
 | 2 | **Conocimiento de EE. UU. para el agente de Hachi** (precios en USD, SMS, HIPAA) | backend: RAG de la empresa `hachi` | Hoy el agente solo sabe de España: un prospecto que llega de `/industries/` y escribe recibiría precios en euros |
 | 3 | **Montar el SMS** | backend (Twilio) | Las páginas de EE. UU. lo prometen desde el 25-09-2026. Tiene que existir antes del primer cliente de allí |
-| 4 | **Que `docs/` y `tools/` no se sirvan** | Coolify (§10) | Probablemente hoy se sirven |
+| 4 | **Que `docs/` y `tools/` no se sirvan** | Coolify (§10.3) | Se servían; el arreglo está en el repo, falta aplicarlo en Coolify |
 | 5 | **Enlaces externos** a las páginas de sector | fuera del sitio | Un dominio nuevo posiciona despacio sin enlaces: directorios del sector, un artículo invitado, LinkedIn enlazando al sector concreto, la firma de los correos de cada campaña apuntando a su sector |
 | 6 | **Usar las páginas en las campañas** | correo en frío | El correo a una veterinaria debería enlazar `/industries/veterinary-clinics.html`, no la portada: más conversión y señal de uso para Google |
 | 7 | Segunda tanda de sectores (§7.1) | `tools/sectores` | Cuando haya datos de la primera |
@@ -393,34 +393,87 @@ Por orden de impacto:
 
 ---
 
-## 10 · ⚠️ `docs/` y `tools/` probablemente se están sirviendo
+## 10 · `docs/` y `tools/` no deben servirse
 
-Este repositorio no tiene `Dockerfile`, ni configuración de nginx, ni
-`.dockerignore`: Coolify sirve **la carpeta entera**. Si es así, esta guía y
-todo `docs/audit/` (endpoints de la API, configuración de los webhooks de
-Chatwoot, arquitectura del backend) se pueden abrir en
-`https://hachi.live/docs/…`.
+### 10.1 · Lo que pasaba
 
-**Compruébalo:** abre `https://hachi.live/docs/pseo-paginas-por-sector.md` en el
-navegador. Si carga, está publicado.
+Confirmado el 25-09-2026: `https://hachi.live/docs/pseo-paginas-por-sector.md`
+**se descargaba**. La aplicación de Coolify (proyecto `landing_page`) estaba así:
 
-**Mitigación ya aplicada (25-09-2026):** `robots.txt` lleva `Disallow: /docs/` y
-`Disallow: /tools/`, así que los buscadores no los indexan. **Eso no impide que
-una persona los abra** con la URL.
+| Ajuste | Valor |
+|---|---|
+| Build Pack | Nixpacks, «Is it a static site?» marcado |
+| Static Image | `nginx:alpine` |
+| Custom Nginx Configuration | vacía (la de por defecto) |
+| Base Directory / Publish Directory | `/` y `/` |
 
-**Arreglo de verdad** (en Coolify, no en el repositorio), una de dos:
+Con eso Coolify copia **el repositorio entero** al nginx: `docs/` (con
+`docs/audit/`: endpoints de la API, webhooks de Chatwoot, arquitectura del
+backend), `tools/` y cualquier `.md`.
 
-- **Opción A (recomendada): servir solo lo público.** Pasar la aplicación a
-  build pack *Dockerfile* con un `Dockerfile` que copie a nginx solo las páginas,
-  `assets/`, `images/`, `icons/`, `.well-known/` y los ficheros de la raíz
-  (`robots.txt`, `sitemap.xml`, `llms.txt`, `manifest.json`, la clave de
-  IndexNow…), sin `docs/` ni `tools/`. Se puede preparar en el repositorio,
-  pero el cambio de build pack se hace en Coolify y hay que probarlo antes de
-  cortar el tráfico.
-- **Opción B: sacar `docs/` y `tools/` del repositorio público** a otro
-  repositorio privado.
+### 10.2 · Lo que hay en el repositorio desde el 25-09-2026
 
----
+| Fichero | Qué hace |
+|---|---|
+| `deploy/nginx.conf` | Sirve el sitio y devuelve **404** a `/docs`, `/tools`, `/deploy`, a los ficheros ocultos (salvo `/.well-known/`) y a cualquier `.md`. Además: redirecciones relativas (detrás del proxy), UTF-8 en `.txt`/`.css`/`.json`, gzip |
+| `Dockerfile` | `nginx:alpine` con esa configuración; copia el sitio y **falla la construcción** si `docs/`, `tools/` o `.git` llegan a la imagen, o si falta `index.html`, `es/index.html`, `robots.txt` o `security.txt` |
+| `.dockerignore` | Deja fuera `.git`, `docs/`, `tools/`, los `.md` y los ficheros del despliegue |
+| `robots.txt` | `Disallow: /docs/` y `/tools/` (que tampoco se indexen) |
+
+Probado con nginx 1.24 sobre una copia de lo que entra en la imagen: todas las
+páginas, los índices de carpeta (`/es/`, `/industries/`, `/es/sectores/`),
+`llms.txt`, `robots.txt`, `sitemap.xml`, `/.well-known/security.txt`, la clave de
+IndexNow, CSS, iconos y `manifest.json` → **200**; `/docs`, `/docs/…`, `/tools/…`,
+`/deploy/…`, `/.git/HEAD`, `README.md` y `Dockerfile` → **404**; `/es` → 301 a
+`/es/` con `Location` relativa.
+
+⚠️ **Sin `listen [::]:80` a propósito:** donde no hay IPv6, esa línea impide
+arrancar nginx (pasó en la prueba). El proxy de Coolify entra por IPv4.
+
+### 10.3 · Lo que hay que hacer en Coolify (una de las dos)
+
+**Opción A · Dockerfile (la completa, recomendada).** `docs/` ni siquiera entra
+en la imagen.
+
+1. Configuration → General → **Build Pack: Dockerfile**.
+2. Deja **Base Directory** en `/`; el Dockerfile está en `/Dockerfile`.
+3. **Ports Exposes: `80`** (aparece al cambiar a Dockerfile).
+4. Los **Domains** no cambian (`https://hachi.live,https://www.hachi.live`).
+5. Save → **Redeploy**. Mira el log: si la construcción falla, falla en el
+   `RUN test …` y dice qué falta; la versión anterior sigue sirviendo.
+6. Comprueba (§10.4).
+
+Para volver atrás: Build Pack → Nixpacks, marcar «Is it a static site?» y
+Redeploy (o Rollback a la versión anterior).
+
+**Opción B · Solo la configuración de nginx (la rápida).** No cambia cómo se
+construye; los ficheros siguen en el contenedor, pero nginx no los entrega.
+
+1. Configuration → General → **Custom Nginx Configuration**: pega el contenido
+   entero de `deploy/nginx.conf`.
+2. Save → Redeploy → comprueba (§10.4).
+
+Para volver atrás: vacía el campo y Redeploy.
+
+### 10.4 · Comprobación después de desplegar
+
+Tienen que **abrir** (200):
+
+- `https://hachi.live/`, `https://hachi.live/es/`, `https://hachi.live/industries/`,
+  `https://hachi.live/es/sectores/veterinarias.html`
+- `https://hachi.live/llms.txt`, `https://hachi.live/robots.txt`,
+  `https://hachi.live/sitemap.xml`, `https://hachi.live/.well-known/security.txt`
+
+Tienen que dar **404** (no descargar nada):
+
+- `https://hachi.live/docs/pseo-paginas-por-sector.md`
+- `https://hachi.live/docs/audit/audit-map.md`
+- `https://hachi.live/tools/sectores/generar.js`
+- `https://hachi.live/.git/HEAD`
+
+Opcional, en el mismo panel: **Direction → «Redirect to non-www»**. Hoy sirve
+las dos (`www` y sin `www`); con la redirección, Search Console deja de listar
+las `www` como «página alternativa».
 
 ## 11 · Cómo añadir un sector (lista de pasos)
 
@@ -452,6 +505,7 @@ una persona los abra** con la URL.
 | 25-09-2026 | Las páginas de EE. UU. anuncian SMS | Hay autorización de Twilio y se monta en un día; queda pendiente construirlo (§8) |
 | 25-09-2026 | GPTBot y CCBot desbloqueados en `robots.txt` | Que los modelos conozcan Hachi (ver `plan-seo-y-posicionamiento.md`) |
 | 25-09-2026 | `robots.txt`: `Disallow: /docs/` y `/tools/` | Mitigación mientras se decide cómo dejar de servirlos (§10) |
+| 25-09-2026 | `Dockerfile` + `deploy/nginx.conf` + `.dockerignore` | `docs/` se descargaba desde hachi.live; pasos en Coolify en §10.3 |
 
 ---
 
