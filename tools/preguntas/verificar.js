@@ -40,7 +40,7 @@ c('un solo <h1>', (HTML.match(/<h1[\s>]/g) || []).length === 1);
 console.log('\n[2] Anclas de pregunta');
 const anclas = (HTML.match(/<article class="pregunta" id="([^"]+)"/g) || [])
   .map((s) => s.match(/id="([^"]+)"/)[1]);
-c('75 preguntas', anclas.length === 75, anclas.length + '');
+c('85 preguntas', anclas.length === 85, anclas.length + '');
 c('todas las anclas son únicas', new Set(anclas).size === anclas.length,
   anclas.length - new Set(anclas).size + ' duplicadas');
 c('sin acentos ni signos en las anclas',
@@ -71,7 +71,7 @@ try {
 }
 c('hay un FAQPage', !!faq);
 c('hay un BreadcrumbList', !!migas);
-c('FAQPage con 75 Question', faq && faq.mainEntity.length === 75,
+c('FAQPage con 85 Question', faq && faq.mainEntity.length === 85,
   faq ? faq.mainEntity.length + '' : '—');
 c('canónica del FAQPage correcta',
   faq && faq.url === 'https://hachi.live/' + RUTA);
@@ -182,14 +182,14 @@ try { r = correrBuscador(''); c('el script del buscador corre sin lanzar', true)
 catch (e) { c('el script del buscador corre sin lanzar', false, e.message); r = null; }
 
 if (r) {
-  c('sin filtro se ven las 75', r.visibles === 75, r.visibles + '');
+  c('sin filtro se ven las 85', r.visibles === 85, r.visibles + '');
   const B = LANG === 'es'
     ? { uno: 'precio', acento: ['numero', 'número'], mayus: 'RGPD',
         varios: 'ventana 24 horas' }
     : { uno: 'pricing', acento: ['telefono', 'teléfono'], mayus: 'GDPR',
         varios: '24-hour window' };
   const rp = correrBuscador(B.uno);
-  c('«' + B.uno + '» encuentra preguntas', rp.visibles > 0 && rp.visibles < 75,
+  c('«' + B.uno + '» encuentra preguntas', rp.visibles > 0 && rp.visibles < 85,
     rp.visibles + '');
   // El índice normaliza acentos: la versión inglesa también tiene que hacerlo,
   // porque un hispanohablante buscando en la web inglesa escribe con tilde.
@@ -206,7 +206,7 @@ if (r) {
   const re = correrBuscador('zzzzqqq');
   c('sin resultados no rompe', re.visibles === 0);
   c('el contador informa del subconjunto',
-    /(?: de | of )75$/.test(rp.contador), rp.contador);
+    /(?: de | of )85$/.test(rp.contador), rp.contador);
 }
 
 // ─────────────────────────────────────────────── 5. cifras coherentes

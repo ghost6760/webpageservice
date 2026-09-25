@@ -660,6 +660,49 @@ body {
     flex-direction: column;
 }
 
+/* Franja ancha bajo las cuatro tarjetas (Multi-sede). Dos columnas en
+   escritorio, una en móvil. */
+.pricing-wide {
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) 2fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 2rem 2.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.pricing-wide .price-features {
+    columns: 2;
+    column-gap: 2rem;
+}
+
+.pricing-wide .price-features li {
+    break-inside: avoid;
+}
+
+@media (max-width: 1335px) and (min-width: 769px) {
+    /* Entre tres y cuatro columnas cabían tres tarjetas y la cuarta quedaba
+       sola: dos por fila, que es simétrico. */
+    .pricing {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-wide {
+        grid-template-columns: 1fr;
+        padding: 1.75rem 1.5rem;
+    }
+
+    .pricing-wide .price-features {
+        columns: 1;
+    }
+}
+
 .pricing-card.featured {
     border: 1px solid var(--accent);
     background: linear-gradient(180deg, rgba(139, 92, 246, 0.10) 0%, var(--surface) 45%);
@@ -678,6 +721,11 @@ body {
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.06em;
+}
+
+/* El CSS lo comparten las dos portadas: en la inglesa salía «RECOMENDADO». */
+html[lang="en"] .pricing-card.featured::before {
+    content: 'RECOMMENDED';
 }
 
 .pricing-card:hover {
@@ -700,11 +748,12 @@ body {
     flex: 1;
 }
 
+/* Bloque con el icono en posición absoluta, no flex: con flex, cada <strong>
+   dentro del <li> se volvía una columna aparte y la frase salía partida en
+   dos («Agenda en tu agenda real | , comprobando antes…»). */
 .price-features li {
-    padding: 0.5rem 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.6rem;
+    padding: 0.5rem 0 0.5rem 1.45rem;
+    position: relative;
     color: var(--text-muted);
     font-size: 0.95rem;
 }
@@ -715,7 +764,9 @@ body {
     font-weight: 900;
     color: var(--ok);
     font-size: 0.85rem;
-    margin-top: 0.25rem;
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
 }
 
 .price-features li:has(i.fa-times-circle)::before,

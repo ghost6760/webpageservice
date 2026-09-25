@@ -9,13 +9,13 @@ LANG_PAGINA=es node tools/preguntas/verificar.js  # 72 comprobaciones
 LANG_PAGINA=en node tools/preguntas/verificar.js  # 72 comprobaciones
 ```
 
-Las dos llevan **las mismas nueve secciones y las mismas 75 preguntas**, para que
+Las dos llevan **las mismas nueve secciones y las mismas 85 preguntas**, para que
 sigan siendo comparables; sólo cambia la redacción. Si añades una pregunta a un
 idioma, añádela al otro.
 
 ## Por qué se genera
 
-La página lleva 75 preguntas, y cada una aparece **dos veces**: en el HTML que
+La página lleva 85 preguntas, y cada una aparece **dos veces**: en el HTML que
 lee la persona y en el `FAQPage` de JSON-LD que leen Google y los modelos de
 lenguaje. Mantener las dos copias a mano es la forma habitual de que acaben
 diciendo cosas distintas, y marcar en el schema una respuesta que no está en la
@@ -67,3 +67,17 @@ de las calculadoras: precios por plan, implantación, extras, conversaciones
 incluidas y el retorno **en margen de contribución** (2/3/6/8 citas, no 1/2/4/5,
 que era la cuenta sobre ingreso). Si cambias un precio en un sitio y no en el
 otro, el test lo dice.
+
+## La plantilla reproduce la página publicada
+
+Hasta el 25-09-2026 `generar.js` llevaba su propio CSS en línea, iconos en el
+índice y otro título, mientras que la página publicada ya usaba
+`/assets/pages.css`: regenerar deshacía el rediseño. Ahora la plantilla produce
+**exactamente** la página publicada (comprobado byte a byte con los datos de
+entonces). Si cambias el diseño, cámbialo aquí o en `pages.css`, nunca a mano en
+el HTML generado.
+
+⚠️ `tools/paginas/generar.js` (las guías) sigue en la situación antigua: su
+salida no coincide con las guías publicadas. **No lo ejecutes** hasta portar la
+plantilla igual que se hizo aquí; mientras, las guías se editan en el HTML y en
+su `contenido/*.js` a la vez.

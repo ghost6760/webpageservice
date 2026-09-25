@@ -53,11 +53,14 @@ citadores.forEach((b) => {
     m ? m[1] === 'Allow' : true, m ? m[1] + ' ' + m[2] : 'sin regla → permitido por defecto');
 });
 
+// Los de entrenamiento se abrieron el 25-09-2026: lo que un modelo «sabe» de
+// Hachi sin buscarlo sale de ahí, y bloqueado lo describía mal. Ahora se exige
+// que sigan abiertos; cerrarlos es una decisión que hay que tomar a propósito.
 const entrenadores = ['GPTBot', 'CCBot'];
 entrenadores.forEach((b) => {
   const m = robots.match(new RegExp('User-agent: ' + b + '\\s*\\n(Allow|Disallow):'));
-  if (m && m[1] === 'Allow') aviso(b + ' está permitido (recopila para entrenar, no trae visitas)');
-  else ok++, console.log('  ✓ ' + b + ' bloqueado (recopila para entrenar)');
+  c('permite a ' + b + ' (entrena modelos: que conozcan Hachi)',
+    !m || m[1] === 'Allow', m ? m[1] : 'sin regla → permitido por defecto');
 });
 
 // ═══════════════════════════════════════════════ llms.txt
@@ -78,6 +81,16 @@ const landing = leer('es/index.html');
     llms.includes('€' + p) &&
     (landing.includes(p.replace(',', '.') + ' €') || p === '1,690'));
 });
+// El Plan Por Cita y el módulo de voz: sin ellos, un modelo repite que la voz
+// empieza en 149 € o que no hay forma de pagar por resultado.
+c('Plan Por Cita (49 € + 4 € / 9 €, tope 990 €) en llms.txt y en la landing',
+  /€49/.test(llms) && /€4 per/.test(llms) && /€9 per/.test(llms) &&
+  landing.includes('49 €/mes') && landing.includes('tope mensual de 990 €'));
+c('módulo de voz de 190 € en llms.txt y en la landing',
+  /€190/.test(llms) && landing.includes('+190 €/mes'));
+c('llms.txt dice que la voz no está en Autónomo ni Esencial',
+  /not included in Solo or Essential|Solo and Essential do not include voice/.test(llms));
+
 c('el retorno en llms.txt es el de margen (2/3/6/8)',
   /2 appointments\/month/.test(llms) && /8 for Complete/.test(llms));
 c('no queda el retorno viejo sobre ingreso',

@@ -37,8 +37,11 @@ Allow: /assets/
 #     llms.txt, que es literalmente un archivo escrito para ellos.
 #
 #   · Los que RECOPILAN PARA ENTRENAR en bloque (GPTBot, CCBot). No devuelven
-#     visitas. Se mantienen bloqueados. Si algún día interesa aparecer también
-#     ahí, basta con borrar sus dos bloques.
+#     visitas directas, pero de lo que leen sale lo que los modelos «saben» de
+#     Hachi sin buscarlo. Estuvieron bloqueados hasta el 25-09-2026; se abren
+#     porque un modelo que no conoce Hachi lo describe mal o no lo nombra (pasó
+#     con Gemini: voz «desde 149 €», bandeja «básica», ni una palabra de las
+#     garantías en código). CCBot es Common Crawl, la base de casi todos.
 # ---------------------------------------------------------------------------
 User-agent: ChatGPT-User
 Allow: /
@@ -82,11 +85,17 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 # ---------------------------------------------------------------------------
 # Rastreadores de análisis de la competencia: no aportan visitas

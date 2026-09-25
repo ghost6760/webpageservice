@@ -5,7 +5,10 @@
  * pueden divergir. Marcar en el schema una respuesta que no está en la página
  * es lo que Google considera marcado engañoso.
  *
- * Las dos versiones llevan las mismas nueve secciones y las mismas 75
+ * Los estilos viven en /assets/pages.css (el sistema de diseño de las páginas
+ * internas), no aquí: la plantilla solo produce el HTML.
+ *
+ * Las dos versiones llevan las mismas nueve secciones y las mismas 85
  * preguntas, para que sigan siendo comparables; sólo cambia la redacción.
  */
 const fs = require('fs');
@@ -23,10 +26,9 @@ const IDIOMAS = {
     precios: '/es/#precios',
     privacidad: '/es/privacy-policy.html',
     codigoAlterno: 'EN',
-    titulo: 'Preguntas frecuentes sobre Hachi · Precios, WhatsApp API, agenda y RGPD',
-    descripcion: (n) => n + ' preguntas respondidas sobre Hachi: precios y planes, ' +
-      'WhatsApp Business API y la ventana de 24 h, migrar tu número, cómo agenda ' +
-      'las citas, ausencias y RGPD.',
+    titulo: 'Preguntas frecuentes · Precios, canales y RGPD | Hachi',
+    descripcion: (n) => n + ' preguntas respondidas: precios y planes, WhatsApp API y ' +
+      'la ventana de 24 h, llamadas, cómo agenda las citas, ausencias y RGPD.',
     ogTitulo: 'Preguntas frecuentes sobre Hachi',
     ogDescripcion: 'Precios, WhatsApp API, tu número, cómo agenda las citas, ' +
       'ausencias, RGPD e implantación. Respondido entero, incluida la parte que ' +
@@ -52,7 +54,7 @@ const IDIOMAS = {
     ctaP: 'Escríbenos y te la respondemos con tu caso concreto. Y si quieres números\n' +
       '    en vez de respuestas, la calculadora hace la cuenta con los tuyos.',
     ctaBoton: 'Solicitar una demostración',
-    ctaBotonSec: '📊 Calcular mi retorno',
+    ctaBotonSec: 'Calcular mi retorno',
     pieInicio: 'Inicio', piePlanes: 'Planes', pieCalc: 'Calculadora',
     piePriv: 'Privacidad',
     unaPregunta: ' pregunta', variasPreguntas: ' preguntas', de: ' de ',
@@ -70,10 +72,9 @@ const IDIOMAS = {
     precios: '/#pricing',
     privacidad: '/privacy-policy.html',
     codigoAlterno: 'ES',
-    titulo: 'Hachi FAQ · Pricing, WhatsApp API, booking and GDPR',
-    descripcion: (n) => n + ' questions answered about Hachi: pricing and plans, ' +
-      'WhatsApp Business API and the 24-hour window, migrating your number, how ' +
-      'appointments are booked, no-shows and GDPR.',
+    titulo: 'FAQ · Pricing, channels, booking and GDPR | Hachi',
+    descripcion: (n) => n + ' questions answered: pricing and plans, WhatsApp API and ' +
+      'the 24-hour window, calls, how appointments are booked, no-shows and GDPR.',
     ogTitulo: 'Frequently asked questions about Hachi',
     ogDescripcion: 'Pricing, WhatsApp API, your number, how appointments are booked, ' +
       'no-shows, GDPR and implementation. Answered in full, including the parts that ' +
@@ -99,7 +100,7 @@ const IDIOMAS = {
     ctaP: 'Write to us and we will answer it for your specific case. And if you want\n' +
       '    numbers rather than answers, the calculator runs the maths on yours.',
     ctaBoton: 'Book a demo',
-    ctaBotonSec: '📊 Calculate my return',
+    ctaBotonSec: 'Calculate my return',
     pieInicio: 'Home', piePlanes: 'Plans', pieCalc: 'Calculator',
     piePriv: 'Privacy',
     unaPregunta: ' question', variasPreguntas: ' questions', de: ' of ',
@@ -205,12 +206,12 @@ const migas = {
 
 // ── HTML ───────────────────────────────────────────────────────────
 const indice = secciones.map((s, i) =>
-  `      <a href="#s${i + 1}"><span>${s.icono}</span>${s.seccion}
+  `      <a href="#s${i + 1}">${s.seccion}
         <em>${s.preguntas.length}</em></a>`).join('\n');
 
 const cuerpo = secciones.map((s, i) => `
 <section class="bloque" id="s${i + 1}">
-  <h2><span aria-hidden="true">${s.icono}</span> ${s.seccion}</h2>
+  <h2>${s.seccion}</h2>
   <p class="intro">${s.intro}</p>
 ${s.preguntas.map((p) => `
   <article class="pregunta" id="${slug(p.q)}">
@@ -247,99 +248,9 @@ ${JSON.stringify(faqPage, null, 2)}
 ${JSON.stringify(migas, null, 2)}
 </script>
 
-<style>
-:root{
-  --violeta:#8B5CF6; --violeta-osc:#7C3AED; --cian:#06B6D4;
-  --verde:#10B981; --ambar:#F59E0B;
-  --fondo:#0a0a0f; --panel:#13131c; --panel2:#1b1b27;
-  --borde:#2a2a3a; --texto:#E5E7EB; --tenue:#9CA3AF;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
-  background:var(--fondo);color:var(--texto);line-height:1.65;
-  -webkit-font-smoothing:antialiased}
-a{color:var(--cian);text-decoration:none}
-a:hover{text-decoration:underline}
-.envoltorio{max-width:920px;margin:0 auto;padding:0 20px}
-
-.nav{border-bottom:1px solid var(--borde);padding:16px 0;position:sticky;top:0;
-  background:rgba(10,10,15,.93);backdrop-filter:blur(8px);z-index:20}
-.nav .envoltorio{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.marca{font-weight:700;font-size:1.2rem;color:#fff}
-.marca span{background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-
-.migas{font-size:.82rem;color:var(--tenue);padding:18px 0 0}
-.migas a{color:var(--tenue)}
-
-header.hero{padding:26px 0 26px}
-h1{font-size:2.15rem;line-height:1.2;margin-bottom:14px;color:#fff}
-h1 em{font-style:normal;background:linear-gradient(90deg,var(--violeta),var(--cian));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.entradilla{color:var(--tenue);font-size:1.05rem;max-width:680px}
-
-.buscador{position:relative;margin:22px 0 6px}
-.buscador input{width:100%;padding:13px 16px 13px 44px;background:var(--panel);
-  border:1px solid var(--borde);border-radius:12px;color:var(--texto);
-  font-size:1rem;font-family:inherit}
-.buscador input:focus{outline:2px solid var(--violeta);outline-offset:1px}
-.buscador::before{content:"🔍";position:absolute;left:15px;top:50%;
-  transform:translateY(-50%);opacity:.6;font-size:.95rem}
-.contador{font-size:.83rem;color:var(--tenue);min-height:20px;margin-bottom:20px}
-
-.indice{background:var(--panel);border:1px solid var(--borde);border-radius:14px;
-  padding:18px 20px;margin-bottom:34px}
-.indice h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--tenue);margin-bottom:12px;font-weight:600}
-.indice div{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:4px}
-.indice a{display:flex;align-items:center;gap:9px;padding:7px 9px;border-radius:8px;
-  color:var(--texto);font-size:.92rem}
-.indice a:hover{background:var(--panel2);text-decoration:none}
-.indice a em{margin-left:auto;font-style:normal;font-size:.76rem;color:var(--tenue);
-  background:var(--panel2);border-radius:20px;padding:1px 8px}
-
-.bloque{margin-bottom:46px;scroll-margin-top:80px}
-.bloque h2{font-size:1.5rem;color:#fff;margin-bottom:6px;
-  padding-bottom:12px;border-bottom:1px solid var(--borde)}
-.bloque .intro{color:var(--tenue);font-size:.95rem;margin:12px 0 24px}
-
-.pregunta{margin-bottom:26px;scroll-margin-top:80px}
-.pregunta h3{font-size:1.1rem;color:#fff;margin-bottom:8px;line-height:1.4}
-.pregunta h3 .ancla{opacity:0;margin-left:8px;color:var(--violeta);
-  font-weight:400;transition:opacity .15s}
-.pregunta:hover h3 .ancla,.pregunta h3 .ancla:focus{opacity:1}
-.pregunta:target h3{color:var(--cian)}
-.respuesta{color:var(--tenue);font-size:.97rem}
-.respuesta p+p,.respuesta ul,.respuesta ol{margin-top:11px}
-.respuesta ul,.respuesta ol{margin-left:22px}
-.respuesta li{margin-bottom:6px}
-.respuesta strong{color:var(--texto)}
-
-.sinresultados{display:none;padding:34px 0;text-align:center;color:var(--tenue)}
-.sinresultados.visible{display:block}
-
-.cta{text-align:center;padding:38px 22px 42px;margin:10px 0 50px;
-  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(6,182,212,.10));
-  border:1px solid rgba(139,92,246,.28);border-radius:20px}
-.cta h2{font-size:1.45rem;color:#fff;margin-bottom:8px}
-.cta p{color:var(--tenue);max-width:520px;margin:0 auto 20px;font-size:.97rem}
-.boton{display:inline-block;padding:14px 30px;border-radius:10px;font-weight:600;
-  background:linear-gradient(90deg,var(--violeta),var(--violeta-osc));color:#fff}
-.boton:hover{text-decoration:none;opacity:.92}
-.boton.sec{background:transparent;border:1px solid var(--borde);color:var(--texto);
-  margin-left:10px}
-
-footer{border-top:1px solid var(--borde);padding:26px 0;color:var(--tenue);
-  font-size:.87rem;text-align:center}
-
-@media(max-width:640px){
-  h1{font-size:1.6rem}
-  .indice div{grid-template-columns:1fr}
-  .boton.sec{margin-left:0;margin-top:10px}
-}
-</style>
+    <link rel="stylesheet" href="/assets/pages.css">
 </head>
-<body>
+<body class="pagina-faq">
 
 <nav class="nav">
   <div class="envoltorio">

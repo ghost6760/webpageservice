@@ -45,9 +45,12 @@ contradigan entre sí**, que es donde fallan de verdad:
 - que ninguna URL del `sitemap.xml` esté bloqueada por `robots.txt`;
 - que `/.well-known/` no esté tapado, porque `security.txt` existe para leerse;
 - que los rastreadores que **responden citando** (ChatGPT-User, PerplexityBot,
-  ClaudeBot, Applebot…) estén permitidos, y que los que sólo **recopilan para
-  entrenar** (GPTBot, CCBot) sigan bloqueados — esto último es una decisión de
-  negocio, así que sale como aviso, no como fallo;
+  ClaudeBot, Applebot…) estén permitidos, y que los que **recopilan para
+  entrenar** (GPTBot, CCBot) también — se abrieron el 25-09-2026 para que los
+  modelos conozcan Hachi; cerrarlos de nuevo tiene que ser una decisión a
+  propósito, así que ahora es un fallo;
+- que el Plan Por Cita, el módulo de voz de 190 € y el «la voz no va en Autónomo
+  ni Esencial» estén en `llms.txt` y en la landing;
 - que los precios de `llms.txt` coincidan con los de la landing. Es el dato que
   más daño hace si se queda viejo, porque un modelo lo citará como autoritativo;
 - que la clave de IndexNow del script exista publicada en la raíz y coincida;

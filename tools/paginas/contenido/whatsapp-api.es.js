@@ -201,7 +201,7 @@ module.exports = {
       nota: 'Qué explica la horquilla de 29 € a 900 €' },
     { href: '/es/preguntas.html#puedo-usar-mi-numero-de-siempre',
       titulo: 'Preguntas frecuentes',
-      nota: '75 respuestas, incluidas las incómodas' }
+      nota: '85 respuestas, incluidas las incómodas' }
   ],
 
   cta: {

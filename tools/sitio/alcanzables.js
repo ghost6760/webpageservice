@@ -84,9 +84,9 @@ c('EN: existe la sección #guides',hEn.includes('id="guides"'));
 c('ES: existe la sección #guias',hEs.includes('id="guias"'));
 c('EN: nav FAQ → /faq.html',/<li><a href="\/faq\.html">FAQ<\/a><\/li>/.test(hEn));
 c('ES: nav Preguntas → /es/preguntas.html',/<li><a href="\/es\/preguntas\.html">Preguntas<\/a><\/li>/.test(hEs));
-c('EN: CTA «See all 75 questions» tras el acordeón',
+c('EN: CTA «See all 85 questions» tras el acordeón',
   /id="faq"[\s\S]*?href="\/faq\.html" class="cta-button"[\s\S]*?<\/section>/.test(hEn));
-c('ES: CTA «Ver las 75 preguntas» tras el acordeón',
+c('ES: CTA «Ver las 85 preguntas» tras el acordeón',
   /id="faq"[\s\S]*?href="\/es\/preguntas\.html" class="cta-button"[\s\S]*?<\/section>/.test(hEs));
 
 console.log('\n[simetría entre idiomas]');

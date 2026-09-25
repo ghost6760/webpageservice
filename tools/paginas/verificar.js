@@ -113,7 +113,10 @@ const existentes = new Set();
 paginas.forEach((p) => {
   [...new Set((html[p.ruta].match(/href="(\/[^"#?]*)/g) || [])
     .map((s) => s.slice(6)))].forEach((u) => {
-    if (!u.endsWith('.html') && !u.endsWith('.ico') && !u.endsWith('.png')) {
+    // Con extensión es un fichero (.html, .css, .ico…); sin ella, un directorio.
+    // Antes solo se miraban .html/.ico/.png y /assets/pages.css se buscaba como
+    // carpeta: daba 6 falsos fallos.
+    if (!/\.[a-z0-9]+$/i.test(u)) {
       // rutas de directorio (/ y /es/) — se comprueba el index
       const idx = path.join(R, u.replace(/^\//, ''), 'index.html');
       c(p.ruta + ' → ' + u, fs.existsSync(idx));

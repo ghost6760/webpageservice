@@ -31,9 +31,11 @@ La base técnica está por encima de la media. Esto está hecho y verificado:
 Dos aciertos que merecen mención porque casi nadie los tiene:
 
 **El `robots.txt`** permite `ChatGPT-User`, `OAI-SearchBot`, `PerplexityBot` y
-`Claude-Web` —los que leen para responder y citan— y bloquea `GPTBot` y `CCBot`
-—los que recopilan en bloque sin devolver visitas—. Es exactamente la decisión
-correcta para LLMO y está razonada en comentarios dentro del propio archivo.
+`Claude-Web` —los que leen para responder y citan—. `GPTBot` y `CCBot` —los que
+recopilan en bloque para entrenar— estuvieron bloqueados y **se abrieron el
+25-09-2026**: lo que un modelo «sabe» de Hachi sin buscarlo sale de ahí, y con
+ellos cerrados Gemini describía la voz «desde 149 €» y no mencionaba ninguna de
+las garantías en código. Razonado en comentarios dentro del propio archivo.
 
 **Las 8 preguntas del FAQ** están en `<details>/<summary>` **y** en el schema. Es
 un error habitual marcar preguntas que no se ven; Google lo penaliza. Aquí está

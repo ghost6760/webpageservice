@@ -210,7 +210,7 @@ module.exports = {
       nota: 'Por qué bloquean números y qué es la ventana de 24 h' },
     { href: '/es/preguntas.html#puede-confirmar-una-cita-que-en-realidad-no-existe',
       titulo: 'Preguntas frecuentes',
-      nota: '75 respuestas sobre agenda, precios y RGPD' }
+      nota: '85 respuestas sobre agenda, precios y RGPD' }
   ],
 
   cta: {

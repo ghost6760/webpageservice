@@ -1,7 +1,7 @@
 /**
  * Source of /faq.html — the English twin of es/preguntas.html.
  *
- * Same nine sections and the same 75 questions, so the two language versions
+ * Same nine sections and the same 85 questions, so the two language versions
  * stay comparable. Only the wording differs.
  *
  * PUBLICATION RULE: problem space only. No enumerated guarantees, no method for
@@ -73,6 +73,14 @@ module.exports = [
           health and therapy practices: physiotherapy, nutrition, psychology, podiatry, speech
           therapy. Also solo professionals and appointment-based businesses outside healthcare.
           The list is where we have flying hours, not who we accept.</p>`
+    },
+    {
+      q: 'Which languages does it speak?',
+      r: `<p><strong>Spanish, English and Portuguese</strong>. There are no menus and no "press 1":
+          it answers in the language the person writes or speaks in, including when they switch
+          halfway through a conversation or a call.</p>
+          <p>Your data does not change: the names of your services, your prices and your
+          business name stay exactly as they are. Only the reply is translated.</p>`
     }
   ]
 },
@@ -85,26 +93,54 @@ module.exports = [
   preguntas: [
     {
       q: 'How much does Hachi cost per month?',
-      r: `<p>Five plans: <strong>Solo €149</strong>, <strong>Essential €390</strong>,
+      r: `<p>Six options: <strong>Pay-per-booking</strong>, €49 plus €4 per appointment booked
+          over chat and €9 per appointment booked during a call, capped at €990;
+          <strong>Solo €149</strong>, <strong>Essential €390</strong>,
           <strong>Professional €690</strong>, <strong>Complete €990</strong> and
           <strong>Multi-site from €1,690</strong> a month. No lock-in: the fee is monthly and
           you can leave whenever you want.</p>
+          <p>AI voice calls are included from the Professional plan; on Solo and Essential they
+          are an add-on at €190/month.</p>
           <p>They are laid out in detail on the <a href="/#pricing">pricing section</a>.</p>`
     },
     {
       q: 'What does each plan include?',
       r: `<ul>
+            <li><strong>Pay-per-booking (€49 + €4 per chat booking and €9 per call booking,
+                capped at €990)</strong> — unlimited conversations and reminders, no proactive
+                follow-up or campaigns.</li>
             <li><strong>Solo (€149)</strong> — WhatsApp 24/7, real calendar, cancellations and
-                rescheduling, reminders, 250 conversations/month.</li>
+                rescheduling, reminders, 250 conversations/month. No voice: it can be added for
+                €190/month with 300 minutes.</li>
             <li><strong>Essential (€390)</strong> — the above plus several calendars or
                 practitioners, full dashboard with metrics, 750 conversations/month.</li>
             <li><strong>Professional (€690)</strong> — plus phone handling with an AI voice that
-                books during the call, 1,500 conversations and 400 minutes.</li>
+                books during the call and WhatsApp calls, 1,500 conversations and 400 minutes.</li>
             <li><strong>Complete (€990)</strong> — plus proactive follow-up, WhatsApp campaigns
                 and outbound calls, 3,000 conversations and 800 minutes.</li>
             <li><strong>Multi-site (from €1,690)</strong> — several sites in one account, your
                 own branding, and reselling.</li>
           </ul>`
+    },
+    {
+      q: 'Is there a plan that charges per booking instead of per conversation?',
+      r: `<p>Yes, the <strong>Pay-per-booking plan</strong>: a €49/month base fee, plus
+          <strong>€4</strong> for each appointment Hachi books over chat and <strong>€9</strong>
+          for each one it books during a call. Conversations are unlimited: talking is free, only
+          bookings are charged.</p>
+          <p>Reminders are included and there is a <strong>monthly cap of €990</strong>, the fee
+          of the Complete plan. Implementation is €290. Proactive follow-up and campaigns are not
+          included, because they work when nobody is writing and their cost does not depend on
+          bookings. If two months in a row it costs you more than a fixed plan, we tell you and
+          switch you.</p>`
+    },
+    {
+      q: 'Can I have voice calls without moving to the Professional plan?',
+      r: `<p>Yes. On the Solo and Essential plans, voice is an <strong>optional add-on at €190/month
+          with 300 minutes included</strong> (extra minutes at €0.20). From the Professional plan
+          it is included: 400 minutes, and 800 on Complete.</p>
+          <p>The €149 plan does not include voice on its own: with the add-on, the fee comes to
+          €339 a month.</p>`
     },
     {
       q: 'Is there a setup fee?',
@@ -401,10 +437,40 @@ module.exports = [
     },
     {
       q: 'Can it book over the phone, not just on WhatsApp?',
-      r: `<p>Yes, from the Professional plan. If nobody picks up at the front desk, Hachi does, with
+      r: `<p>Yes, from the Professional plan, or with the voice add-on (€190/month) on Solo and
+          Essential. If nobody picks up at the front desk, Hachi does, with
           a natural voice, checks real availability and <strong>closes the appointment during the
           call itself</strong>. Every call is logged with its transcript and summary in the
           dashboard.</p>`
+    },
+    {
+      q: 'What does the voice sound like and how long does it take to answer on the phone?',
+      r: `<p>A natural voice, not a robotic one. Underneath it runs on <strong>Retell AI</strong>, one
+          of the leading voice engines, which handles listening, speaking and the caller
+          interrupting. On top of it sits the Hachi agent, which checks the calendar and books
+          exactly as it does on WhatsApp, with the same guarantees.</p>
+          <p>Honestly: when it has to check something, it answers in <strong>about 4 seconds on
+          average</strong>, and meanwhile it says a short phrase such as "give me a second". A
+          voice that only chats answers sooner, but it does not look at your calendar. And if the
+          caller switches language mid-call, it switches too.</p>`
+    },
+    {
+      q: 'What stops the AI from getting the important things wrong?',
+      r: `<p>The important things do not depend on the model. Hachi separates two jobs:
+          <strong>the AI understands and converses</strong>, and <strong>the code enforces</strong>
+          the critical rules — the guardrails. More than 80 are enforced this way, each with its own
+          automated test. Among other things, the code prevents it from:</p>
+          <ul>
+            <li>confirming a slot that is already taken;</li>
+            <li>double-booking, even if the client insists or sends the details in pieces;</li>
+            <li>leaving a booking half-done if a step fails;</li>
+            <li>booking a time that has already passed;</li>
+            <li>quoting a price that is not in your documents;</li>
+            <li>introducing itself as another business;</li>
+            <li>claiming to be a person: if asked, it says it is an AI assistant;</li>
+            <li>losing an emergency or a request to speak to someone: it hands it to your team,
+                even if something fails internally.</li>
+          </ul>`
     }
   ]
 },
@@ -521,6 +587,38 @@ module.exports = [
           objections and missing details that arrive in pieces.</p>`
     },
     {
+      q: 'Hachi or Respond.io?',
+      r: `<p>It depends on what you want to solve. <strong>Respond.io</strong> is a messaging platform
+          for teams: it shines at routing chats among many agents and measuring their
+          productivity. If your priority is coordinating a large sales team inside WhatsApp, it is
+          a very good choice.</p>
+          <p><strong>Hachi</strong> is built so the conversation ends in an appointment written
+          into your calendar with nobody stepping in, with the critical rules enforced in code.
+          Your team is not left out: it works from a shared inbox with conversation assignment,
+          teams, labels and response-time reports.</p>`
+    },
+    {
+      q: 'Why not use Retell AI or Vapi directly?',
+      r: `<p>Because they are infrastructure, not an agent. <strong>Retell AI and Vapi</strong> are
+          excellent at transcribing, speaking and handling interruptions — in fact, Hachi's voice
+          runs on Retell — but with them alone you have to program who checks the calendar, what
+          may be promised to the client and what happens when something fails. That usually takes
+          a developer.</p>
+          <p>Hachi gives you that work done: several specialised agents — booking, changes,
+          cancellations, sales and emergencies — already built, with the same guarantees on the
+          phone as in chat, in Spanish, English or Portuguese, and set up by us.</p>`
+    },
+    {
+      q: 'Hachi or a button bot like Landbot?',
+      r: `<p>If your whole process fits in a menu, a button bot is a sound choice: the client taps
+          fixed options and there is no room for misunderstanding. What you lose is everything
+          else: voice notes, messages that mix several requests, questions nobody anticipated.</p>
+          <p>Hachi gets you what you want from buttons — an AI that does not make up what matters
+          — without forcing anyone to tap them: it understands free text and voice notes, and the
+          critical parts (availability, the booking, prices) are enforced by code, not by the
+          model.</p>`
+    },
+    {
       q: 'Can it invent a price or a service I do not offer?',
       r: `<p>An unconstrained model fills in what it does not know, because that is what it was
           trained to do: it sounds convincing and it is false. In Hachi the answer is checked against
@@ -597,6 +695,16 @@ module.exports = [
           signed before we start. If you need to see it before deciding, ask for it at the demo.</p>`
     },
     {
+      q: 'Are you ISO 27001 or SOC 2 certified?',
+      r: `<p>No, and we would rather say so plainly: Hachi does not currently hold certifications such
+          as ISO 27001 or SOC 2, which large corporations often require in procurement.</p>
+          <p>What there is: the Article 28 GDPR data processing agreement, signed before any data
+          is touched; health data treated as a special category; full isolation between
+          businesses; encrypted credentials; and the notice that the client is talking to an AI,
+          as required by Article 50 of the EU AI Act. If your company needs a specific
+          certification to buy, tell us in the demo.</p>`
+    },
+    {
       q: 'Do I lose control of what the assistant says?',
       r: `<p>The opposite. From the dashboard you edit how it replies, what prices it quotes, what services
           it offers and <strong>what it must never say</strong>. Your team sees every conversation in real
@@ -654,6 +762,14 @@ module.exports = [
           <strong>simulator</strong> for testing any change in a practice conversation before a real customer
           sees it. If you would rather we did it, message us and routine changes are done within 24-48 working
           hours.</p>`
+    },
+    {
+      q: 'Can my team step in and split the conversations between them?',
+      r: `<p>Yes. Every conversation arrives in a <strong>shared inbox</strong> where your team sees it
+          in real time and can step in at any moment. You can assign each conversation to a person
+          or a team, use labels and canned responses, and see response-time reports.</p>
+          <p>When Hachi detects that a person is needed — an emergency, a complaint, someone asking
+          for it — it leaves the conversation pending for your team, with all the context.</p>`
     },
     {
       q: 'What is quoted separately?',

@@ -82,6 +82,14 @@ module.exports = [
           logopedia. También profesionales independientes y negocios con cita previa
           fuera de la salud. La lista es dónde tenemos horas de vuelo, no a quién
           aceptamos.</p>`
+    },
+    {
+      q: '¿En qué idiomas atiende?',
+      r: `<p>En <strong>español, inglés y portugués</strong>. No hay menús ni «pulse 1»: contesta
+          en el idioma en el que le escribe o le habla la persona, también si cambia a mitad de
+          la conversación o de una llamada.</p>
+          <p>Lo que no cambia son tus datos: los nombres de tus servicios, tus precios y el de
+          tu negocio se mantienen tal cual. Solo se traduce la respuesta.</p>`
     }
   ]
 },
@@ -94,27 +102,56 @@ module.exports = [
   preguntas: [
     {
       q: '¿Cuánto cuesta Hachi al mes?',
-      r: `<p>Cinco planes: <strong>Autónomo 149 €</strong>, <strong>Esencial 390 €</strong>,
+      r: `<p>Seis opciones: <strong>Por Cita</strong>, 49 € más 4 € por cita agendada por
+          chat y 9 € por cita agendada en una llamada, con tope de 990 €;
+          <strong>Autónomo 149 €</strong>, <strong>Esencial 390 €</strong>,
           <strong>Profesional 690 €</strong>, <strong>Clínica Completa 990 €</strong> y
           <strong>Multi-sede desde 1.690 €</strong> al mes. Sin permanencia: la cuota es
           mensual y te das de baja cuando quieras.</p>
+          <p>Las llamadas con voz de IA vienen incluidas desde el plan Profesional; en
+          Autónomo y Esencial se añaden como módulo de 190 €/mes.</p>
           <p>Puedes verlos en detalle en <a href="/es/#precios">planes y precios</a>.</p>`
     },
     {
       q: '¿Qué incluye cada plan?',
       r: `<ul>
+            <li><strong>Por Cita (49 € + 4 € por cita de chat y 9 € por cita de llamada,
+                tope de 990 €)</strong> — conversaciones ilimitadas y recordatorios, sin
+                seguimiento proactivo ni campañas.</li>
             <li><strong>Autónomo (149 €)</strong> — WhatsApp 24/7, agenda real,
-                cancelaciones y reagendamientos, recordatorios, 250 conversaciones/mes.</li>
+                cancelaciones y reagendamientos, recordatorios, 250 conversaciones/mes. Sin
+                voz: se añade como módulo de 190 €/mes con 300 minutos.</li>
             <li><strong>Esencial (390 €)</strong> — lo anterior más varias agendas o
                 profesionales, panel completo con métricas, 750 conversaciones/mes.</li>
             <li><strong>Profesional (690 €)</strong> — más atención telefónica con voz de
-                IA que agenda durante la llamada, 1.500 conversaciones y 400 minutos.</li>
+                IA que agenda durante la llamada y llamadas de WhatsApp, 1.500 conversaciones y
+                400 minutos.</li>
             <li><strong>Clínica Completa (990 €)</strong> — más seguimiento proactivo,
                 campañas de WhatsApp y llamadas salientes, 3.000 conversaciones y
                 800 minutos.</li>
             <li><strong>Multi-sede (desde 1.690 €)</strong> — varias sedes en una cuenta,
                 marca propia y reventa.</li>
           </ul>`
+    },
+    {
+      q: '¿Hay un plan que cobre por cita en vez de por conversaciones?',
+      r: `<p>Sí, el <strong>Plan Por Cita</strong>: 49 €/mes de cuota base, más <strong>4 €</strong>
+          por cada cita que Hachi agende por chat y <strong>9 €</strong> por cada cita que
+          agende durante una llamada. Las conversaciones son ilimitadas: no se cobra por
+          hablar, solo por agendar.</p>
+          <p>Incluye los recordatorios y tiene un <strong>tope mensual de 990 €</strong>, la
+          cuota del plan Clínica Completa. La implantación es de 290 €. No incluye
+          seguimiento proactivo ni campañas, porque trabajan cuando nadie escribe y su coste
+          no depende de las citas. Si dos meses seguidos te sale más caro que un plan fijo, te
+          avisamos y te lo cambiamos.</p>`
+    },
+    {
+      q: '¿Puedo tener llamadas de voz sin pasar al plan Profesional?',
+      r: `<p>Sí. En los planes Autónomo y Esencial la voz se añade como <strong>módulo opcional
+          por 190 €/mes, con 300 minutos incluidos</strong> (el minuto extra, a 0,20 €). Desde
+          el plan Profesional viene incluida: 400 minutos, y 800 en Clínica Completa.</p>
+          <p>El plan de 149 € no incluye voz por sí solo: con el módulo, la cuota queda en
+          339 € al mes.</p>`
     },
     {
       q: '¿Hay coste de implantación?',
@@ -418,10 +455,40 @@ module.exports = [
     },
     {
       q: '¿Puede agendar por teléfono, no sólo por WhatsApp?',
-      r: `<p>Sí, desde el plan Profesional. Si nadie coge el teléfono en recepción, Hachi lo
+      r: `<p>Sí, desde el plan Profesional, o con el módulo de voz (190 €/mes) en Autónomo y
+          Esencial. Si nadie coge el teléfono en recepción, Hachi lo
           coge con voz natural, consulta la disponibilidad real y <strong>cierra la cita
           durante la propia llamada</strong>. Cada llamada queda registrada con su
           transcripción y su resumen en el panel.</p>`
+    },
+    {
+      q: '¿Cómo suena la voz y cuánto tarda en contestar por teléfono?',
+      r: `<p>Con voz natural, no robótica. Por debajo funciona sobre <strong>Retell AI</strong>, uno
+          de los motores de voz de referencia, que se encarga de escuchar, hablar y gestionar
+          que el cliente interrumpa. Encima va el agente de Hachi, que consulta la agenda y
+          reserva igual que por WhatsApp, con las mismas garantías.</p>
+          <p>Con honestidad: cuando tiene que comprobar algo, contesta en <strong>unos 4
+          segundos de media</strong>, y mientras tanto dice una frase corta, del tipo «dame un
+          segundo». Una voz que solo conversa contesta antes, pero no mira tu agenda. Y si el
+          cliente cambia de idioma a mitad de la llamada, cambia con él.</p>`
+    },
+    {
+      q: '¿Qué impide que la IA se equivoque en lo importante?',
+      r: `<p>Que lo importante no depende del modelo. Hachi separa dos cosas: <strong>la IA entiende
+          y conversa</strong>, y <strong>el código hace cumplir</strong> las reglas críticas —los
+          guardrails—. Hay más de 80 impuestas así, cada una con su prueba automática. Entre
+          otras cosas, el código impide:</p>
+          <ul>
+            <li>confirmar una hora que ya está ocupada;</li>
+            <li>duplicar una cita aunque el cliente insista o mande los datos a trozos;</li>
+            <li>dejar una reserva a medias si falla un paso;</li>
+            <li>reservar una hora que ya pasó;</li>
+            <li>dar un precio que no está en tus documentos;</li>
+            <li>presentarse como si fuera otra empresa;</li>
+            <li>decir que es una persona: si le preguntan, dice que es un asistente de IA;</li>
+            <li>perder una urgencia o una petición de hablar con alguien: la pasa a tu equipo,
+                también si algo falla por dentro.</li>
+          </ul>`
     }
   ]
 },
@@ -542,6 +609,39 @@ module.exports = [
           cambios de opinión, objeciones y datos que faltan y llegan a trozos.</p>`
     },
     {
+      q: '¿Hachi o Respond.io?',
+      r: `<p>Depende de lo que quieras resolver. <strong>Respond.io</strong> es una plataforma de
+          mensajería para equipos: brilla repartiendo chats entre muchos agentes y midiendo su
+          productividad. Si tu prioridad es coordinar a un equipo comercial grande dentro de
+          WhatsApp, es muy buena elección.</p>
+          <p><strong>Hachi</strong> está hecho para que la conversación termine en una cita
+          escrita en tu agenda sin que nadie intervenga, con las reglas críticas impuestas en
+          código. Tu equipo no se queda fuera: entra por una bandeja compartida con asignación
+          de conversaciones, equipos, etiquetas e informes de tiempos de respuesta.</p>`
+    },
+    {
+      q: '¿Por qué no usar Retell AI o Vapi directamente?',
+      r: `<p>Porque son infraestructura, no un agente. <strong>Retell AI y Vapi</strong> son
+          excelentes transcribiendo, hablando y gestionando interrupciones —de hecho, la voz de
+          Hachi funciona sobre Retell—, pero con ellos solos tienes que programar quién consulta
+          la agenda, qué se le puede prometer al cliente y qué pasa cuando algo falla.
+          Normalmente, eso exige un desarrollador.</p>
+          <p>Hachi te da ese trabajo hecho: varios agentes especializados —agenda, cambios,
+          cancelaciones, ventas y urgencias— ya construidos, con las mismas garantías por
+          teléfono que por chat, en español, inglés o portugués, y montados por nosotros.</p>`
+    },
+    {
+      q: '¿Hachi o un bot de botones como Landbot?',
+      r: `<p>Si todo tu proceso cabe en un menú, un bot de botones es una opción correcta: el
+          cliente pulsa opciones fijas y no hay malentendidos. Lo que se pierde es todo lo
+          demás: audios, mensajes que mezclan varias cosas, preguntas que no estaban
+          previstas.</p>
+          <p>Hachi consigue lo que buscas en los botones —que la IA no se invente lo
+          importante— sin obligar a nadie a pulsarlos: entiende texto libre y notas de voz, y
+          lo crítico (la disponibilidad, la reserva, los precios) lo impone el código, no el
+          modelo.</p>`
+    },
+    {
       q: '¿Puede inventarse un precio o un servicio que no ofrezco?',
       r: `<p>Un modelo sin restricciones completa lo que no sabe, porque para eso está
           entrenado: suena convincente y es falso. En Hachi la respuesta se comprueba
@@ -623,6 +723,17 @@ module.exports = [
           pídelo en la demostración.</p>`
     },
     {
+      q: '¿Tenéis certificación ISO 27001 o SOC 2?',
+      r: `<p>No, y preferimos decirlo claro: Hachi no tiene hoy certificaciones como ISO 27001 o
+          SOC 2, que suelen pedir las grandes corporaciones en sus compras.</p>
+          <p>Lo que sí hay: el contrato de encargado del tratamiento del artículo 28 del RGPD,
+          firmado antes de tocar un dato; los datos de salud tratados como categoría especial;
+          aislamiento completo entre empresas; credenciales cifradas; y el aviso de que el
+          cliente habla con una IA que exige el artículo 50 del Reglamento europeo de IA. Si tu
+          empresa necesita una certificación concreta para comprar, dínoslo en la
+          demostración.</p>`
+    },
+    {
       q: '¿Pierdo el control de lo que dice el asistente?',
       r: `<p>Al contrario. Desde el panel editas cómo responde, qué precios da, qué
           servicios ofrece y <strong>qué no debe decir nunca</strong>. Tu equipo ve todas
@@ -684,6 +795,15 @@ module.exports = [
           conversación de prueba antes de que lo vea un cliente real. Si prefieres que lo
           dejemos hecho nosotros, nos escribes y los cambios habituales quedan resueltos en
           24-48 horas laborables.</p>`
+    },
+    {
+      q: '¿Mi equipo puede intervenir y repartirse las conversaciones?',
+      r: `<p>Sí. Todas las conversaciones llegan a una <strong>bandeja compartida</strong> donde tu
+          equipo las ve en tiempo real y puede entrar en cualquier momento. Permite asignar cada
+          conversación a una persona o a un equipo, usar etiquetas y respuestas guardadas, y ver
+          informes de tiempos de respuesta.</p>
+          <p>Cuando Hachi detecta que hace falta una persona —una urgencia, una queja, alguien
+          que lo pide— deja la conversación pendiente para tu equipo, con todo el contexto.</p>`
     },
     {
       q: '¿Qué se presupuesta aparte?',
