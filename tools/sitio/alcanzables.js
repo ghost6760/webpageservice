@@ -53,7 +53,11 @@ const TODAS=['index.html','es/index.html','calculator.html','es/calculadora.html
   'es/cuanto-cuesta-un-asistente-ia.html','why-flow-based-bots-fail.html',
   'es/por-que-los-bots-de-flujo-fallan.html','privacy-policy.html',
   'es/privacy-policy.html','terms-of-service.html','es/terms-of-service.html',
-  'data-deletion.html'];
+  'data-deletion.html',
+  // Páginas de sector: todas, más sus dos índices (tools/sectores).
+  ...['es/sectores', 'industries'].filter((d) => fs.existsSync(path.join(R, d)))
+    .flatMap((d) => fs.readdirSync(path.join(R, d)).filter((f) => f.endsWith('.html'))
+      .map((f) => d + '/' + f))];
 
 console.log('\n[alcanzable desde hachi.live/ (portada inglesa)]');
 TODAS.forEach(p=>c(p+(en.vistos.has(p)?'  · salto '+en.profundidad[p]+' desde '+en.desde[p]:''),
@@ -74,6 +78,11 @@ console.log('  ES: '+unClicEs.join(', '));
 ['es/calculadora.html','es/preguntas.html','es/cuanto-cuesta-un-asistente-ia.html',
  'es/por-que-los-bots-de-flujo-fallan.html','es/whatsapp-api-vs-business.html']
  .forEach(p=>c('ES a 1 clic: '+p,unClicEs.includes(p),'salto '+es.profundidad[p]));
+
+// Los índices de sectores, a un clic de su portada (enlazados en «No hace falta
+// ser una clínica» y en el pie).
+c('EN a 1 clic: industries/index.html', unClicEn.includes('industries/index.html'));
+c('ES a 1 clic: es/sectores/index.html', unClicEs.includes('es/sectores/index.html'));
 
 console.log('\n[el nav lleva a las guías]');
 const hEn=fs.readFileSync(path.join(R,'index.html'),'utf8');

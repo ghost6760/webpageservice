@@ -607,3 +607,88 @@ body.pagina-legal { padding: 2rem; line-height: 1.8; }
     .indice div { grid-template-columns: 1fr; }
     .boton.sec { margin-left: 0; margin-top: 10px; }
 }
+
+/* ═══════════════ Páginas de sector (/es/sectores/, /industries/) ═══════════════
+   Generadas por tools/sectores/generar.js. Mismo sistema que las guías; solo
+   añaden la conversación de ejemplo y la caja del plan. */
+.chat {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 18px 18px 14px;
+    margin: 8px 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat p { margin: 0; }
+
+.chat-cab {
+    font-size: 0.8rem;
+    color: var(--tenue);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--borde);
+    margin-bottom: 4px !important;
+}
+
+.chat-cab b { color: var(--texto); font-weight: 600; }
+
+.msg {
+    max-width: 82%;
+    padding: 9px 13px;
+    border-radius: 14px;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.msg.entra {
+    align-self: flex-start;
+    background: var(--panel2);
+    border: 1px solid var(--borde);
+    border-bottom-left-radius: 4px;
+}
+
+.msg.sale {
+    align-self: flex-end;
+    background: rgba(139, 92, 246, 0.14);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-bottom-right-radius: 4px;
+}
+
+.chat-pie {
+    font-size: 0.76rem;
+    color: var(--tenue);
+    text-align: center;
+    padding-top: 6px;
+}
+
+.plan-caja {
+    background: var(--panel);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 14px;
+    padding: 18px 22px 4px;
+    margin: 8px 0 18px;
+}
+
+.plan-nombre {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--violeta);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.plan-precio { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.plan-precio span { font-size: 0.85rem; font-weight: 400; color: var(--tenue); }
+
+.rejilla-sectores { margin-top: 30px; }
+
+@media (max-width: 640px) {
+    .msg { max-width: 92%; }
+    .plan-precio { font-size: 1.3rem; }
+}
+
+/* Tres sectores vecinos + «todos»: cuatro en fila en escritorio, sin huérfano. */
+.pagina-sector .relacionadas div { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }

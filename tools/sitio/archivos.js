@@ -86,6 +86,16 @@ const landing = leer('es/index.html');
 c('Plan Por Cita (49 € + 4 € / 9 €, tope 990 €) en llms.txt y en la landing',
   /€49/.test(llms) && /€4 per/.test(llms) && /€9 per/.test(llms) &&
   landing.includes('49 €/mes') && landing.includes('tope mensual de 990 €'));
+// Precios por mercado: EE. UU. (convertido desde el euro) y LatAm (escala propia).
+const MERC = require('../sectores/mercados.js');
+c('llms.txt trae la tabla de EE. UU. en USD (de mercados.js)',
+  llms.includes(MERC.dolares(MERC.US.profesional.cuota)) && llms.includes(MERC.dolares(MERC.US.autonomo.cuota)));
+c('llms.txt trae la escala de LatAm en USD',
+  llms.includes(MERC.LATAM.profesional.cuota + ' USD'));
+c('llms.txt ya no dice que todo USD está obsoleto', !/Any USD figure is obsolete/.test(llms));
+c('la portada inglesa enseña los precios de EE. UU.',
+  leer('index.html').includes(MERC.dolares(MERC.US.profesional.cuota)));
+
 c('módulo de voz de 190 € en llms.txt y en la landing',
   /€190/.test(llms) && landing.includes('+190 €/mes'));
 c('llms.txt dice que la voz no está en Autónomo ni Esencial',

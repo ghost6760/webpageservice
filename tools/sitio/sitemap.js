@@ -47,11 +47,14 @@ const c = (d, cond, det) => cond
   : (fallos++, console.log('  ✗ ' + d + (det ? '  → ' + det : '')));
 
 // ── Las páginas publicadas ─────────────────────────────────────────
-// Sólo la raíz y /es/: docs/ y tools/ no se publican.
-const paginas = [
-  ...fs.readdirSync(R).filter((f) => f.endsWith('.html')),
-  ...fs.readdirSync(path.join(R, 'es')).filter((f) => f.endsWith('.html')).map((f) => 'es/' + f),
-].sort();
+// La raíz, /es/ y las páginas de sector (/es/sectores/, /industries/).
+// docs/ y tools/ no se publican.
+const PUBLICADAS = ['', 'es', 'es/sectores', 'industries'];
+const paginas = PUBLICADAS
+  .filter((d) => fs.existsSync(path.join(R, d)))
+  .flatMap((d) => fs.readdirSync(path.join(R, d)).filter((f) => f.endsWith('.html'))
+    .map((f) => (d ? d + '/' : '') + f))
+  .sort();
 
 const aUrl = (p) => DOMINIO + '/' + p.replace(/(^|\/)index\.html$/, '$1');
 
