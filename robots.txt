@@ -130,5 +130,6 @@ Disallow: /
 Sitemap: https://hachi.live/sitemap.xml
 
 # LLM-Content: https://hachi.live/llms.txt
+# LLM-Full-Content: https://hachi.live/llms-full.txt
 
 Host: https://hachi.live

@@ -1,0 +1,20 @@
+/* TEAM */
+Founder & CEO (LinkedIn below)
+Contact: ceo [at] hachi.live
+LinkedIn: https://www.linkedin.com/in/juan-felipe-rúa-cadavid-3a3a3b143
+Company: https://www.linkedin.com/company/hachi-live/
+Code: https://github.com/ghost6760
+
+/* THANKS */
+The first clinics that trusted an assistant with their calendar,
+and told us every time it got something wrong.
+
+/* SITE */
+Last update: 2026/09/25
+Language: English / Español
+Doctype: HTML5
+Standards: HTML5, CSS3, schema.org (JSON-LD), Atom, RFC 9116 (security.txt), llms.txt
+Components: nginx, Inter, Font Awesome
+Software: hand-written HTML, with small Node scripts that generate the FAQ,
+          the industry pages, the sitemap and the feed
+For AI assistants: https://hachi.live/llms.txt · https://hachi.live/llms-full.txt

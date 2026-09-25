@@ -254,7 +254,7 @@ ${pag.relacionadas.map((r) =>
 <meta property="og:url" content="${url}">
 <meta property="og:title" content="${esc(pag.ogTitulo || pag.titulo)}">
 <meta property="og:description" content="${esc(pag.descripcion)}">
-<meta property="og:image" content="${base}/images/og-image.png">
+<meta property="og:image" content="${base}/images/og-image${pag.lang === 'es' ? '-es' : ''}.png">
 
 ${bloquesLd}
 

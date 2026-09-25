@@ -273,16 +273,22 @@ teniendo ya una marca fragmentada.
 
 ### Fase 2 · Archivos técnicos
 
-| Archivo | Estado | Acción |
+**Estado al 25-09-2026: la fase está completa.** Detalle y qué hace cada uno en
+[`pseo-paginas-por-sector.md`](pseo-paginas-por-sector.md) §12.
+
+| Archivo | Estado | Nota |
 |---|---|---|
-| `sitemap.xml` | 8 URLs | Ampliar según Fase 1; añadir `lastmod` real |
-| `llms.txt` | Bueno | Corregir 63→57; añadir las URLs nuevas |
-| `robots.txt` | Muy bueno | Sin cambios |
-| `security.txt` | Correcto | Renovar `Expires` antes de nov 2026 |
-| **`/indexnow.txt`** | ❌ Falta | Clave + ping: indexación en horas en Bing y Yandex |
-| **`/feed.xml`** | ❌ Falta | RSS del blog; lo consumen agregadores y algunos rastreadores de IA |
-| **`/humans.txt`** | ❌ Falta | Marginal, pero es una señal de marca más |
-| **`og-image-es.png`** | ❌ Falta | Clic al compartir en español |
+| `sitemap.xml` | ✅ 41 URLs | Se genera (`tools/sitio/sitemap.js`) con `lastmod` real del último commit |
+| `llms.txt` | ✅ | Precios por mercado (España, EE. UU., LatAm), sectores, guardrails, notas para asistentes |
+| `llms-full.txt` | ✅ **Nuevo** | Todo el sitio en markdown en un fichero (`tools/sitio/llms-full.js`) |
+| `robots.txt` | ✅ | GPTBot y CCBot abiertos; `/docs/` y `/tools/` fuera |
+| `security.txt` | ✅ | `Expires` renovado hasta el 20-09-2027 |
+| Clave de IndexNow | ✅ | Ya existía: `f245e831….txt` en la raíz + `tools/sitio/indexnow.sh` (el «falta» era un error de esta tabla) |
+| `feed.xml` | ✅ **Nuevo** | Atom de guías, FAQ y sectores (`tools/sitio/feed.js`) |
+| `humans.txt` | ✅ **Nuevo** | Enlazado con `rel="author"` desde las portadas |
+| `og-image-es.png` | ✅ **Nuevo** | Y rehechas `og-image.png` y `twitter-image*.png` con el logo real |
+| Favicon e iconos | ✅ **Rehechos** | Eran un cuadrado morado de relleno; ahora el logo real, con 48×48 para Google |
+| `manifest.json` | ✅ | Sin referencias rotas; iconos `any` y `maskable` |
 
 Y fuera del repositorio, **por comprobar y hacer**: verificar el dominio en
 **Google Search Console** y **Bing Webmaster Tools**, y enviar el sitemap en

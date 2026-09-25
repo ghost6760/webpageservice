@@ -7,7 +7,7 @@
 > se sirva).
 >
 > Empezado el 25-09-2026. Actualízalo cada vez que se publique una tanda o se
-> tome una decisión; el historial está en §12.
+> tome una decisión; el historial está en §14.
 
 ---
 
@@ -20,7 +20,8 @@
 | **Mercados** | Español → España y Latinoamérica · Inglés → Estados Unidos |
 | **Sitemap** | De 17 a **41 URLs** |
 | **Indexación** | 10 solicitudes al día en Search Console → plan de 3 días en §5 |
-| **Siguiente** | Indexar (§5) → medir 3-6 semanas (§6) → segunda tanda de sectores (§7) |
+| **Siguiente** | Indexar (§5) → medir 3-6 semanas (§6) → segunda tanda de sectores (§7) y otros ejes (§13) |
+| **Archivos técnicos** | Completos: sitemap, robots, llms.txt, llms-full.txt, feed, humans, security, IndexNow, imágenes, iconos (§12) |
 | **Lo que no se puede romper** | §9: ni una «doorway page», ni una promesa que el producto no cumple |
 
 ---
@@ -360,13 +361,13 @@ Por orden de impacto:
 | 1 | **Indexar** las 24 URLs (§5) | Search Console | Sin esto no existe nada de lo anterior |
 | 2 | **Conocimiento de EE. UU. para el agente de Hachi** (precios en USD, SMS, HIPAA) | backend: RAG de la empresa `hachi` | Hoy el agente solo sabe de España: un prospecto que llega de `/industries/` y escribe recibiría precios en euros |
 | 3 | **Montar el SMS** | backend (Twilio) | Las páginas de EE. UU. lo prometen desde el 25-09-2026. Tiene que existir antes del primer cliente de allí |
-| 4 | **Que `docs/` y `tools/` no se sirvan** | Coolify (§10.3) | Se servían; el arreglo está en el repo, falta aplicarlo en Coolify |
+| 4 | ~~Que `docs/` y `tools/` no se sirvan~~ | Coolify (§10.3) | ✅ Hecho el 25-09-2026 (Dockerfile + «Redirect to non-www») |
 | 5 | **Enlaces externos** a las páginas de sector | fuera del sitio | Un dominio nuevo posiciona despacio sin enlaces: directorios del sector, un artículo invitado, LinkedIn enlazando al sector concreto, la firma de los correos de cada campaña apuntando a su sector |
 | 6 | **Usar las páginas en las campañas** | correo en frío | El correo a una veterinaria debería enlazar `/industries/veterinary-clinics.html`, no la portada: más conversión y señal de uso para Google |
 | 7 | Segunda tanda de sectores (§7.1) | `tools/sectores` | Cuando haya datos de la primera |
 | 8 | Portar la plantilla de las guías | `tools/paginas/generar.js` | Está desfasada: **no ejecutarla** hasta portarla (ver `tools/preguntas/README.md`) |
 | 9 | Páginas pendientes del plan SEO | `plan-seo-y-posicionamiento.md` §4 | `rgpd-clinicas-whatsapp`, `migrar-numero-whatsapp-api`, `test-nivel-asistente` |
-| 10 | Imagen para compartir por sector | `images/` | Hoy todas comparten `og-image.png` |
+| 10 | Imagen para compartir por sector | `images/`, `tools/sitio/og-image.py` | Hoy una por idioma (`og-image.png`, `og-image-es.png`); una por sector daría más clic al compartir |
 
 ---
 
@@ -491,11 +492,159 @@ las `www` como «página alternativa».
 8. Capturas en escritorio y móvil antes de publicar.
 9. Commit, push a `main`, `bash tools/sitio/indexnow.sh` y añadir sus dos URLs
    al plan de indexación (§5).
-10. Actualiza este documento: §2.1, §7.1 y §12.
+10. Actualiza este documento: §2.1, §7.1 y §14.
 
 ---
 
-## 12 · Historial de decisiones
+## 12 · Archivos técnicos del sitio (estado al 25-09-2026)
+
+| Archivo | Para qué sirve | Cómo se mantiene |
+|---|---|---|
+| `sitemap.xml` | La lista de URLs para buscadores (41), con `lastmod` real y `hreflang` | `node tools/sitio/sitemap.js --escribir` |
+| `robots.txt` | Qué pueden rastrear. Abiertos todos los de IA, también GPTBot y CCBot; fuera `/docs/` y `/tools/` | A mano |
+| `llms.txt` | El resumen autoritativo para modelos: precios por mercado, planes, sectores, guardrails, notas para asistentes | A mano; `archivos.js` comprueba precios y enlaces |
+| `llms-full.txt` | **Todo el sitio en markdown** en un fichero (≈290 KB), inglés y luego español | `node tools/sitio/llms-full.js --escribir` (sale del HTML publicado) |
+| `feed.xml` | Feed Atom de guías, FAQ y sectores: agregadores y rastreadores de IA ven lo nuevo sin recorrer el sitio | `node tools/sitio/feed.js --escribir` |
+| `humans.txt` | Quién hace el sitio y con qué; señal de marca menor | A mano (`rel="author"` desde las portadas) |
+| `.well-known/security.txt` | Contacto de seguridad (RFC 9116). `Expires` hasta el **20-09-2027** | Renovar antes de esa fecha (`archivos.js` avisa a 60 días) |
+| Clave de IndexNow (`f245e831….txt`) | Permite avisar a Bing y Yandex de URLs nuevas en minutos | `bash tools/sitio/indexnow.sh` tras cada publicación |
+| `images/og-image.png` · `og-image-es.png` · `twitter-image*.png` | La tarjeta al compartir en WhatsApp, LinkedIn, X… con el logo real | `python3 tools/sitio/og-image.py` (Playwright) |
+| `favicon.ico` + `icons/*` | Pestaña, resultados de Google (≥ 48×48), iPhone y Android (`maskable`) | Generados del logo real (disco oscuro) |
+| `manifest.json` | Instalación como app; sin referencias rotas | A mano |
+
+**Orden al publicar algo nuevo:** `sitemap.js --escribir` → `llms-full.js
+--escribir` → `feed.js --escribir` (los dos últimos leen el sitemap) →
+`archivos.js`, `sitemap.js`, `alcanzables.js` → commit → push →
+`indexnow.sh`.
+
+**Pendiente, menor:** página 404 propia (hoy la de nginx, sin enlaces); ver §13.
+
+---
+
+## 13 · Más estrategias de posicionamiento
+
+Lo publicado hasta ahora es **un eje** (sector × mercado). Hay más ejes, más
+técnica y, sobre todo, **autoridad**, que es lo que le falta a un dominio nuevo.
+Ordenado por lo que aporta frente a lo que cuesta.
+
+### 13.1 · Prioridad (lo que haría, en este orden)
+
+| # | Estrategia | Aporta | Cuesta | Tipo |
+|---|---|---|---|---|
+| 1 | Alta en **Bing Webmaster Tools** + IndexNow tras cada publicación | Alto (Bing alimenta a ChatGPT y a Copilot) | 15 min | Técnica |
+| 2 | **Directorios de software** (G2, Capterra/GetApp, Product Hunt, AlternativeTo, SaaSworthy, directorios de IA) | Alto: primeros enlaces de autoridad y fuentes que citan los modelos | 1 tarde | Autoridad |
+| 3 | **Páginas por problema** (eje nuevo de pSEO, §13.3) | Alto: búsquedas de intención alta sin sector | 1-2 días | Contenido |
+| 4 | **Comparativas y alternativas** (§13.4) | Alto: quien busca «alternativas a X» está comprando | 1 día | Contenido |
+| 5 | **Analítica de conversiones** propia (Umami o Plausible en Coolify) | Alto: saber qué página trae demos | 1 h | Medición |
+| 6 | Correos de campaña → **página del sector**, no la portada | Medio-alto | Cambiar plantillas | Autoridad/uso |
+| 7 | **Glosario** programático (§13.5) | Medio: cola larga + respuestas citables por modelos | 1-2 días | Contenido |
+| 8 | **Herramientas gratuitas** (§13.6) | Medio-alto: enlaces naturales | 1-3 días cada una | Contenido |
+| 9 | **Datos propios** publicados (§13.7) | Alto a medio plazo: lo citan medios y modelos | Depende de datos | Autoridad |
+| 10 | Casos de cliente con números (con permiso) | Alto para convertir | Cuando haya cliente dispuesto | Contenido |
+| 11 | Enlazado interno guías ↔ sectores ↔ FAQ | Medio | 2 h | Técnica |
+| 12 | Core Web Vitals (PageSpeed Insights) | Medio | 2-4 h | Técnica |
+| 13 | 404 propia con enlaces a portada, sectores y FAQ | Bajo-medio | 1 h | Técnica |
+
+### 13.2 · Técnica
+
+- **Bing Webmaster Tools.** Alta, verificar el dominio (se puede importar desde
+  Search Console), enviar el sitemap. IndexNow ya está: ejecutarlo tras cada
+  publicación. Opcional: un GitHub Action que lo lance en cada push a `main`.
+- **Core Web Vitals.** Medir `/`, `/es/` y un sector con PageSpeed Insights. Lo
+  más probable: el HTML de las portadas (~130 KB) y Font Awesome entero; se puede
+  cargar solo el subconjunto de iconos que se usan.
+- **Datos estructurados que sí tocan.** `Organization`, `SoftwareApplication`,
+  `Service`, `FAQPage`, `BreadcrumbList` y `CollectionPage` ya están. Cuando
+  haya vídeos, `VideoObject` con transcripción. **Nunca** `AggregateRating` sin
+  reseñas reales publicadas en una plataforma de terceros: Google penaliza el
+  marcado de reseñas inventado.
+- **Enlazado interno.** Las tres guías deberían enlazar a los sectores donde
+  aplican (la de bots de flujo → talleres, veterinarias; la de precio →
+  peluquerías por el Plan Por Cita). Y el FAQ → sectores.
+- **404 propia.** `error_page 404 /404.html;` en `deploy/nginx.conf` y una página
+  con enlaces: recupera visitas de enlaces rotos (como `/h`).
+
+### 13.3 · Eje nuevo de pSEO: páginas por problema
+
+Mismo generador que los sectores, otra intención: la persona no busca «para
+veterinarias», busca **lo que le pasa**. Candidatas (ES/EN):
+
+| Página | Búsqueda que captura |
+|---|---|
+| Recordatorios de citas por WhatsApp (y por SMS en EE. UU.) | «recordatorio de citas whatsapp automático» · "appointment reminder text" |
+| Atender las llamadas perdidas | «no puedo coger el teléfono en la clínica» · "missed call text back" |
+| Reducir las ausencias (no-shows) | «cómo reducir ausencias en la clínica» · "reduce no-shows" |
+| Lista de espera automática | «lista de espera citas canceladas» · "automated waitlist" |
+| Contestar los leads de Meta en segundos | «responder leads de facebook automáticamente» · "speed to lead" |
+| Recepcionista fuera de horario | «atención fuera de horario whatsapp» · "after-hours answering service" |
+
+Misma regla que los sectores: contenido escrito a mano, verificación de
+parecido, y cada página enlazada desde los sectores donde ese problema pesa.
+
+### 13.4 · Comparativas y alternativas
+
+Las búsquedas «X vs Y» y «alternativas a X» son de alguien que ya está
+comprando. Candidatas: *Hachi vs Respond.io*, *alternativas a Landbot*,
+*Retell AI o Hachi*, *recepcionista con IA vs recepcionista humana*,
+*Hachi vs un bot de ManyChat*. Reglas: justas (qué hace mejor el otro, como ya
+hace la sección de la portada), con fecha de revisión y sin afirmar nada del
+competidor que no esté en su web pública.
+
+### 13.5 · Glosario
+
+Definiciones cortas y exactas, una por URL, que los modelos citan con gusto:
+*ventana de 24 horas de WhatsApp*, *plantilla de WhatsApp*, *WhatsApp Business
+API*, *no-show*, *margen de contribución*, *A2P 10DLC*, *BAA de HIPAA*, *Lead
+Ads*, *RAG*, *guardrails de IA*, *invariante*. 20-40 términos, enlazados desde el
+FAQ y las guías. Cuidado con la regla del espacio del problema: definir el
+término, no contar cómo está hecho Hachi.
+
+### 13.6 · Herramientas gratuitas
+
+La calculadora ya existe. Más: **test de nivel de tu asistente** (15 preguntas
+para hacerle a cualquier bot; ver `plan-seo-y-posicionamiento.md`), **generador
+de mensajes de recordatorio**, **plantilla de política de cancelación**,
+**calculadora de coste de una recepcionista**. Atraen enlaces porque son útiles
+sin comprar nada.
+
+### 13.7 · Datos propios
+
+Lo que solo Hachi puede publicar, agregado y anónimo: *a qué hora escriben los
+clientes de una clínica*, *qué porcentaje de mensajes llega fuera de horario*,
+*cuánto se reducen las ausencias con recordatorio*. Una página de datos con
+fuente y método la citan medios, blogs y modelos. Requisito: datos agregados de
+varios clientes y su permiso.
+
+### 13.8 · Autoridad y entidad
+
+- **Perfiles consistentes**, todos con el mismo nombre («Hachi AI») y enlace a
+  `hachi.live`: LinkedIn (ya), Crunchbase, Product Hunt, G2, Capterra, GitHub.
+  Cada uno nuevo va al `sameAs` del JSON-LD de las portadas.
+- **Reseñas reales** en G2 o Capterra en cuanto haya clientes: son fuentes que
+  los modelos leen para «mejor X para Y».
+- **Contenido invitado y podcasts** del sector (veterinaria, estética, talleres):
+  con enlace a la página de ese sector, no a la portada.
+- **Wikidata**, solo cuando haya cobertura independiente que lo sostenga.
+
+### 13.9 · Visibilidad en asistentes de IA (GEO)
+
+Hecho: `llms.txt`, `llms-full.txt`, rastreadores de IA abiertos, datos citables
+(precios por mercado, 80+ invariantes, ~4 s de latencia en voz). Falta:
+
+- **Estar donde los modelos buscan:** respuestas genuinas en Reddit y foros del
+  sector (sin spam), comparativas de terceros, directorios.
+- **Medirlo.** Una vez al mes, preguntar lo mismo a ChatGPT, Gemini, Perplexity y
+  Copilot, y apuntarlo:
+
+| Fecha | Pregunta | ChatGPT | Gemini | Perplexity | Copilot |
+|---|---|---|---|---|---|
+| | «mejor recepcionista con IA para veterinarias» | | | | |
+| | "AI receptionist for auto repair shops" | | | | |
+| | «qué es Hachi AI y cuánto cuesta» | | | | |
+
+---
+
+## 14 · Historial de decisiones
 
 | Fecha | Decisión | Por qué |
 |---|---|---|
@@ -506,6 +655,8 @@ las `www` como «página alternativa».
 | 25-09-2026 | GPTBot y CCBot desbloqueados en `robots.txt` | Que los modelos conozcan Hachi (ver `plan-seo-y-posicionamiento.md`) |
 | 25-09-2026 | `robots.txt`: `Disallow: /docs/` y `/tools/` | Mitigación mientras se decide cómo dejar de servirlos (§10) |
 | 25-09-2026 | `Dockerfile` + `deploy/nginx.conf` + `.dockerignore` | `docs/` se descargaba desde hachi.live; pasos en Coolify en §10.3 |
+| 25-09-2026 | Desplegado con Dockerfile y «Redirect to non-www» en Coolify | Confirmado: páginas en 200, `docs/` y `tools/` ya no se sirven |
+| 25-09-2026 | Favicon, iconos e imágenes para compartir con el logo real; `feed.xml`, `humans.txt`, `llms-full.txt`; `security.txt` renovado | Eran marcadores de posición (cuadrado morado); archivos técnicos de la Fase 2 completos (§12) |
 
 ---
 

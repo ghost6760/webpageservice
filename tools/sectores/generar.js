@@ -274,7 +274,7 @@ function pagina(lang, s) {
 <meta property="og:url" content="${url(ruta)}">
 <meta property="og:title" content="${escAttr(aTexto(s.h1))}">
 <meta property="og:description" content="${escAttr(s.descripcion)}">
-<meta property="og:image" content="https://hachi.live/images/og-image.png">
+<meta property="og:image" content="https://hachi.live/images/og-image${lang === 'es' ? '-es' : ''}.png">
 
 ${ld.map((o) => `<script type="application/ld+json">\n${JSON.stringify(o, null, 2)}\n</script>`).join('\n')}
 
@@ -428,7 +428,7 @@ function indice(lang) {
 <meta property="og:url" content="${url(ruta)}">
 <meta property="og:title" content="${escAttr(aTexto(L.t.indiceH1))}">
 <meta property="og:description" content="${escAttr(L.t.indiceDescripcion)}">
-<meta property="og:image" content="https://hachi.live/images/og-image.png">
+<meta property="og:image" content="https://hachi.live/images/og-image${lang === 'es' ? '-es' : ''}.png">
 
 ${ld.map((o) => `<script type="application/ld+json">\n${JSON.stringify(o, null, 2)}\n</script>`).join('\n')}
 

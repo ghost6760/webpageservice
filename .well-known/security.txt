@@ -12,8 +12,8 @@ Preferred-Languages: en, es
 # Canonical URL for this security.txt file
 Canonical: https://hachi.live/.well-known/security.txt
 
-# Expiration date for this file (update annually)
-Expires: 2026-11-20T00:00:00.000Z
+# Expiration date (RFC 9116: under a year ahead). Renew before it passes.
+Expires: 2027-09-20T00:00:00.000Z
 
 # Acknowledgments page (optional - create when you have security contributors)
 # Acknowledgments: https://hachi.live/security/acknowledgments

@@ -14,6 +14,14 @@ business's real calendar. A language model interprets what the person wants;
 verified code performs the availability check and the calendar write. That
 separation is the product.
 
+## Full content
+
+- [llms-full.txt](https://hachi.live/llms-full.txt): every public page as plain
+  markdown in one file, English then Spanish. This file (llms.txt) stays the
+  authoritative summary.
+- [feed.xml](https://hachi.live/feed.xml): Atom feed of guides, FAQ and industry
+  pages, newest first.
+
 ## Core Pages
 
 - [Homepage (English)](https://hachi.live/): Product, pricing, GDPR, FAQ and architecture

@@ -239,7 +239,7 @@ const html = `<!DOCTYPE html>
 <meta property="og:url" content="https://hachi.live/${T.ruta}">
 <meta property="og:title" content="${T.ogTitulo}">
 <meta property="og:description" content="${T.ogDescripcion}">
-<meta property="og:image" content="https://hachi.live/images/og-image.png">
+<meta property="og:image" content="https://hachi.live/images/og-image${LANG === 'es' ? '-es' : ''}.png">
 
 <script type="application/ld+json">
 ${JSON.stringify(faqPage, null, 2)}

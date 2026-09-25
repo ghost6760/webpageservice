@@ -128,6 +128,40 @@ c('la clave tiene entre 8 y 128 caracteres hexadecimales',
 c('el fichero de clave no está bloqueado en robots.txt',
   !disallows.some((d) => d !== '/' && ('/' + claveScript + '.txt').startsWith(d)));
 
+// ═══════════════════════════════════════════════ iconos, imágenes y otros
+console.log('\n[iconos, imágenes para compartir y ficheros técnicos]');
+const { execFileSync: ejecutar } = require('child_process');
+const bin = (f) => fs.readFileSync(path.join(R, f));
+// favicon.ico con 48x48 dentro: Google pide múltiplos de 48 para el resultado.
+if (hay('favicon.ico')) {
+  const ico = bin('favicon.ico'); const n = ico.readUInt16LE(4);
+  const tallas = Array.from({ length: n }, (_, i) => ico[6 + i * 16] || 256);
+  c('favicon.ico incluye 48x48', tallas.includes(48), tallas.join(', '));
+} else c('favicon.ico existe', false);
+c('el favicon ya no es el cuadrado morado de relleno (> 2 KB)', hay('favicon.ico') && bin('favicon.ico').length > 2000);
+['index.html', 'es/index.html'].forEach((f) => {
+  const h = leer(f);
+  c(f + ': declara favicon de 48 y de 192', h.includes('sizes="48x48"') && h.includes('sizes="192x192"'));
+  c(f + ': enlaza feed.xml y humans.txt', h.includes('/feed.xml') && h.includes('/humans.txt'));
+});
+c('las páginas en español comparten la imagen en español',
+  leer('es/index.html').includes('og-image-es.png') && !leer('es/preguntas.html').includes('images/og-image.png'));
+['images/og-image.png', 'images/og-image-es.png', 'images/twitter-image.png', 'images/twitter-image-es.png']
+  .forEach((f) => c(f + ' existe y no es el marcador de posición', hay(f) && bin(f).length > 50000));
+const manifiesto = JSON.parse(leer('manifest.json'));
+const refs = [...manifiesto.icons, ...(manifiesto.shortcuts || []).flatMap((s) => s.icons || [])]
+  .map((i) => i.src).concat((manifiesto.screenshots || []).map((s) => s.src));
+const rotas = refs.filter((s) => !hay(s.replace(/^\//, '')));
+c('manifest.json no apunta a ficheros que no existen', rotas.length === 0, rotas.join(', '));
+c('manifest.json tiene iconos maskable', manifiesto.icons.some((i) => i.purpose === 'maskable'));
+c('humans.txt existe', hay('humans.txt'));
+[['feed.js', 'feed.xml'], ['llms-full.js', 'llms-full.txt']].forEach(([s, f]) => {
+  let bien = true;
+  try { ejecutar('node', [path.join(__dirname, s)], { stdio: 'ignore' }); } catch (e) { bien = false; }
+  c(f + ' al día con las páginas (node tools/sitio/' + s + ' --escribir)', bien);
+});
+c('llms.txt enlaza llms-full.txt', llms.includes('https://hachi.live/llms-full.txt'));
+
 // ═══════════════════════════════════════════════ security.txt
 console.log('\n[.well-known/security.txt]');
 c('existe', hay('.well-known/security.txt'));

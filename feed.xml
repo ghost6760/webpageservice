@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generado por tools/sitio/feed.js. No editar a mano: se regenera. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hachi · AI receptionist</title>
+  <subtitle>Guides, industry pages and answers about AI receptionists that book into a real calendar.</subtitle>
+  <link rel="self" type="application/atom+xml" href="https://hachi.live/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://hachi.live/"/>
+  <id>https://hachi.live/feed.xml</id>
+  <updated>2026-09-25T00:00:00Z</updated>
+  <author><name>Hachi</name><uri>https://hachi.live/</uri></author>
+  <icon>https://hachi.live/icons/favicon-96x96.png</icon>
+  <logo>https://hachi.live/icons/icon-512x512.png</logo>
+  <entry xml:lang="es">
+    <title>Calculadora: qué te cuestan las ausencias | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/calculadora.html"/>
+    <id>https://hachi.live/es/calculadora.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Calcula con tus números cuánto pierde tu clínica por ausencias y por horas de recepción. Margen de contribución y coste laboral real. Sin registro.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Cuánto cuesta un asistente de IA para clínicas | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/cuanto-cuesta-un-asistente-ia.html"/>
+    <id>https://hachi.live/es/cuanto-cuesta-un-asistente-ia.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Por qué los presupuestos van de 29 € a más de 900 € al mes, qué se paga en cada nivel y cómo saber cuál te compensa con tus números.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Por qué tu bot no consulta la agenda de verdad | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html"/>
+    <id>https://hachi.live/es/por-que-los-bots-de-flujo-fallan.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>El motivo técnico por el que un bot de flujos no mira tu calendario, cómo se produce la cita duplicada y qué exigirle a quien agende por ti.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Preguntas frecuentes · Precios, canales y RGPD | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/preguntas.html"/>
+    <id>https://hachi.live/es/preguntas.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>85 preguntas respondidas: precios y planes, WhatsApp API y la ventana de 24 h, llamadas, cómo agenda las citas, ausencias y RGPD.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA por sector: qué cambia en cada negocio | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/"/>
+    <id>https://hachi.live/es/sectores/</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Veterinarias, clínicas, peluquerías, talleres, fontaneros: qué hace una recepcionista con IA en cada sector, con ejemplos reales y la cuenta de cuándo compensa.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para centros de belleza y uñas | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/centros-de-belleza-y-unas.html"/>
+    <id>https://hachi.live/es/sectores/centros-de-belleza-y-unas.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Agenda manicuras, rellenos, pestañas y depilación con su duración y su cabina, y recuerda a cada clienta cuándo le toca volver. WhatsApp atendido mientras trabajas.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para clínicas capilares y de láser | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/clinicas-capilares-y-laser.html"/>
+    <id>https://hachi.live/es/sectores/clinicas-capilares-y-laser.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Contesta a quien pregunta por un injerto o por la depilación láser, agenda la valoración y cada sesión en su intervalo, y retoma a quien pidió precio y no reservó.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para clínicas dentales | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/clinicas-dentales.html"/>
+    <id>https://hachi.live/es/sectores/clinicas-dentales.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Atiende el WhatsApp y el teléfono de tu clínica dental, agenda primeras visitas y revisiones en tu agenda real y pasa a tu equipo las urgencias con dolor.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para centros de fisioterapia | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/fisioterapia.html"/>
+    <id>https://hachi.live/es/sectores/fisioterapia.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Agenda sesiones con el fisio que toca, gestiona cambios de hora sin interrumpir el tratamiento y recuerda cada cita. WhatsApp y teléfono atendidos a cualquier hora.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para fontaneros, electricistas y mantenimiento</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/fontaneros-electricistas-y-mantenimiento.html"/>
+    <id>https://hachi.live/es/sectores/fontaneros-electricistas-y-mantenimiento.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Contesta mientras estás en una obra, pide dirección y fotos de la avería, agenda la visita en tu franja y pasa a ti las urgencias. Llamadas y WhatsApp, 24/7.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para clínicas de medicina estética | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/medicina-estetica.html"/>
+    <id>https://hachi.live/es/sectores/medicina-estetica.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Contesta a quien pregunta por bótox o rellenos a las once de la noche, agenda la valoración en tu agenda real y retoma a quien preguntó el precio y no volvió.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para peluquerías y barberías | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/peluquerias-y-barberias.html"/>
+    <id>https://hachi.live/es/sectores/peluquerias-y-barberias.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Agenda cortes, tintes y barba con la duración de cada servicio y el peluquero que pide el cliente, mientras trabajas. Con recordatorios y lista de espera.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para psicólogos y consultas de terapia | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/psicologos.html"/>
+    <id>https://hachi.live/es/sectores/psicologos.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Agenda primeras consultas y sesiones mientras estás en terapia, con discreción y datos de salud protegidos. Lo delicado pasa a ti al momento.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para spas y centros de masajes | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/spas-y-masajes.html"/>
+    <id>https://hachi.live/es/sectores/spas-y-masajes.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Contesta a quien pregunta por un masaje o un circuito un domingo por la noche, agenda con el terapeuta y la cabina que toca y recuerda la cita para que no falle.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para talleres mecánicos | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/talleres-mecanicos.html"/>
+    <id>https://hachi.live/es/sectores/talleres-mecanicos.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Atiende el teléfono y el WhatsApp del taller cuando estás bajo un coche, pide marca, modelo y matrícula, y agenda la revisión o el diagnóstico.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>Recepcionista con IA para clínicas veterinarias | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/sectores/veterinarias.html"/>
+    <id>https://hachi.live/es/sectores/veterinarias.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Agenda vacunas, revisiones y peluquería canina en tu agenda real, recuerda la próxima dosis y pasa al veterinario las urgencias. WhatsApp y teléfono, 24/7.</summary>
+  </entry>
+  <entry xml:lang="es">
+    <title>WhatsApp Business vs API: diferencias reales | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="es" href="https://hachi.live/es/whatsapp-api-vs-business.html"/>
+    <id>https://hachi.live/es/whatsapp-api-vs-business.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Qué diferencia hay entre la app de WhatsApp Business y la API oficial, por qué bloquean números y qué es la ventana de 24 horas.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>FAQ · Pricing, channels, booking and GDPR | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/faq.html"/>
+    <id>https://hachi.live/faq.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>85 questions answered: pricing and plans, WhatsApp API and the 24-hour window, calls, how appointments are booked, no-shows and GDPR.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist by industry: what changes in each business | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/"/>
+    <id>https://hachi.live/industries/</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Vets, med spas, salons, auto shops, plumbers: what an AI receptionist does in each industry, with real examples and the maths on when it pays off.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for auto repair shops | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/auto-repair-shops.html"/>
+    <id>https://hachi.live/industries/auto-repair-shops.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Answers the shop phone and texts while you are under a car, asks for year, make and model, reads photos of the damage and books the diagnostic or service.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for beauty and nail salons | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/beauty-and-nail-salons.html"/>
+    <id>https://hachi.live/industries/beauty-and-nail-salons.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Books manicures, fills, lashes and waxing with the right length and station, and reminds every client when her next visit is due. Texts answered while you work.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for dental practices | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/dental-practices.html"/>
+    <id>https://hachi.live/industries/dental-practices.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Answers your dental practice's phone, texts and WhatsApp, books new-patient visits and cleanings into your real calendar and hands emergencies to your team.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for hair restoration and laser clinics | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/hair-restoration-and-laser-clinics.html"/>
+    <id>https://hachi.live/industries/hair-restoration-and-laser-clinics.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Answers people asking about a hair transplant or laser hair removal, books the consultation and every session on schedule, and follows up with those who went quiet.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for hair salons and barbershops | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/hair-salons-and-barbershops.html"/>
+    <id>https://hachi.live/industries/hair-salons-and-barbershops.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Books cuts, color and beard trims with the right length and the stylist your client asks for, while you work. With text reminders and a waiting list.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for med spas and aesthetic clinics | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/med-spas.html"/>
+    <id>https://hachi.live/industries/med-spas.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Answers Botox and filler questions at 11pm by text, WhatsApp or phone, books the consultation into your real calendar and follows up with people who went quiet.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for physical therapy clinics | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/physical-therapy.html"/>
+    <id>https://hachi.live/industries/physical-therapy.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Books sessions with the right therapist, handles reschedules without pulling anyone off the table and texts a reminder before every visit. Phone and text, any time.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for plumbers, electricians and home services</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/plumbers-electricians-and-home-services.html"/>
+    <id>https://hachi.live/industries/plumbers-electricians-and-home-services.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Answers calls and texts while you are on a job, asks for the address and a photo of the problem, books the visit into your arrival window and flags emergencies.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for day spas and massage studios | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/spas-and-massage.html"/>
+    <id>https://hachi.live/industries/spas-and-massage.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Answers the Sunday-night "do you have a massage Saturday?" text, books with the right therapist and room, and sends a reminder so the booking holds.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for therapists and counselors | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/therapists.html"/>
+    <id>https://hachi.live/industries/therapists.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Books intake calls and sessions while you are in session, discreetly. Anything sensitive goes to you right away and never stays with the machine.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>AI receptionist for veterinary clinics | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/industries/veterinary-clinics.html"/>
+    <id>https://hachi.live/industries/veterinary-clinics.html</id>
+    <updated>2026-09-25T00:00:00Z</updated>
+    <summary>Books vaccines, wellness exams and grooming into your real calendar, texts reminders before each visit and hands pet emergencies to your team, 24/7.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>ROI calculator: what no-shows really cost | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/calculator.html"/>
+    <id>https://hachi.live/calculator.html</id>
+    <updated>2026-09-07T00:00:00Z</updated>
+    <summary>Work out with your own figures what no-shows and reception hours cost your clinic. Contribution margin, fully loaded labour cost. No sign-up.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>What an AI assistant for clinics costs | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/how-much-does-an-ai-assistant-cost.html"/>
+    <id>https://hachi.live/how-much-does-an-ai-assistant-cost.html</id>
+    <updated>2026-09-07T00:00:00Z</updated>
+    <summary>Why quotes run from €29 to over €900 a month, what you are paying for at each tier, and how to tell which one pays for itself.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>WhatsApp Business vs API: the real differences | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/whatsapp-api-vs-business.html"/>
+    <id>https://hachi.live/whatsapp-api-vs-business.html</id>
+    <updated>2026-09-07T00:00:00Z</updated>
+    <summary>What separates the WhatsApp Business app from the official API, why numbers get blocked, and what the 24-hour window means for you.</summary>
+  </entry>
+  <entry xml:lang="en">
+    <title>Why your bot cannot check the calendar | Hachi</title>
+    <link rel="alternate" type="text/html" hreflang="en" href="https://hachi.live/why-flow-based-bots-fail.html"/>
+    <id>https://hachi.live/why-flow-based-bots-fail.html</id>
+    <updated>2026-09-07T00:00:00Z</updated>
+    <summary>The technical reason a flow-based bot cannot check your calendar, how a duplicated booking happens, and what to demand from any assistant.</summary>
+  </entry>
+</feed>
