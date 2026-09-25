@@ -1,5 +1,9 @@
 # Plan de posicionamiento de hachi.live
 
+> **Continuación (25-09-2026):** la estrategia de páginas por sector (pSEO), lo
+> publicado, el plan de indexación y los siguientes pasos están en
+> [`pseo-paginas-por-sector.md`](pseo-paginas-por-sector.md).
+
 **Qué es este documento:** el estado real de la web hoy, por qué casi nadie la
 encuentra, y el plan para que buscadores y modelos de lenguaje la citen cuando
 alguien tiene el problema que Hachi resuelve.

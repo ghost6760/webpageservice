@@ -12,6 +12,12 @@ Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
 
+# Documentación interna y herramientas del repositorio: no son páginas.
+# Mitigación: esto evita que se indexen, pero no que se abran con la URL.
+# Ver docs/pseo-paginas-por-sector.md §10.
+Disallow: /docs/
+Disallow: /tools/
+
 # /.well-known/ NO se bloquea: security.txt (RFC 9116) existe precisamente para
 # que cualquiera pueda leerlo, y ahí viven también las verificaciones de dominio.
 
